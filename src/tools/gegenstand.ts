@@ -91,6 +91,12 @@ export function formatGegenstand(d: DetailResponse, path: string): string {
       );
     }
   }
+  const press = (c.correspondence ?? []).filter((p) => p.title && p.url);
+  if (press.length) {
+    lines.push('', 'Parlamentskorrespondenz (Pressemeldungen):');
+    for (const p of press.slice(0, 5)) lines.push(`- ${p.date ? p.date + ': ' : ''}${cleanText(p.title!)} — ${absolute(p.url!)}`);
+    if (press.length > 5) lines.push(`- … und ${press.length - 5} weitere`);
+  }
   const topics = c.topics?.data.bubbles.map((b) => b.label) ?? [];
   const words = c.headwords?.data.bubbles.map((b) => b.label) ?? [];
   if (topics.length) lines.push('', `Themen: ${topics.join(', ')}`);
@@ -105,7 +111,7 @@ export function registerGegenstand(server: McpServer, client: ParlamentClient): 
     {
       title: 'Verhandlungsgegenstand im Detail (Einbringer, Verlauf, Dokumente)',
       description:
-        'Zeigt Details zu einem Gegenstand des Nationalrats, derzeit Anfragen (Zitation z. B. "7436/J") und Anfragebeantwortungen ("6209/AB"): ' +
+        'Zeigt Details zu einem Gegenstand des Nationalrats: Anfragen ("7436/J"), Beantwortungen ("6209/AB"), Gesetzesvorlagen ("251/I"), Petitionen ("21/PET"), Bürgerinitiativen ("8/BI"): ' +
         'Titel, wer sie eingebracht bzw. beantwortet hat (mit Partei-Kürzel), Verlauf, PDF-Dokumente und Bezüge. ' +
         'Zitation und Gesetzgebungsperiode stehen in den Ergebnissen von parl_anfragen. Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {

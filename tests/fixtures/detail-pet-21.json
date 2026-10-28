@@ -1,0 +1,460 @@
+{
+  "pagetype": "geschichtsseite",
+  "meta": {
+    "description": "Erhalt aller Bezirksgerichte in Tirol – insbesondere des Bezirksgerichts Telfs (21/PET)",
+    "generationTime": "Fri Oct 23 23:25:22 GMT 2026",
+    "keywords": "\"Petitionen\", \"Rechtspflege\"",
+    "lang": "de",
+    "title": "Erhalt aller Bezirksgerichte in Tirol – insbesondere des Bezirksgerichts Telfs (21/PET) | Parlament Österreich",
+    "openGraph": {
+      "image": "https://www.parlament.gv.at/static/img/og.png",
+      "title": "Erhalt aller Bezirksgerichte in Tirol – insbesondere des Bezirksgerichts Telfs | Parlament Österreich",
+      "description": "21/PET"
+    },
+    "scripts": [],
+    "styles": []
+  },
+  "content": {
+    "breadcrumbs": [
+      { "title": "Start", "url": "/" },
+      { "title": "Gegenstände", "url": "/recherchieren/gegenstaende/" },
+      { "title": "Nationalrat - XXVIII. GP", "url": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII" },
+      { "title": "Petition im Nationalrat", "url": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&VHG=PET&DOKTYP=PET" },
+      { "title": "21/PET" }
+    ],
+    "type": "Petition im Nationalrat",
+    "sntype": "Petition im Nationalrat",
+    "title": "Erhalt aller Bezirksgerichte in Tirol – insbesondere des Bezirksgerichts Telfs",
+    "zitation": "21/PET",
+    "description": "Petition betreffend \"Erhalt aller Bezirksgerichte in Tirol – insbesondere des Bezirksgerichts Telfs\", überreicht vom Abgeordneten Klaus Mair",
+    "gp_code": "XXVIII",
+    "ityp": "PET",
+    "inr": 21,
+    "doktyp": "PET",
+    "update": "2026-10-24T01:25:20",
+    "nr_gp_code": "XXVIII",
+    "intranet": "N",
+    "group": "1",
+    "deleted": false,
+    "einlangen": "2026-06-19T00:00:00",
+    "history_ind": 2,
+    "vhg_fertig": "J",
+    "vhg_fertig_docs": "J",
+    "process": "J",
+    "statementsstate": "1",
+    "approvalstate": "1",
+    "statements": {
+      "new": 1,
+      "personform": {
+        "rendertype": "form",
+        "data": {
+          "action": "/PtWeb/api/stellungnahme",
+          "description": "Ihre Stellungnahme wird nur mit Ihrem Einverständnis auf der Parlamentswebsite veröffentlicht. Die Stellungnahme muss der Würde des Hauses entsprechen und darf nicht gegen zwingende gesetzliche Vorschriften verstoßen (z.B. das Strafrecht, Urheberrecht oder Datenschutzrecht).",
+          "fields": [
+            { "fieldType": "hidden", "id": "gpCode", "required": true, "value": "XXVIII" },
+            { "fieldType": "hidden", "id": "ityp", "required": true, "value": "PET" },
+            { "fieldType": "hidden", "id": "inr", "required": true, "value": "21" },
+            { "fieldType": "text", "id": "vorname", "label": "Vorname", "required": true },
+            { "fieldType": "text", "id": "nachname", "label": "Nachname", "required": true },
+            { "fieldType": "text", "id": "titel", "label": "Titel", "required": false },
+            { "fieldType": "email", "id": "email", "label": "E-Mail-Adresse", "required": true },
+            { "fieldType": "text", "id": "plz", "label": "PLZ", "required": true },
+            { "fieldType": "text", "id": "ort", "label": "Ort", "required": true },
+            { "fieldType": "textarea", "id": "text", "label": "Stellungnahme", "required": false },
+            {
+              "heading": {
+                "title": "Anlagen",
+                "ebene": 4,
+                "tooltip": { "text": "Hier können Sie Anlagen hinzufügen (Dateiformat: pdf, max. Dateigröße: 10 MB, max. drei Anlagen" }
+              },
+              "fieldType": "heading"
+            },
+            {
+              "fieldType": "file",
+              "id": "uploadStellungnahme",
+              "required": false,
+              "multiple": true,
+              "allowedExtensions": ["pdf"],
+              "maxFilesize": 10000000,
+              "maxAllowedFiles": 3
+            },
+            {
+              "id": "eingeladen",
+              "entries": [
+                {
+                  "label": "Diese Stellungnahme wird auf Eigeninitiative übermittelt.",
+                  "value": "eigen",
+                  "tooltip": {
+                    "text": "Interessierte Privatpersonen können im Rahmen von Begutachtungsverfahren Stellungnahmen abgeben und so einen wichtigen Beitrag zum weiteren Gesetzgebungsprozess leisten."
+                  },
+                  "selected": true
+                },
+                {
+                  "label": "Diese Stellungnahme wird auf persönliche Einladung des zuständigen Bundesministeriums übermittelt.",
+                  "value": "bund",
+                  "tooltip": { "text": "Das zuständige Bundesministerium hat Sie persönlich kontaktiert und um Stellungnahme ersucht" }
+                }
+              ],
+              "fieldType": "radio"
+            },
+            {
+              "id": "oeffentlich",
+              "checkboxGroupName": "oeffentlich",
+              "entries": [
+                {
+                  "label": "Ich bin mit der Veröffentlichung meiner Stellungnahme auf der Parlamentswebsite einverstanden.",
+                  "tooltip": {
+                    "text": "Ihre Stellungnahme wird jedenfalls den parlamentarischen Klubs und/oder dem zuständigen Ressort für ihre Arbeit zur Verfügung gestellt."
+                  }
+                }
+              ],
+              "fieldType": "checkbox"
+            },
+            {
+              "id": "hinweiseGelesen",
+              "checkboxGroupName": "hinweiseGelesen",
+              "entries": [
+                {
+                  "label": "Ich bin mindestens 16 Jahre alt und habe den <a href=\\\"/DSH/index.shtml\\\">Datenschutzhinweis</a> zur Kenntnis genommen.",
+                  "required": true
+                }
+              ],
+              "fieldType": "checkbox"
+            }
+          ],
+          "method": "POST",
+          "preventDefault": true,
+          "rest": true,
+          "enctype": "multipart/form-data"
+        }
+      },
+      "orgform": {
+        "rendertype": "form",
+        "data": {
+          "action": "/PtWeb/api/stellungnahme?org=true",
+          "description": "Ihre Stellungnahme wird auf der Parlamentswebsite veröffentlicht. Die Stellungnahme muss der Würde des Hauses entsprechen und darf nicht gegen zwingende gesetzliche Vorschriften verstoßen (z.B. das Strafrecht, Urheberrecht oder Datenschutzrecht).",
+          "fields": [
+            { "fieldType": "hidden", "id": "gpCodeO", "required": true, "value": "XXVIII" },
+            { "fieldType": "hidden", "id": "itypO", "required": true, "value": "PET" },
+            { "fieldType": "hidden", "id": "inrO", "required": true, "value": "21" },
+            { "heading": { "title": "Institution/Organisation", "ebene": 4 }, "fieldType": "heading" },
+            { "fieldType": "text", "id": "orgNameO", "label": "Bezeichnung der Institution/Organisation", "required": true },
+            { "fieldType": "text", "id": "orgAbteilungO", "label": "Abteilung", "required": false },
+            {
+              "heading": { "title": "Kontaktdaten", "ebene": 4, "tooltip": { "text": "Für Rückmeldungen & Rückfragen" } },
+              "fieldType": "heading"
+            },
+            { "fieldType": "text", "id": "vornameO", "label": "Vorname", "required": true },
+            { "fieldType": "text", "id": "nachnameO", "label": "Nachname", "required": true },
+            { "fieldType": "email", "id": "emailO", "label": "E-Mail-Adresse", "required": true },
+            { "fieldType": "textarea", "id": "textO", "label": "Stellungnahme", "required": false },
+            {
+              "heading": {
+                "title": "Anlagen",
+                "ebene": 4,
+                "tooltip": { "text": "Hier können Sie Anlagen hinzufügen (Dateiformat: pdf, max. Dateigröße: 10 MB, max. drei Anlagen" }
+              },
+              "fieldType": "heading"
+            },
+            {
+              "fieldType": "file",
+              "id": "uploadStellungnahmeO",
+              "required": false,
+              "multiple": true,
+              "allowedExtensions": ["pdf"],
+              "maxFilesize": 10000000,
+              "maxAllowedFiles": 3
+            },
+            {
+              "id": "eingeladenO",
+              "entries": [
+                {
+                  "label": "Diese Stellungnahme wird auf Eigeninitiative übermittelt.",
+                  "value": "eigen",
+                  "tooltip": {
+                    "text": "Die interessierte Öffentlichkeit kann im Rahmen von Begutachtungsverfahren Stellungnahmen abgeben und so einen wichtigen Beitrag zum weiteren Gesetzgebungsprozess leisten. Diese Möglichkeit steht sowohl privaten als auch öffentlichen Institutionen/Organisationen offen."
+                  },
+                  "selected": true
+                },
+                {
+                  "label": "Ihre Institution/Organisation wurde vom zuständigen Bundesministerium zur Stellungnahme eingeladen.",
+                  "value": "bund",
+                  "tooltip": {
+                    "text": "Das zuständige Bundesministerium hat Ihre Institution/Organisation mittels Einladungsschreiben kontaktiert und um Stellungnahme ersucht."
+                  }
+                }
+              ],
+              "fieldType": "radio"
+            },
+            {
+              "fieldType": "info",
+              "infoText": "Informationen zu den erfassten/veröffentlichten Daten finden Sie im <a href=\\\"/DSH/index.shtml\\\">Datenschutzhinweis</a>.",
+              "infoType": "TEXT"
+            }
+          ],
+          "method": "POST",
+          "preventDefault": true,
+          "rest": true,
+          "enctype": "multipart/form-data"
+        }
+      },
+      "documents": [],
+      "filter": {
+        "rendertype": "filter",
+        "data": {
+          "type": "FILTER",
+          "resultLayout": "TABLE",
+          "hasForm": true,
+          "hasList": true,
+          "label": "Stellungnahmen",
+          "pagesize": 20,
+          "definition": {
+            "bez": "FP_142_vhg",
+            "listeId": 142,
+            "params": { "BEZUG_GP_CODE": ["XXVIII"], "BEZUG_ITYP": ["PET"], "BEZUG_INR": [21] },
+            "fixedParams": { "BEZUG_GP_CODE": ["XXVIII"], "BEZUG_ITYP": ["PET"], "BEZUG_INR": [21] },
+            "hideDimensions": ["BEZUG_GP_CODE", "BEZUG_ITYP", "BEZUG_INR"],
+            "hideColumns": ["16", "17"],
+            "sortrnr": 5,
+            "ascDesc": "DESC"
+          }
+        }
+      }
+    },
+    "approvals": {
+      "new": 1,
+      "personform": {
+        "rendertype": "form",
+        "data": {
+          "action": "/PtWeb/api/ebi",
+          "description": "Die gegenständliche Petition im Nationalrat wurde rechtsgültig im Nationalrat eingebracht. Die elektronische Unterstützung dient der Abbildung der politischen Interessenlage und hat für die Beratungen im Nationalrat informativen Charakter.<br><br>Wie bei einer Wahl ist die Abgabe lediglich einer Unterstützung pro Person vorgesehen. Die Parlamentsdirektion behält sich vor, weitere Unterstützungen einer Person zu löschen.",
+          "fields": [
+            { "fieldType": "hidden", "id": "gpCode", "required": true, "value": "XXVIII" },
+            { "fieldType": "hidden", "id": "ityp", "required": true, "value": "PET" },
+            { "fieldType": "hidden", "id": "inr", "required": true, "value": "21" },
+            { "fieldType": "text", "id": "ebiVorname", "label": "Vorname", "required": true },
+            { "fieldType": "text", "id": "ebiNachname", "label": "Nachname", "required": true },
+            { "fieldType": "text", "id": "ebiTitel", "label": "Titel", "required": false },
+            { "fieldType": "email", "id": "ebiMail", "label": "E-Mail-Adresse", "required": true },
+            { "fieldType": "text", "id": "ebiPlz", "label": "PLZ", "required": true },
+            { "fieldType": "text", "id": "ebiOrt", "label": "Ort", "required": true },
+            { "fieldType": "text", "id": "ebiStaat", "label": "Staat", "required": true },
+            {
+              "id": "ebiStaatsb",
+              "checkboxGroupName": "ebiStaatsb",
+              "entries": [
+                {
+                  "label": "Ich bin mindestens 16 Jahre alt und österreichische:r Staatsbürger:in.",
+                  "required": true,
+                  "tooltip": {
+                    "text": "Für die elektronische Unterstützung von Petitionen und Bürgerinitiativen sind die Vollendung des 16. Lebensjahres sowie die österreichische Staatsbürgerschaft notwendig. Dies entspricht den gemäß § 100 GOG-NR für die Unterstützung geltenden Voraussetzungen."
+                  }
+                }
+              ],
+              "fieldType": "checkbox"
+            },
+            {
+              "id": "hinweiseGelesen",
+              "checkboxGroupName": "hinweiseGelesen",
+              "entries": [
+                { "label": "Ich habe den <a href=\\\"/DSH/index.shtml\\\">Datenschutzhinweis</a> zur Kenntnis genommen", "required": true }
+              ],
+              "fieldType": "checkbox"
+            },
+            {
+              "id": "ebiVeroeffentl",
+              "checkboxGroupName": "oeffentlich",
+              "entries": [
+                {
+                  "label": "Ich bin mit der Veröffentlichung meiner Daten einverstanden. Ich kann diesen Status jederzeit wieder ändern. <a href=\"https://cms-neu.parlament.gv.at/opencms/opencms/beteiligen/hilfe/haeufige-fragen/\" target=\"_blank\" title=\"Unterstützungen - FAQ\">Mehr</a>",
+                  "tooltip": {
+                    "text": "Wenn Sie dieses Feld anklicken, werden Ihr Name, PLZ und Ort in der Liste der Unterstützungen angezeigt."
+                  }
+                }
+              ],
+              "fieldType": "checkbox"
+            }
+          ],
+          "method": "POST",
+          "preventDefault": true,
+          "rest": true
+        }
+      },
+      "filter": {
+        "rendertype": "filter",
+        "data": {
+          "type": "FILTER",
+          "resultLayout": "TABLE",
+          "hasForm": true,
+          "hasList": true,
+          "label": "Unterstützungen",
+          "pagesize": 20,
+          "definition": {
+            "bez": "BI_001",
+            "listeId": 305,
+            "params": { "GP_CODE": ["XXVIII"], "ITYP": ["PET"], "INR": [21] },
+            "fixedParams": { "GP_CODE": ["XXVIII"], "ITYP": ["PET"], "INR": [21] },
+            "hideDimensions": ["GP_CODE", "ITYP", "INR"],
+            "hideColumns": ["10", "12"],
+            "sortrnr": 5,
+            "ascDesc": "DESC"
+          }
+        }
+      }
+    },
+    "formlink": "/gegenstand/XXVIII/PET/21?selectedStage=101&persForm=1#persForm",
+    "appformlink": "/gegenstand/XXVIII/PET/21?selectedStage=103&appForm=1#appForm",
+    "status": {
+      "number": 5,
+      "description": "Ausschuss für Petitionen und Bürgerinitiativen: auf <a href=\"/dokument/XXVIII/A-PB/1/00932/TO_16857423.html\">Tagesordnung</a> in der <a href=\"/ausschuss/XXVIII/A-PB/1/00932?selectedStage=105&selectedSession=7&selectedDate=22102026\">7. Sitzung des Ausschusses</a>"
+    },
+    "progress": [
+      { "name": "Einlangen NR", "id": 1, "empty": false },
+      { "name": "Ausschussberatungen NR", "id": 3, "empty": false },
+      { "name": "Plenarberatungen NR", "id": 4, "empty": false }
+    ],
+    "phase": [
+      {
+        "name": "Einlangen NR",
+        "id": 1,
+        "stages": [
+          { "date": "19.06.2026", "text": "Einlangen im Nationalrat", "priority": 1 },
+          {
+            "date": "19.06.2026",
+            "text": "Vorgesehen für den <a href=\"/ausschuss/XXVIII/A-PB/1/00932\">Ausschuss für Petitionen und Bürgerinitiativen</a>"
+          }
+        ],
+        "documents": []
+      },
+      {
+        "name": "Ausschussberatungen NR",
+        "id": 3,
+        "stages": [
+          {
+            "date": "21.06.2026",
+            "text": "Zuweisung an den <a href=\"/ausschuss/XXVIII/A-PB/1/00932\">Ausschuss für Petitionen und Bürgerinitiativen</a>"
+          },
+          {
+            "date": "22.10.2026",
+            "text": "Ausschuss für Petitionen und Bürgerinitiativen: auf <a href=\"/dokument/XXVIII/A-PB/1/00932/TO_16857423.html\">Tagesordnung</a> in der <a href=\"/ausschuss/XXVIII/A-PB/1/00932?selectedStage=105&selectedSession=7&selectedDate=22102026\">7. Sitzung des Ausschusses</a>",
+            "priority": 1
+          }
+        ],
+        "documents": [],
+        "correspondence": [
+          {
+            "additional": false,
+            "title": "Petitionsausschuss holt Einschätzungen zu Bürgeranliegen ein",
+            "date": "22.10.2026",
+            "url": "/aktuelles/pk/jahr_2026/pk1008#XXVIII_PET_00021"
+          }
+        ]
+      },
+      {
+        "name": "Plenarberatungen NR",
+        "id": 4,
+        "stages": [
+          {
+            "date": "06.07.2026",
+            "text": "<a href=\"/gegenstand/XXVIII/NRSITZ/85\">85. Sitzung des Nationalrates</a>: Mitteilung des Einlangens und der Zuweisung an den <a href=\"/ausschuss/XXVIII/A-PB/1/00932\">Ausschuss für Petitionen und Bürgerinitiativen</a>",
+            "fsth": [
+              {
+                "gp_code": "XXVIII",
+                "sitzung_id": 85,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/XXVIII/NRSITZ/85/A_-_13_02_16_00986841.html#2.4",
+                "title": "13:02:16 - Präsidium (RN/2.4)",
+                "text": "RN/2.4"
+              }
+            ]
+          }
+        ],
+        "documents": []
+      }
+    ],
+    "documents": [
+      {
+        "title": "Petition (gescanntes Original)",
+        "documents": [{ "link": "/dokument/XXVIII/PET/21/imfname_1765778.pdf", "type": "PDF" }]
+      },
+      {
+        "title": "Petition  (elektr. übermittelte Version)",
+        "documents": [
+          { "link": "/dokument/XXVIII/PET/21/fname_1772804.pdf", "type": "PDF" },
+          { "link": "/dokument/XXVIII/PET/21/fnameorig_1772804.html", "type": "HTML" }
+        ]
+      }
+    ],
+    "names": [
+      {
+        "funktext": "Petition überreicht von",
+        "name": "Klaus Mair",
+        "frak_code": "V",
+        "url": "/person/30722",
+        "portrait": {
+          "rendertype": "image",
+          "data": {
+            "src": "/dokument/bild/201426/20142652_384.jpg",
+            "alt": "Portraitfoto von Klaus Mair",
+            "bildId": 20142652,
+            "copyright": "Parlamentsdirektion/Thomas Topf"
+          }
+        }
+      }
+    ],
+    "correspondence": [
+      {
+        "additional": false,
+        "title": "Neu im Petitionsausschuss",
+        "date": "22.07.2026",
+        "url": "/aktuelles/pk/jahr_2026/pk0765#XXVIII_PET_00021"
+      },
+      {
+        "additional": false,
+        "title": "Petitionsausschuss holt Einschätzungen zu Bürgeranliegen ein",
+        "date": "22.10.2026",
+        "url": "/aktuelles/pk/jahr_2026/pk1008#XXVIII_PET_00021"
+      }
+    ],
+    "topics": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          { "label": "Inneres und Recht", "link": "/suche?thema=Inneres und Recht" },
+          { "label": "Parlament und Demokratie", "link": "/suche?thema=Parlament und Demokratie" }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    },
+    "headwords": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          { "label": "Petitionen", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Petitionen" },
+          { "label": "Rechtspflege", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Rechtspflege" }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    },
+    "eurovoc": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          { "label": "Gerichtswesen", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=Gerichtswesen" },
+          {
+            "label": "partizipative Demokratie",
+            "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=partizipative Demokratie"
+          }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    }
+  }
+}

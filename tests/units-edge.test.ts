@@ -267,7 +267,7 @@ describe('parseGegenstaende with odd rows', () => {
     expect(formatGegenstaende({ total: 12, items: [] }, q)).toBe('Keine Treffer ab offset=40; es gibt insgesamt 12.');
     const [it] = parseGegenstaende(response(header, [row()]));
     const text = formatGegenstaende({ total: 1, items: [it!] }, { ...q, offset: 0 });
-    expect(text).toContain('1 Antrag');
+    expect(text).toContain('1 Treffer (Antrag');
     expect(text).toContain('angezeigt 1–1.');
     expect(text).not.toContain('Weitere mit offset');
   });

@@ -149,6 +149,10 @@ export const detailSchema = z
           z.object({ teil1: z.string().nullish(), teil2: z.string().nullish(), stand: z.string().nullish() }).passthrough(),
         ),
         vote: lenient(z.object({ text: z.string().nullish(), infavor: z.boolean().nullish() }).passthrough()),
+        /** Press releases of the Parliament about this item ("Parlamentskorrespondenz"). */
+        correspondence: lenient(
+          z.array(z.object({ title: z.string().nullish(), date: z.string().nullish(), url: z.string().nullish() }).passthrough()),
+        ),
       })
       .passthrough(),
   })

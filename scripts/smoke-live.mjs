@@ -25,6 +25,10 @@ const calls = [
   ['parl_ausschuesse', { gp: 28 }, /Ausschuss/],
   ['parl_ausschuesse', { gp: 28, suche: 'Finanzausschuss' }, /Vorsitz/],
   ['parl_ausschuesse', { gremium: 'BR' }, /Ausschuss/],
+  ['parl_gegenstaende', { gp: 28, art: 'PET', limit: 3 }, /\/PET/],
+  ['parl_gegenstaende', { gp: 28, art: 'BI', limit: 3 }, /\/BI/],
+  ['parl_gegenstaende', { gp: 28, art: 'EU', limit: 3 }, /\/EU/],
+  ['parl_gegenstand', { gp: 28, zitation: '21/PET' }, /Parlamentskorrespondenz/],
   ['parl_beschluesse', { gp: 28, nummer: 30, top: 'TOP 3' }, /Dafür: ÖVP, SPÖ, NEOS, dagegen: FPÖ, GRÜNE/],
 ];
 
@@ -42,6 +46,15 @@ for (const [name, args, expected] of calls) {
   if (!ok) failed++;
   console.log(`${ok ? 'OK  ' : 'FAIL'} ${name} ${JSON.stringify(args)} (${text.length} chars)`);
   if (!ok) console.log('     ' + text.slice(0, 300).replace(/\n/g, ' '));
+}
+// The list has no useful order of its own: the tool must ask for the newest first (a bill from 2026 must come before one from 2025).
+for (const art of ['RV', 'PET']) {
+  const res = await client.callTool({ name: 'parl_gegenstaende', arguments: { gp: 28, art, limit: 5 } });
+  const dates = (res.structuredContent?.items ?? []).map((i) => i.datum);
+  const sorted = [...dates].sort().reverse();
+  const ok = dates.length === 5 && dates.every((d, i) => d === sorted[i]);
+  if (!ok) failed++;
+  console.log(`${ok ? 'OK  ' : 'FAIL'} parl_gegenstaende art=${art} comes newest first (${dates.join(', ')})`);
 }
 await client.close();
 console.log(failed ? `\n${failed} live check(s) failed.` : '\nAll live checks passed.');

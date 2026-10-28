@@ -18,19 +18,19 @@ MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an L
 
 ## Tools
 
-| Tool                | What it does                                                                                                                  |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `parl_abgeordnete`  | Find people by name, body, function; current members are marked and filterable (`nur_aktuell`, `klub`, `bundesland`)          |
-| `parl_person`       | Biography and mandates of one person with dates, club, career, education                                                      |
-| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic                                                      |
-| `parl_anfragen`     | Inquiries or answers, newest first; filter by body, legislative period, search term                                           |
-| `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge), referendums (Volksbegehren) by period and official keyword                |
-| `parl_gegenstand`   | One item in detail: introducer/answerer with party, procedure, vote, Bundesgesetzblatt, PDFs, references                      |
-| `parl_sitzungen`    | List plenary sessions of the Nationalrat and the Bundesrat                                                                    |
-| `parl_sitzung`      | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item                           |
-| `parl_rede`         | One speech as text, in citable pieces                                                                                         |
-| `parl_beschluesse`  | What a session decided per agenda item, with the vote by party and later steps (e.g. Bundesrat); press releases, agenda links |
-| `parl_ausschuesse`  | Committees of a period; with `suche=` also chairs (with party), tasks, latest agendas, assigned items                         |
+| Tool                | What it does                                                                                                                             |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `parl_abgeordnete`  | Find people by name, body, function; current members are marked and filterable (`nur_aktuell`, `klub`, `bundesland`)                     |
+| `parl_person`       | Biography and mandates of one person with dates, club, career, education                                                                 |
+| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic                                                                 |
+| `parl_anfragen`     | Inquiries or answers, newest first; filter by body, legislative period, search term                                                      |
+| `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge), referendums, petitions, citizens' initiatives and EU documents by period and keyword |
+| `parl_gegenstand`   | One item in detail: introducer/answerer with party, procedure, vote, Bundesgesetzblatt, PDFs, references                                 |
+| `parl_sitzungen`    | List plenary sessions of the Nationalrat and the Bundesrat                                                                               |
+| `parl_sitzung`      | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item                                      |
+| `parl_rede`         | One speech as text, in citable pieces                                                                                                    |
+| `parl_beschluesse`  | What a session decided per agenda item, with the vote by party and later steps (e.g. Bundesrat); press releases, agenda links            |
+| `parl_ausschuesse`  | Committees of a period; with `suche=` also chairs (with party), tasks, latest agendas, assigned items                                    |
 
 **Prompts:** `rede_recherchieren`, `gesetz_verfolgen`, `anfragen_zum_thema`, `ausschuss_ueberblick`, `abgeordnete_profil` - each chains the tools above for one research task.
 

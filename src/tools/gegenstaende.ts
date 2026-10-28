@@ -9,12 +9,17 @@ import { rowsToObjects, type FilterResponse } from '../types.js';
 
 /** List id of the "Verhandlungsgegenstände" (bills, motions, petitions, ...). Body keys: NRBR, GP_CODE, VHG, SW, ... */
 export const GEGENSTAENDE_LIST_ID = 101;
+/** Column number (`rnr`) of `DATUMSORT`. Without an explicit sort the list comes in no useful order, not even for bills. */
+const SORT_RNR = 9;
 
 /** Types verified against the live list. The key is the value of the API's `VHG` filter. */
 export const ARTEN = {
   RV: 'Regierungsvorlage',
   ANTR: 'Antrag (Initiativ-, Entschließungsantrag u. a.)',
   VOLKBG: 'Volksbegehren',
+  PET: 'Petition',
+  BI: 'Bürgerinitiative',
+  EU: 'EU-Vorlage oder EU-Dokument',
 } as const;
 export type Art = keyof typeof ARTEN;
 
@@ -86,7 +91,12 @@ export function buildBody(q: Pick<GegenstaendeQuery, 'gremium' | 'art' | 'gp' | 
 export async function searchGegenstaende(client: ParlamentClient, q: GegenstaendeQuery) {
   const body = buildBody(q);
   return fetchSlice(q.offset, q.limit, async (page) => {
-    const resp = await client.filterDataPost(GEGENSTAENDE_LIST_ID, body, { page, pagesize: PAGE_SIZE });
+    const resp = await client.filterDataPost(GEGENSTAENDE_LIST_ID, body, {
+      page,
+      pagesize: PAGE_SIZE,
+      sortrnr: SORT_RNR,
+      ascDesc: 'DESC',
+    });
     return { total: resp.count, rows: parseGegenstaende(resp), rawRows: resp.rows.length };
   });
 }
@@ -99,7 +109,7 @@ export function formatGegenstaende(result: { total: number; items: GegenstandIte
   }
   const to = q.offset + result.items.length;
   const lines = [
-    `${result.total} ${ARTEN[q.art]}-Treffer, angezeigt ${q.offset + 1}–${to}.${to < result.total ? ` Weitere mit offset=${to}.` : ''}`,
+    `${result.total} Treffer (${ARTEN[q.art]}), angezeigt ${q.offset + 1}–${to}.${to < result.total ? ` Weitere mit offset=${to}.` : ''}`,
     '',
   ];
   for (const it of result.items) {
@@ -118,14 +128,19 @@ export function registerGegenstaende(server: McpServer, client: ParlamentClient)
   server.registerTool(
     'parl_gegenstaende',
     {
-      title: 'Gesetzesvorlagen, Anträge und Volksbegehren suchen',
+      title: 'Gesetzesvorlagen, Anträge, Volksbegehren, Petitionen und Bürgerinitiativen suchen',
       description:
-        'Listet Verhandlungsgegenstände des Nationalrats oder Bundesrats, neueste zuerst: Regierungsvorlagen (RV), Anträge (ANTR) oder Volksbegehren (VOLKBG). ' +
+        'Listet Verhandlungsgegenstände des Nationalrats oder Bundesrats, neueste zuerst: Regierungsvorlagen (RV), Anträge (ANTR), Volksbegehren (VOLKBG), Petitionen (PET), Bürgerinitiativen (BI) oder EU-Dokumente (EU). ' +
         'Filter: Gesetzgebungsperiode (gp) und amtliches Schlagwort (z. B. "Verwaltungsverfahren"; kein Volltext). ' +
         'Jeder Treffer hat eine Zitation wie "251/I"; damit zeigt parl_gegenstand den Stand im Verfahren (Ausschuss, Nationalrat, Bundesrat, Bundesgesetzblatt), Abstimmung und Dokumente. ' +
         'Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {
-        art: z.enum(['RV', 'ANTR', 'VOLKBG']).default('RV').describe('RV = Regierungsvorlage, ANTR = Antrag, VOLKBG = Volksbegehren'),
+        art: z
+          .enum(['RV', 'ANTR', 'VOLKBG', 'PET', 'BI', 'EU'])
+          .default('RV')
+          .describe(
+            'RV = Regierungsvorlage, ANTR = Antrag, VOLKBG = Volksbegehren, PET = Petition, BI = Bürgerinitiative, EU = EU-Dokument',
+          ),
         gp: z
           .union([z.string().min(1).max(8), z.number().int().min(1).max(40)])
           .optional()

@@ -1,0 +1,519 @@
+{
+  "pagetype": "geschichtsseite",
+  "meta": {
+    "description": "Wirkungsvoller Schutz gefährdeter Kulturgüter in Österreich (8/BI)",
+    "generationTime": "Fri Aug 14 01:34:32 UTC 2026",
+    "keywords": "\"Bürgerinitiativen\", \"Kunst und Kultur\"",
+    "lang": "de",
+    "title": "Wirkungsvoller Schutz gefährdeter Kulturgüter in Österreich (8/BI) | Parlament Österreich",
+    "openGraph": {
+      "image": "https://www.parlament.gv.at/static/img/og.png",
+      "title": "Wirkungsvoller Schutz gefährdeter Kulturgüter in Österreich | Parlament Österreich",
+      "description": "8/BI"
+    },
+    "scripts": [],
+    "styles": []
+  },
+  "content": {
+    "breadcrumbs": [
+      { "title": "Start", "url": "/" },
+      { "title": "Gegenstände", "url": "/recherchieren/gegenstaende/" },
+      { "title": "Nationalrat - XXVIII. GP", "url": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII" },
+      { "title": "Bürgerinitiative", "url": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&VHG=BI&DOKTYP=BI" },
+      { "title": "8/BI" }
+    ],
+    "type": "Bürgerinitiative",
+    "sntype": "Bürgerinitiative",
+    "title": "Wirkungsvoller Schutz gefährdeter Kulturgüter in Österreich",
+    "zitation": "8/BI",
+    "description": "Bürgerinitiative betreffend \"Wirkungsvoller Schutz gefährdeter Kulturgüter in Österreich\"",
+    "gp_code": "XXVIII",
+    "ityp": "BI",
+    "inr": 8,
+    "doktyp": "BI",
+    "update": "2026-08-14T03:34:31",
+    "nr_gp_code": "XXVIII",
+    "intranet": "N",
+    "group": "1",
+    "deleted": false,
+    "einlangen": "2024-10-24T00:00:00",
+    "history_ind": 2,
+    "vhg_fertig": "J",
+    "vhg_fertig_docs": "J",
+    "process": "J",
+    "statementsstate": "0",
+    "approvalstate": "0",
+    "statements": {
+      "new": 0,
+      "documents": [],
+      "filter": {
+        "rendertype": "filter",
+        "data": {
+          "type": "FILTER",
+          "resultLayout": "TABLE",
+          "hasForm": true,
+          "hasList": true,
+          "label": "Stellungnahmen",
+          "pagesize": 20,
+          "definition": {
+            "bez": "FP_142_vhg",
+            "listeId": 142,
+            "params": { "BEZUG_GP_CODE": ["XXVIII"], "BEZUG_ITYP": ["BI"], "BEZUG_INR": [8] },
+            "fixedParams": { "BEZUG_GP_CODE": ["XXVIII"], "BEZUG_ITYP": ["BI"], "BEZUG_INR": [8] },
+            "hideDimensions": ["BEZUG_GP_CODE", "BEZUG_ITYP", "BEZUG_INR"],
+            "hideColumns": ["16", "17"],
+            "sortrnr": 5,
+            "ascDesc": "DESC"
+          }
+        }
+      }
+    },
+    "approvals": {
+      "new": 0,
+      "filter": {
+        "rendertype": "filter",
+        "data": {
+          "type": "FILTER",
+          "resultLayout": "TABLE",
+          "hasForm": true,
+          "hasList": true,
+          "label": "Unterstützungen",
+          "pagesize": 20,
+          "definition": {
+            "bez": "BI_001",
+            "listeId": 305,
+            "params": { "GP_CODE": ["XXVIII"], "ITYP": ["BI"], "INR": [8] },
+            "fixedParams": { "GP_CODE": ["XXVIII"], "ITYP": ["BI"], "INR": [8] },
+            "hideDimensions": ["GP_CODE", "ITYP", "INR"],
+            "hideColumns": ["10", "12"],
+            "sortrnr": 5,
+            "ascDesc": "DESC"
+          }
+        }
+      }
+    },
+    "status": { "number": 5, "description": "Ausschussbericht <a href=\"/gegenstand/XXVIII/I/159\">159 d.B.</a> zur Kenntnis genommen" },
+    "progress": [
+      { "name": "Einlangen NR", "id": 1, "empty": false },
+      { "name": "Ausschussberatungen NR", "id": 3, "empty": false },
+      { "name": "Plenarberatungen NR", "id": 4, "empty": false }
+    ],
+    "phase": [
+      {
+        "name": "Einlangen NR",
+        "id": 1,
+        "stages": [
+          { "date": "24.10.2024", "text": " Verhandlungsgegenstand gem. § 21 Abs. 1a GOG", "priority": 1 },
+          {
+            "date": "24.10.2024",
+            "text": "Vorgesehen für den <a href=\"/ausschuss/XXVIII/A-PB/1/00932\">Ausschuss für Petitionen und Bürgerinitiativen</a>"
+          },
+          {
+            "date": "24.10.2024",
+            "text": "<a href=\"/gegenstand/XXVIII/NRSITZ/1\">1. Sitzung des Nationalrates</a>: Mitteilung des Einlangens",
+            "fsth": [
+              {
+                "gp_code": "XXVIII",
+                "sitzung_id": 1,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/XXVIII/NRSITZ/1/fnameorig_1688618.html#4",
+                "title": "12:35:51 - Präsidium (RN/4)",
+                "text": "RN/4"
+              }
+            ]
+          }
+        ],
+        "documents": []
+      },
+      {
+        "name": "Ausschussberatungen NR",
+        "id": 3,
+        "stages": [
+          {
+            "date": "26.02.2025",
+            "text": "Zuweisung an den <a href=\"/ausschuss/XXVIII/A-PB/1/00932\">Ausschuss für Petitionen und Bürgerinitiativen</a>"
+          },
+          {
+            "date": "03.04.2025",
+            "text": "Ausschuss für Petitionen und Bürgerinitiativen: auf <a href=\"/dokument/XXVIII/A-PB/1/00932/TO_16500059.html\">Tagesordnung</a> in der <a href=\"/ausschuss/XXVIII/A-PB/1/00932?selectedStage=105&selectedSession=2&selectedDate=03042025\">2. Sitzung des Ausschusses</a>"
+          },
+          {
+            "date": "03.04.2025",
+            "text": "Ausschuss für Petitionen und Bürgerinitiativen: Beschlussfassung auf Einholung schriftlicher Stellungnahmen im Rahmen eines \"Ausschussbegutachtungsverfahrens\""
+          },
+          {
+            "date": "03.04.2025",
+            "text": "Antrag auf Einholung einer Stellungnahme von Bundesministerium für Wohnen, Kunst, Kultur, Medien und Sport - <b>angenommen</b>"
+          },
+          {
+            "date": "26.06.2025",
+            "text": "Ausschuss für Petitionen und Bürgerinitiativen: auf <a href=\"/dokument/XXVIII/A-PB/1/00932/TO_16500060.html\">Tagesordnung</a> in der <a href=\"/ausschuss/XXVIII/A-PB/1/00932?selectedStage=105&selectedSession=3&selectedDate=26062025\">3. Sitzung des Ausschusses</a>"
+          },
+          {
+            "date": "26.06.2025",
+            "text": "Ausschuss für Petitionen und Bürgerinitiativen: Antrag, die parlamentarische Bürgerinitiative durch Kenntnisnahme im Ausschuss zu erledigen<br>Dafür: ÖVP, SPÖ, NEOS, dagegen: FPÖ, GRÜNE"
+          },
+          {
+            "date": "26.06.2025",
+            "text": "Ausschuss für Petitionen und Bürgerinitiativen: <a href=\"/gegenstand/XXVIII/I/159\">Sammelbericht des Ausschusses für Petitionen und Bürgerinitiativen (159 d.B.)</a>",
+            "priority": 1
+          }
+        ],
+        "documents": [
+          {
+            "title": "Berichterstattung",
+            "documents": [
+              { "link": "/dokument/XXVIII/I/159/fname_1696528.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/I/159/fnameorig_1696528.html", "type": "HTML" }
+            ]
+          }
+        ],
+        "correspondence": [
+          {
+            "additional": false,
+            "title": "Petitionsausschuss nimmt vielfältige Anliegen zur Kenntnis",
+            "date": "26.06.2025",
+            "url": "/aktuelles/pk/jahr_2025/pk0617#XXVIII_BI_00008"
+          }
+        ]
+      },
+      {
+        "name": "Plenarberatungen NR",
+        "id": 4,
+        "stages": [
+          {
+            "date": "26.02.2025",
+            "text": "<a href=\"/gegenstand/XXVIII/NRSITZ/10\">10. Sitzung des Nationalrates</a>: Mitteilung des Einlangens und der Zuweisung an den <a href=\"/ausschuss/XXVIII/A-PB/1/00932\">Ausschuss für Petitionen und Bürgerinitiativen</a>",
+            "fsth": [
+              {
+                "gp_code": "XXVIII",
+                "sitzung_id": 10,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/XXVIII/NRSITZ/10/fnameorig_1705238.html#2",
+                "title": "17:42:24 - Walter Rosenkranz, Präsident des Nationalrates - Präsidium (RN/2)",
+                "text": "RN/2"
+              }
+            ]
+          },
+          { "date": "03.04.2025", "text": "Antrag auf Ausschussbegutachtung der Vorlage (<a href=\"/gegenstand/XXVIII/AUA/8\">8/AUA</a>)" },
+          {
+            "date": "24.09.2025",
+            "text": "Auf der <a href=\"/dokument/XXVIII/NRSITZ/41/TO_16447532.html\">Tagesordnung</a> der <a href=\"/gegenstand/XXVIII/NRSITZ/41\">41. Sitzung des Nationalrates</a>"
+          },
+          {
+            "date": "24.09.2025",
+            "text": "Wortmeldungen in der Debatte",
+            "reden": {
+              "rendertype": "table",
+              "data": {
+                "header": [
+                  {
+                    "label": "Name und Klub",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-namefraktion"
+                  },
+                  {
+                    "label": "Wortmeldungsart",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-wortmeldungsart"
+                  },
+                  {
+                    "label": "Protokoll",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-protokoll"
+                  },
+                  {
+                    "label": "Video",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-video"
+                  }
+                ],
+                "rows": [
+                  [
+                    "<a href=\"/person/30648\" target=\"_blank\">Mag. Marie-Christine Giuliani-Sterrer, BA (F)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#215",
+                        "title": "23:24:02 - Marie-Christine Giuliani-Sterrer (FPÖ) - TOP 24 Bericht des Petitionsausschusses (RN/215)",
+                        "text": "RN/215"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758756250" }
+                  ],
+                  [
+                    "<a href=\"/person/6151\" target=\"_blank\">Heike Eder, BSc MBA (V)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#216",
+                        "title": "23:27:37 - Heike Eder (ÖVP) - TOP 24 Bericht des Petitionsausschusses (RN/216)",
+                        "text": "RN/216"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758756469" }
+                  ],
+                  [
+                    "<a href=\"/person/30695\" target=\"_blank\">Andreas Haitzer (S)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#217",
+                        "title": "23:30:58 - Andreas Haitzer (SPÖ) - TOP 24 Bericht des Petitionsausschusses (RN/217)",
+                        "text": "RN/217"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758756670" }
+                  ],
+                  [
+                    "<a href=\"/person/83124\" target=\"_blank\">Michael Bernhard (N)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#218",
+                        "title": "23:34:12 - Michael Bernhard (NEOS) - TOP 24 Bericht des Petitionsausschusses (RN/218)",
+                        "text": "RN/218"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758756863" }
+                  ],
+                  [
+                    "<a href=\"/person/5654\" target=\"_blank\">Dr. Elisabeth Götze (G)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#219",
+                        "title": "23:37:11 - Elisabeth Götze (Grüne) - TOP 24 Bericht des Petitionsausschusses (RN/219)",
+                        "text": "RN/219"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758757041" }
+                  ],
+                  [
+                    "<a href=\"/person/2998\" target=\"_blank\">Alois Kainz (F)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#220",
+                        "title": "23:41:41 - Alois Kainz (FPÖ) - TOP 24 Bericht des Petitionsausschusses (RN/220)",
+                        "text": "RN/220"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758757310" }
+                  ],
+                  [
+                    "<a href=\"/person/5632\" target=\"_blank\">MMag. Dr. Agnes Totter, BEd (V)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#221",
+                        "title": "23:44:57 - Agnes Totter (ÖVP) - TOP 24 Bericht des Petitionsausschusses (RN/221)",
+                        "text": "RN/221"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758757507" }
+                  ],
+                  [
+                    "<a href=\"/person/30697\" target=\"_blank\">Bernhard Herzog (S)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#222",
+                        "title": "23:48:33 - Bernhard Herzog (SPÖ) - TOP 24 Bericht des Petitionsausschusses (RN/222)",
+                        "text": "RN/222"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758757723" }
+                  ],
+                  [
+                    "<a href=\"/person/30702\" target=\"_blank\">Wolfgang Kocevar (S)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#223",
+                        "title": "23:51:48 - Wolfgang Kocevar (SPÖ) - TOP 24 Bericht des Petitionsausschusses (RN/223)",
+                        "text": "RN/223"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758757919" }
+                  ],
+                  [
+                    "<a href=\"/person/5646\" target=\"_blank\">Rudolf Silvan (S)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#224",
+                        "title": "23:54:15 - Rudolf Silvan (SPÖ) - TOP 24 Bericht des Petitionsausschusses (RN/224)",
+                        "text": "RN/224"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758758066" }
+                  ],
+                  [
+                    "<a href=\"/person/64022\" target=\"_blank\">Michael Schnedlitz (F)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 41,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#225",
+                        "title": "23:57:32 - Michael Schnedlitz (FPÖ) - TOP 24 Bericht des Petitionsausschusses (RN/225)",
+                        "text": "RN/225"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/41?DEBATTE=11&TS=1758758263" }
+                  ]
+                ]
+              }
+            }
+          },
+          {
+            "date": "24.09.2025",
+            "text": "41. Sitzung des Nationalrates: Antrag, den Ausschussbericht zur Kenntnis zu nehmen, <b>angenommen</b><br>Dafür: FPÖ, ÖVP, SPÖ, NEOS, GRÜNE, dagegen: -",
+            "priority": 1,
+            "fsth": [
+              {
+                "gp_code": "XXVIII",
+                "sitzung_id": 41,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/XXVIII/NRSITZ/41/fnameorig_1763008.html#226",
+                "title": "23:58:23 - Abstimmung - TOP 24 Bericht des Petitionsausschusses (RN/226)",
+                "text": "RN/226"
+              }
+            ]
+          }
+        ],
+        "documents": [],
+        "correspondence": [
+          {
+            "additional": false,
+            "title": "Petitionsausschuss nimmt vielfältige Anliegen zur Kenntnis",
+            "date": "26.06.2025",
+            "url": "/aktuelles/pk/jahr_2025/pk0617#XXVIII_BI_00008"
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "title": "Bürgerinitiative (gescanntes Original)",
+        "documents": [{ "link": "/dokument/XXVIII/BI/8/imfname_1657939.pdf", "type": "PDF" }]
+      }
+    ],
+    "names": [{ "funktext": "Erstunterzeichnerin/Erstunterzeichner", "name": "Mustermann, Max", "frak_code": null }],
+    "correspondence": [
+      {
+        "additional": false,
+        "title": "Petitionsausschuss nimmt vielfältige Anliegen zur Kenntnis",
+        "date": "26.06.2025",
+        "url": "/aktuelles/pk/jahr_2025/pk0617#XXVIII_BI_00008"
+      }
+    ],
+    "reference": [
+      {
+        "text": "Neuverteilung gem. § 21 Abs. 1a GOG-NR",
+        "subject": "Wirkungsvoller Schutz gefährdeter Kulturgüter in Österreich",
+        "zitation": "64/BI",
+        "url": "/gegenstand/XXVII/BI/64",
+        "art": "DIS"
+      }
+    ],
+    "topics": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          { "label": "Kultur", "link": "/suche?thema=Kultur" },
+          { "label": "Parlament und Demokratie", "link": "/suche?thema=Parlament und Demokratie" }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    },
+    "headwords": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          { "label": "Bürgerinitiativen", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Bürgerinitiativen" },
+          { "label": "Kunst und Kultur", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Kunst und Kultur" }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    },
+    "eurovoc": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          { "label": "Kulturpolitik", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=Kulturpolitik" },
+          { "label": "Kunst", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=Kunst" },
+          {
+            "label": "partizipative Demokratie",
+            "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=partizipative Demokratie"
+          }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    }
+  }
+}

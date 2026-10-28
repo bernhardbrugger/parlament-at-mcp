@@ -92,3 +92,10 @@ Each entry: what was measured or decided, when, and why. Add to it whenever the 
 ## 2026-10-28 · Scope
 
 - Only office holders and officials as published by the Parliament. No enrichment, no profiling of private persons.
+
+## 2026-10-28 · More kinds of items in list 101, and its sort order (v0.5)
+
+- `VHG` values measured for the XXVIII. GP (Nationalrat): `PET` Petitionen (29), `BI` Bürgerinitiativen (36), `EU` EU documents (6,928, many sub-types such as `EUBTG` = reports on sessions of preparatory bodies). `ME`, `STV`, `BRM`, `UEA`, `ENTSCH`, `VBG`, `SN` answer with 0 rows: they are not valid values (Ministerialentwürfe live elsewhere).
+- **The list has no useful default order.** Without a sort it returned `251/I` (2025-10-15) first although `657/I` (2026-10-14) exists; the same for petitions and EU documents. `sortrnr=9&ascDesc=DESC` (column 9 = `DATUMSORT`) gives newest first. `parl_gegenstaende` claimed "neueste zuerst" before without asking for it: fixed in this version. The inquiries list (`WFP_005`) is already newest first; the speeches list is sorted explicitly. Items of the same day come in no stable order.
+- The detail pages of petitions and citizens' initiatives have the same shape as bills: `names` (petition handed in by an MP, or the first signatory of an initiative), `status`, `phase` (Einlangen, Ausschuss für Petitionen und Bürgerinitiativen, Plenum), `documents`, `correspondence` (press releases, now shown). **No number of supporters** is in the JSON; the electronic-support form (`approvals`) only carries the form definition.
+- Not found, so not built: a list of the current federal government (see the 2026-10-28 session notes above), voting by individual member (the plenary decision carries party votes only), and a full-text search across everything.

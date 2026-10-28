@@ -28,7 +28,7 @@ describe('items list (real fixture, list 101)', () => {
   it('formats a readable list that points to parl_gegenstand', () => {
     const items = parseGegenstaende(rv);
     const text = formatGegenstaende({ total: 128, items }, { ...base, limit: 5 });
-    expect(text).toContain('128 Regierungsvorlage-Treffer, angezeigt 1–5. Weitere mit offset=5.');
+    expect(text).toContain('128 Treffer (Regierungsvorlage), angezeigt 1–5. Weitere mit offset=5.');
     expect(text).toContain('251/I · 251 d.B. · 2025-10-15');
     expect(text).toContain('parl_gegenstand');
   });
