@@ -21,6 +21,12 @@ function router(url: string, init: RequestInit): Response {
   if (url.endsWith('/gegenstand/XXVIII/NRSITZ/30?json=TRUE')) return json(fixtureText('session-nr-xxviii-30.json'));
   if (url.endsWith('/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html')) return new Response(fixtureText('speech-kickl-A_-_11_12_46_00801352.html'), { status: 200 });
   if (url.endsWith('/gegenstand/XXVIII/I/251?json=TRUE')) return json(fixtureText('detail-rv-251.json'));
+  if (url.includes('FBEZ=WFW_002')) return json(fixtureText('members-wfw002-nr.json'));
+  if (url.includes('FBEZ=WFW_005')) return json(fixtureText('members-wfw005-br.json'));
+  if (url.includes('FBEZ=WFP_009')) return json(fixtureText('committees-wfp009-nr-xxviii.json'));
+  if (url.includes('/Filter/api/filter/data/251')) return json(fixtureText('person-reden-251.json'));
+  if (url.endsWith('/person/91034?json=TRUE')) return json(fixtureText('person-91034.json'));
+  if (url.endsWith('/ausschuss/XXVIII/A-AS/1/00917?json=TRUE')) return json(fixtureText('detail-committee-as.json'));
   if (url.includes('/gegenstand/')) return new Response('not found', { status: 404 });
   throw new Error(`unexpected request: ${url}`);
 }
@@ -41,11 +47,14 @@ async function call(client: Client, name: string, args: Record<string, unknown>)
 }
 
 describe('MCP server', () => {
-  it('lists seven read-only tools, each with a schema and description', async () => {
+  it('lists ten read-only tools, each with a schema and description', async () => {
     const { client } = await connect();
     const { tools } = await client.listTools();
     expect(tools.map((t) => t.name).sort()).toEqual(
-      ['parl_abgeordnete', 'parl_anfragen', 'parl_gegenstaende', 'parl_gegenstand', 'parl_rede', 'parl_sitzung', 'parl_sitzungen'].sort(),
+      [
+        'parl_abgeordnete', 'parl_anfragen', 'parl_ausschuesse', 'parl_gegenstaende', 'parl_gegenstand',
+        'parl_person', 'parl_rede', 'parl_reden_person', 'parl_sitzung', 'parl_sitzungen',
+      ].sort(),
     );
     for (const t of tools) {
       expect(t.annotations?.readOnlyHint).toBe(true);
@@ -144,6 +153,51 @@ describe('MCP server', () => {
     const detail = await call(client, 'parl_gegenstand', { gp: 28, zitation: '251/I' });
     expect(detail.text).toContain('Verfahren:');
     expect(detail.text).toContain('Bundesgesetzblatt I Nr. 86/2025');
+  });
+
+  it('parl_abgeordnete marks current members and filters by club', async () => {
+    const { client } = await connect();
+    const res = await call(client, 'parl_abgeordnete', { nur_aktuell: true, klub: 'NEOS' });
+    expect(res.isError).toBe(false);
+    expect(res.text).toContain('Aldali Lisa');
+    expect(res.text).toContain('AKTUELL im Nationalrat · Klub NEOS');
+    expect(res.text).not.toContain('Kickl');
+  });
+
+  it('parl_person shows the biography, parl_reden_person lists the speeches', async () => {
+    const { client } = await connect();
+    const bio = await call(client, 'parl_person', { name: 'Rendi-Wagner' });
+    expect(bio.isError).toBe(false);
+    expect(bio.text).toContain('Mandate und Funktionen:');
+    expect(bio.text).toContain('Geb.: 07.05.1971, Wien');
+    const speeches = await call(client, 'parl_reden_person', { pad_intern: 91034, limit: 3 });
+    expect(speeches.isError).toBe(false);
+    expect(speeches.text).toContain('129 Reden von');
+    expect(speeches.text).toContain('Bundes-Energieeffizienzgesetz');
+  });
+
+  it('parl_person asks for clarification when a name is ambiguous or unknown', async () => {
+    const { client } = await connect();
+    const ambiguous = await call(client, 'parl_person', { name: 'Androsch' });
+    expect(ambiguous.isError).toBe(true);
+    expect(ambiguous.text).toContain('nicht eindeutig');
+    const unknown = await call(client, 'parl_reden_person', { name: 'Zzzzzz' });
+    expect(unknown.isError).toBe(true);
+    const nothing = await call(client, 'parl_person', {});
+    expect(nothing.isError).toBe(true);
+    expect(nothing.text).toContain('pad_intern oder name');
+  });
+
+  it('parl_ausschuesse lists committees and shows the chairs for a narrow search', async () => {
+    const { client } = await connect();
+    const list = await call(client, 'parl_ausschuesse', { gp: 28 });
+    expect(list.isError).toBe(false);
+    expect(list.text).toContain('8 Ausschüsse der XXVIII. GP');
+    const detail = await call(client, 'parl_ausschuesse', { gp: 28, suche: 'Arbeit' });
+    expect(detail.text).toContain('Obmann: Josef Muchitsch');
+    const noGp = await call(client, 'parl_ausschuesse', {});
+    expect(noGp.isError).toBe(true);
+    expect(noGp.text).toContain('Gesetzgebungsperiode');
   });
 
   it('rejects out-of-range arguments before any request is made', async () => {

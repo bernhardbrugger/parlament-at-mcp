@@ -2,22 +2,24 @@
 
 MCP server for the **Austrian Parliament** (Nationalrat, Bundesrat). Ask an LLM who sits where, what was asked and answered, and where a bill stands - with a link to the official source for every result.
 
-> **Status: early (v0.3).** Seven tools work today; the rest is on the roadmap in [`SPEC.md`](SPEC.md). Unofficial; not affiliated with the Parlamentsdirektion.
+> **Status: early (v0.4).** Ten tools work today; the rest is on the roadmap in [`SPEC.md`](SPEC.md). Unofficial; not affiliated with the Parlamentsdirektion.
 
 ## Tools
 
 | Tool | What it does | Status |
 |---|---|---|
-| `parl_abgeordnete` | Find people who sat in the Parliament (Nationalrat, Bundesrat, Bundesregierung, ...) by name, body and function | ✅ |
+| `parl_abgeordnete` | Find people who sat in the Parliament by name, body, function; **current** members of Nationalrat and Bundesrat are marked (club, constituency, state) and filterable | ✅ |
+| `parl_person` | Biography and mandates of one person: terms with dates, club, career, education, whether currently in office | ✅ |
+| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic | ✅ |
+| `parl_ausschuesse` | Committees of a legislative period; with `suche=` also chairs (with party), tasks, latest agendas and assigned items | ✅ |
 | `parl_anfragen` | Parliamentary inquiries or answers, newest first; filter by body, legislative period and search term | ✅ |
 | `parl_gegenstand` | One item in detail: who asked / answered / introduced it (with party), procedure through committee, Nationalrat and Bundesrat, vote, Bundesgesetzblatt, PDFs | ✅ |
 | `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge) and referendums (Volksbegehren) by legislative period and official keyword | ✅ |
 | `parl_sitzungen` | List plenary sessions of the Nationalrat and the Bundesrat | ✅ |
 | `parl_sitzung` | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item | ✅ |
 | `parl_rede` | One speech as text (interjections optional), in citable pieces with `offset` paging | ✅ |
-| `parl_ausschuesse` | Committees and their members | planned (M3) |
 
-Example prompts: *"Was hat Herbert Kickl in der 30. Sitzung der XXVIII. GP zum Budgetbegleitgesetz gesagt?"* (`parl_sitzung` with `redner`, then `parl_rede`), *"Wo steht die Regierungsvorlage 251 d.B. im Verfahren?"*, *"Welche Anfragen zum Polizeischutz gab es in der XXVIII. GP, und wer hat sie gestellt?"*, *"Wer war Bundesministerin und Abgeordnete zum Nationalrat und heißt Rendi-Wagner?"*, *"Zeig mir alle Volksanwälte im Parlamentsverzeichnis."*
+Example prompts: *"Wer sitzt für die Grünen aus Wien im Nationalrat?"*, *"Wer ist Obmann des Finanzausschusses und was steht auf der Tagesordnung?"*, *"Zeig mir die letzten Reden von Pamela Rendi-Wagner."*, *"Was hat Herbert Kickl in der 30. Sitzung der XXVIII. GP zum Budgetbegleitgesetz gesagt?"* (`parl_sitzung` with `redner`, then `parl_rede`), *"Wo steht die Regierungsvorlage 251 d.B. im Verfahren?"*, *"Welche Anfragen zum Polizeischutz gab es in der XXVIII. GP, und wer hat sie gestellt?"*, *"Wer war Bundesministerin und Abgeordnete zum Nationalrat und heißt Rendi-Wagner?"*, *"Zeig mir alle Volksanwälte im Parlamentsverzeichnis."*
 
 ## Install and run
 

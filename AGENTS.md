@@ -35,11 +35,11 @@ npm run smoke:live     # needs a fresh build; calls every tool once against the 
     `node scripts/secret-scan.mjs workspace/parlament-at-mcp` before pushing, push to `main`.
 
 ## M4 work order (due 2026-11-18; take the next unchecked item, one per run is plenty)
-- [ ] 1. `parl_ausschuesse`: committees via list `WFP_009` (body `NRBR`, `GP`; ParlAT uses `jsMode=EVAL&FBEZ=WFP_009`), members from the
+- [x] 1. (done 2026-10-28) `parl_ausschuesse`: committees via list `WFP_009` (body `NRBR`, `GP`; ParlAT uses `jsMode=EVAL&FBEZ=WFP_009`), members from the
          committee detail JSON (`/ausschuss/...`). Measure first, fixtures, tests, live check, DECISIONS entry.
-- [ ] 2. Current members: list `WFW_002` (Nationalrat) and the Bundesrat counterpart; add a `nur_aktuell` filter to `parl_abgeordnete`
+- [x] 2. (done 2026-10-28) Current members: list `WFW_002` (Nationalrat) and the Bundesrat counterpart; add a `nur_aktuell` filter to `parl_abgeordnete`
          with party and state. Document what the persons list (10400) cannot tell.
-- [ ] 3. Person detail: what does `/person/{pad_intern}?json=TRUE` return (mandates, club, activities)? Add it to `parl_abgeordnete`
+- [x] 3. (done 2026-10-28) Person detail: what does `/person/{pad_intern}?json=TRUE` return (mandates, club, activities)? Add it to `parl_abgeordnete`
          only if it is stable; otherwise record the finding in DECISIONS.md.
 - [ ] 4. Structured output: add `structuredContent` + `outputSchema` to the list tools alongside the text, with tests.
 - [ ] 5. Quality bar from `SPEC.md`: ESLint + Prettier configs and scripts, `SECURITY.md`, `CONTRIBUTING.md`, issue templates,

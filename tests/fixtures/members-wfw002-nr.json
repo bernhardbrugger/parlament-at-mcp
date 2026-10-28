@@ -1,0 +1,217 @@
+{
+ "pages": 1,
+ "count": 8,
+ "header": [
+  {
+   "filterable": false,
+   "orig_link_rnr": 2,
+   "link_rnr": 12,
+   "hidden": false,
+   "rnr": 1,
+   "label": "Name",
+   "sortable": true,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": false,
+   "rnr": 2,
+   "label": "Klub",
+   "sortable": true,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": false,
+   "rnr": 4,
+   "label": "Wahlkreis",
+   "sortable": true,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": false,
+   "rnr": 5,
+   "label": "Bundesland",
+   "sortable": true,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": true,
+   "rnr": 6,
+   "label": "pad_sortier",
+   "sortable": false,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": true,
+   "rnr": 7,
+   "label": "Liste",
+   "sortable": false,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": true,
+   "rnr": 8,
+   "label": "RSS-Description",
+   "sortable": false,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": true,
+   "rnr": 9,
+   "label": "RSS-Pfad",
+   "sortable": false,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": true,
+   "rnr": 10,
+   "label": "RSS-Titel",
+   "sortable": false,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": true,
+   "rnr": 11,
+   "label": "Sort_FR",
+   "sortable": false,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": true,
+   "rnr": 12,
+   "label": "Sort_WP",
+   "sortable": false,
+   "additionalinfo": false
+  },
+  {
+   "filterable": false,
+   "hidden": true,
+   "label": "link",
+   "sortable": false,
+   "additionalinfo": false
+  }
+ ],
+ "rows": [
+  [
+   "Aldali Lisa",
+   "<span title=\"NEOS Parlamentsklub\" class=\"zeigeTooltip\">NEOS</span>",
+   "B Bundeswahlvorschlag",
+   "<span title=\"Bundeswahlvorschlag\" class=\"zeigeTooltip\">BWV</span>",
+   "Aldali",
+   null,
+   "Name:\nAldali Lisa\n<br />\nVorname:\nLisa\n<br />\nNachname:\nAldali\n<br />\nAk. Grad:\n\n<br />\nAk. Grad nachg.:\n\n<br />\nFraktion:\n<span title=\"NEOS Parlamentsklub\" class=\"zeigeTooltip\">NEOS</span>\n<br />\nWahlkreis:\nB Bundeswahlvorschlag\n<br />\nBundesland:\nBundeswahlvorschlag\n<br />\n",
+   "/person/38385",
+   "Aldali Lisa",
+   "NEOS",
+   "NEOS",
+   "/person/38385"
+  ],
+  [
+   "Auer Katrin, Mag.",
+   "<span title=\"Die Sozialdemokratische Parlamentsfraktion - Klub der sozialdemokratischen Abgeordneten zum Nationalrat, Bundesrat und Europäischen Parlament\" class=\"zeigeTooltip\">SPÖ</span>",
+   "4D Traunviertel",
+   "<span title=\"Oberösterreich\" class=\"zeigeTooltip\">O</span>",
+   "Auer",
+   null,
+   "Name:\nAuer Katrin, Mag.\n<br />\nVorname:\nKatrin\n<br />\nNachname:\nAuer\n<br />\nAk. Grad:\nMag.\n<br />\nAk. Grad nachg.:\n\n<br />\nFraktion:\n<span title=\"Die Sozialdemokratische Parlamentsfraktion - Klub der sozialdemokratischen Abgeordneten zum Nationalrat, Bundesrat und Europäischen Parlament\" class=\"zeigeTooltip\">SPÖ</span>\n<br />\nWahlkreis:\n4D Traunviertel\n<br />\nBundesland:\nOberösterreich\n<br />\n",
+   "/person/30688",
+   "Auer Katrin, Mag.",
+   "SPÖ",
+   "SPÖ",
+   "/person/30688"
+  ],
+  [
+   "Auinger-Oberzaucher Gertraud, Mag.",
+   "<span title=\"NEOS Parlamentsklub\" class=\"zeigeTooltip\">NEOS</span>",
+   "3 Niederösterreich",
+   "<span title=\"Niederösterreich\" class=\"zeigeTooltip\">N</span>",
+   "Auinger-Oberzaucher",
+   null,
+   "Name:\nAuinger-Oberzaucher Gertraud, Mag.\n<br />\nVorname:\nGertraud\n<br />\nNachname:\nAuinger-Oberzaucher\n<br />\nAk. Grad:\nMag.\n<br />\nAk. Grad nachg.:\n\n<br />\nFraktion:\n<span title=\"NEOS Parlamentsklub\" class=\"zeigeTooltip\">NEOS</span>\n<br />\nWahlkreis:\n3 Niederösterreich\n<br />\nBundesland:\nNiederösterreich\n<br />\n",
+   "/person/30668",
+   "Auinger-Oberzaucher Gertraud, Mag.",
+   "NEOS",
+   "NEOS",
+   "/person/30668"
+  ],
+  [
+   "Baumann Roland",
+   "<span title=\"Die Sozialdemokratische Parlamentsfraktion - Klub der sozialdemokratischen Abgeordneten zum Nationalrat, Bundesrat und Europäischen Parlament\" class=\"zeigeTooltip\">SPÖ</span>",
+   "4A Linz und Umgebung",
+   "<span title=\"Oberösterreich\" class=\"zeigeTooltip\">O</span>",
+   "Baumann",
+   null,
+   "Name:\nBaumann Roland\n<br />\nVorname:\nRoland\n<br />\nNachname:\nBaumann\n<br />\nAk. Grad:\n\n<br />\nAk. Grad nachg.:\n\n<br />\nFraktion:\n<span title=\"Die Sozialdemokratische Parlamentsfraktion - Klub der sozialdemokratischen Abgeordneten zum Nationalrat, Bundesrat und Europäischen Parlament\" class=\"zeigeTooltip\">SPÖ</span>\n<br />\nWahlkreis:\n4A Linz und Umgebung\n<br />\nBundesland:\nOberösterreich\n<br />\n",
+   "/person/30689",
+   "Baumann Roland",
+   "SPÖ",
+   "SPÖ",
+   "/person/30689"
+  ],
+  [
+   "Baumgartner Angela",
+   "<span title=\"Parlamentsklub der Österreichischen Volkspartei\" class=\"zeigeTooltip\">ÖVP</span>",
+   "3G Niederösterreich Ost",
+   "<span title=\"Niederösterreich\" class=\"zeigeTooltip\">N</span>",
+   "Baumgartner",
+   null,
+   "Name:\nBaumgartner Angela\n<br />\nVorname:\nAngela\n<br />\nNachname:\nBaumgartner\n<br />\nAk. Grad:\n\n<br />\nAk. Grad nachg.:\n\n<br />\nFraktion:\n<span title=\"Parlamentsklub der Österreichischen Volkspartei\" class=\"zeigeTooltip\">ÖVP</span>\n<br />\nWahlkreis:\n3G Niederösterreich Ost\n<br />\nBundesland:\nNiederösterreich\n<br />\n",
+   "/person/1974",
+   "Baumgartner Angela",
+   "ÖVP",
+   "ÖVP",
+   "/person/1974"
+  ],
+  [
+   "Bayr Petra, MA MLS",
+   "<span title=\"Die Sozialdemokratische Parlamentsfraktion - Klub der sozialdemokratischen Abgeordneten zum Nationalrat, Bundesrat und Europäischen Parlament\" class=\"zeigeTooltip\">SPÖ</span>",
+   "9D Wien Süd",
+   "<span title=\"Wien\" class=\"zeigeTooltip\">W</span>",
+   "Bayr",
+   null,
+   "Name:\nBayr Petra, MA MLS\n<br />\nVorname:\nPetra\n<br />\nNachname:\nBayr\n<br />\nAk. Grad:\n\n<br />\nAk. Grad nachg.:\nMA MLS\n<br />\nFraktion:\n<span title=\"Die Sozialdemokratische Parlamentsfraktion - Klub der sozialdemokratischen Abgeordneten zum Nationalrat, Bundesrat und Europäischen Parlament\" class=\"zeigeTooltip\">SPÖ</span>\n<br />\nWahlkreis:\n9D Wien Süd\n<br />\nBundesland:\nWien\n<br />\n",
+   "/person/14835",
+   "Bayr Petra, MA MLS",
+   "SPÖ",
+   "SPÖ",
+   "/person/14835"
+  ],
+  [
+   "Belakowitsch Dagmar, Dr.",
+   "<span title=\"Freiheitlicher Parlamentsklub\" class=\"zeigeTooltip\">FPÖ</span>",
+   "B Bundeswahlvorschlag",
+   "<span title=\"Bundeswahlvorschlag\" class=\"zeigeTooltip\">BWV</span>",
+   "Belakowitsch",
+   null,
+   "Name:\nBelakowitsch Dagmar, Dr.\n<br />\nVorname:\nDagmar\n<br />\nNachname:\nBelakowitsch\n<br />\nAk. Grad:\nDr.\n<br />\nAk. Grad nachg.:\n\n<br />\nFraktion:\n<span title=\"Freiheitlicher Parlamentsklub\" class=\"zeigeTooltip\">FPÖ</span>\n<br />\nWahlkreis:\nB Bundeswahlvorschlag\n<br />\nBundesland:\nBundeswahlvorschlag\n<br />\n",
+   "/person/35468",
+   "Belakowitsch Dagmar, Dr.",
+   "FPÖ",
+   "FPÖ",
+   "/person/35468"
+  ],
+  [
+   "Berger Ricarda",
+   "<span title=\"Freiheitlicher Parlamentsklub\" class=\"zeigeTooltip\">FPÖ</span>",
+   "9 Wien",
+   "<span title=\"Wien\" class=\"zeigeTooltip\">W</span>",
+   "Berger",
+   null,
+   "Name:\nBerger Ricarda\n<br />\nVorname:\nRicarda\n<br />\nNachname:\nBerger\n<br />\nAk. Grad:\n\n<br />\nAk. Grad nachg.:\n\n<br />\nFraktion:\n<span title=\"Freiheitlicher Parlamentsklub\" class=\"zeigeTooltip\">FPÖ</span>\n<br />\nWahlkreis:\n9 Wien\n<br />\nBundesland:\nWien\n<br />\n",
+   "/person/2996",
+   "Berger Ricarda",
+   "FPÖ",
+   "FPÖ",
+   "/person/2996"
+  ]
+ ]
+}

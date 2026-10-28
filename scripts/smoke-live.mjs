@@ -19,6 +19,12 @@ const calls = [
   ['parl_sitzungen', { gp: 28, limit: 2 }, /Sitzung \d+/],
   ['parl_sitzung', { gp: 28, nummer: 30, redner: 'Kickl' }, /rede=\d+/],
   ['parl_rede', { gp: 28, nummer: 30, rede: 801352, max_zeichen: 1500 }, /Kickl/],
+  ['parl_abgeordnete', { nur_aktuell: true, klub: 'SPÖ', bundesland: 'Wien', limit: 3 }, /AKTUELL im (Nationalrat|Bundesrat)/],
+  ['parl_person', { name: 'Rendi-Wagner' }, /Mandate und Funktionen/],
+  ['parl_reden_person', { name: 'Rendi-Wagner', limit: 3 }, /Reden von/],
+  ['parl_ausschuesse', { gp: 28 }, /Ausschuss/],
+  ['parl_ausschuesse', { gp: 28, suche: 'Finanzausschuss' }, /Vorsitz/],
+  ['parl_ausschuesse', { gremium: 'BR' }, /Ausschuss/],
 ];
 
 let failed = 0;

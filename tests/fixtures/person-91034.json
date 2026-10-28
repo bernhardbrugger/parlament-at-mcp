@@ -1,0 +1,256 @@
+{
+ "pagetype": "biografie",
+ "meta": {
+  "description": "Rendi-Wagner Pamela, Dr., MSc",
+  "generationTime": "Wed Aug 19 21:17:34 GMT 2026",
+  "lang": "de",
+  "title": "Rendi-Wagner Pamela, Dr., MSc | Parlament Österreich",
+  "openGraph": {
+   "image": "https://www.parlament.gv.at/dokument/bild/200697/20069744_500.jpg",
+   "title": "Rendi-Wagner Pamela, Dr., MSc | Parlament Österreich",
+   "description": "Abgeordnete zum Nationalrat (XXVI.-XXVII. GP), SPÖ"
+  },
+  "scripts": [],
+  "styles": []
+ },
+ "content": {
+  "headingbox": {
+   "title": "Dr. Pamela Rendi-Wagner, MSc",
+   "title_plain": "Dr. Pamela Rendi-Wagner, MSc",
+   "ebene": 1
+  },
+  "personInfo": {
+   "personTyp": "mandatar",
+   "gremium": null,
+   "pad_intern": 91034,
+   "aktiv": false
+  },
+  "tabs": [
+   {
+    "id": "BIO",
+    "label": "Biografie",
+    "selected": true
+   },
+   {
+    "id": "PLENUM",
+    "label": "Plenum",
+    "selected": false
+   },
+   {
+    "id": "AUS",
+    "label": "Ausschüsse",
+    "selected": false
+   },
+   {
+    "id": "AKT",
+    "label": "Aktivitäten",
+    "selected": false
+   },
+   {
+    "id": "MEDIEN",
+    "label": "Mediathek",
+    "selected": false
+   }
+  ],
+  "biografie": {
+   "portrait": {
+    "src": "/dokument/bild/200697/20069744_384.jpg",
+    "alt": "Portraitfoto von Dr. Pamela Rendi-Wagner, MSc",
+    "bildId": 20069744,
+    "copyright": "Parlamentsdirektion/PHOTO SIMONIS"
+   },
+   "biografieStand": "05.09.2023",
+   "kurzinfo_html": null,
+   "portraitvideo": "ce6ebf81-1de4-4efb-94fc-00548fadbce3",
+   "mandatefunktionen": {
+    "bez": "Politische Mandate/Funktionen",
+    "mandate": [
+     {
+      "funktion_text": "Abgeordnete zum Nationalrat",
+      "mandat": "Abgeordnete zum Nationalrat",
+      "klub": "Die Sozialdemokratische Parlamentsfraktion - Klub der sozialdemokratischen Abgeordneten zum Nationalrat, Bundesrat und Europäischen Parlament",
+      "wahlkreis": "Bundeswahlvorschlag",
+      "wahlpartei": "SPÖ",
+      "wahlpartei_text": "Sozialdemokratische Partei Österreichs",
+      "gremium": "NR",
+      "funktion": "NR",
+      "bez": "Abgeordnete zum Nationalrat (XXVI.-XXVII. GP), SPÖ",
+      "mandatVon": "09.11.2017",
+      "mandatBis": "30.06.2023",
+      "funktion_von": "09.11.2017",
+      "funktion_bis": "30.06.2023",
+      "aktiv": false,
+      "zeitraum": "09.11.2017-30.06.2023"
+     },
+     {
+      "funktion_text": "Bundesministerin für Gesundheit und Frauen",
+      "mandat": "Bundesministerin für Gesundheit und Frauen",
+      "klub": null,
+      "wahlkreis": null,
+      "wahlpartei": null,
+      "wahlpartei_text": null,
+      "gremium": "BM",
+      "funktion": "BM",
+      "bez": "Bundesministerin für Gesundheit und Frauen",
+      "mandatVon": "08.03.2017",
+      "mandatBis": "18.12.2017",
+      "funktion_von": "08.03.2017",
+      "funktion_bis": "18.12.2017",
+      "aktiv": false,
+      "zeitraum": "08.03.2017-18.12.2017"
+     }
+    ]
+   },
+   "kurzbiografie": {
+    "gebtext": "Geb.: 07.05.1971, Wien",
+    "beruflicherWerdegang": [
+     "Gastdozentur am Zentrum für Public Health, Medizinische Universtität Wien 2012-2017",
+     "Leiterin der Sektion für Öffentliche Gesundheit und Medizinische Angelegenheiten, Bundesministerium für Gesundheit und Frauen 2011-2017",
+     "Gastdozentur am Department of Epidemiology and Preventive Medicine, School of Public Health, Tel Aviv University, Israel 2008-2011",
+     "Assistenzärztin in der Abteilung für Spezifische Prophylaxe und Tropenmedizin, Medizinische Universität Wien 2003-2007",
+     "Assistenzärztin in der Abteilung für Infektionskrankheiten und Tropenmedizin, Kaiser Franz Josef Spital, Wien 2002-2003",
+     "Assistenzärztin in der Abteilung für Spezifische Prophylaxe und Tropenmedizin, Medizinische Universität Wien 1998-2002"
+    ],
+    "bildungsweg": [
+     "Master of Science in Infection and Health in the Tropics, London School of Hygiene and Tropical Medicine, University of London (MSc) UK (Masters of Science (MSc)) 1996-1997",
+     "Diploma in Tropical Medicine & Hygiene (DTM&H) The Royal College of Physicians of London UK 1997",
+     "Facharztdiplom: Spezifische Prophylaxe und Tropenhygiene, Medizinische Universität  Wien 2005",
+     "Habilitation für Spezifische Prophylaxe und Tropenmedizin an der Medizinischen Universtität  Wien (Priv. Doz.) 2008",
+     "Doktoratsstudium der Medizin an der Universität Wien (Dr.med.univ.) 1996",
+     "Naturwissenschaftliches Bundesrealgymnasium Wien XII 1981-1989"
+    ],
+    "politischeFunktionen": [
+     "Bundesparteivorsitzende der SPÖ 24.11.2018-3.6.2023",
+     "Klubvorsitzende der Sozialdemokratischen Parlamentsfraktion - Klub der sozialdemokratischen Abgeordneten zum Nationalrat, Bundesrat und Europäischen Parlament 8.10.2018-13.6.2023"
+    ],
+    "bez": "Kurzbiografie",
+    "disclaimer": "Inhalt und Umfang der Biografien ab 1945 gehen grundsätzlich auf die von den Mandatarinnen und Mandataren selbst gemachten Angaben zurück. Diese können von der Parlamentsdirektion ohne Zustimmung der Betroffenen nicht geändert werden."
+   },
+   "parentid": "biografietabs",
+   "tabid": "BIO"
+  },
+  "medien": {
+   "filter": {
+    "rendertype": "filter",
+    "data": {
+     "type": "FILTER",
+     "resultLayout": "SEARCH",
+     "hasForm": true,
+     "hasList": true,
+     "label": "Medien",
+     "pagesize": 20,
+     "hasPaging": false,
+     "showMore": true,
+     "definition": {
+      "bez": "BIO_252",
+      "listeId": 252,
+      "params": {},
+      "fixedParams": {
+       "PAD_INTERN": [
+        91034
+       ]
+      },
+      "hideDimensions": [
+       "PAD_INTERN"
+      ],
+      "sortrnr": 11,
+      "ascDesc": "DESC"
+     }
+    }
+   },
+   "portraitvideo": "ce6ebf81-1de4-4efb-94fc-00548fadbce3",
+   "parentid": "biografietabs",
+   "tabid": "MEDIEN"
+  },
+  "ausschuss": {
+   "parentid": "biografietabs",
+   "tabid": "AUS",
+   "filter": {
+    "rendertype": "filter",
+    "data": {
+     "resultLayout": "TABLE",
+     "hasForm": true,
+     "hasList": true,
+     "label": "Ausschuesse",
+     "pagesize": 20,
+     "definition": {
+      "bez": "AUSSCHUSS_BIO_250",
+      "listeId": 250,
+      "params": {},
+      "fixedParams": {
+       "PAD_INTERN": [
+        91034
+       ]
+      },
+      "hideDimensions": [
+       "PAD_INTERN"
+      ],
+      "sortrnr": 14,
+      "ascDesc": "DESC"
+     },
+     "type": "MONGODB"
+    }
+   }
+  },
+  "plenum": {
+   "filter": {
+    "rendertype": "filter",
+    "data": {
+     "type": "FILTER",
+     "resultLayout": "TABLE",
+     "hasForm": true,
+     "hasList": true,
+     "label": "Reden",
+     "pagesize": 20,
+     "definition": {
+      "bez": "BIO_251",
+      "listeId": 251,
+      "params": {},
+      "fixedParams": {
+       "PAD_INTERN": [
+        91034
+       ]
+      },
+      "hideDimensions": [
+       "PAD_INTERN"
+      ],
+      "sortrnr": 10,
+      "ascDesc": "DESC"
+     }
+    }
+   },
+   "parentid": "biografietabs",
+   "tabid": "PLENUM"
+  },
+  "akt": {
+   "parentid": "biografietabs",
+   "tabid": "AKT",
+   "filter": {
+    "rendertype": "filter",
+    "data": {
+     "type": "MONGODB",
+     "resultLayout": "TABLE",
+     "hasForm": true,
+     "hasList": true,
+     "label": "Aktivitaeten",
+     "pagesize": 20,
+     "definition": {
+      "bez": "PERS_AKTIVIT_025_MONGODB",
+      "listeId": 25,
+      "params": {},
+      "fixedParams": {
+       "PAD_INTERN": [
+        91034
+       ]
+      },
+      "hideDimensions": [
+       "PAD_INTERN"
+      ],
+      "sortrnr": 9,
+      "ascDesc": "DESC"
+     }
+    }
+   }
+  }
+ }
+}

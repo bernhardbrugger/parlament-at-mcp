@@ -3,9 +3,11 @@ import {
   detailSchema,
   filterResponseSchema,
   parseSession,
+  personSchema,
   sessionSchema,
   type DetailResponse,
   type FilterResponse,
+  type PersonResponse,
   type Session,
 } from './types.js';
 
@@ -141,12 +143,18 @@ export class ParlamentClient {
     return this.request(path, { method: 'GET', headers: { Accept: 'text/html' } });
   }
 
+  /** The JSON twin of a person page. */
+  person(padIntern: number): Promise<PersonResponse> {
+    if (!Number.isInteger(padIntern) || padIntern < 1) throw new ParlamentError(`Not a valid person id: ${padIntern}`);
+    return this.parse(`/person/${padIntern}?json=TRUE`, { method: 'GET' }, personSchema);
+  }
+
   /**
    * The JSON twin of a detail page: append `?json=TRUE` to the page path. `path` must be a site path
    * such as `/gegenstand/XXVIII/J/7436`; callers validate its shape.
    */
   detail(path: string): Promise<DetailResponse> {
-    if (!path.startsWith('/') || path.includes('?') || path.includes('..')) {
+    if (!/^\/[A-Za-z0-9/_-]+$/.test(path) || path.includes('//')) {
       throw new ParlamentError(`Not a valid detail path: ${path}`);
     }
     return this.parse(`${path}?json=TRUE`, { method: 'GET' }, detailSchema);

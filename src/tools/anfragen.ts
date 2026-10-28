@@ -2,7 +2,7 @@ import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
 import { parseLegisPeriod } from '../legis-period.js';
-import { cleanText, truncate } from '../text.js';
+import { cleanText, htmlAttr, truncate } from '../text.js';
 import { rowsToObjects, type FilterResponse } from '../types.js';
 
 /** Feld-Bezeichner of the inquiries-and-answers list. */
@@ -43,11 +43,6 @@ function isoDate(s: unknown): string | null {
   return m ? `${m[3]}-${m[2]}-${m[1]}` : null;
 }
 
-function attr(html: unknown, name: string): string | null {
-  const m = typeof html === 'string' ? new RegExp(`${name}="([^"]*)"`).exec(html) : null;
-  return m?.[1] ? cleanText(m[1]) : null;
-}
-
 export function parseAnfragen(resp: FilterResponse): AnfrageItem[] {
   const items: AnfrageItem[] = [];
   for (const o of rowsToObjects(resp)) {
@@ -59,9 +54,9 @@ export function parseAnfragen(resp: FilterResponse): AnfrageItem[] {
       zitation,
       datum: isoDate(o['Aktualisierung']),
       artCode: typeof o['Art'] === 'string' ? cleanText(o['Art']) || null : null,
-      art: attr(o['Art'], 'title'),
+      art: htmlAttr(o['Art'], 'title'),
       betreff,
-      status: attr(o['Status'], 'title'),
+      status: htmlAttr(o['Status'], 'title'),
       url: link ? BASE_URL + link : null,
     });
   }

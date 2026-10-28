@@ -1,0 +1,131 @@
+{
+ "pagetype": "geschichtsseite",
+ "meta": {
+  "title": "Ausschuss für Arbeit und Soziales (1/A-AS XXVIII. GP) seit 26.02.2025 | Parlament Österreich"
+ },
+ "content": {
+  "breadcrumbs": [
+   {
+    "title": "Start",
+    "url": "/"
+   },
+   {
+    "title": "Ausschüsse",
+    "url": "/recherchieren/ausschuesse/"
+   },
+   {
+    "title": "Nationalrat - XXVIII. GP",
+    "url": "/recherchieren/ausschuesse/?NRBR=NR&GP=XXVIII"
+   },
+   {
+    "title": "Ausschuss für Arbeit und Soziales",
+    "url": "/recherchieren/ausschuesse/?NRBR=NR&GP=XXVIII&UA=J"
+   },
+   {
+    "title": "1/A-AS"
+   }
+  ],
+  "type": "Ausschuss für Arbeit und Soziales",
+  "title": "Ausschuss für Arbeit und Soziales",
+  "zitation": "1/A-AS",
+  "description": "Im Ausschuss für Arbeit und Soziales werden alle Gesetzesvorlagen und Anträge, die sich auf Arbeits- und Sozialrecht beziehen, behandelt. Das umfasst neben der Beschäftigung Pensions-, Kranken- und Unfallversicherung sowie Arbeitslosenversicherung. Auch Regelungen und Förderungen für Menschen mit Behinderung und pflegebedürftige Personen werden vom Ausschuss für Arbeit und Soziales behandelt.",
+  "gp_code": "XXVIII",
+  "ityp": "A-AS",
+  "inr": 1,
+  "aus_code": "AS",
+  "aus_von": "2025-02-26T00:00:00",
+  "names": [
+   {
+    "funktext": "Obmann",
+    "name": "Josef Muchitsch",
+    "url": "/person/35497",
+    "portrait": {
+     "rendertype": "image",
+     "data": {
+      "src": "/dokument/bild/201433/20143348_384.jpg",
+      "alt": "Portraitfoto von Josef Muchitsch",
+      "bildId": 20143348,
+      "copyright": "Parlamentsdirektion/Thomas Topf"
+     }
+    }
+   },
+   {
+    "funktext": "Obmannstellvertreterin",
+    "name": "Dr. Dagmar Belakowitsch",
+    "url": "/person/35468"
+   },
+   {
+    "funktext": "Obmannstellvertreter",
+    "name": "August Wöginger",
+    "url": "/person/14795"
+   },
+   {
+    "funktext": "Obmannstellvertreter",
+    "name": "Peter Wurm",
+    "url": "/person/83137"
+   }
+  ],
+  "recentagenda": [
+   {
+    "title": "Tagesordnung der 11. Sitzung vom 03.11.2026",
+    "documents": [
+     {
+      "link": "/dokument/XXVIII/A-AS/1/00917/TO_16952398.pdf",
+      "type": "PDF"
+     },
+     {
+      "link": "/dokument/XXVIII/A-AS/1/00917/TO_16952398.html",
+      "type": "HTML"
+     }
+    ]
+   },
+   {
+    "title": "Tagesordnung der 10. Sitzung vom 09.09.2026",
+    "documents": [
+     {
+      "link": "/dokument/XXVIII/A-AS/1/00917/TO_16904239.pdf",
+      "type": "PDF"
+     },
+     {
+      "link": "/dokument/XXVIII/A-AS/1/00917/TO_16904239.html",
+      "type": "HTML"
+     }
+    ]
+   },
+   {
+    "title": "Alle Tagesordnungen",
+    "documents": [
+     {
+      "link": "/ausschuss/XXVIII/A-AS/1/00917?selectedStage=105",
+      "type": "DEFAULT"
+     }
+    ],
+    "linkonly": true
+   }
+  ],
+  "assignments": {
+   "rendertype": "linklist",
+   "data": {
+    "links": [
+     {
+      "title": "Bericht der Anwältin für Gleichbehandlungsfragen für Menschen mit Behinderungen über die Tätigkeit im Jahr 2024 (III-373 d.B.)",
+      "link": "/gegenstand/XXVIII/III/373",
+      "type": "DEFAULT"
+     },
+     {
+      "title": "Allgemeine Sozialversicherungsgesetz, Änderung (937/A)",
+      "link": "/gegenstand/XXVIII/A/937",
+      "type": "DEFAULT"
+     },
+     {
+      "title": "Alle Verhandlungsgegenstände in Vorberatung",
+      "link": "/ausschuss/XXVIII/A-AS/1/00917?selectedStage=106",
+      "type": "DEFAULT"
+     }
+    ],
+    "title": "Zuletzt zugewiesene Verhandlungsgegenstände",
+    "level": 3
+   }
+  }
+ }
+}

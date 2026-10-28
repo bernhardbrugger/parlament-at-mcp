@@ -23,6 +23,12 @@ export function cleanText(s: string): string {
   return decodeEntities(s.replace(/<[^>]*>/g, '')).replace(/\s+/g, ' ').trim();
 }
 
+/** Value of an attribute in an HTML snippet (first match), e.g. the `title` of `<span title="Wien">W</span>`. */
+export function htmlAttr(html: unknown, name: string): string | null {
+  const m = typeof html === 'string' ? new RegExp(`${name}="([^"]*)"`).exec(html) : null;
+  return m?.[1] ? cleanText(m[1]) : null;
+}
+
 /** Fold case and strip diacritics so "Ostermayer", "OSTERMAYER" and "Östermayer" all match. */
 export function fold(s: string): string {
   return s

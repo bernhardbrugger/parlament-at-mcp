@@ -69,7 +69,7 @@ export function formatGegenstand(d: DetailResponse, path: string): string {
   if (c.phase?.length) {
     lines.push('', 'Verfahren:');
     for (const p of c.phase) {
-      lines.push(`${p.name}:`);
+      lines.push(`${p.name ?? 'Verfahrensschritt'}:`);
       for (const s of p.stages ?? []) lines.push(`- ${s.date ? s.date + ': ' : ''}${truncate(htmlText(s.text), 300)}`);
     }
   }

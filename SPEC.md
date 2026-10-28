@@ -25,7 +25,9 @@ Journalists, researchers and developers who ask an LLM about Austrian politics (
 | `parl_gegenstaende` | **done (M3)** | list bills (RV), motions (ANTR), referendums (VOLKBG) by legislative period and official keyword, with vote result |
 | process status | **done (M3)** | part of `parl_gegenstand` (the "Verfahren" section) |
 | `parl_sitzungen`, `parl_sitzung`, `parl_rede` | **done (M3)** | session list (Nationalrat and Bundesrat), session outline with agenda items and every speaker, one speech as text with interjections (optional), 45,000-character budget with `offset` paging |
-| `parl_ausschuesse` | M4 | committees and members (list `WFP_009` is known from ParlAT; not yet verified here) |
+| `parl_ausschuesse` | **done (M4)** | committees by legislative period; chairs, tasks, latest agendas and assigned items on request |
+| `parl_person`, `parl_reden_person` | **done (M4)** | biography/mandates; list of all plenary speeches of a person |
+| current members | **done (M4)** | `parl_abgeordnete` marks and filters current Nationalrat/Bundesrat members (lists `WFW_002`, `WFW_005`) |
 
 ## Quality bar (what "as good as ris-mcp-ts" means, measured from that repo)
 - [x] Zod-validated client with retries, timeouts, throttling, host allowlist
