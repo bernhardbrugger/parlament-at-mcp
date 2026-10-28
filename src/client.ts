@@ -1,4 +1,5 @@
-import { filterResponseSchema, type FilterResponse } from './types.js';
+import type { z } from 'zod';
+import { detailSchema, filterResponseSchema, type DetailResponse, type FilterResponse } from './types.js';
 
 export const BASE_URL = 'https://www.parlament.gv.at';
 const ALLOWED_HOSTS = new Set(['www.parlament.gv.at']);
@@ -11,7 +12,7 @@ export class ParlamentError extends Error {
   }
 }
 
-class HttpError extends ParlamentError {
+export class HttpError extends ParlamentError {
   constructor(readonly status: number) {
     super(`HTTP ${status} from the Parliament API.`);
   }
@@ -71,16 +72,37 @@ export class ParlamentClient {
   }
 
   /**
-   * POST a filter query (e.g. `FBEZ=WFP_005` = inquiries). Every body value MUST be an array of strings:
-   * the server answers 500 for plain strings.
+   * POST a filter query (e.g. `FBEZ=WFP_005` = inquiries and answers). Every body value MUST be an array
+   * of strings: the server answers 500 for plain strings.
+   *
+   * The server pages with 50 rows per page (`pageNumber`, starting at 1; a page beyond the end returns
+   * zero rows). `all: true` returns every row in one response - for 7,500 inquiries that is 6.8 MB, so
+   * only use it for small, searched result sets.
    */
-  filterPost(fbez: string, body: Record<string, string[]>, query: Record<string, string> = {}): Promise<FilterResponse> {
-    const params = new URLSearchParams({ jsMode: 'EVAL', FBEZ: fbez, showAll: 'true', ...query });
+  filterPost(
+    fbez: string,
+    body: Record<string, string[]>,
+    opts: { page?: number; all?: boolean } = {},
+  ): Promise<FilterResponse> {
+    const params = new URLSearchParams({ jsMode: 'EVAL', FBEZ: fbez });
+    if (opts.all) params.set('showAll', 'true');
+    else params.set('pageNumber', String(opts.page ?? 1));
     return this.json(`/Filter/api/json/post?${params}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Origin: this.baseUrl },
       body: JSON.stringify(body),
     });
+  }
+
+  /**
+   * The JSON twin of a detail page: append `?json=TRUE` to the page path. `path` must be a site path
+   * such as `/gegenstand/XXVIII/J/7436`; callers validate its shape.
+   */
+  detail(path: string): Promise<DetailResponse> {
+    if (!path.startsWith('/') || path.includes('?') || path.includes('..')) {
+      throw new ParlamentError(`Not a valid detail path: ${path}`);
+    }
+    return this.parse(`${path}?json=TRUE`, { method: 'GET' }, detailSchema);
   }
 
   /** Run `load` once per key and reuse the result for `ttlMs` (the big list endpoints change at most daily). */
@@ -92,7 +114,11 @@ export class ParlamentClient {
     return value;
   }
 
-  private async json(path: string, init: RequestInit): Promise<FilterResponse> {
+  private json(path: string, init: RequestInit): Promise<FilterResponse> {
+    return this.parse(path, init, filterResponseSchema);
+  }
+
+  private async parse<S extends z.ZodTypeAny>(path: string, init: RequestInit, schema: S): Promise<z.infer<S>> {
     const text = await this.request(path, init);
     let raw: unknown;
     try {
@@ -100,9 +126,12 @@ export class ParlamentClient {
     } catch (cause) {
       throw new ParlamentError('The Parliament returned something that is not JSON.', { cause });
     }
-    const parsed = filterResponseSchema.safeParse(raw);
+    const parsed = schema.safeParse(raw);
     if (!parsed.success) {
-      throw new ParlamentError(`Unexpected response shape from the Parliament API: ${parsed.error.issues[0]?.message ?? 'invalid'}`);
+      const issue = parsed.error.issues[0];
+      throw new ParlamentError(
+        `Unexpected response shape from the Parliament API: ${issue?.path.join('.') || 'root'}: ${issue?.message ?? 'invalid'}`,
+      );
     }
     return parsed.data;
   }

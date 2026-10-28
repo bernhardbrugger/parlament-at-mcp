@@ -1,9 +1,11 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { ParlamentClient } from './client.js';
 import { registerAbgeordnete } from './tools/abgeordnete.js';
+import { registerAnfragen } from './tools/anfragen.js';
+import { registerGegenstand } from './tools/gegenstand.js';
 
 export const SERVER_NAME = 'parlament-at-mcp';
-export const SERVER_VERSION = '0.1.0';
+export const SERVER_VERSION = '0.2.0';
 
 export function createServer(client: ParlamentClient = new ParlamentClient()): McpServer {
   const server = new McpServer(
@@ -15,5 +17,7 @@ export function createServer(client: ParlamentClient = new ParlamentClient()): M
     },
   );
   registerAbgeordnete(server, client);
+  registerAnfragen(server, client);
+  registerGegenstand(server, client);
   return server;
 }

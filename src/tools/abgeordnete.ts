@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { BASE_URL, type ParlamentClient } from '../client.js';
+import { cleanText, fold } from '../text.js';
 import { rowsToObjects } from '../types.js';
 
 /** List id of "all persons who ever sat in the Parliament" (Nationalrat, Bundesrat, government, ...). */
@@ -18,32 +19,7 @@ export interface Person {
   portraitUrl: string | null;
 }
 
-/** Fold case and strip diacritics so "Ostermayer", "OSTERMAYER" and "Östermayer" all match. */
-export function fold(s: string): string {
-  return s
-    .normalize('NFD')
-    .replace(/\p{M}/gu, '')
-    .replace(/ß/g, 'ss')
-    .toLowerCase()
-    .trim();
-}
-
-/**
- * The API embeds HTML in text fields, e.g. "Arpa Claudia, Mag.<sup>a</sup>" for the title "Mag.a".
- * Keep the text of such markup and drop the tags.
- */
-export function cleanText(s: string): string {
-  return s
-    .replace(/<[^>]*>/g, '')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
+export { cleanText, fold };
 
 function parseGremien(raw: unknown): string[] {
   if (typeof raw !== 'string') return [];

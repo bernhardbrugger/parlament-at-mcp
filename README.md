@@ -2,19 +2,19 @@
 
 MCP server for the **Austrian Parliament** (Nationalrat, Bundesrat). Ask an LLM who sits where, what was asked and answered, and where a bill stands - with a link to the official source for every result.
 
-> **Status: early (v0.1).** One tool works today; the rest is on the roadmap in [`SPEC.md`](SPEC.md). Unofficial; not affiliated with the Parlamentsdirektion.
+> **Status: early (v0.2).** Three tools work today; the rest is on the roadmap in [`SPEC.md`](SPEC.md). Unofficial; not affiliated with the Parlamentsdirektion.
 
 ## Tools
 
 | Tool | What it does | Status |
 |---|---|---|
 | `parl_abgeordnete` | Find people who sat in the Parliament (Nationalrat, Bundesrat, Bundesregierung, ...) by name, body and function | ✅ |
-| `parl_anfragen` | Parliamentary inquiries and answers | planned (M2) |
-| `parl_gegenstand` | Details and stages of a bill / motion / petition | planned (M2) |
-| `parl_sitzungen`, `parl_protokolle` | Plenary sessions and protocol text in citable chunks | planned (M3) |
+| `parl_anfragen` | Parliamentary inquiries or answers, newest first; filter by body, legislative period and search term | ✅ |
+| `parl_gegenstand` | Details of an inquiry or answer: who asked / answered (with party), stages, PDFs, references | ✅ (bills and motions: M3) |
+| `parl_sitzung`, `parl_rede` | Plenary session outline and single speeches as text (the Parliament publishes each speech as its own segment) | planned (M3) |
 | `parl_ausschuesse` | Committees and their members | planned (M3) |
 
-Example prompts: *"Wer war Bundesministerin und Abgeordnete zum Nationalrat und heißt Rendi-Wagner?"*, *"Zeig mir alle Volksanwälte im Parlamentsverzeichnis."*
+Example prompts: *"Welche Anfragen zum Polizeischutz gab es in der XXVIII. GP, und wer hat sie gestellt?"*, *"Wer war Bundesministerin und Abgeordnete zum Nationalrat und heißt Rendi-Wagner?"*, *"Zeig mir alle Volksanwälte im Parlamentsverzeichnis."*
 
 ## Install and run
 

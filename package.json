@@ -1,6 +1,6 @@
 {
   "name": "parlament-at-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP server for the Austrian Parliament (Nationalrat, Bundesrat): members, inquiries, plenary protocols, legislative items - via the official open data JSON interface",
   "type": "module",
   "license": "MIT",
