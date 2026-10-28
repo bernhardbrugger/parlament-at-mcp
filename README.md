@@ -1,10 +1,14 @@
 # parlament-at-mcp
 
+[![CI](https://github.com/bernhardbrugger/parlament-at-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/bernhardbrugger/parlament-at-mcp/actions/workflows/ci.yml)
+![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
+![Node >= 20](https://img.shields.io/badge/node-%3E%3D20-blue.svg)
+
 MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an LLM who sits where, which committee a bill is in, what was asked and answered, and **what a politician actually said** in the plenary - with a link to the official source for every result.
 
 > **Status: v0.4, in development.** Eleven tools, five prompts, 170 offline tests (95 % line coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
 
-## What makes it useful
+## Why this exists
 
 - **Single speeches, not 300,000-character protocols.** The Parliament publishes every speech as its own segment. `parl_sitzung` lists the agenda items and _every speaker_, `parl_rede` returns one speech as text (interjections optional) in pieces of at most 45,000 characters, with `offset` paging.
 - **Who asked, who answered, how did it go.** Inquiries with the party of the introducer, bills with their procedure through committee, Nationalrat and Bundesrat, the vote by party and the Bundesgesetzblatt link.
@@ -29,6 +33,10 @@ MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an L
 | `parl_ausschuesse`  | Committees of a period; with `suche=` also chairs (with party), tasks, latest agendas, assigned items                         |
 
 **Prompts:** `rede_recherchieren`, `gesetz_verfolgen`, `anfragen_zum_thema`, `ausschuss_ueberblick`, `abgeordnete_profil` - each chains the tools above for one research task.
+
+Real output (from a live run, not mocked):
+
+![parl_beschluesse output for the 30th session of the Nationalrat](docs/demo.svg)
 
 Example questions (all answered from live data during development):
 
@@ -78,7 +86,7 @@ The HTTP mode itself is tested (in-process and with the built server over curl);
 
 The HTTP mode has no authentication and no rate limiting. Put a reverse proxy with TLS, authentication and rate limiting in front before exposing it; see [`SECURITY.md`](SECURITY.md).
 
-## Data, licence, limits
+## Limitations, data and licence
 
 - Source: open data of the Austrian Parliament, **CC BY 4.0**. Attribution: _Quelle: Parlamentsdirektion_. See the [Parliament's open data page](https://www.parlament.gv.at/recherchieren/open-data/).
 - The interface is the website's own JSON API. It is **not formally documented** and may change without notice. This server records what it measured in [`DECISIONS.md`](DECISIONS.md).
