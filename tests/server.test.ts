@@ -13,6 +13,14 @@ function router(url: string, init: RequestInit): Response {
   }
   if (url.endsWith('/gegenstand/XXVIII/J/7436?json=TRUE')) return json(fixtureText('detail-j-7436.json'));
   if (url.endsWith('/gegenstand/XXVIII/AB/6209?json=TRUE')) return json(fixtureText('detail-ab.json'));
+  if (url.includes('/Filter/api/filter/data/701')) {
+    const body = JSON.parse(String(init.body)) as Record<string, string[]>;
+    return json(fixtureText(body['GREMIUM']?.[0] === 'BR' ? 'sessions-701-br.json' : 'sessions-701-nr-xxviii.json'));
+  }
+  if (url.includes('/Filter/api/filter/data/101')) return json(fixtureText('items-101-rv-xxviii.json'));
+  if (url.endsWith('/gegenstand/XXVIII/NRSITZ/30?json=TRUE')) return json(fixtureText('session-nr-xxviii-30.json'));
+  if (url.endsWith('/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html')) return new Response(fixtureText('speech-kickl-A_-_11_12_46_00801352.html'), { status: 200 });
+  if (url.endsWith('/gegenstand/XXVIII/I/251?json=TRUE')) return json(fixtureText('detail-rv-251.json'));
   if (url.includes('/gegenstand/')) return new Response('not found', { status: 404 });
   throw new Error(`unexpected request: ${url}`);
 }
@@ -33,10 +41,12 @@ async function call(client: Client, name: string, args: Record<string, unknown>)
 }
 
 describe('MCP server', () => {
-  it('lists three read-only tools, each with a schema and description', async () => {
+  it('lists seven read-only tools, each with a schema and description', async () => {
     const { client } = await connect();
     const { tools } = await client.listTools();
-    expect(tools.map((t) => t.name).sort()).toEqual(['parl_abgeordnete', 'parl_anfragen', 'parl_gegenstand']);
+    expect(tools.map((t) => t.name).sort()).toEqual(
+      ['parl_abgeordnete', 'parl_anfragen', 'parl_gegenstaende', 'parl_gegenstand', 'parl_rede', 'parl_sitzung', 'parl_sitzungen'].sort(),
+    );
     for (const t of tools) {
       expect(t.annotations?.readOnlyHint).toBe(true);
       expect(t.description?.length).toBeGreaterThan(80);
@@ -90,6 +100,50 @@ describe('MCP server', () => {
     const bad = await call(client, 'parl_gegenstand', { gp: 28, zitation: '../../x' });
     expect(bad.isError).toBe(true);
     expect(bad.text).toContain('Zitation');
+  });
+
+  it('parl_sitzungen lists sessions of both chambers', async () => {
+    const { client } = await connect();
+    const nr = await call(client, 'parl_sitzungen', { gp: 28, limit: 2 });
+    expect(nr.text).toContain('Sitzung 104 · 2026-10-15');
+    const br = await call(client, 'parl_sitzungen', { gremium: 'BR', limit: 1 });
+    expect(br.text).toContain('Sitzung 997');
+  });
+
+  it('parl_sitzung shows the speakers and parl_rede reads one speech', async () => {
+    const { client } = await connect();
+    const outline = await call(client, 'parl_sitzung', { gp: 28, nummer: 30, redner: 'Kickl' });
+    expect(outline.isError).toBe(false);
+    expect(outline.text).toContain('Herbert Kickl (FPÖ) · rede=801352');
+    const speech = await call(client, 'parl_rede', { gp: 28, nummer: 30, rede: 801352 });
+    expect(speech.isError).toBe(false);
+    expect(speech.text).toContain('Herbert Kickl (FPÖ)');
+    expect(speech.text).toContain('Danke schön, Herr Präsident!');
+    expect(speech.text).toContain('Na bravo!');
+    const quiet = await call(client, 'parl_rede', { gp: 28, nummer: 30, rede: 801352, zwischenrufe: false });
+    expect(quiet.text).not.toContain('Na bravo!');
+  });
+
+  it('parl_rede and parl_sitzung explain unknown input', async () => {
+    const { client } = await connect();
+    const noGp = await call(client, 'parl_sitzung', { nummer: 30 });
+    expect(noGp.isError).toBe(true);
+    expect(noGp.text).toContain('Gesetzgebungsperiode');
+    const unknown = await call(client, 'parl_rede', { gp: 28, nummer: 30, rede: 5 });
+    expect(unknown.isError).toBe(true);
+    expect(unknown.text).toContain('Kein Redebeitrag');
+    const missing = await call(client, 'parl_sitzung', { gp: 28, nummer: 9999 });
+    expect(missing.isError).toBe(true);
+    expect(missing.text).toContain('Keine Sitzung');
+  });
+
+  it('parl_gegenstaende lists bills and parl_gegenstand shows the procedure', async () => {
+    const { client } = await connect();
+    const list = await call(client, 'parl_gegenstaende', { gp: 28, limit: 3 });
+    expect(list.text).toContain('251/I');
+    const detail = await call(client, 'parl_gegenstand', { gp: 28, zitation: '251/I' });
+    expect(detail.text).toContain('Verfahren:');
+    expect(detail.text).toContain('Bundesgesetzblatt I Nr. 86/2025');
   });
 
   it('rejects out-of-range arguments before any request is made', async () => {

@@ -31,6 +31,24 @@ Each entry: what was measured or decided, when, and why. Add to it whenever the 
 - Segment HTML: `<p class="randnummer" title="Speaker (Party)">RN/23</p>`, `_RB`/`_RE` = start/end time, the speaker links to `/person/{id}`, interjections are in `<i>`. One 11-minute speech is about 21,000 characters, a whole TOP segment about 270,000. Always fetch per speech.
 - Newer protocols carry a note (`sthint`) that the raw transcript was produced with AI support and then edited. Tools should pass that note on.
 
+## 2026-10-28 · Numbered lists: sessions (701) and items (101), measured
+- Besides `POST /Filter/api/json/post?FBEZ=...` there is `POST /Filter/api/filter/data/{listId}?page=N&pagesize=50` (found via ParlAT). Body values are arrays here too. Paging works with `page` and `pagesize` (50 accepted); a short page is the last one.
+- **Sessions, list 701:** body `{"GREMIUM":["NR"],"GP_CODE":["XXVIII"],"SIAKT":["SI"]}`; `sortrnr=22&ascDesc=DESC` gives newest first. 104 sessions in the XXVIII. GP at the time of measuring. For the Bundesrat omit `GP_CODE`: 1,207 sessions, numbered continuously (997 in October 2026), path `/gegenstand/BR/BRSITZ/{n}`.
+- Most columns of list 701 have **no label** (hidden); the useful ones sit at fixed positions (Datum 20, Betreff 22, session link 28, kind text 25). They are exposed as `col{index}`. Header labels are therefore optional in the schema.
+- **Items, list 101:** body `{"NRBR":["NR"],"GP_CODE":["XXVIII"],"VHG":["RV"]}`. Verified `VHG` values: `RV` (Regierungsvorlage, 128 in the XXVIII. GP), `ANTR` (Anträge, 1,606), `VOLKBG` (Volksbegehren, 5). `SW` filters by the official keyword (exact vocabulary, not full text): "Verwaltungsverfahren" finds 2 bills. A single `DATUM_VON` value is ignored (ParlAT sends two values: from and to; not verified here).
+- Item rows carry `ITYP` + `INR` (citation "251/I"), a link in `HIS_URL`, the vote as text in `Abstimmungstext` and JSON-encoded strings for `THEMEN`/`SW`.
+
+## 2026-10-28 · Detail JSON of bills (RV)
+- `/gegenstand/XXVIII/I/251?json=TRUE`: no `stages`; instead `status` (phase number, HTML description, `bgbllinks` to the Bundesgesetzblatt), `phase[]` (named phases such as "Einlangen NR", "Ausschussberatungen NR", "Plenarberatungen NR", "Einlangen BR" ... with dated `stages[]`), `shortinfo` (HTML bullet lists), `vote` (text and per-party result), `correspondence` (press releases).
+- **Fields are often `null`**, not absent: ministers have `frak_code: null`. The schema uses `nullish()` for the whole detail block; a strict `optional()` made the live call fail.
+- Text contains HTML entities (`Erm&auml;chtigung`); `cleanText` decodes numeric and the common named entities.
+
+## 2026-10-28 · Speeches in tools (implemented)
+- `parl_sitzung` finds the three content blocks by their keys, not by position. It lists every speaker only for sessions with at most 40 speeches or when `top`/`redner` narrows it down; the real 30th session has 100 speeches in 13 agenda items.
+- `parl_rede` locates a speech by `st_objekte_id` in the cached session JSON (10 minutes), then fetches only that speech's HTML segment. The document path must match `/dokument/{GP|BR}/{NRSITZ|BRSITZ}/{n}/{name}.html`; nothing else is ever requested.
+- Interjections are in `<i>` and are kept by default (they are part of the record); `zwischenrufe=false` removes them.
+- Output windows end at a paragraph break when one is close, and the reply says where to continue (`offset`).
+
 ## 2026-10-28 · Client behaviour
 - Default pause of 1 s between requests and a single request at a time: the Parliament publishes no rate limit, so be polite. Retries on 429/5xx/network errors with exponential backoff; never on other 4xx.
 - The client refuses any host except `www.parlament.gv.at`, so a configuration mistake cannot turn it into an open proxy.

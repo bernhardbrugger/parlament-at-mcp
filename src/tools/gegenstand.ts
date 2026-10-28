@@ -23,7 +23,18 @@ function absolute(link: string): string {
   return link.startsWith('http') ? link : BASE_URL + (link.startsWith('/') ? '' : '/') + link;
 }
 
-function isoToDe(s: string | undefined): string | null {
+/** HTML snippet -> one line of text; line breaks become " · ". */
+function htmlText(html: string): string {
+  return cleanText(html.replace(/<br\s*\/?>/gi, ' · ').replace(/ · (?: · )+/g, ' · '));
+}
+
+/** `<ul><li>..</li></ul>` -> list of item texts. */
+function htmlItems(html: string | null | undefined): string[] {
+  if (!html) return [];
+  return [...html.matchAll(/<li[^>]*>([\s\S]*?)<\/li>/gi)].map((m) => cleanText(m[1] ?? '')).filter(Boolean);
+}
+
+function isoToDe(s: string | null | undefined): string | null {
   const m = s ? /^(\d{4})-(\d{2})-(\d{2})/.exec(s) : null;
   return m ? `${m[3]}.${m[2]}.${m[1]}` : null;
 }
@@ -46,6 +57,23 @@ export function formatGegenstand(d: DetailResponse, path: string): string {
     }
   }
   if (c.description) lines.push('', truncate(cleanText(c.description), 1200));
+
+  // Bills: where the item stands in the legislative process
+  if (c.status?.description) lines.push('', `Stand: ${htmlText(c.status.description)}`);
+  for (const b of c.status?.bgbllinks ?? []) if (b.title && b.title !== 'Kunsttext') lines.push(`  ${b.title}: ${b.link}`);
+  if (c.vote?.text) lines.push(`Abstimmung: ${cleanText(c.vote.text)}`);
+  for (const part of [c.shortinfo?.teil1, c.shortinfo?.teil2]) {
+    const items = htmlItems(part);
+    if (items.length) lines.push('', ...(part === c.shortinfo?.teil1 ? ['Kurzinformation:'] : []), ...items.map((i) => `- ${i}`));
+  }
+  if (c.phase?.length) {
+    lines.push('', 'Verfahren:');
+    for (const p of c.phase) {
+      lines.push(`${p.name}:`);
+      for (const s of p.stages ?? []) lines.push(`- ${s.date ? s.date + ': ' : ''}${truncate(htmlText(s.text), 300)}`);
+    }
+  }
+
   if (c.stages?.length) {
     lines.push('', 'Verlauf:');
     for (const s of c.stages) lines.push(`- ${s.date ? s.date + ': ' : ''}${cleanText(s.text)}`);

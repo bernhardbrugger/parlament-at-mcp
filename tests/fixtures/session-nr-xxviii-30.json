@@ -4380,11 +4380,11 @@
      }
     },
     {
-     "text": "Präsidium",
-     "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=401",
-     "time": "09:11:14",
-     "ts": "16-06-2025 09:11:14",
-     "st_objekte_id": 801241,
+     "text": "TOP 1 Erklärung der Regierungsspitze zum Amoklauf in Graz",
+     "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=1",
+     "time": "09:14:07",
+     "ts": "16-06-2025 09:14:07",
+     "st_objekte_id": 801175,
      "protocol": {
       "rendertype": "doklinklist",
       "data": {
@@ -4392,11 +4392,431 @@
         {
          "documents": [
           {
-           "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_11_14_00801241.html",
+           "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_14_07_00801175.html",
            "type": "HTML"
           },
           {
-           "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_11_14_00801241.pdf",
+           "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_14_07_00801175.pdf",
+           "type": "PDF"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "speeches": [
+      {
+       "texta": "Präsidium",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=1&TS=1750065247",
+       "time": "09:14:07",
+       "ts": "16-06-2025 09:14:07",
+       "st_objekte_id": 801176,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_14_07_00801176.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_14_07_00801176.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-11-12T10:10:58"
+      },
+      {
+       "texta": "Christian Stocker, Bundeskanzler",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=1&TS=1750065285",
+       "time": "09:14:45",
+       "ts": "16-06-2025 09:14:45",
+       "st_objekte_id": 801177,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_14_45_00801177.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_14_45_00801177.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-10-03T17:28:06"
+      },
+      {
+       "texta": "Andreas Babler, Vizekanzler",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=1&TS=1750066041",
+       "time": "09:27:18",
+       "ts": "16-06-2025 09:27:18",
+       "st_objekte_id": 801182,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_27_18_00801182.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_09_27_18_00801182.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-10-03T17:28:57"
+      }
+     ]
+    },
+    {
+     "text": "TOP 2-4 Debatte zum Budgetbegleitgesetz 2025",
+     "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=2",
+     "time": "11:11:48",
+     "ts": "16-06-2025 11:11:48",
+     "st_objekte_id": 801348,
+     "protocol": {
+      "rendertype": "doklinklist",
+      "data": {
+       "links": [
+        {
+         "documents": [
+          {
+           "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_11_48_00801348.html",
+           "type": "HTML"
+          },
+          {
+           "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_11_48_00801348.pdf",
+           "type": "PDF"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "speeches": [
+      {
+       "texta": "Präsidium",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=2&TS=1750072316",
+       "time": "11:11:48",
+       "ts": "16-06-2025 11:11:48",
+       "st_objekte_id": 801349,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_11_48_00801349.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_11_48_00801349.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-11-12T15:54:58"
+      },
+      {
+       "texta": "Herbert Kickl (FPÖ)",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=2&TS=1750072373",
+       "time": "11:12:46",
+       "ts": "16-06-2025 11:12:46",
+       "st_objekte_id": 801352,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-11-12T10:20:06"
+      },
+      {
+       "texta": "Philip Kucher (SPÖ)",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=2&TS=1750073635",
+       "time": "11:33:50",
+       "ts": "16-06-2025 11:33:50",
+       "st_objekte_id": 801405,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_33_50_00801405.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_33_50_00801405.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-11-12T10:21:04"
+      },
+      {
+       "texta": "Werner Kogler (Grüne)",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=2&TS=1750074010",
+       "time": "11:40:03",
+       "ts": "16-06-2025 11:40:03",
+       "st_objekte_id": 801415,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_40_03_00801415.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_40_03_00801415.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-10-03T12:53:58"
+      },
+      {
+       "texta": "August Wöginger (ÖVP)",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=2&TS=1750074531",
+       "time": "11:48:45",
+       "ts": "16-06-2025 11:48:45",
+       "st_objekte_id": 801446,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_48_45_00801446.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_48_45_00801446.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-11-12T10:29:05"
+      },
+      {
+       "texta": "Michael Schnedlitz (FPÖ)",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=2&TS=1750075098",
+       "time": "11:58:11",
+       "ts": "16-06-2025 11:58:11",
+       "st_objekte_id": 801473,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_58_11_00801473.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_58_11_00801473.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-11-12T10:32:05"
+      }
+     ]
+    },
+    {
+     "text": "Dringliche Anfrage",
+     "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=60",
+     "time": "14:59:35",
+     "ts": "16-06-2025 14:59:35",
+     "st_objekte_id": 802030,
+     "protocol": {
+      "rendertype": "doklinklist",
+      "data": {
+       "links": [
+        {
+         "documents": [
+          {
+           "link": "/dokument/XXVIII/NRSITZ/30/A_-_14_59_35_00802030.html",
+           "type": "HTML"
+          },
+          {
+           "link": "/dokument/XXVIII/NRSITZ/30/A_-_14_59_35_00802030.pdf",
+           "type": "PDF"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     "speeches": [
+      {
+       "texta": "Präsidium",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=60&TS=1750085982",
+       "time": "14:59:35",
+       "ts": "16-06-2025 14:59:35",
+       "st_objekte_id": 802031,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_14_59_35_00802031.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_14_59_35_00802031.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2026-01-05T15:44:12"
+      },
+      {
+       "texta": "Susanne Fürst (FPÖ)",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=60&TS=1750086010",
+       "time": "15:00:04",
+       "ts": "16-06-2025 15:00:04",
+       "st_objekte_id": 802032,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_15_00_04_00802032.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_15_00_04_00802032.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-11-12T13:47:09"
+      },
+      {
+       "texta": "Alexander Pröll, Staatssekretär im Bundeskanzleramt",
+       "video": "/aktuelles/mediathek/XXVIII/NRSITZ/30?DEBATTE=60&TS=1750087246",
+       "time": "15:20:35",
+       "ts": "16-06-2025 15:20:35",
+       "st_objekte_id": 802121,
+       "protocol": {
+        "rendertype": "doklinklist",
+        "data": {
+         "links": [
+          {
+           "documents": [
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_15_20_35_00802121.html",
+             "type": "HTML"
+            },
+            {
+             "link": "/dokument/XXVIII/NRSITZ/30/A_-_15_20_35_00802121.pdf",
+             "type": "PDF"
+            }
+           ]
+          }
+         ]
+        }
+       },
+       "autorisiert": true,
+       "veroeffentlicht": "2025-11-12T13:49:22"
+      }
+     ]
+    },
+    {
+     "text": "Sitzungsende",
+     "video": null,
+     "time": "18:51:15",
+     "ts": "16-06-2025 18:51:15",
+     "st_objekte_id": 803204,
+     "protocol": {
+      "rendertype": "doklinklist",
+      "data": {
+       "links": [
+        {
+         "documents": [
+          {
+           "link": "/dokument/XXVIII/NRSITZ/30/A_-_18_51_15_00803204.html",
+           "type": "HTML"
+          },
+          {
+           "link": "/dokument/XXVIII/NRSITZ/30/A_-_18_51_15_00803204.pdf",
            "type": "PDF"
           }
          ]

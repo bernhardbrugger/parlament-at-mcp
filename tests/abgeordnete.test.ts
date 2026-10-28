@@ -35,6 +35,13 @@ describe('text cleaning', () => {
     expect(cleanText('A &amp; B&nbsp;C <b>x</b>')).toBe('A & B C x');
   });
 
+  it('decodes named and numeric entities, in one pass', () => {
+    expect(cleanText('Erm&auml;chtigung &amp; Verpflichtung')).toBe('Ermächtigung & Verpflichtung');
+    expect(cleanText('&sect; 12 &ndash; &bdquo;Test&ldquo; &#8364; &#x20AC;')).toBe('§ 12 – „Test“ € €');
+    expect(cleanText('&amp;lt;b&amp;gt;')).toBe('&lt;b&gt;');
+    expect(cleanText('&unknown; &#0; &#99999999;')).toBe('&unknown; &#0; &#99999999;');
+  });
+
   it('folds case and diacritics', () => {
     expect(fold('Östermayer')).toBe('ostermayer');
     expect(fold('Weiß')).toBe('weiss');

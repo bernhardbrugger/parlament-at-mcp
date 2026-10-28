@@ -21,10 +21,11 @@ Journalists, researchers and developers who ask an LLM about Austrian politics (
 |---|---|---|
 | `parl_abgeordnete` | **done (M1)** | name/body/function search over the cached persons list |
 | `parl_anfragen` | **done (M2)** | inquiries or answers (separate queries), body, legislative period, search in the subject, paging across the 50-row pages |
-| `parl_gegenstand` | **done (M2)** for inquiries/answers | who asked/answered (with party), stages, PDFs, references, topics. Bills, Anträge, Volksbegehren use the same JSON twin: verify and add in M3 |
-| process status | M3 | where is a bill (Ausschuss, Plenum, Bundesrat) |
-| `parl_sitzungen`, `parl_sitzung`, `parl_rede` | M3 | session list (list endpoint still to find), session outline with TOPs and speakers, one speech as text with interjections marked, size-budgeted |
-| `parl_ausschuesse` | M3 | committees and members |
+| `parl_gegenstand` | **done (M2, extended M3)** | inquiries, answers and bills: who asked/answered (with party), stages, procedure per phase (committee, Nationalrat, Bundesrat), vote, Bundesgesetzblatt links, PDFs, references, topics |
+| `parl_gegenstaende` | **done (M3)** | list bills (RV), motions (ANTR), referendums (VOLKBG) by legislative period and official keyword, with vote result |
+| process status | **done (M3)** | part of `parl_gegenstand` (the "Verfahren" section) |
+| `parl_sitzungen`, `parl_sitzung`, `parl_rede` | **done (M3)** | session list (Nationalrat and Bundesrat), session outline with agenda items and every speaker, one speech as text with interjections (optional), 45,000-character budget with `offset` paging |
+| `parl_ausschuesse` | M4 | committees and members (list `WFP_009` is known from ParlAT; not yet verified here) |
 
 ## Quality bar (what "as good as ris-mcp-ts" means, measured from that repo)
 - [x] Zod-validated client with retries, timeouts, throttling, host allowlist
@@ -32,7 +33,7 @@ Journalists, researchers and developers who ask an LLM about Austrian politics (
 - [ ] 300+ tests, coverage report; integration suite against the live API kept separate
 - [ ] `DECISIONS.md` documenting every measured API quirk (started), `SECURITY.md`, `CONTRIBUTING.md`
 - [ ] CI (Linux + Windows, Node 20/22), CodeQL, lint + format, commit hooks (CI file prepared in `ci/`, needs the `workflow` token scope)
-- [ ] Response-size budget per tool (clients drop large tool results; ris-mcp-ts measured 45,000 chars for Claude Code)
+- [x] Response-size budget: `parl_rede` pages at most 45,000 characters (default 30,000), the session outline is capped at 20,000 and always keeps its footer
 - [ ] Remote HTTP transport + Dockerfile; MCP registry release (`server.json`); versioned releases
 - [ ] README in English with German terms, example prompts, honest limits, attribution line
 
@@ -45,5 +46,5 @@ Registry-published v1.0 with tools M1–M3, 300+ tests, 50 stars or 3 external u
 ## Milestones (incubation deadline 2026-11-18)
 - **M1 · 2026-10-28 · done:** client, persons tool, MCP wiring, 23 tests, verified live over stdio.
 - **M2 · 2026-11-04 · done 2026-10-28:** `parl_anfragen` (paging over 50-row pages), `parl_gegenstand` (detail JSON), protocol research (speech-level segments exist), real-data fixtures, 74 tests, verified live.
-- **M3 · 2026-11-11:** `parl_sitzung` + `parl_rede` (fixtures `session-nr-xxviii-30.json` and a real speech segment are in `tests/fixtures`), find the session-list endpoint, Bundesrat sessions (`/gegenstand/BR/BRSITZ/{n}`), bills/Anträge in `parl_gegenstand`, committees, response-size budget (45,000 characters).
-- **M4 · 2026-11-18:** quality-bar items above, launch kit in `drafts/parlament-at-mcp/`, `LAUNCH` item in the inbox.
+- **M3 · 2026-11-11 · done 2026-10-28:** `parl_sitzungen`, `parl_sitzung`, `parl_rede`, `parl_gegenstaende`, procedure/vote in `parl_gegenstand`, Bundesrat sessions, size budget, 117 tests, verified live. **Not done, moved to M4:** committees.
+- **M4 · 2026-11-18:** committees (`parl_ausschuesse`), person detail (mandates, club) if the detail JSON allows, "current members" list (`WFW_002`), quality-bar items above, launch kit in `drafts/parlament-at-mcp/`, `LAUNCH` item in the inbox.

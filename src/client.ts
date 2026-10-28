@@ -1,5 +1,13 @@
 import type { z } from 'zod';
-import { detailSchema, filterResponseSchema, type DetailResponse, type FilterResponse } from './types.js';
+import {
+  detailSchema,
+  filterResponseSchema,
+  parseSession,
+  sessionSchema,
+  type DetailResponse,
+  type FilterResponse,
+  type Session,
+} from './types.js';
 
 export const BASE_URL = 'https://www.parlament.gv.at';
 const ALLOWED_HOSTS = new Set(['www.parlament.gv.at']);
@@ -92,6 +100,45 @@ export class ParlamentClient {
       headers: { 'Content-Type': 'application/json', Origin: this.baseUrl },
       body: JSON.stringify(body),
     });
+  }
+
+  /**
+   * POST a filter query to a numbered list (`/Filter/api/filter/data/{id}`): 101 = items (bills, motions, ...),
+   * 701 = plenary sessions. Newer than `filterPost`; paging uses `page` + `pagesize` (max 50 observed to work).
+   * Body values must be arrays here too.
+   */
+  filterDataPost(
+    listId: number,
+    body: Record<string, string[]>,
+    opts: { page?: number; pagesize?: number; sortrnr?: number; ascDesc?: 'ASC' | 'DESC' } = {},
+  ): Promise<FilterResponse> {
+    const params = new URLSearchParams({ js: 'eval', page: String(opts.page ?? 1), pagesize: String(opts.pagesize ?? 50) });
+    if (opts.sortrnr !== undefined) params.set('sortrnr', String(opts.sortrnr));
+    if (opts.ascDesc) params.set('ascDesc', opts.ascDesc);
+    return this.json(`/Filter/api/filter/data/${listId}?${params}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Origin: this.baseUrl },
+      body: JSON.stringify(body),
+    });
+  }
+
+  /** The raw JSON of a session page (see `parseSession`); cached for 10 minutes. */
+  session(path: string): Promise<Session> {
+    if (!/^\/gegenstand\/(?:[IVXL]{1,8}|BR)\/(?:NRSITZ|BRSITZ)\/\d{1,4}$/.test(path)) {
+      throw new ParlamentError(`Not a valid session path: ${path}`);
+    }
+    return this.cached(`session:${path}`, 10 * 60 * 1000, async () => {
+      const raw = await this.parse(`${path}?json=TRUE`, { method: 'GET' }, sessionSchema);
+      return parseSession(raw);
+    });
+  }
+
+  /** A protocol segment (HTML) below `/dokument/`. Only plain document paths are accepted. */
+  async document(path: string): Promise<string> {
+    if (!/^\/dokument\/(?:[IVXL]{1,8}|BR)\/(?:NRSITZ|BRSITZ)\/\d{1,4}\/[A-Za-z0-9_.-]+\.html$/.test(path)) {
+      throw new ParlamentError(`Not a valid protocol document path: ${path}`);
+    }
+    return this.request(path, { method: 'GET', headers: { Accept: 'text/html' } });
   }
 
   /**
