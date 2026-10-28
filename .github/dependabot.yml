@@ -9,6 +9,13 @@ updates:
       # zod 4 changes the API (z.record needs two arguments, ...) and the MCP SDK still targets zod 3: migrate on purpose, not by bot
       - dependency-name: zod
         update-types: ["version-update:semver-major"]
+      # Vitest 5 needs Node 22+ (and @types/node 22+): stay on 2.x while Node 20 is supported
+      - dependency-name: vitest
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@vitest/coverage-v8"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     groups:
       dev-dependencies:
         dependency-type: development
