@@ -111,7 +111,7 @@ export function registerBeschluesse(server: McpServer, client: ParlamentClient):
       const fail = (text: string) => ({ isError: true as const, content: [{ type: 'text' as const, text }] });
       let path: string;
       try {
-        path = sitzungPath(args.gremium ?? 'NR', args.gp, args.nummer);
+        path = sitzungPath(args.gremium, args.gp, args.nummer);
       } catch (e) {
         return fail((e as Error).message);
       }

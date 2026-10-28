@@ -159,10 +159,10 @@ export function registerAnfragen(server: McpServer, client: ParlamentClient): vo
         return { isError: true, content: [{ type: 'text', text: (e as Error).message }] };
       }
       const query: AnfragenQuery = {
-        gremium: args.gremium ?? 'NR',
-        art: args.art ?? 'anfrage',
-        limit: args.limit ?? 15,
-        offset: args.offset ?? 0,
+        gremium: args.gremium,
+        art: args.art,
+        limit: args.limit,
+        offset: args.offset,
         ...(gp ? { gp } : {}),
         ...(args.suche ? { suche: args.suche } : {}),
       };

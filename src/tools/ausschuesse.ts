@@ -100,7 +100,7 @@ export function registerAusschuesse(server: McpServer, client: ParlamentClient):
     },
     async (args) => {
       const fail = (text: string) => ({ isError: true as const, content: [{ type: 'text' as const, text }] });
-      const gremium = args.gremium ?? 'NR';
+      const gremium = args.gremium;
       let gp: string | undefined;
       try {
         gp = args.gp === undefined ? undefined : parseLegisPeriod(args.gp);

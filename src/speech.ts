@@ -45,7 +45,7 @@ export interface Window {
 
 /**
  * Cut `maxChars` characters starting at `offset`, preferring to stop at a paragraph break so a quote
- * never ends mid-sentence when it can be avoided.
+ * never ends mid-sentence when it can be avoided; without one, at the last space so no word is cut in two.
  */
 export function windowText(text: string, offset: number, maxChars: number): Window {
   const total = text.length;
@@ -53,7 +53,12 @@ export function windowText(text: string, offset: number, maxChars: number): Wind
   let to = Math.min(from + maxChars, total);
   if (to < total) {
     const breakAt = text.lastIndexOf('\n\n', to);
-    if (breakAt > from + maxChars * 0.5) to = breakAt;
+    if (breakAt > from + maxChars * 0.5) {
+      to = breakAt;
+    } else {
+      const spaceAt = text.lastIndexOf(' ', to);
+      if (spaceAt > from + maxChars * 0.5) to = spaceAt;
+    }
   }
   return { text: text.slice(from, to).trim(), from, to, total };
 }

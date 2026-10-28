@@ -112,7 +112,7 @@ export function registerRede(server: McpServer, client: ParlamentClient): void {
       const fail = (text: string) => ({ isError: true as const, content: [{ type: 'text' as const, text }] });
       let path: string;
       try {
-        path = sitzungPath(args.gremium ?? 'NR', args.gp, args.nummer);
+        path = sitzungPath(args.gremium, args.gp, args.nummer);
       } catch (e) {
         return fail((e as Error).message);
       }
@@ -127,9 +127,9 @@ export function registerRede(server: McpServer, client: ParlamentClient): void {
           sessionTitle: session.title,
           protocolNote: session.protocolNote,
           html,
-          interjections: args.zwischenrufe ?? true,
-          offset: args.offset ?? 0,
-          maxChars: args.max_zeichen ?? DEFAULT_CHARS,
+          interjections: args.zwischenrufe,
+          offset: args.offset,
+          maxChars: args.max_zeichen,
         });
         return { content: [{ type: 'text' as const, text }] };
       } catch (e) {

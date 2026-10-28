@@ -146,10 +146,10 @@ export function registerGegenstaende(server: McpServer, client: ParlamentClient)
         return { isError: true, content: [{ type: 'text', text: (e as Error).message }] };
       }
       const query: GegenstaendeQuery = {
-        gremium: args.gremium ?? 'NR',
-        art: args.art ?? 'RV',
-        limit: args.limit ?? 15,
-        offset: args.offset ?? 0,
+        gremium: args.gremium,
+        art: args.art,
+        limit: args.limit,
+        offset: args.offset,
         ...(gp ? { gp } : {}),
         ...(args.schlagwort ? { schlagwort: args.schlagwort } : {}),
       };

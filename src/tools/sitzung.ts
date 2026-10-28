@@ -94,7 +94,7 @@ export function registerSitzung(server: McpServer, client: ParlamentClient): voi
     async (args) => {
       let path: string;
       try {
-        path = sitzungPath(args.gremium ?? 'NR', args.gp, args.nummer);
+        path = sitzungPath(args.gremium, args.gp, args.nummer);
       } catch (e) {
         return { isError: true, content: [{ type: 'text', text: (e as Error).message }] };
       }

@@ -57,11 +57,11 @@ npm run smoke:live     # needs a fresh build; calls every tool once against the 
 
 ## Beyond M4: from "good" to "as good as ris-mcp-ts" (owner priority, one item per run, in this order)
 
-State on 2026-10-28: 10 tools, 5 prompts, 155 offline tests (95 % lines), live smoke + live canary, HTTP mode, lint/format, v0.4.0 (unreleased).
+State on 2026-10-28: 11 tools, 5 prompts, 332 offline tests (98 % lines, 88 % branches), live smoke (16 checks) + live canary, HTTP mode, lint/format, CI, v0.5.0 (pushed to the private repo, not released).
 
-- [ ] A. Launch kit in the autopilot repo: `drafts/parlament-at-mcp/` (show-hn.md, reddit.md, social.md, awesome-lists.md, story.md - drafts only, never post;
+- [x] A. (done 2026-10-28: drafts in `drafts/parlament-at-mcp/`, launch-check passes except the release, `LAUNCH` item in `inbox.md`) Launch kit in the autopilot repo: `drafts/parlament-at-mcp/` (show-hn.md, reddit.md, social.md, awesome-lists.md, story.md - drafts only, never post;
       the story: "undocumented interface, measured, tested against the real thing"), adapt `node scripts/launch-check.mjs` for npm projects, then a `LAUNCH` item in `inbox.md`.
-- [ ] B. Tests to 300+: edge cases per formatter (empty/huge/odd inputs), every error branch of the tools, property-style tests for `windowText`, `fetchSlice`, `parseLegisPeriod`;
+- [x] B. (done 2026-10-28: 332 tests, branch coverage 74 % -> 88 %; `node scripts/uncovered-branches.mjs` lists what is left) Tests to 300+: edge cases per formatter (empty/huge/odd inputs), every error branch of the tools, property-style tests for `windowText`, `fetchSlice`, `parseLegisPeriod`;
       raise branch coverage above 85 %. Quality over count: each test must be able to fail for a real reason.
 - [ ] C. New questions people ask (measure each first, then tool + fixtures + tests + live check + DECISIONS entry): 1. (done 2026-10-28 as `parl_beschluesse`: decisions per agenda item with party votes, plus agenda and press-release links; the agenda of a future session is not published before the session exists);
 - [ ] D. Output polish: for `parl_rede`, mark speaker changes inside segments with several RN markers; optional `quote_range` so a model can cite paragraph numbers;

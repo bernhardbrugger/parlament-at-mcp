@@ -190,8 +190,8 @@ export function registerAbgeordnete(server: McpServer, client: ParlamentClient):
     },
     async (args) => {
       const query: PersonQuery = {
-        limit: args.limit ?? 20,
-        offset: args.offset ?? 0,
+        limit: args.limit,
+        offset: args.offset,
         ...(args.name ? { name: args.name } : {}),
         ...(args.gremium ? { gremium: args.gremium } : {}),
         ...(args.funktion ? { funktion: args.funktion } : {}),

@@ -194,8 +194,8 @@ export function registerPerson(server: McpServer, client: ParlamentClient): void
       try {
         const r = await resolvePerson(client, args);
         if ('error' in r) return fail(r.error);
-        const offset = args.offset ?? 0;
-        const result = await searchReden(client, r.person.padIntern, offset, args.limit ?? 10);
+        const offset = args.offset;
+        const result = await searchReden(client, r.person.padIntern, offset, args.limit);
         return listResult(formatReden(r.person, result, offset), result.total, offset, result.items);
       } catch (e) {
         return apiFail(e);

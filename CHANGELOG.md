@@ -3,6 +3,9 @@
 ## 0.5.0 (unreleased)
 
 - **New tool `parl_beschluesse`:** what a plenary session decided per agenda item, with the vote by party, later steps (e.g. Bundesrat), press releases and agenda links.
+- **Fix:** `parl_rede` continuation windows no longer cut a word in two when a paragraph is longer than half the window (they end at the last space).
+- **Tests:** 332 (was 170), branch coverage 88 % (was 74 %); property-style tests for `windowText`, `fetchSlice`, `parseLegisPeriod`, `truncate`; every tool's error paths.
+- Removed unreachable `?? default` fallbacks on arguments the schema already defaults.
 - CI on Linux and Windows (Node 20/22), Dependabot; ESLint 10, cheerio 1.2. Vitest stays on 2.x because Vitest 5 requires Node 22+.
 - LF line endings everywhere (`.gitattributes`): Windows runners used to check files out with CRLF and failed the format check.
 

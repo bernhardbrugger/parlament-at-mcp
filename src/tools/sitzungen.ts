@@ -107,9 +107,9 @@ export function registerSitzungen(server: McpServer, client: ParlamentClient): v
         return { isError: true, content: [{ type: 'text', text: (e as Error).message }] };
       }
       const query: SitzungenQuery = {
-        gremium: args.gremium ?? 'NR',
-        limit: args.limit ?? 10,
-        offset: args.offset ?? 0,
+        gremium: args.gremium,
+        limit: args.limit,
+        offset: args.offset,
         ...(gp ? { gp } : {}),
       };
       try {
