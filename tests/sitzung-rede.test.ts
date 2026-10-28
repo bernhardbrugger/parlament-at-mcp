@@ -18,7 +18,14 @@ describe('session page (real fixture)', () => {
     expect(s.state).toBe('fertig');
     expect(s.protocols[0]!.title).toBe('Stenographisches Protokoll');
     expect(s.protocols[0]!.links.map((l) => l.type)).toEqual(['PDF', 'HTML']);
-    expect(s.progress.map((p) => p.text.split(' ')[0])).toEqual(['Sitzungsbeginn', 'Präsidium', 'TOP', 'TOP', 'Dringliche', 'Sitzungsende']);
+    expect(s.progress.map((p) => p.text.split(' ')[0])).toEqual([
+      'Sitzungsbeginn',
+      'Präsidium',
+      'TOP',
+      'TOP',
+      'Dringliche',
+      'Sitzungsende',
+    ]);
   });
 
   it('tolerates a page without the optional blocks', () => {
@@ -179,8 +186,13 @@ describe('locateSpeech and formatRede', () => {
     expect(text.length).toBeLessThan(45_000);
   });
 
-  it('passes on the Parliament\'s notes', () => {
-    const text = formatRede({ ...common, maxChars: 3000, protocolNote: 'Mit KI-Unterstützung erstellt.', located: { ...located, autorisiert: false } });
+  it("passes on the Parliament's notes", () => {
+    const text = formatRede({
+      ...common,
+      maxChars: 3000,
+      protocolNote: 'Mit KI-Unterstützung erstellt.',
+      located: { ...located, autorisiert: false },
+    });
     expect(text).toContain('Hinweis des Parlaments: Mit KI-Unterstützung erstellt.');
     expect(text).toContain('noch nicht autorisiert');
   });
@@ -199,10 +211,22 @@ describe('client.session / client.document', () => {
 
   it('accepts only plain session and protocol document paths', async () => {
     const { client } = clientWith(() => json({}));
-    for (const p of ['/gegenstand/XXVIII/NRSITZ/30/../1', '/gegenstand/XXVIII/J/30', '/gegenstand/XXVIII/NRSITZ/x', 'https://evil.example/x', '/gegenstand/XXVIII/NRSITZ/30?x=1']) {
+    for (const p of [
+      '/gegenstand/XXVIII/NRSITZ/30/../1',
+      '/gegenstand/XXVIII/J/30',
+      '/gegenstand/XXVIII/NRSITZ/x',
+      'https://evil.example/x',
+      '/gegenstand/XXVIII/NRSITZ/30?x=1',
+    ]) {
       expect(() => client.session(p)).toThrow(/Not a valid session path/);
     }
-    for (const p of ['/dokument/XXVIII/NRSITZ/30/../../x.html', '/dokument/XXVIII/NRSITZ/30/a.pdf', '/dokument/XXVIII/J/30/a.html', '/foo/a.html', '//evil.example/a.html']) {
+    for (const p of [
+      '/dokument/XXVIII/NRSITZ/30/../../x.html',
+      '/dokument/XXVIII/NRSITZ/30/a.pdf',
+      '/dokument/XXVIII/J/30/a.html',
+      '/foo/a.html',
+      '//evil.example/a.html',
+    ]) {
       await expect(client.document(p)).rejects.toThrow(/Not a valid protocol document path/);
     }
   });

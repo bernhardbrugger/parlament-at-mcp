@@ -19,7 +19,8 @@ function router(url: string, init: RequestInit): Response {
   }
   if (url.includes('/Filter/api/filter/data/101')) return json(fixtureText('items-101-rv-xxviii.json'));
   if (url.endsWith('/gegenstand/XXVIII/NRSITZ/30?json=TRUE')) return json(fixtureText('session-nr-xxviii-30.json'));
-  if (url.endsWith('/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html')) return new Response(fixtureText('speech-kickl-A_-_11_12_46_00801352.html'), { status: 200 });
+  if (url.endsWith('/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html'))
+    return new Response(fixtureText('speech-kickl-A_-_11_12_46_00801352.html'), { status: 200 });
   if (url.endsWith('/gegenstand/XXVIII/I/251?json=TRUE')) return json(fixtureText('detail-rv-251.json'));
   if (url.includes('FBEZ=WFW_002')) return json(fixtureText('members-wfw002-nr.json'));
   if (url.includes('FBEZ=WFW_005')) return json(fixtureText('members-wfw005-br.json'));
@@ -52,8 +53,16 @@ describe('MCP server', () => {
     const { tools } = await client.listTools();
     expect(tools.map((t) => t.name).sort()).toEqual(
       [
-        'parl_abgeordnete', 'parl_anfragen', 'parl_ausschuesse', 'parl_gegenstaende', 'parl_gegenstand',
-        'parl_person', 'parl_rede', 'parl_reden_person', 'parl_sitzung', 'parl_sitzungen',
+        'parl_abgeordnete',
+        'parl_anfragen',
+        'parl_ausschuesse',
+        'parl_gegenstaende',
+        'parl_gegenstand',
+        'parl_person',
+        'parl_rede',
+        'parl_reden_person',
+        'parl_sitzung',
+        'parl_sitzungen',
       ].sort(),
     );
     for (const t of tools) {
@@ -198,6 +207,58 @@ describe('MCP server', () => {
     const noGp = await call(client, 'parl_ausschuesse', {});
     expect(noGp.isError).toBe(true);
     expect(noGp.text).toContain('Gesetzgebungsperiode');
+  });
+
+  it('list tools return machine-readable structuredContent next to the text', async () => {
+    const { client } = await connect();
+    const res = await client.callTool({ name: 'parl_anfragen', arguments: { gp: 28, limit: 3 } });
+    const sc = res.structuredContent as { total: number; offset: number; items: Array<{ zitation: string; url: string | null }> };
+    expect(sc.total).toBe(7562);
+    expect(sc.offset).toBe(0);
+    expect(sc.items).toHaveLength(3);
+    expect(sc.items[0]).toMatchObject({ zitation: '7436/J', url: 'https://www.parlament.gv.at/gegenstand/XXVIII/J/7436' });
+    const persons = await client.callTool({ name: 'parl_abgeordnete', arguments: { nur_aktuell: true } });
+    const people = (persons.structuredContent as { items: Array<{ padIntern: number; aktuell: { gremium: string } | null }> }).items;
+    expect(people.map((p) => p.padIntern).sort()).toEqual([24110, 38385]);
+    expect(people.every((p) => p.aktuell !== null)).toBe(true);
+    const sessions = await client.callTool({ name: 'parl_sitzungen', arguments: { gp: 28, limit: 2 } });
+    expect((sessions.structuredContent as { items: Array<{ nummer: number }> }).items.map((i) => i.nummer)).toEqual([104, 103]);
+    const bills = await client.callTool({ name: 'parl_gegenstaende', arguments: { gp: 28, limit: 2 } });
+    expect((bills.structuredContent as { items: Array<{ zitation: string }> }).items[0]!.zitation).toBe('251/I');
+    const speeches = await client.callTool({ name: 'parl_reden_person', arguments: { pad_intern: 91034, limit: 2 } });
+    expect((speeches.structuredContent as { total: number }).total).toBe(129);
+  });
+
+  it('declares an output schema on the list tools', async () => {
+    const { client } = await connect();
+    const { tools } = await client.listTools();
+    const withSchema = tools
+      .filter((t) => t.outputSchema)
+      .map((t) => t.name)
+      .sort();
+    expect(withSchema).toEqual(['parl_abgeordnete', 'parl_anfragen', 'parl_gegenstaende', 'parl_reden_person', 'parl_sitzungen']);
+    expect(Object.keys(tools.find((t) => t.name === 'parl_anfragen')!.outputSchema!.properties!)).toEqual(['total', 'offset', 'items']);
+  });
+
+  it('offers research prompts that chain the tools', async () => {
+    const { client } = await connect();
+    const { prompts } = await client.listPrompts();
+    expect(prompts.map((p) => p.name).sort()).toEqual([
+      'abgeordnete_profil',
+      'anfragen_zum_thema',
+      'ausschuss_ueberblick',
+      'gesetz_verfolgen',
+      'rede_recherchieren',
+    ]);
+    const rede = await client.getPrompt({ name: 'rede_recherchieren', arguments: { redner: 'Herbert Kickl', thema: 'Budget' } });
+    const text = (rede.messages[0]!.content as { text: string }).text;
+    expect(text).toContain('Herbert Kickl');
+    expect(text).toContain('Budget');
+    for (const tool of ['parl_reden_person', 'parl_sitzung', 'parl_rede']) expect(text).toContain(tool);
+    expect(text).toContain('Rechtsberatung');
+    const law = await client.getPrompt({ name: 'gesetz_verfolgen', arguments: { gesetz: 'Verwaltungsverfahren' } });
+    expect((law.messages[0]!.content as { text: string }).text).toContain('XXVIII');
+    await expect(client.getPrompt({ name: 'rede_recherchieren', arguments: {} })).rejects.toThrow();
   });
 
   it('rejects out-of-range arguments before any request is made', async () => {

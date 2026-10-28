@@ -53,7 +53,10 @@ describe('searchSitzungen', () => {
   it('does not send a legislative period for the Bundesrat', async () => {
     const { client, fetchImpl } = clientWith(() => json(fixtureText('sessions-701-br.json')));
     await searchSitzungen(client, { gremium: 'BR', limit: 1, offset: 0 });
-    expect(JSON.parse((fetchImpl.mock.calls[0] as unknown as [string, RequestInit])[1].body as string)).toEqual({ GREMIUM: ['BR'], SIAKT: ['SI'] });
+    expect(JSON.parse((fetchImpl.mock.calls[0] as unknown as [string, RequestInit])[1].body as string)).toEqual({
+      GREMIUM: ['BR'],
+      SIAKT: ['SI'],
+    });
   });
 });
 

@@ -1,27 +1,57 @@
 # parlament-at-mcp
 
-MCP server for the **Austrian Parliament** (Nationalrat, Bundesrat). Ask an LLM who sits where, what was asked and answered, and where a bill stands - with a link to the official source for every result.
+MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an LLM who sits where, which committee a bill is in, what was asked and answered, and **what a politician actually said** in the plenary - with a link to the official source for every result.
 
-> **Status: early (v0.4).** Ten tools work today; the rest is on the roadmap in [`SPEC.md`](SPEC.md). Unofficial; not affiliated with the Parlamentsdirektion.
+> **Status: v0.4, in development.** Ten tools, five prompts, 155 offline tests (95 % line coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
+
+## What makes it useful
+
+- **Single speeches, not 300,000-character protocols.** The Parliament publishes every speech as its own segment. `parl_sitzung` lists the agenda items and _every speaker_, `parl_rede` returns one speech as text (interjections optional) in pieces of at most 45,000 characters, with `offset` paging.
+- **Who asked, who answered, how did it go.** Inquiries with the party of the introducer, bills with their procedure through committee, Nationalrat and Bundesrat, the vote by party and the Bundesgesetzblatt link.
+- **Who is in office _now_.** Current Nationalrat and Bundesrat members are marked with club, constituency and state and can be filtered; every person has a biography page and a list of all their plenary speeches.
+- **Built for LLMs:** German tool texts with source links, `structuredContent` + `outputSchema` on the list tools, five ready-made research prompts, size-bounded output.
+- **Honest about an undocumented interface.** The Parliament documents no endpoints. Everything here was measured and is written down in [`DECISIONS.md`](DECISIONS.md); a live canary suite tells you when the interface changes.
 
 ## Tools
 
-| Tool | What it does | Status |
-|---|---|---|
-| `parl_abgeordnete` | Find people who sat in the Parliament by name, body, function; **current** members of Nationalrat and Bundesrat are marked (club, constituency, state) and filterable | ✅ |
-| `parl_person` | Biography and mandates of one person: terms with dates, club, career, education, whether currently in office | ✅ |
-| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic | ✅ |
-| `parl_ausschuesse` | Committees of a legislative period; with `suche=` also chairs (with party), tasks, latest agendas and assigned items | ✅ |
-| `parl_anfragen` | Parliamentary inquiries or answers, newest first; filter by body, legislative period and search term | ✅ |
-| `parl_gegenstand` | One item in detail: who asked / answered / introduced it (with party), procedure through committee, Nationalrat and Bundesrat, vote, Bundesgesetzblatt, PDFs | ✅ |
-| `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge) and referendums (Volksbegehren) by legislative period and official keyword | ✅ |
-| `parl_sitzungen` | List plenary sessions of the Nationalrat and the Bundesrat | ✅ |
-| `parl_sitzung` | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item | ✅ |
-| `parl_rede` | One speech as text (interjections optional), in citable pieces with `offset` paging | ✅ |
+| Tool                | What it does                                                                                                         |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `parl_abgeordnete`  | Find people by name, body, function; current members are marked and filterable (`nur_aktuell`, `klub`, `bundesland`) |
+| `parl_person`       | Biography and mandates of one person with dates, club, career, education                                             |
+| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic                                             |
+| `parl_anfragen`     | Inquiries or answers, newest first; filter by body, legislative period, search term                                  |
+| `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge), referendums (Volksbegehren) by period and official keyword       |
+| `parl_gegenstand`   | One item in detail: introducer/answerer with party, procedure, vote, Bundesgesetzblatt, PDFs, references             |
+| `parl_sitzungen`    | List plenary sessions of the Nationalrat and the Bundesrat                                                           |
+| `parl_sitzung`      | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item                  |
+| `parl_rede`         | One speech as text, in citable pieces                                                                                |
+| `parl_ausschuesse`  | Committees of a period; with `suche=` also chairs (with party), tasks, latest agendas, assigned items                |
 
-Example prompts: *"Wer sitzt für die Grünen aus Wien im Nationalrat?"*, *"Wer ist Obmann des Finanzausschusses und was steht auf der Tagesordnung?"*, *"Zeig mir die letzten Reden von Pamela Rendi-Wagner."*, *"Was hat Herbert Kickl in der 30. Sitzung der XXVIII. GP zum Budgetbegleitgesetz gesagt?"* (`parl_sitzung` with `redner`, then `parl_rede`), *"Wo steht die Regierungsvorlage 251 d.B. im Verfahren?"*, *"Welche Anfragen zum Polizeischutz gab es in der XXVIII. GP, und wer hat sie gestellt?"*, *"Wer war Bundesministerin und Abgeordnete zum Nationalrat und heißt Rendi-Wagner?"*, *"Zeig mir alle Volksanwälte im Parlamentsverzeichnis."*
+**Prompts:** `rede_recherchieren`, `gesetz_verfolgen`, `anfragen_zum_thema`, `ausschuss_ueberblick`, `abgeordnete_profil` - each chains the tools above for one research task.
 
-## Install and run
+Example questions (all answered from live data during development):
+
+- _"Was hat Herbert Kickl in der 30. Sitzung der XXVIII. GP zum Budgetbegleitgesetz gesagt?"_ → `parl_sitzung` (`redner="Kickl"`) → `parl_rede`
+- _"Wo steht die Regierungsvorlage 251 d.B. im Verfahren?"_ → procedure per phase, vote _Dafür: F, V, S, N, G, Dagegen: -_, Bundesgesetzblatt I Nr. 86/2025
+- _"Wer ist Obmann des Finanzausschusses und was steht auf der Tagesordnung?"_ → `parl_ausschuesse` with `suche="Finanzausschuss"`
+- _"Wer sitzt für die Grünen aus Wien im Nationalrat?"_ → `parl_abgeordnete` with `klub`, `bundesland`
+- _"Welche Anfragen zum Polizeischutz gab es, und wer hat sie gestellt?"_ → `parl_anfragen` → `parl_gegenstand`
+
+A speech, as the server returns it (shortened):
+
+```
+Herbert Kickl (FPÖ) · 11.12–11.32
+30. Sitzung des Nationalrats der XXVIII. GP am 16. Juni 2025 · TOP 2-4 Debatte zum Budgetbegleitgesetz 2025
+Quelle: https://www.parlament.gv.at/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html
+
+Abgeordneter Herbert Kickl (FPÖ): Danke schön, Herr Präsident! […] (Beifall bei der FPÖ. – Abg. Michael Hammer [ÖVP]: Na bravo!)
+
+[Zeichen 1–857 von 21643; weiterlesen mit offset=857]
+```
+
+## Install
+
+Needs Node 20 or newer.
 
 ```bash
 git clone https://github.com/bernhardbrugger/parlament-at-mcp.git
@@ -29,27 +59,43 @@ cd parlament-at-mcp
 npm install && npm run build
 ```
 
-Claude Desktop / any MCP client (stdio):
+**Claude Desktop / any stdio client**
 
 ```json
 { "mcpServers": { "parlament-at": { "command": "node", "args": ["/absolute/path/to/parlament-at-mcp/dist/index.js"] } } }
 ```
 
+**Remote (Streamable HTTP, stateless)**
+
+```bash
+PORT=3000 npm run start:http        # POST http://127.0.0.1:3000/mcp, health: GET /healthz
+docker build -t parlament-at-mcp . && docker run -p 3000:3000 -e ALLOWED_HOSTS=mcp.example.org parlament-at-mcp
+```
+
+The HTTP mode itself is tested (in-process and with the built server over curl); the Dockerfile is written but has **not been built yet** (Docker is not installed on the development machine).
+
+The HTTP mode has no authentication and no rate limiting. Put a reverse proxy with TLS, authentication and rate limiting in front before exposing it; see [`SECURITY.md`](SECURITY.md).
+
 ## Data, licence, limits
 
-- Source: open data of the Austrian Parliament, **CC BY 4.0**, attribution: *Parlamentsdirektion*. See the [Parliament's open data page](https://www.parlament.gv.at/recherchieren/open-data/).
-- The server uses the website's JSON interface, which is **not formally documented** and may change. What we measured is recorded in [`DECISIONS.md`](DECISIONS.md).
-- The client waits 1 second between requests and caches large lists for 6 hours.
-- Results are official information, not legal or political advice.
+- Source: open data of the Austrian Parliament, **CC BY 4.0**. Attribution: _Quelle: Parlamentsdirektion_. See the [Parliament's open data page](https://www.parlament.gv.at/recherchieren/open-data/).
+- The interface is the website's own JSON API. It is **not formally documented** and may change without notice. This server records what it measured in [`DECISIONS.md`](DECISIONS.md).
+- Newer stenographic protocols were produced with AI support and then edited by the Parliament (the server passes that note on). Biographies are, from 1945, based on the members' own statements.
+- Counts without a legislative period are capped by the interface at about 20,000. Search terms for bills are _official keywords_, not full text.
+- The client waits one second between requests and caches large lists (persons 6 h, current members 1 h, sessions 10 min).
+- Results are official information, not legal or political advice. Only office holders and officials as published by the Parliament; no profiling of private persons.
 
 ## Development
 
 ```bash
-npm test          # offline tests (real-data fixtures, MCP-level tests through an in-memory transport)
-npm run check     # typecheck + tests
+npm run check             # typecheck + lint + format check + offline tests
+npm run test:coverage     # coverage report
+npm run build && npm run smoke:live     # every tool once against the real interface
+npm run test:integration  # live canary: do all lists and pages still have the expected shape?
 ```
 
-A GitHub Actions workflow is prepared in `ci/github-actions-ci.yml`.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the working rules (measure first, test from real responses, check live) and [`SPEC.md`](SPEC.md) for the plan.
 
 ## License
-MIT - see [LICENSE](LICENSE). Data: CC BY 4.0 (Parlamentsdirektion).
+
+MIT - see [LICENSE](LICENSE). Data: CC BY 4.0, Parlamentsdirektion.

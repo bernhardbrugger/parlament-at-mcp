@@ -1,1 +1,86 @@
-{"pagetype":"geschichtsseite","meta":{"description":"Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit (7436/J)","generationTime":"Tue Oct 27 14:59:29 GMT 2026","lang":"de","title":"Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit (7436/J) | Parlament Österreich","openGraph":{"image":"https://www.parlament.gv.at/static/img/og.png","title":"Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit | Parlament Österreich","description":"7436/J"},"scripts":[],"styles":[]},"content":{"breadcrumbs":[{"title":"Start","url":"/"},{"title":"Anfragen & Beantwortungen","url":"/recherchieren/gegenstaende/anfragen-und-beantwortungen/"},{"title":"Nationalrat - XXVIII. GP","url":"/recherchieren/gegenstaende/anfragen-und-beantwortungen/?NRBR=NR&GP=XXVIII"},{"title":"Anfragen","url":"/recherchieren/gegenstaende/anfragen-und-beantwortungen/?NRBR=NR&GP=XXVIII&JMAB=J_JPR_M&VHG2=JMIN"},{"title":"7436/J"}],"type":"Schriftliche Anfrage","sntype":"Schriftliche Anfrage","title":"Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit","zitation":"7436/J","description":"Schriftliche Anfrage der Abgeordneten Peter Wurm, Kolleginnen und Kollegen an die Bundesministerin für Europa, Integration und Familie betreffend Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit","gp_code":"XXVIII","ityp":"J","inr":7436,"doktyp":"J","update":"2026-10-27T15:59:29","nr_gp_code":"XXVIII","intranet":"N","group":"1","deleted":false,"einlangen":"2026-10-27T00:00:00","history_ind":1.1,"vhg_fertig":"J","vhg_fertig_docs":"J","process":"N","statementsstate":"9 Keine Begutachtung bei dem Doktyp \"J\" möglich","approvalstate":"9 Keine Zustimmung bei dem Doktyp \"J\" möglich","stages":[{"date":"27.10.2026","text":"Einlangen im Nationalrat (Frist: 27.12.2026)","priority":1},{"date":"27.10.2026","text":"Übermittlung an Büro der Bundesministerin für Europa, Integration und Familie"}],"documents":[{"title":"Anfrage (gescanntes Original)","documents":[{"link":"/dokument/XXVIII/J/7436/imfname_1785869.pdf","type":"PDF"}]}],"names":[{"funktext":"Eingebracht von","name":"Peter Wurm","frak_code":"F","url":"/person/83137","portrait":{"rendertype":"image","data":{"src":"/dokument/bild/201426/20142674_384.jpg","alt":"Portraitfoto von Peter Wurm","bildId":20142674,"copyright":"Parlamentsdirektion/Thomas Topf"}}},{"funktext":"Eingebracht an","name":"Claudia Bauer","frak_code":"V","ltext":"Büro der Bundesministerin für Europa, Integration und Familie","url":"/person/2295","portrait":{"rendertype":"image","data":{"src":"/dokument/bild/201546/20154697_384.jpg","alt":"Portraitfoto von Claudia Bauer","bildId":20154697,"copyright":"BKA/Andy Wenzel"}}}]}}
+{
+  "pagetype": "geschichtsseite",
+  "meta": {
+    "description": "Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit (7436/J)",
+    "generationTime": "Tue Oct 27 14:59:29 GMT 2026",
+    "lang": "de",
+    "title": "Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit (7436/J) | Parlament Österreich",
+    "openGraph": {
+      "image": "https://www.parlament.gv.at/static/img/og.png",
+      "title": "Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit | Parlament Österreich",
+      "description": "7436/J"
+    },
+    "scripts": [],
+    "styles": []
+  },
+  "content": {
+    "breadcrumbs": [
+      { "title": "Start", "url": "/" },
+      { "title": "Anfragen & Beantwortungen", "url": "/recherchieren/gegenstaende/anfragen-und-beantwortungen/" },
+      { "title": "Nationalrat - XXVIII. GP", "url": "/recherchieren/gegenstaende/anfragen-und-beantwortungen/?NRBR=NR&GP=XXVIII" },
+      { "title": "Anfragen", "url": "/recherchieren/gegenstaende/anfragen-und-beantwortungen/?NRBR=NR&GP=XXVIII&JMAB=J_JPR_M&VHG2=JMIN" },
+      { "title": "7436/J" }
+    ],
+    "type": "Schriftliche Anfrage",
+    "sntype": "Schriftliche Anfrage",
+    "title": "Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit",
+    "zitation": "7436/J",
+    "description": "Schriftliche Anfrage der Abgeordneten Peter Wurm, Kolleginnen und Kollegen an die Bundesministerin für Europa, Integration und Familie betreffend Bürgerfeindlicher Digitalzwang bei Förderansuchen: Ausgrenzung von Senioren und Familien durch die Abschaffung von Papierformularen und die Sicherstellung der analogen Wahlfreiheit",
+    "gp_code": "XXVIII",
+    "ityp": "J",
+    "inr": 7436,
+    "doktyp": "J",
+    "update": "2026-10-27T15:59:29",
+    "nr_gp_code": "XXVIII",
+    "intranet": "N",
+    "group": "1",
+    "deleted": false,
+    "einlangen": "2026-10-27T00:00:00",
+    "history_ind": 1.1,
+    "vhg_fertig": "J",
+    "vhg_fertig_docs": "J",
+    "process": "N",
+    "statementsstate": "9 Keine Begutachtung bei dem Doktyp \"J\" möglich",
+    "approvalstate": "9 Keine Zustimmung bei dem Doktyp \"J\" möglich",
+    "stages": [
+      { "date": "27.10.2026", "text": "Einlangen im Nationalrat (Frist: 27.12.2026)", "priority": 1 },
+      { "date": "27.10.2026", "text": "Übermittlung an Büro der Bundesministerin für Europa, Integration und Familie" }
+    ],
+    "documents": [
+      { "title": "Anfrage (gescanntes Original)", "documents": [{ "link": "/dokument/XXVIII/J/7436/imfname_1785869.pdf", "type": "PDF" }] }
+    ],
+    "names": [
+      {
+        "funktext": "Eingebracht von",
+        "name": "Peter Wurm",
+        "frak_code": "F",
+        "url": "/person/83137",
+        "portrait": {
+          "rendertype": "image",
+          "data": {
+            "src": "/dokument/bild/201426/20142674_384.jpg",
+            "alt": "Portraitfoto von Peter Wurm",
+            "bildId": 20142674,
+            "copyright": "Parlamentsdirektion/Thomas Topf"
+          }
+        }
+      },
+      {
+        "funktext": "Eingebracht an",
+        "name": "Claudia Bauer",
+        "frak_code": "V",
+        "ltext": "Büro der Bundesministerin für Europa, Integration und Familie",
+        "url": "/person/2295",
+        "portrait": {
+          "rendertype": "image",
+          "data": {
+            "src": "/dokument/bild/201546/20154697_384.jpg",
+            "alt": "Portraitfoto von Claudia Bauer",
+            "bildId": 20154697,
+            "copyright": "BKA/Andy Wenzel"
+          }
+        }
+      }
+    ]
+  }
+}

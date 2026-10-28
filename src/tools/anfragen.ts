@@ -3,6 +3,7 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
 import { parseLegisPeriod } from '../legis-period.js';
 import { cleanText, htmlAttr, truncate } from '../text.js';
+import { anfrageItemSchema, listOutput, listResult } from '../output.js';
 import { rowsToObjects, type FilterResponse } from '../types.js';
 
 /** Feld-Bezeichner of the inquiries-and-answers list. */
@@ -105,7 +106,9 @@ export function formatAnfragen(result: AnfragenResult, q: AnfragenQuery): string
   const to = q.offset + result.items.length;
   const lines = [`${result.total >= COUNT_CAP ? 'mindestens ' : ''}${result.total} Treffer, angezeigt ${from}–${to}.`];
   if (result.total >= COUNT_CAP) {
-    lines.push('Hinweis: Die Schnittstelle zählt höchstens rund 20.000 Treffer. Mit "gp" (Gesetzgebungsperiode) oder "suche" eingrenzen, um alles zu erreichen.');
+    lines.push(
+      'Hinweis: Die Schnittstelle zählt höchstens rund 20.000 Treffer. Mit "gp" (Gesetzgebungsperiode) oder "suche" eingrenzen, um alles zu erreichen.',
+    );
   }
   if (to < result.total) lines.push(`Weitere Treffer mit offset=${to}.`);
   lines.push('');
@@ -133,12 +136,19 @@ export function registerAnfragen(server: McpServer, client: ParlamentClient): vo
         'Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {
         suche: z.string().min(2).max(200).optional().describe('Suchbegriff, z. B. "Budget" oder "Polizeischutz"'),
-        gp: z.union([z.string().min(1).max(8), z.number().int().min(1).max(40)]).optional().describe('Gesetzgebungsperiode: 28 oder "XXVIII"'),
+        gp: z
+          .union([z.string().min(1).max(8), z.number().int().min(1).max(40)])
+          .optional()
+          .describe('Gesetzgebungsperiode: 28 oder "XXVIII"'),
         gremium: z.enum(['NR', 'BR']).default('NR').describe('NR = Nationalrat, BR = Bundesrat'),
-        art: z.enum(['anfrage', 'beantwortung']).default('anfrage').describe('Anfragen oder Anfragebeantwortungen (nicht beides in einer Abfrage)'),
+        art: z
+          .enum(['anfrage', 'beantwortung'])
+          .default('anfrage')
+          .describe('Anfragen oder Anfragebeantwortungen (nicht beides in einer Abfrage)'),
         limit: z.number().int().min(1).max(50).default(15).describe('Anzahl Treffer pro Aufruf'),
         offset: z.number().int().min(0).max(19_950).default(0).describe('Treffer überspringen (Seiten)'),
       },
+      outputSchema: listOutput(anfrageItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
     },
     async (args) => {
@@ -158,7 +168,7 @@ export function registerAnfragen(server: McpServer, client: ParlamentClient): vo
       };
       try {
         const result = await searchAnfragen(client, query);
-        return { content: [{ type: 'text', text: formatAnfragen(result, query) }] };
+        return listResult(formatAnfragen(result, query), result.total, query.offset, result.items);
       } catch (e) {
         if (e instanceof ParlamentError) {
           return { isError: true, content: [{ type: 'text', text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };

@@ -89,11 +89,7 @@ export class ParlamentClient {
    * zero rows). `all: true` returns every row in one response - for 7,500 inquiries that is 6.8 MB, so
    * only use it for small, searched result sets.
    */
-  filterPost(
-    fbez: string,
-    body: Record<string, string[]>,
-    opts: { page?: number; all?: boolean } = {},
-  ): Promise<FilterResponse> {
+  filterPost(fbez: string, body: Record<string, string[]>, opts: { page?: number; all?: boolean } = {}): Promise<FilterResponse> {
     const params = new URLSearchParams({ jsMode: 'EVAL', FBEZ: fbez });
     if (opts.all) params.set('showAll', 'true');
     else params.set('pageNumber', String(opts.page ?? 1));

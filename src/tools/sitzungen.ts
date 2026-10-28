@@ -4,6 +4,7 @@ import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
 import { parseLegisPeriod } from '../legis-period.js';
 import { fetchSlice, isoFromDe, PAGE_SIZE } from '../paging.js';
 import { cleanText } from '../text.js';
+import { listOutput, listResult, sitzungItemSchema } from '../output.js';
 import { rowsToObjects, type FilterResponse } from '../types.js';
 
 /** List id of the plenary sessions (and activities); request body keys: GREMIUM, GP_CODE, SIAKT. */
@@ -62,7 +63,9 @@ export async function searchSitzungen(client: ParlamentClient, q: SitzungenQuery
 
 export function formatSitzungen(result: { total: number; items: SitzungItem[] }, q: SitzungenQuery): string {
   if (result.total === 0 || result.items.length === 0) {
-    return result.total === 0 ? 'Keine Sitzungen gefunden. Gesetzgebungsperiode prüfen (z. B. XXVIII).' : `Keine Treffer ab offset=${q.offset}; es gibt insgesamt ${result.total}.`;
+    return result.total === 0
+      ? 'Keine Sitzungen gefunden. Gesetzgebungsperiode prüfen (z. B. XXVIII).'
+      : `Keine Treffer ab offset=${q.offset}; es gibt insgesamt ${result.total}.`;
   }
   const to = q.offset + result.items.length;
   const lines = [`${result.total} Sitzungen, angezeigt ${q.offset + 1}–${to}.${to < result.total ? ` Weitere mit offset=${to}.` : ''}`, ''];
@@ -86,10 +89,14 @@ export function registerSitzungen(server: McpServer, client: ParlamentClient): v
         'Für Tagesordnung, Redner und Reden einer bestimmten Sitzung: parl_sitzung und parl_rede. Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {
         gremium: z.enum(['NR', 'BR']).default('NR').describe('NR = Nationalrat, BR = Bundesrat'),
-        gp: z.union([z.string().min(1).max(8), z.number().int().min(1).max(40)]).optional().describe('Gesetzgebungsperiode, nur für den Nationalrat'),
+        gp: z
+          .union([z.string().min(1).max(8), z.number().int().min(1).max(40)])
+          .optional()
+          .describe('Gesetzgebungsperiode, nur für den Nationalrat'),
         limit: z.number().int().min(1).max(50).default(10).describe('Anzahl Sitzungen pro Aufruf'),
         offset: z.number().int().min(0).max(5000).default(0).describe('Sitzungen überspringen (Seiten)'),
       },
+      outputSchema: listOutput(sitzungItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
     },
     async (args) => {
@@ -106,9 +113,11 @@ export function registerSitzungen(server: McpServer, client: ParlamentClient): v
         ...(gp ? { gp } : {}),
       };
       try {
-        return { content: [{ type: 'text', text: formatSitzungen(await searchSitzungen(client, query), query) }] };
+        const result = await searchSitzungen(client, query);
+        return listResult(formatSitzungen(result, query), result.total, query.offset, result.items);
       } catch (e) {
-        if (e instanceof ParlamentError) return { isError: true, content: [{ type: 'text', text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };
+        if (e instanceof ParlamentError)
+          return { isError: true, content: [{ type: 'text', text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };
         throw e;
       }
     },

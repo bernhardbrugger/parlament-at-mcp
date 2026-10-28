@@ -1,1 +1,113 @@
-{"pagetype":"geschichtsseite","meta":{"description":"Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen (6209/AB)","generationTime":"Sat Oct 24 13:10:56 GMT 2026","keywords":"\"Sicherheitswesen\"","lang":"de","title":"Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen (6209/AB) | Parlament Österreich","openGraph":{"image":"https://www.parlament.gv.at/static/img/og.png","title":"Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen | Parlament Österreich","description":"6209/AB"},"scripts":[],"styles":[]},"content":{"breadcrumbs":[{"title":"Start","url":"/"},{"title":"Anfragen & Beantwortungen","url":"/recherchieren/gegenstaende/anfragen-und-beantwortungen/"},{"title":"Nationalrat - XXVIII. GP","url":"/recherchieren/gegenstaende/anfragen-und-beantwortungen/?NRBR=NR&GP=XXVIII"},{"title":"Beantwortungen","url":"/recherchieren/gegenstaende/anfragen-und-beantwortungen/?NRBR=NR&GP=XXVIII&JMAB=AB_ABPR_ABM&VHG2=ABMIN"},{"title":"6209/AB"}],"type":"Anfragebeantwortung","sntype":"Anfragebeantwortung","title":"Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen","zitation":"6209/AB","description":"Anfragebeantwortung durch den Bundesminister für Inneres Mag. Gerhard Karner zu der schriftlichen Anfrage (6817/J) der Abgeordneten Mag. Norbert Nemeth, Kolleginnen und Kollegen an den Bundesminister für Inneres betreffend trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen","gp_code":"XXVIII","ityp":"AB","inr":6209,"doktyp":"AB","update":"2026-10-24T15:10:56","nr_gp_code":"XXVIII","intranet":"N","group":"1","deleted":false,"einlangen":"2026-10-23T00:00:00","history_ind":1.1,"vhg_fertig":"J","vhg_fertig_docs":"J","process":"N","statementsstate":"9 Keine Begutachtung bei dem Doktyp \"AB\" möglich","approvalstate":"9 Keine Zustimmung bei dem Doktyp \"AB\" möglich","stages":[{"date":"23.10.2026","text":"Einlangen im Nationalrat","priority":1}],"documents":[{"title":"Anfragebeantwortung","documents":[{"link":"/dokument/XXVIII/AB/6209/imfname_1785537.pdf","type":"PDF"}]}],"names":[{"funktext":"Beantwortet durch","name":"Mag. Gerhard Karner","frak_code":"V","ltext":"Bundesministerium für Inneres","url":"/person/20445","portrait":{"rendertype":"image","data":{"src":"/dokument/bild/201547/20154700_384.jpg","alt":"Portraitfoto von Mag. Gerhard Karner","bildId":20154700,"copyright":"BKA/Andy Wenzel"}}}],"reference":[{"text":"Beantwortet","subject":"Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen","zitation":"6817/J","url":"/gegenstand/XXVIII/J/6817","art":"BA"}],"topics":{"rendertype":"bubbles","data":{"title":"","bubbles":[{"label":"Inneres und Recht","link":"/suche?thema=Inneres und Recht"}],"pretext":null,"subtitle":null}},"headwords":{"rendertype":"bubbles","data":{"title":"","bubbles":[{"label":"Sicherheitswesen","link":"/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Sicherheitswesen"}],"pretext":null,"subtitle":null}},"eurovoc":{"rendertype":"bubbles","data":{"title":"","bubbles":[{"label":"öffentliche Sicherheit","link":"/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=öffentliche Sicherheit"}],"pretext":null,"subtitle":null}}}}
+{
+  "pagetype": "geschichtsseite",
+  "meta": {
+    "description": "Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen (6209/AB)",
+    "generationTime": "Sat Oct 24 13:10:56 GMT 2026",
+    "keywords": "\"Sicherheitswesen\"",
+    "lang": "de",
+    "title": "Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen (6209/AB) | Parlament Österreich",
+    "openGraph": {
+      "image": "https://www.parlament.gv.at/static/img/og.png",
+      "title": "Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen | Parlament Österreich",
+      "description": "6209/AB"
+    },
+    "scripts": [],
+    "styles": []
+  },
+  "content": {
+    "breadcrumbs": [
+      { "title": "Start", "url": "/" },
+      { "title": "Anfragen & Beantwortungen", "url": "/recherchieren/gegenstaende/anfragen-und-beantwortungen/" },
+      { "title": "Nationalrat - XXVIII. GP", "url": "/recherchieren/gegenstaende/anfragen-und-beantwortungen/?NRBR=NR&GP=XXVIII" },
+      {
+        "title": "Beantwortungen",
+        "url": "/recherchieren/gegenstaende/anfragen-und-beantwortungen/?NRBR=NR&GP=XXVIII&JMAB=AB_ABPR_ABM&VHG2=ABMIN"
+      },
+      { "title": "6209/AB" }
+    ],
+    "type": "Anfragebeantwortung",
+    "sntype": "Anfragebeantwortung",
+    "title": "Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen",
+    "zitation": "6209/AB",
+    "description": "Anfragebeantwortung durch den Bundesminister für Inneres Mag. Gerhard Karner zu der schriftlichen Anfrage (6817/J) der Abgeordneten Mag. Norbert Nemeth, Kolleginnen und Kollegen an den Bundesminister für Inneres betreffend trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen",
+    "gp_code": "XXVIII",
+    "ityp": "AB",
+    "inr": 6209,
+    "doktyp": "AB",
+    "update": "2026-10-24T15:10:56",
+    "nr_gp_code": "XXVIII",
+    "intranet": "N",
+    "group": "1",
+    "deleted": false,
+    "einlangen": "2026-10-23T00:00:00",
+    "history_ind": 1.1,
+    "vhg_fertig": "J",
+    "vhg_fertig_docs": "J",
+    "process": "N",
+    "statementsstate": "9 Keine Begutachtung bei dem Doktyp \"AB\" möglich",
+    "approvalstate": "9 Keine Zustimmung bei dem Doktyp \"AB\" möglich",
+    "stages": [{ "date": "23.10.2026", "text": "Einlangen im Nationalrat", "priority": 1 }],
+    "documents": [
+      { "title": "Anfragebeantwortung", "documents": [{ "link": "/dokument/XXVIII/AB/6209/imfname_1785537.pdf", "type": "PDF" }] }
+    ],
+    "names": [
+      {
+        "funktext": "Beantwortet durch",
+        "name": "Mag. Gerhard Karner",
+        "frak_code": "V",
+        "ltext": "Bundesministerium für Inneres",
+        "url": "/person/20445",
+        "portrait": {
+          "rendertype": "image",
+          "data": {
+            "src": "/dokument/bild/201547/20154700_384.jpg",
+            "alt": "Portraitfoto von Mag. Gerhard Karner",
+            "bildId": 20154700,
+            "copyright": "BKA/Andy Wenzel"
+          }
+        }
+      }
+    ],
+    "reference": [
+      {
+        "text": "Beantwortet",
+        "subject": "Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen",
+        "zitation": "6817/J",
+        "url": "/gegenstand/XXVIII/J/6817",
+        "art": "BA"
+      }
+    ],
+    "topics": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [{ "label": "Inneres und Recht", "link": "/suche?thema=Inneres und Recht" }],
+        "pretext": null,
+        "subtitle": null
+      }
+    },
+    "headwords": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [{ "label": "Sicherheitswesen", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Sicherheitswesen" }],
+        "pretext": null,
+        "subtitle": null
+      }
+    },
+    "eurovoc": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          {
+            "label": "öffentliche Sicherheit",
+            "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=öffentliche Sicherheit"
+          }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    }
+  }
+}

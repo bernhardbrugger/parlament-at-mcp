@@ -41,11 +41,11 @@ npm run smoke:live     # needs a fresh build; calls every tool once against the 
          with party and state. Document what the persons list (10400) cannot tell.
 - [x] 3. (done 2026-10-28) Person detail: what does `/person/{pad_intern}?json=TRUE` return (mandates, club, activities)? Add it to `parl_abgeordnete`
          only if it is stable; otherwise record the finding in DECISIONS.md.
-- [ ] 4. Structured output: add `structuredContent` + `outputSchema` to the list tools alongside the text, with tests.
-- [ ] 5. Quality bar from `SPEC.md`: ESLint + Prettier configs and scripts, `SECURITY.md`, `CONTRIBUTING.md`, issue templates,
+- [x] 4. (done 2026-10-28) Structured output: add `structuredContent` + `outputSchema` to the list tools alongside the text, with tests.
+- [~] 5. (mostly done 2026-10-28: ESLint, Prettier, coverage 95 %, SECURITY, CONTRIBUTING, templates, Dockerfile, HTTP transport, server.json, live canary suite; still open: CodeQL/CI need the workflow scope) Quality bar from `SPEC.md`: ESLint + Prettier configs and scripts, `SECURITY.md`, `CONTRIBUTING.md`, issue templates,
          `.editorconfig`, `Dockerfile`, remote HTTP transport (stateless, opt-in), `server.json` for the MCP registry (do not publish),
          a separate live integration suite (`npm run test:integration`, excluded from `npm test`), coverage report. Target: 300+ tests.
-- [ ] 6. Robustness: what happens when the Parliament changes a column (schema drift)? Add a drift test that fails with a clear message,
+- [x] 6. (done 2026-10-28: lenient detail blocks, canary suite, rnr fix) Robustness: what happens when the Parliament changes a column (schema drift)? Add a drift test that fails with a clear message,
          and make tools degrade (skip unknown rows) instead of crashing.
 - [ ] 7. README polish (English, example prompts that were really run, honest limits, attribution line "Quelle: Parlamentsdirektion, CC BY 4.0"),
          `CHANGELOG.md`, version bump.

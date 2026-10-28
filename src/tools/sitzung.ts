@@ -25,10 +25,14 @@ export interface OutlineFilter {
 
 export function formatSitzung(session: Session, path: string, filter: OutlineFilter = {}): string {
   const lines: string[] = [session.title];
-  lines.push([session.zitation, session.gp && `${session.gp}. GP`, session.state && `Status: ${session.state}`].filter(Boolean).join(' · '));
+  lines.push(
+    [session.zitation, session.gp && `${session.gp}. GP`, session.state && `Status: ${session.state}`].filter(Boolean).join(' · '),
+  );
   if (session.start) lines.push(`Beginn ${session.start.replace('T', ' ')}${session.end ? `, Ende ${session.end.replace('T', ' ')}` : ''}`);
 
-  const protocols = session.protocols.flatMap((p) => p.links.map((l) => `- ${p.title}${l.type ? ` (${l.type})` : ''}: ${BASE_URL}${l.link}`));
+  const protocols = session.protocols.flatMap((p) =>
+    p.links.map((l) => `- ${p.title}${l.type ? ` (${l.type})` : ''}: ${BASE_URL}${l.link}`),
+  );
   if (protocols.length) lines.push('', 'Gesamtes Protokoll (sehr lang, besser einzelne Reden mit parl_rede):', ...protocols);
   if (session.protocolNote) lines.push('', `Hinweis des Parlaments: ${cleanText(session.protocolNote)}`);
 
@@ -77,7 +81,10 @@ export function registerSitzung(server: McpServer, client: ParlamentClient): voi
         'mit top= nur passende Tagesordnungspunkte. Sitzungsnummern liefert parl_sitzungen. Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {
         gremium: z.enum(['NR', 'BR']).default('NR').describe('NR = Nationalrat, BR = Bundesrat'),
-        gp: z.union([z.string().min(1).max(8), z.number().int().min(1).max(40)]).optional().describe('Gesetzgebungsperiode (nur Nationalrat)'),
+        gp: z
+          .union([z.string().min(1).max(8), z.number().int().min(1).max(40)])
+          .optional()
+          .describe('Gesetzgebungsperiode (nur Nationalrat)'),
         nummer: z.number().int().min(1).max(9999).describe('Sitzungsnummer, z. B. 30'),
         redner: z.string().min(2).max(80).optional().describe('Nur Wortmeldungen dieser Person (Name oder Teil davon)'),
         top: z.string().min(2).max(80).optional().describe('Nur Tagesordnungspunkte, deren Titel das enthält'),
@@ -93,12 +100,31 @@ export function registerSitzung(server: McpServer, client: ParlamentClient): voi
       }
       try {
         const session = await client.session(path);
-        return { content: [{ type: 'text', text: formatSitzung(session, path, { ...(args.top ? { top: args.top } : {}), ...(args.redner ? { redner: args.redner } : {}) }) }] };
+        return {
+          content: [
+            {
+              type: 'text',
+              text: formatSitzung(session, path, {
+                ...(args.top ? { top: args.top } : {}),
+                ...(args.redner ? { redner: args.redner } : {}),
+              }),
+            },
+          ],
+        };
       } catch (e) {
         if (e instanceof HttpError && e.status === 404) {
-          return { isError: true, content: [{ type: 'text', text: `Keine Sitzung unter ${path} gefunden. Nummer und Gesetzgebungsperiode prüfen (parl_sitzungen listet sie).` }] };
+          return {
+            isError: true,
+            content: [
+              {
+                type: 'text',
+                text: `Keine Sitzung unter ${path} gefunden. Nummer und Gesetzgebungsperiode prüfen (parl_sitzungen listet sie).`,
+              },
+            ],
+          };
         }
-        if (e instanceof ParlamentError) return { isError: true, content: [{ type: 'text', text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };
+        if (e instanceof ParlamentError)
+          return { isError: true, content: [{ type: 'text', text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };
         throw e;
       }
     },

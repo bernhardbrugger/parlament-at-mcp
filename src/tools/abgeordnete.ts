@@ -2,6 +2,7 @@ import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
 import { cleanText, fold, htmlAttr } from '../text.js';
+import { listOutput, listResult, personItemSchema } from '../output.js';
 import { rowsToObjects } from '../types.js';
 
 /** List id of "all persons who ever sat in the Parliament" (Nationalrat, Bundesrat, government, ...). */
@@ -60,7 +61,12 @@ export async function loadCurrentMembers(client: ParlamentClient): Promise<Map<n
     for (const o of rowsToObjects(await client.filterPost(CURRENT_NR_FBEZ, body, { all: true }))) {
       const pad = Number(/\/person\/(\d+)/.exec(String(o['link'] ?? ''))?.[1]);
       if (!Number.isInteger(pad)) continue;
-      members.set(pad, { gremium: 'NR', klub: str(o['Klub']), wahlkreis: str(o['Wahlkreis']), bundesland: htmlAttr(o['Bundesland'], 'title') ?? str(o['Bundesland']) });
+      members.set(pad, {
+        gremium: 'NR',
+        klub: str(o['Klub']),
+        wahlkreis: str(o['Wahlkreis']),
+        bundesland: htmlAttr(o['Bundesland'], 'title') ?? str(o['Bundesland']),
+      });
     }
     for (const o of rowsToObjects(await client.filterPost(CURRENT_BR_FBEZ, body, { all: true }))) {
       const pad = Number(o['pad_intern']);
@@ -179,6 +185,7 @@ export function registerAbgeordnete(server: McpServer, client: ParlamentClient):
         limit: z.number().int().min(1).max(100).default(20).describe('Maximale Anzahl Treffer'),
         offset: z.number().int().min(0).default(0).describe('Treffer überspringen (für Seiten)'),
       },
+      outputSchema: listOutput(personItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
     },
     async (args) => {
@@ -194,9 +201,10 @@ export function registerAbgeordnete(server: McpServer, client: ParlamentClient):
       };
       try {
         const result = searchPersons(await loadPersons(client), query);
-        return { content: [{ type: 'text' as const, text: formatPersons(result, query) }] };
+        return listResult(formatPersons(result, query), result.total, query.offset, result.items);
       } catch (e) {
-        if (e instanceof ParlamentError) return { isError: true, content: [{ type: 'text' as const, text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };
+        if (e instanceof ParlamentError)
+          return { isError: true, content: [{ type: 'text' as const, text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };
         throw e;
       }
     },

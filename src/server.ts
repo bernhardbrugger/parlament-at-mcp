@@ -1,5 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { ParlamentClient } from './client.js';
+import { registerPrompts } from './prompts.js';
 import { registerAbgeordnete } from './tools/abgeordnete.js';
 import { registerAnfragen } from './tools/anfragen.js';
 import { registerAusschuesse } from './tools/ausschuesse.js';
@@ -34,5 +35,6 @@ export function createServer(client: ParlamentClient = new ParlamentClient()): M
   registerRede(server, client);
   registerAusschuesse(server, client);
   registerPerson(server, client);
+  registerPrompts(server);
   return server;
 }

@@ -3,6 +3,7 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { BASE_URL, HttpError, ParlamentError, type ParlamentClient } from '../client.js';
 import { fetchSlice, PAGE_SIZE } from '../paging.js';
 import { cleanText, htmlAttr, truncate } from '../text.js';
+import { listOutput, listResult, redeItemSchema } from '../output.js';
 import { rowsToObjects, type FilterResponse, type PersonResponse } from '../types.js';
 import { describeCurrent, fold, loadPersons, type Person } from './abgeordnete.js';
 
@@ -13,21 +14,29 @@ const MAX_LIST = 12;
 export type Resolved = { person: Person } | { error: string };
 
 /** Resolve `pad_intern` or a name to one person; an ambiguous name returns the candidates instead of guessing. */
-export async function resolvePerson(client: ParlamentClient, args: { pad_intern?: number | undefined; name?: string | undefined }): Promise<Resolved> {
+export async function resolvePerson(
+  client: ParlamentClient,
+  args: { pad_intern?: number | undefined; name?: string | undefined },
+): Promise<Resolved> {
   const all = await loadPersons(client);
   if (args.pad_intern !== undefined) {
     const p = all.find((x) => x.padIntern === args.pad_intern);
-    return p ? { person: p } : { error: `Keine Person mit pad_intern ${args.pad_intern}. pad_intern steht in den Ergebnissen von parl_abgeordnete.` };
+    return p
+      ? { person: p }
+      : { error: `Keine Person mit pad_intern ${args.pad_intern}. pad_intern steht in den Ergebnissen von parl_abgeordnete.` };
   }
   if (!args.name) return { error: 'Bitte pad_intern oder name angeben.' };
   const parts = fold(args.name).split(/\s+/).filter(Boolean);
   const hits = all.filter((p) => parts.every((part) => fold(p.name).includes(part)));
-  if (hits.length === 0) return { error: `Keine Person zu "${args.name}" gefunden. Name ohne Titel versuchen oder parl_abgeordnete nutzen.` };
+  if (hits.length === 0)
+    return { error: `Keine Person zu "${args.name}" gefunden. Name ohne Titel versuchen oder parl_abgeordnete nutzen.` };
   const current = hits.filter((p) => p.aktuell);
   const pool = hits.length === 1 ? hits : current.length === 1 ? current : hits;
   if (pool.length === 1) return { person: pool[0]! };
   const list = pool.slice(0, 8).map((p) => `- ${p.name} — ${p.funktion ?? ''} (pad_intern ${p.padIntern})${p.aktuell ? ' · aktuell' : ''}`);
-  return { error: `"${args.name}" ist nicht eindeutig (${pool.length} Treffer). Bitte pad_intern angeben:\n${list.join('\n')}${pool.length > 8 ? '\n…' : ''}` };
+  return {
+    error: `"${args.name}" ist nicht eindeutig (${pool.length} Treffer). Bitte pad_intern angeben:\n${list.join('\n')}${pool.length > 8 ? '\n…' : ''}`,
+  };
 }
 
 export function formatPerson(p: Person, d: PersonResponse): string {
@@ -44,7 +53,9 @@ export function formatPerson(p: Person, d: PersonResponse): string {
   if (mandate.length) {
     lines.push('', 'Mandate und Funktionen:');
     for (const m of mandate.slice(0, MAX_LIST)) {
-      lines.push(`- ${cleanText(m.bez ?? m.gremium ?? 'Mandat')}${m.zeitraum ? ` (${m.zeitraum})` : ''}${m.aktiv ? ' · aktiv' : ''}${m.wahlkreis ? ` · ${cleanText(m.wahlkreis)}` : ''}`);
+      lines.push(
+        `- ${cleanText(m.bez ?? m.gremium ?? 'Mandat')}${m.zeitraum ? ` (${m.zeitraum})` : ''}${m.aktiv ? ' · aktiv' : ''}${m.wahlkreis ? ` · ${cleanText(m.wahlkreis)}` : ''}`,
+      );
     }
     if (mandate.length > MAX_LIST) lines.push(`- … und ${mandate.length - MAX_LIST} weitere`);
   }
@@ -57,7 +68,11 @@ export function formatPerson(p: Person, d: PersonResponse): string {
   section('Politische Funktionen', k?.politischeFunktionen);
   section('Beruflicher Werdegang', k?.beruflicherWerdegang);
   section('Bildungsweg', k?.bildungsweg);
-  if (bio?.biografieStand) lines.push('', `Biografie-Stand: ${bio.biografieStand}. Angaben ab 1945 stammen laut Parlament von den Mandatarinnen und Mandataren selbst.`);
+  if (bio?.biografieStand)
+    lines.push(
+      '',
+      `Biografie-Stand: ${bio.biografieStand}. Angaben ab 1945 stammen laut Parlament von den Mandatarinnen und Mandataren selbst.`,
+    );
   lines.push(`Quelle: ${p.url}`, 'Reden dieser Person: parl_reden_person.');
   return lines.join('\n');
 }
@@ -93,22 +108,34 @@ export function parseReden(resp: FilterResponse): RedeItem[] {
 }
 
 export function formatReden(who: Person, result: { total: number; items: RedeItem[] }, offset: number): string {
-  if (result.total === 0) return `Keine Reden von ${who.name} im Plenarprotokoll gefunden (Reden gibt es für Abgeordnete mit Wortmeldungen im Plenum).`;
+  if (result.total === 0)
+    return `Keine Reden von ${who.name} im Plenarprotokoll gefunden (Reden gibt es für Abgeordnete mit Wortmeldungen im Plenum).`;
   if (result.items.length === 0) return `Keine Treffer ab offset=${offset}; es gibt insgesamt ${result.total}.`;
   const to = offset + result.items.length;
   const surname = who.name.split(/[ ,]/)[0] ?? who.name;
-  const lines = [`${result.total} Reden von ${who.name}, neueste zuerst, angezeigt ${offset + 1}–${to}.${to < result.total ? ` Weitere mit offset=${to}.` : ''}`, ''];
+  const lines = [
+    `${result.total} Reden von ${who.name}, neueste zuerst, angezeigt ${offset + 1}–${to}.${to < result.total ? ` Weitere mit offset=${to}.` : ''}`,
+    '',
+  ];
   for (const r of result.items) {
-    lines.push(`- ${r.datum ?? '?'} · ${r.sitzung}. Sitzung ${r.gremium === 'NR' ? `des Nationalrats (${r.gp}. GP)` : 'des Bundesrats'} · ${truncate(r.thema, 200)}`);
+    lines.push(
+      `- ${r.datum ?? '?'} · ${r.sitzung}. Sitzung ${r.gremium === 'NR' ? `des Nationalrats (${r.gp}. GP)` : 'des Bundesrats'} · ${truncate(r.thema, 200)}`,
+    );
     if (r.protokollUrl) lines.push(`  Protokoll: ${r.protokollUrl}`);
-    lines.push(`  Text: parl_sitzung gremium=${r.gremium}${r.gremium === 'NR' ? ` gp=${r.gp}` : ''} nummer=${r.sitzung} redner="${surname}" → rede-Nummer → parl_rede`);
+    lines.push(
+      `  Text: parl_sitzung gremium=${r.gremium}${r.gremium === 'NR' ? ` gp=${r.gp}` : ''} nummer=${r.sitzung} redner="${surname}" → rede-Nummer → parl_rede`,
+    );
   }
   return lines.join('\n');
 }
 
 export async function searchReden(client: ParlamentClient, pad: number, offset: number, limit: number) {
   return fetchSlice(offset, limit, async (page) => {
-    const resp = await client.filterDataPost(PERSON_REDEN_LIST_ID, { PAD_INTERN: [String(pad)] }, { page, pagesize: PAGE_SIZE, sortrnr: 10, ascDesc: 'DESC' });
+    const resp = await client.filterDataPost(
+      PERSON_REDEN_LIST_ID,
+      { PAD_INTERN: [String(pad)] },
+      { page, pagesize: PAGE_SIZE, sortrnr: 10, ascDesc: 'DESC' },
+    );
     return { total: resp.count, rows: parseReden(resp), rawRows: resp.rows.length };
   });
 }
@@ -160,6 +187,7 @@ export function registerPerson(server: McpServer, client: ParlamentClient): void
         limit: z.number().int().min(1).max(50).default(10).describe('Anzahl Reden pro Aufruf'),
         offset: z.number().int().min(0).max(5000).default(0).describe('Reden überspringen (Seiten)'),
       },
+      outputSchema: listOutput(redeItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
     },
     async (args) => {
@@ -168,7 +196,7 @@ export function registerPerson(server: McpServer, client: ParlamentClient): void
         if ('error' in r) return fail(r.error);
         const offset = args.offset ?? 0;
         const result = await searchReden(client, r.person.padIntern, offset, args.limit ?? 10);
-        return { content: [{ type: 'text' as const, text: formatReden(r.person, result, offset) }] };
+        return listResult(formatReden(r.person, result, offset), result.total, offset, result.items);
       } catch (e) {
         return apiFail(e);
       }

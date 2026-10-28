@@ -60,7 +60,10 @@ describe('real API fixtures', () => {
     const resp = filterResponseSchema.parse({
       pages: 1,
       count: 1,
-      header: [{ rnr: 1, label: 'a' }, { rnr: 3, label: 'c' }],
+      header: [
+        { rnr: 1, label: 'a' },
+        { rnr: 3, label: 'c' },
+      ],
       rows: [['x', 'y', 'z']],
     });
     expect(rowsToObjects(resp)[0]).toEqual({ a: 'x', c: 'z' });
@@ -91,7 +94,12 @@ describe('loadCurrentMembers', () => {
     const { client } = routed();
     const members = await loadCurrentMembers(client);
     expect(members.size).toBe(14);
-    expect(members.get(38385)).toEqual({ gremium: 'NR', klub: 'NEOS', wahlkreis: 'B Bundeswahlvorschlag', bundesland: 'Bundeswahlvorschlag' });
+    expect(members.get(38385)).toEqual({
+      gremium: 'NR',
+      klub: 'NEOS',
+      wahlkreis: 'B Bundeswahlvorschlag',
+      bundesland: 'Bundeswahlvorschlag',
+    });
     expect(members.get(30688)).toMatchObject({ gremium: 'NR', klub: 'SPÖ', bundesland: 'Oberösterreich' });
     expect(members.get(24110)).toEqual({ gremium: 'BR', klub: 'SPÖ', wahlkreis: '2 Kärnten', bundesland: 'Kärnten' });
   });
@@ -106,7 +114,10 @@ describe('loadCurrentMembers', () => {
       }) as unknown as typeof fetch,
     });
     await loadCurrentMembers(client);
-    expect(bodies).toEqual([{ M: ['M'], W: ['W'] }, { M: ['M'], W: ['W'] }]);
+    expect(bodies).toEqual([
+      { M: ['M'], W: ['W'] },
+      { M: ['M'], W: ['W'] },
+    ]);
   });
 });
 
@@ -159,7 +170,11 @@ describe('searchPersons', () => {
 
   it('filters current members by flag, club and Bundesland', async () => {
     const all = await loadPersons(routed().client);
-    expect(searchPersons(all, { ...q, nurAktuell: true }).items.map((p) => p.padIntern).sort()).toEqual([24110, 38385]);
+    expect(
+      searchPersons(all, { ...q, nurAktuell: true })
+        .items.map((p) => p.padIntern)
+        .sort(),
+    ).toEqual([24110, 38385]);
     expect(searchPersons(all, { ...q, klub: 'neos' }).items.map((p) => p.padIntern)).toEqual([38385]);
     expect(searchPersons(all, { ...q, klub: 'SPÖ' }).items.map((p) => p.padIntern)).toEqual([24110]);
     expect(searchPersons(all, { ...q, bundesland: 'kärnten' }).items.map((p) => p.padIntern)).toEqual([24110]);
@@ -190,8 +205,14 @@ describe('searchPersons', () => {
   });
 
   it('does not repeat the Bundesland when the Wahlkreis already names it', () => {
-    expect(describeCurrent({ gremium: 'NR', klub: 'GRÜNE', wahlkreis: '9 Wien', bundesland: 'Wien' })).toBe('AKTUELL im Nationalrat · Klub GRÜNE · Wahlkreis 9 Wien');
-    expect(describeCurrent({ gremium: 'NR', klub: 'FPÖ', wahlkreis: '3G Niederösterreich Ost', bundesland: 'Niederösterreich' })).not.toMatch(/ · Niederösterreich$/);
-    expect(describeCurrent({ gremium: 'NR', klub: 'X', wahlkreis: '4D Traunviertel', bundesland: 'Oberösterreich' })).toMatch(/ · Oberösterreich$/);
+    expect(describeCurrent({ gremium: 'NR', klub: 'GRÜNE', wahlkreis: '9 Wien', bundesland: 'Wien' })).toBe(
+      'AKTUELL im Nationalrat · Klub GRÜNE · Wahlkreis 9 Wien',
+    );
+    expect(
+      describeCurrent({ gremium: 'NR', klub: 'FPÖ', wahlkreis: '3G Niederösterreich Ost', bundesland: 'Niederösterreich' }),
+    ).not.toMatch(/ · Niederösterreich$/);
+    expect(describeCurrent({ gremium: 'NR', klub: 'X', wahlkreis: '4D Traunviertel', bundesland: 'Oberösterreich' })).toMatch(
+      / · Oberösterreich$/,
+    );
   });
 });

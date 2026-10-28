@@ -1,170 +1,170 @@
 {
- "pages": 1,
- "count": 8,
- "header": [
-  {
-   "filterable": false,
-   "orig_link_rnr": 2,
-   "link_rnr": 8,
-   "hidden": false,
-   "rnr": 1,
-   "label": "Ausschuss",
-   "sortable": true,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "rnr": 2,
-   "label": "sort",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "rnr": 3,
-   "label": "aus_von",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "orig_link_rnr": 6,
-   "link_rnr": 9,
-   "hidden": false,
-   "rnr": 4,
-   "label": "Sitzungsüberblick",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": false,
-   "rnr": 5,
-   "label": "aktuellste Tagesordnung",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "rnr": 6,
-   "label": "RSS-Description",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "rnr": 7,
-   "label": "rss pubdate",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "label": "link",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "label": "link",
-   "sortable": false,
-   "additionalinfo": false
-  }
- ],
- "rows": [
-  [
-   "Pilnacek-Untersuchungsausschuss eingesetzt am 22.10.2025",
-   "000",
-   "22.10.25",
-   "Sitzungsüberblick",
-   "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-USA/2/00944/TO_16918128.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-USA/2/00944/TO_16918128.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
-   "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-USA/2/00944/TO_16918128.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-USA/2/00944/TO_16918128.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
-   "03.11.2026",
-   "/ausschuss/XXVIII/A-USA/2/00944",
-   "/ausschuss/XXVIII/A-USA/2/00944#tab-Sitzungsueberblick"
+  "pages": 1,
+  "count": 8,
+  "header": [
+    {
+      "filterable": false,
+      "orig_link_rnr": 2,
+      "link_rnr": 8,
+      "hidden": false,
+      "rnr": 1,
+      "label": "Ausschuss",
+      "sortable": true,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "rnr": 2,
+      "label": "sort",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "rnr": 3,
+      "label": "aus_von",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "orig_link_rnr": 6,
+      "link_rnr": 9,
+      "hidden": false,
+      "rnr": 4,
+      "label": "Sitzungsüberblick",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": false,
+      "rnr": 5,
+      "label": "aktuellste Tagesordnung",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "rnr": 6,
+      "label": "RSS-Description",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "rnr": 7,
+      "label": "rss pubdate",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "label": "link",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "label": "link",
+      "sortable": false,
+      "additionalinfo": false
+    }
   ],
-  [
-   "Ausschuss für Arbeit und Soziales",
-   "001",
-   "26.02.25",
-   "Sitzungsüberblick",
-   "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-AS/1/00917/TO_16952398.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-AS/1/00917/TO_16952398.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
-   "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-AS/1/00917/TO_16952398.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-AS/1/00917/TO_16952398.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
-   "02.12.2026",
-   "/ausschuss/XXVIII/A-AS/1/00917",
-   "/ausschuss/XXVIII/A-AS/1/00917#tab-Sitzungsueberblick"
-  ],
-  [
-   "Außenpolitischer Ausschuss",
-   "002",
-   "26.02.25",
-   "Sitzungsüberblick",
-   "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 16.06.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-AU/1/00918/TO_16819327.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-AU/1/00918/TO_16819327.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
-   "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 16.06.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-AU/1/00918/TO_16819327.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-AU/1/00918/TO_16819327.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
-   "09.06.2027",
-   "/ausschuss/XXVIII/A-AU/1/00918",
-   "/ausschuss/XXVIII/A-AU/1/00918#tab-Sitzungsueberblick"
-  ],
-  [
-   "Ausschuss für Bauten und Wohnen",
-   "003",
-   "26.02.25",
-   "Sitzungsüberblick",
-   "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 02.12.2025</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BA/1/00919/TO_16734294.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BA/1/00919/TO_16734294.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
-   "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 02.12.2025</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BA/1/00919/TO_16734294.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BA/1/00919/TO_16734294.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
-   "02.12.2025",
-   "/ausschuss/XXVIII/A-BA/1/00919",
-   "/ausschuss/XXVIII/A-BA/1/00919#tab-Sitzungsueberblick"
-  ],
-  [
-   "Bildungsausschuss",
-   "004",
-   "26.02.25",
-   "Sitzungsüberblick",
-   "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BI/1/00942/TO_16839691.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BI/1/00942/TO_16839691.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
-   "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BI/1/00942/TO_16839691.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BI/1/00942/TO_16839691.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
-   "08.06.2027",
-   "/ausschuss/XXVIII/A-BI/1/00942",
-   "/ausschuss/XXVIII/A-BI/1/00942#tab-Sitzungsueberblick"
-  ],
-  [
-   "Budgetausschuss",
-   "005",
-   "24.10.24",
-   "Sitzungsüberblick",
-   "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 15.09.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BU/1/00907/TO_16968117.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BU/1/00907/TO_16968117.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
-   "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 15.09.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BU/1/00907/TO_16968117.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BU/1/00907/TO_16968117.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
-   "03.06.2027",
-   "/ausschuss/XXVIII/A-BU/1/00907",
-   "/ausschuss/XXVIII/A-BU/1/00907#tab-Sitzungsueberblick"
-  ],
-  [
-   "Ständiger Unterausschuss des Budgetausschusses",
-   "006",
-   "24.10.24",
-   "Sitzungsüberblick",
-   "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 24.10.2024</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/SA-BU/1/00908/TO_16435595.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/SA-BU/1/00908/TO_16435595.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
-   "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 24.10.2024</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/SA-BU/1/00908/TO_16435595.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/SA-BU/1/00908/TO_16435595.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
-   "24.10.2024",
-   "/ausschuss/XXVIII/SA-BU/1/00908",
-   "/ausschuss/XXVIII/SA-BU/1/00908#tab-Sitzungsueberblick"
-  ],
-  [
-   "Ständiger Unterausschuss in ESM-Angelegenheiten",
-   "007",
-   "24.10.24",
-   null,
-   null,
-   "aktuellste Tagesordnung:\nkeine\n<br />\n",
-   "24.10.2024",
-   "/ausschuss/XXVIII/SA-ESM/1/00909",
-   null
+  "rows": [
+    [
+      "Pilnacek-Untersuchungsausschuss eingesetzt am 22.10.2025",
+      "000",
+      "22.10.25",
+      "Sitzungsüberblick",
+      "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-USA/2/00944/TO_16918128.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-USA/2/00944/TO_16918128.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
+      "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-USA/2/00944/TO_16918128.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-USA/2/00944/TO_16918128.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
+      "03.11.2026",
+      "/ausschuss/XXVIII/A-USA/2/00944",
+      "/ausschuss/XXVIII/A-USA/2/00944#tab-Sitzungsueberblick"
+    ],
+    [
+      "Ausschuss für Arbeit und Soziales",
+      "001",
+      "26.02.25",
+      "Sitzungsüberblick",
+      "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-AS/1/00917/TO_16952398.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-AS/1/00917/TO_16952398.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
+      "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-AS/1/00917/TO_16952398.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-AS/1/00917/TO_16952398.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
+      "02.12.2026",
+      "/ausschuss/XXVIII/A-AS/1/00917",
+      "/ausschuss/XXVIII/A-AS/1/00917#tab-Sitzungsueberblick"
+    ],
+    [
+      "Außenpolitischer Ausschuss",
+      "002",
+      "26.02.25",
+      "Sitzungsüberblick",
+      "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 16.06.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-AU/1/00918/TO_16819327.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-AU/1/00918/TO_16819327.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
+      "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 16.06.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-AU/1/00918/TO_16819327.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-AU/1/00918/TO_16819327.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
+      "09.06.2027",
+      "/ausschuss/XXVIII/A-AU/1/00918",
+      "/ausschuss/XXVIII/A-AU/1/00918#tab-Sitzungsueberblick"
+    ],
+    [
+      "Ausschuss für Bauten und Wohnen",
+      "003",
+      "26.02.25",
+      "Sitzungsüberblick",
+      "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 02.12.2025</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BA/1/00919/TO_16734294.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BA/1/00919/TO_16734294.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
+      "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 02.12.2025</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BA/1/00919/TO_16734294.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BA/1/00919/TO_16734294.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
+      "02.12.2025",
+      "/ausschuss/XXVIII/A-BA/1/00919",
+      "/ausschuss/XXVIII/A-BA/1/00919#tab-Sitzungsueberblick"
+    ],
+    [
+      "Bildungsausschuss",
+      "004",
+      "26.02.25",
+      "Sitzungsüberblick",
+      "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BI/1/00942/TO_16839691.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BI/1/00942/TO_16839691.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
+      "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 03.11.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BI/1/00942/TO_16839691.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BI/1/00942/TO_16839691.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
+      "08.06.2027",
+      "/ausschuss/XXVIII/A-BI/1/00942",
+      "/ausschuss/XXVIII/A-BI/1/00942#tab-Sitzungsueberblick"
+    ],
+    [
+      "Budgetausschuss",
+      "005",
+      "24.10.24",
+      "Sitzungsüberblick",
+      "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 15.09.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BU/1/00907/TO_16968117.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/A-BU/1/00907/TO_16968117.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
+      "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 15.09.2026</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BU/1/00907/TO_16968117.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/A-BU/1/00907/TO_16968117.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
+      "03.06.2027",
+      "/ausschuss/XXVIII/A-BU/1/00907",
+      "/ausschuss/XXVIII/A-BU/1/00907#tab-Sitzungsueberblick"
+    ],
+    [
+      "Ständiger Unterausschuss des Budgetausschusses",
+      "006",
+      "24.10.24",
+      "Sitzungsüberblick",
+      "<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 24.10.2024</span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/SA-BU/1/00908/TO_16435595.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"/dokument/XXVIII/SA-BU/1/00908/TO_16435595.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>",
+      "aktuellste Tagesordnung:\n<div class=\"link-list\" inline><ul><li><span>Tagesordnung vom 24.10.2024</span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/SA-BU/1/00908/TO_16435595.html\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-code fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">HTML</span></a></span>&amp;nbsp;<span class=\"doclink\"><a href=\"https://www.parlament.gv.at/dokument/XXVIII/SA-BU/1/00908/TO_16435595.pdf\" target=\"_blank\"><i aria-hidden=\"true\" class=\"fa-file-pdf fal small\" tabindex=\"-1\" title=\"\" style=\"--opacity: 1\"></i>&amp;nbsp;<span class=\"iconlinklabel\">PDF</span></a></span></li></ul></div>\n<br />\n",
+      "24.10.2024",
+      "/ausschuss/XXVIII/SA-BU/1/00908",
+      "/ausschuss/XXVIII/SA-BU/1/00908#tab-Sitzungsueberblick"
+    ],
+    [
+      "Ständiger Unterausschuss in ESM-Angelegenheiten",
+      "007",
+      "24.10.24",
+      null,
+      null,
+      "aktuellste Tagesordnung:\nkeine\n<br />\n",
+      "24.10.2024",
+      "/ausschuss/XXVIII/SA-ESM/1/00909",
+      null
+    ]
   ]
- ]
 }

@@ -22,14 +22,28 @@ export interface Located {
 export function locateSpeech(session: Session, id: number): Located | null {
   for (const entry of session.progress) {
     const candidates = [
-      ...(entry.speeches ?? []).map((s) => ({ id: s.st_objekte_id, speaker: s.texta, time: s.time, protocol: s.protocol, auto: s.autorisiert })),
-      ...(entry.st_objekte_id !== undefined ? [{ id: entry.st_objekte_id, speaker: entry.text, time: entry.time, protocol: entry.protocol, auto: undefined }] : []),
+      ...(entry.speeches ?? []).map((s) => ({
+        id: s.st_objekte_id,
+        speaker: s.texta,
+        time: s.time,
+        protocol: s.protocol,
+        auto: s.autorisiert,
+      })),
+      ...(entry.st_objekte_id !== undefined
+        ? [{ id: entry.st_objekte_id, speaker: entry.text, time: entry.time, protocol: entry.protocol, auto: undefined }]
+        : []),
     ];
     for (const c of candidates) {
       if (c.id !== id) continue;
       const html = c.protocol?.data.links.flatMap((l) => l.documents ?? []).find((d) => d.type?.toUpperCase() === 'HTML');
       if (!html) return null;
-      return { speaker: cleanText(c.speaker), time: c.time ?? null, top: cleanText(entry.text), htmlPath: html.link, autorisiert: c.auto ?? null };
+      return {
+        speaker: cleanText(c.speaker),
+        time: c.time ?? null,
+        top: cleanText(entry.text),
+        htmlPath: html.link,
+        autorisiert: c.auto ?? null,
+      };
     }
   }
   return null;
@@ -47,11 +61,12 @@ export function formatRede(args: {
   const speech = parseSpeechHtml(args.html, { interjections: args.interjections });
   const full = speech.paragraphs.join('\n\n');
   const win = windowText(full, args.offset, args.maxChars);
-  const times = speech.start ? ` · ${speech.start}${speech.end ? `–${speech.end}` : ''}` : args.located.time ? ` · ${args.located.time}` : '';
-  const lines = [
-    `${speech.speaker ?? args.located.speaker}${times}`,
-    `${args.sessionTitle} · ${args.located.top}`,
-  ];
+  const times = speech.start
+    ? ` · ${speech.start}${speech.end ? `–${speech.end}` : ''}`
+    : args.located.time
+      ? ` · ${args.located.time}`
+      : '';
+  const lines = [`${speech.speaker ?? args.located.speaker}${times}`, `${args.sessionTitle} · ${args.located.top}`];
   if (args.located.autorisiert === false) lines.push('Hinweis: Dieser Redebeitrag ist laut Parlament noch nicht autorisiert.');
   if (args.protocolNote) lines.push(`Hinweis des Parlaments: ${cleanText(args.protocolNote)}`);
   lines.push(`Quelle: ${BASE_URL}${args.located.htmlPath}`, '');
@@ -59,9 +74,12 @@ export function formatRede(args: {
     lines.push('(Der Redebeitrag enthält keinen Text.)');
   } else {
     lines.push(win.text);
-    lines.push('', win.to < win.total
-      ? `[Zeichen ${win.from + 1}–${win.to} von ${win.total}; weiterlesen mit offset=${win.to}]`
-      : `[Ende der Rede, ${win.total} Zeichen${args.interjections ? '' : ', ohne Zwischenrufe'}]`);
+    lines.push(
+      '',
+      win.to < win.total
+        ? `[Zeichen ${win.from + 1}–${win.to} von ${win.total}; weiterlesen mit offset=${win.to}]`
+        : `[Ende der Rede, ${win.total} Zeichen${args.interjections ? '' : ', ohne Zwischenrufe'}]`,
+    );
   }
   return lines.join('\n');
 }
@@ -78,7 +96,10 @@ export function registerRede(server: McpServer, client: ParlamentClient): void {
         'Zitate immer mit Redner, Sitzung und der Quellangabe aus dem Ergebnis belegen. Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {
         gremium: z.enum(['NR', 'BR']).default('NR').describe('NR = Nationalrat, BR = Bundesrat'),
-        gp: z.union([z.string().min(1).max(8), z.number().int().min(1).max(40)]).optional().describe('Gesetzgebungsperiode (nur Nationalrat)'),
+        gp: z
+          .union([z.string().min(1).max(8), z.number().int().min(1).max(40)])
+          .optional()
+          .describe('Gesetzgebungsperiode (nur Nationalrat)'),
         nummer: z.number().int().min(1).max(9999).describe('Sitzungsnummer'),
         rede: z.number().int().min(1).describe('Nummer des Redebeitrags (rede=...) aus parl_sitzung'),
         zwischenrufe: z.boolean().default(true).describe('Zwischenrufe und Beifall mitliefern'),
@@ -98,7 +119,8 @@ export function registerRede(server: McpServer, client: ParlamentClient): void {
       try {
         const session = await client.session(path);
         const located = locateSpeech(session, args.rede);
-        if (!located) return fail(`Kein Redebeitrag mit rede=${args.rede} in dieser Sitzung. Die Nummern stehen im Ergebnis von parl_sitzung.`);
+        if (!located)
+          return fail(`Kein Redebeitrag mit rede=${args.rede} in dieser Sitzung. Die Nummern stehen im Ergebnis von parl_sitzung.`);
         const html = await client.document(located.htmlPath);
         const text = formatRede({
           located,

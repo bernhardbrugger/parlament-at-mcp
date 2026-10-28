@@ -46,7 +46,10 @@ export function formatAusschussDetail(item: AusschussItem, d: DetailResponse): s
   if (c.description) lines.push(truncate(cleanText(c.description), 600));
   if (c.names?.length) {
     lines.push('', 'Vorsitz:');
-    for (const n of c.names) lines.push(`- ${n.funktext ?? 'Mitglied'}: ${cleanText(n.name)}${n.frak_code ? ` (${n.frak_code})` : ''}${n.url ? ` — ${link(n.url)}` : ''}`);
+    for (const n of c.names)
+      lines.push(
+        `- ${n.funktext ?? 'Mitglied'}: ${cleanText(n.name)}${n.frak_code ? ` (${n.frak_code})` : ''}${n.url ? ` — ${link(n.url)}` : ''}`,
+      );
   }
   const agenda = (c.recentagenda ?? []).filter((a) => a.title && a.documents?.length);
   if (agenda.length) {
@@ -69,7 +72,10 @@ export function formatAusschussListe(items: AusschussItem[], gp: string | undefi
   if (items.length === 0) return 'Keine Ausschüsse gefunden. Tipp: Namensteil kürzer wählen oder die Gesetzgebungsperiode prüfen.';
   const lines = [`${items.length} Ausschüsse${gp ? ` der ${gp}. GP` : ''}:`, ''];
   for (const i of items) lines.push(`- ${i.name}${i.seit ? ` (seit ${i.seit})` : ''}${i.url ? `\n  ${i.url}` : ''}`);
-  lines.push('', `Mit suche= auf bis zu ${MAX_DETAILS} Ausschüsse eingrenzen, dann kommen Vorsitz, Tagesordnungen und zugewiesene Gegenstände dazu.`);
+  lines.push(
+    '',
+    `Mit suche= auf bis zu ${MAX_DETAILS} Ausschüsse eingrenzen, dann kommen Vorsitz, Tagesordnungen und zugewiesene Gegenstände dazu.`,
+  );
   return lines.join('\n');
 }
 
@@ -84,7 +90,10 @@ export function registerAusschuesse(server: McpServer, client: ParlamentClient):
         'Aufgabenbeschreibung, letzte Tagesordnungen und zugewiesene Gegenstände. Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {
         gremium: z.enum(['NR', 'BR']).default('NR').describe('NR = Nationalrat, BR = Bundesrat'),
-        gp: z.union([z.string().min(1).max(8), z.number().int().min(1).max(40)]).optional().describe('Gesetzgebungsperiode (Nationalrat)'),
+        gp: z
+          .union([z.string().min(1).max(8), z.number().int().min(1).max(40)])
+          .optional()
+          .describe('Gesetzgebungsperiode (Nationalrat)'),
         suche: z.string().min(2).max(60).optional().describe('Teil des Ausschussnamens'),
       },
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },

@@ -1,1 +1,798 @@
-{"pagetype":"geschichtsseite","meta":{"description":"Wasserstraßengesetz, Schifffahrtsgesetz, Änderung (251 d.B.)","generationTime":"Fri Aug 21 23:03:56 GMT 2026","keywords":"\"Verkehr IV. Schifffahrt\", \"Verwaltungsorganisation\"","lang":"de","title":"Wasserstraßengesetz, Schifffahrtsgesetz, Änderung (251 d.B.) | Parlament Österreich","openGraph":{"image":"https://www.parlament.gv.at/static/img/og.png","title":"Wasserstraßengesetz, Schifffahrtsgesetz, Änderung | Parlament Österreich","description":"251 d.B."},"scripts":[],"styles":[]},"content":{"breadcrumbs":[{"title":"Start","url":"/"},{"title":"Gesetzesinitiativen","url":"/recherchieren/gegenstaende/gesetzesinitiativen/"},{"title":"Nationalrat - XXVIII. GP","url":"/recherchieren/gegenstaende/gesetzesinitiativen/?GP=XXVIII"},{"title":"Regierungsvorlage: Bundes(verfassungs)gesetz","url":"/recherchieren/gegenstaende/gesetzesinitiativen/?GP=XXVIII&RGES=RV"},{"title":"251 d.B."}],"type":"Regierungsvorlage: Bundes(verfassungs)gesetz","sntype":"Regierungsvorlage: Bundes(verfassungs)gesetz","title":"Wasserstraßengesetz, Schifffahrtsgesetz, Änderung","zitation":"251 d.B.","description":"Bundesgesetz, mit dem das Wasserstraßengesetz und das Schifffahrtsgesetz geändert werden","gp_code":"XXVIII","ityp":"I","inr":251,"doktyp":"RV","update":"2026-08-22T01:03:51","nr_gp_code":"XXVIII","intranet":"N","group":"1","deleted":false,"einlangen":"2025-10-15T00:00:00","history_ind":2,"vhg_fertig":"J","vhg_fertig_docs":"J","process":"J","statementsstate":"0","approvalstate":"9 Keine Zustimmung bei dem Doktyp \"RV\" möglich","statements":{"new":0,"documents":[{"title":"Gesetzestext","documents":[{"link":"/dokument/XXVIII/I/251/fname_1716197.pdf","type":"PDF"},{"link":"/dokument/XXVIII/I/251/fnameorig_1716197.html","type":"HTML"}]},{"title":"Geändert im Ausschuss","documents":[{"link":"/dokument/XXVIII/I/285/fname_1720730.pdf","type":"PDF"},{"link":"/dokument/XXVIII/I/285/fnameorig_1720730.html","type":"HTML"}]}],"filter":{"rendertype":"filter","data":{"type":"FILTER","resultLayout":"TABLE","hasForm":true,"hasList":true,"label":"Stellungnahmen","pagesize":20,"definition":{"bez":"FP_142_vhg","listeId":142,"params":{"BEZUG_GP_CODE":["XXVIII"],"BEZUG_ITYP":["I"],"BEZUG_INR":[251]},"fixedParams":{"BEZUG_GP_CODE":["XXVIII"],"BEZUG_ITYP":["I"],"BEZUG_INR":[251]},"hideDimensions":["BEZUG_GP_CODE","BEZUG_ITYP","BEZUG_INR"],"hideColumns":["16","17"],"sortrnr":5,"ascDesc":"DESC"}}}},"status":{"number":5,"description":"Beschlossen im Bundesrat <a href=\"/gegenstand/XXVIII/BNR/89\">89/BNR</a><br>Einstimmig<br>Beschlossen im Nationalrat <a href=\"/gegenstand/XXVIII/BNR/89\">89/BNR</a>, Einstimmig","bgbllinks":[{"title":"Bundesgesetzblatt I Nr. 86/2025","link":"http://www.ris.bka.gv.at/Dokument.wxe?Abfrage=BgblAuth&Dokumentnummer=BGBLA_2025_I_86","type":"DEFAULT"},{"title":"Kunsttext","link":"http://www.ris.bka.gv.at/Ergebnis.wxe?Abfrage=Bundesnormen&Kundmachungsorgan=BGBl.+I+Nr.&Kundmachungsnummer=86%2f2025&Suchworte=&ReturnUrl=%2fSuchen.wxe%3fQueryID%3dBundesnormen","type":"DEFAULT"}]},"progress":[{"name":"Einlangen NR","id":1,"empty":false},{"name":"Ausschussberatungen NR","id":3,"empty":false},{"name":"Plenarberatungen NR","id":4,"empty":false},{"name":"Einlangen BR","id":5,"empty":false},{"name":"Ausschussberatungen BR","id":6,"empty":false},{"name":"Plenarberatungen BR","id":7,"empty":false}],"phase":[{"name":"Einlangen NR","id":1,"stages":[{"date":"15.10.2025","text":"Einlangen im Nationalrat","priority":1},{"date":"15.10.2025","text":"Vorgesehen für den <a href=\"/ausschuss/XXVIII/A-VE/1/00939\">Ausschuss für Verkehr und Mobilität</a>"},{"date":"16.10.2025","text":"<a href=\"/gegenstand/XXVIII/NRSITZ/46\">46. Sitzung des Nationalrates</a>: Mitteilung des Einlangens","fsth":[{"gp_code":"XXVIII","sitzung_id":46,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/46/fnameorig_1768648.html#14.2","title":"10:09:58 - Präsidium (RN/14.2)","text":"RN/14.2"}]}],"documents":[]},{"name":"Ausschussberatungen NR","id":3,"stages":[{"date":"16.10.2025","text":"<a href=\"/gegenstand/XXVIII/NRSITZ/47\">47. Sitzung des Nationalrates</a>: Zuweisung an den <a href=\"/ausschuss/XXVIII/A-VE/1/00939\">Ausschuss für Verkehr und Mobilität</a>","fsth":[{"gp_code":"XXVIII","sitzung_id":47,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/47/fnameorig_1774591.html#2","title":"18:56:48 - Walter Rosenkranz, Präsident des Nationalrates - Präsidium (RN/2)","text":"RN/2"}]},{"date":"06.11.2025","text":"Ausschuss für Verkehr und Mobilität: auf <a href=\"/dokument/XXVIII/A-VE/1/00939/TO_16626395.html\">Tagesordnung</a> in der <a href=\"/ausschuss/XXVIII/A-VE/1/00939?selectedStage=105&selectedSession=5&selectedDate=06112025\">5. Sitzung des Ausschusses</a>"},{"date":"06.11.2025","text":"Ausschuss für Verkehr und Mobilität: Bericht <a href=\"/gegenstand/XXVIII/I/285\">285 d.B.</a>","priority":1},{"date":"06.11.2025","text":"Ausschuss für Verkehr und Mobilität: Abänderungsantrag der Abgeordneten <a href=\"/person/5630\" target=\"_blank\">Mst. Joachim Schnabel</a>, <a href=\"/person/30705\" target=\"_blank\">Wolfgang Moitzi</a>, <a href=\"/person/30681\" target=\"_blank\">Dominik Oberhofer</a>, Kolleginnen und Kollegen (<a href=\"/gegenstand/XXVIII/AAA/16\">16/AAA</a>)<br><b>angenommen</b><br>Dafür: FPÖ, ÖVP, SPÖ, NEOS, GRÜNE, dagegen: -"}],"documents":[{"title":"Abänderungsantrag (gescanntes Original)","documents":[{"link":"/dokument/XXVIII/AAA/16/imfname_1735081.pdf","type":"PDF"}]},{"title":"Berichterstattung","documents":[{"link":"/dokument/XXVIII/I/285/fname_1720729.pdf","type":"PDF"},{"link":"/dokument/XXVIII/I/285/fnameorig_1720729.html","type":"HTML"}]},{"title":"Gesetzestext","documents":[{"link":"/dokument/XXVIII/I/285/fname_1720730.pdf","type":"PDF"},{"link":"/dokument/XXVIII/I/285/fnameorig_1720730.html","type":"HTML"}]},{"title":"Abänderungsantrag (gescanntes Original)","documents":[{"link":"/dokument/XXVIII/AAA/16/imfname_1735081.pdf","type":"PDF"}]}],"correspondence":[{"additional":false,"title":"Verkehrsausschuss beschließt Aus für Klebevignette ab Ende 2026","date":"06.11.2025","url":"/aktuelles/pk/jahr_2025/pk1006#XXVIII_I_00251"}]},{"name":"Plenarberatungen NR","id":4,"stages":[{"date":"20.11.2025","text":"Auf der <a href=\"/dokument/XXVIII/NRSITZ/52/TO_16447538.html\">Tagesordnung</a> der <a href=\"/gegenstand/XXVIII/NRSITZ/52\">52. Sitzung des Nationalrates</a>"},{"date":"20.11.2025","text":"Wortmeldungen in der Debatte","reden":{"rendertype":"table","data":{"header":[{"label":"Name und Klub","sortable":false,"filterable":false,"hidden":false,"additionalInfo":false,"class":"his-col-namefraktion"},{"label":"Wortmeldungsart","sortable":false,"filterable":false,"hidden":false,"additionalInfo":false,"class":"his-col-wortmeldungsart"},{"label":"Protokoll","sortable":false,"filterable":false,"hidden":false,"additionalInfo":false,"class":"his-col-protokoll"},{"label":"Video","sortable":false,"filterable":false,"hidden":false,"additionalInfo":false,"class":"his-col-video"}],"rows":[["<a href=\"/person/5644\" target=\"_blank\">Alois Schroll (S)</a>","Pro",[{"gp_code":"XXVIII","sitzung_id":52,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/52/A_-_12_18_17_00866909.html#51","title":"12:18:17 - Alois Schroll (SPÖ) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/51)","text":"RN/51"}],{"url":"/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641105"}],["<a href=\"/person/52727\" target=\"_blank\">Johannes Schmuckenschlager (V)</a>","Pro",[{"gp_code":"XXVIII","sitzung_id":52,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/52/A_-_12_22_26_00866933.html#52","title":"12:22:26 - Johannes Schmuckenschlager (ÖVP) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/52)","text":"RN/52"}],{"url":"/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641354"}],["<a href=\"/person/30681\" target=\"_blank\">Dominik Oberhofer (N)</a>","Pro",[{"gp_code":"XXVIII","sitzung_id":52,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/52/A_-_12_24_20_00866936.html#53","title":"12:24:20 - Dominik Oberhofer (NEOS) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/53)","text":"RN/53"}],{"url":"/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641467"}],["<a href=\"/person/5654\" target=\"_blank\">Dr. Elisabeth Götze (G)</a>","Pro",[{"gp_code":"XXVIII","sitzung_id":52,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/52/A_-_12_27_28_00866944.html#54","title":"12:27:28 - Elisabeth Götze (Grüne) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/54)","text":"RN/54"}],{"url":"/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641656"}],["<a href=\"/person/16234\" target=\"_blank\">Mst. Johann Höfinger, MBA (V)</a>","Pro",[{"gp_code":"XXVIII","sitzung_id":52,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/52/A_-_12_31_49_00866955.html#55","title":"12:31:49 - Johann Höfinger (ÖVP) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/55)","text":"RN/55"}],{"url":"/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641908"}],["<a href=\"/person/30680\" target=\"_blank\">MMag. Markus Hofer (N)</a>","tatsächliche Berichtigung",[{"gp_code":"XXVIII","sitzung_id":52,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/52/A_-_12_34_32_00866960.html#56","title":"12:34:32 - Markus Hofer (NEOS) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/56)","text":"RN/56"}],{"url":"/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763642081"}]]}}},{"date":"20.11.2025","text":"52. Sitzung des Nationalrates: Gesetzesvorschlag in zweiter Lesung <b>angenommen</b><br>Dafür: FPÖ, ÖVP, SPÖ, NEOS, GRÜNE, dagegen: -","fsth":[{"gp_code":"XXVIII","sitzung_id":52,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/52/A_-_12_35_42_00866970.html#57","title":"12:35:42 - Abstimmung - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/57)","text":"RN/57"}]},{"date":"20.11.2025","text":"52. Sitzung des Nationalrates: Gesetzesvorschlag in dritter Lesung <b>angenommen</b><br>Dafür: FPÖ, ÖVP, SPÖ, NEOS, GRÜNE, dagegen: -","fsth":[{"gp_code":"XXVIII","sitzung_id":52,"fund_von":null,"fund_bis":null,"url":"/dokument/XXVIII/NRSITZ/52/A_-_12_35_42_00866970.html#57","title":"12:35:42 - Abstimmung - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/57)","text":"RN/57"}]},{"date":"20.11.2025","text":"Beschluss im Nationalrat <a href=\"/gegenstand/XXVIII/BNR/89\">89/BNR</a>","priority":1},{"date":"21.11.2025","text":"Übermittlung des Beschlusses an den Bundesrat"}],"documents":[{"title":"Gesetzestext","documents":[{"link":"/dokument/XXVIII/BNR/89/fname_1724802.pdf","type":"PDF"},{"link":"/dokument/XXVIII/BNR/89/fnameorig_1724802.html","type":"HTML"}]},{"title":"Beschlussformel NR","documents":[{"link":"/dokument/XXVIII/BNR/89/fname_1724803.pdf","type":"PDF"},{"link":"/dokument/XXVIII/BNR/89/fnameorig_1724803.html","type":"HTML"}]},{"title":"Beschlussformel BR","documents":[{"link":"/dokument/XXVIII/BNR/89/fname_1727974.pdf","type":"PDF"},{"link":"/dokument/XXVIII/BNR/89/fnameorig_1727974.html","type":"HTML"}]}],"correspondence":[{"additional":false,"title":"Nationalrat beschließt mit Mehrheit neue Mautsätze und Abschaffung der Klebevignetten","date":"20.11.2025","url":"/aktuelles/pk/jahr_2025/pk1046#XXVIII_I_00251"}],"vote":{"result":[{"text":"FPÖ","code":"F","color":"#0052FB","fraction":57,"infavor":true},{"text":"ÖVP","code":"V","color":"#62C3D0","fraction":51,"infavor":true},{"text":"SPÖ","code":"S","color":"#FF0000","fraction":41,"infavor":true},{"text":"NEOS","code":"N","color":"#E3257B","fraction":18,"infavor":true},{"text":"GRÜNE","code":"G","color":"#69B12E","fraction":16,"infavor":true}],"infavor":true,"code":"FVSNG","text":"Dafür: F, V, S, N, G, Dagegen: -","comment":null}},{"name":"Einlangen BR","id":5,"stages":[{"date":"21.11.2025","text":"Einlangen im Bundesrat (Frist: 16.01.2026)"},{"date":"21.11.2025","text":"Mitwirkungsrecht des Bundesrates","priority":1}],"documents":[]},{"name":"Ausschussberatungen BR","id":6,"stages":[{"date":"21.11.2025","text":"Zuweisung an den <a href=\"/ausschuss/BR/A-VE-BR/1/00386\">Ausschuss für Verkehr des Bundesrates</a>"},{"date":"02.12.2025","text":"Ausschuss für Verkehr des Bundesrates: auf <a href=\"/dokument/BR/A-VE-BR/1/00386/TO_16726974.html\">Tagesordnung</a> in der <a href=\"/ausschuss/BR/A-VE-BR/1/00386?selectedStage=105&selectedSession=3&selectedDate=02122025\">3. Sitzung des Ausschusses</a>"},{"date":"02.12.2025","text":"Ausschuss für Verkehr des Bundesrates: Bericht <a href=\"/gegenstand/BR/I-BR/11715\">11715/BR d.B.</a>","priority":1}],"documents":[{"title":"Berichterstattung","documents":[{"link":"/dokument/BR/I-BR/11715/fname_1727338.pdf","type":"PDF"},{"link":"/dokument/BR/I-BR/11715/fnameorig_1727338.html","type":"HTML"}]}]},{"name":"Plenarberatungen BR","id":7,"stages":[{"date":"04.12.2025","text":"Auf der Tagesordnung der <a href=\"/gegenstand/BR/BRSITZ/983\">983. Sitzung</a>"},{"date":"04.12.2025","text":"983. Sitzung: Berichterstattung durch den Bundesrat <a href=\"/person/22827\" target=\"_blank\">Daniel Schmid</a>","fsth":[{"gp_code":"BR","sitzung_id":983,"fund_von":null,"fund_bis":null,"url":"/dokument/BR/BRSITZ/983/A_-_11_56_40_00873391.html#42","title":"11:56:40 - Berichterstatter Daniel Schmid - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/42)","text":"RN/42"}]},{"date":"04.12.2025","text":"983. Sitzung: Debatte","fsth":[{"gp_code":"BR","sitzung_id":983,"fund_von":null,"fund_bis":null,"url":"/dokument/BR/BRSITZ/983/A_-_11_57_28_00873336.html#43","title":"11:57:28 - Thomas Schmid (SPÖ/Bgld.) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/43)","text":"RN/43"},{"gp_code":"BR","sitzung_id":983,"fund_von":null,"fund_bis":null,"url":"/dokument/BR/BRSITZ/983/A_-_12_12_49_00873371.html#46","title":"12:12:49 - Simone Jagl (Grüne/NÖ) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/46)","text":"RN/46"}]},{"date":"04.12.2025","text":"Wortmeldungen in der Debatte","reden":{"rendertype":"table","data":{"header":[{"label":"Name und Fraktion","sortable":false,"filterable":false,"hidden":false,"additionalInfo":false,"class":"his-col-namefraktion"},{"label":"Wortmeldungsart","sortable":false,"filterable":false,"hidden":false,"additionalInfo":false,"class":"his-col-wortmeldungsart"},{"label":"Protokoll","sortable":false,"filterable":false,"hidden":false,"additionalInfo":false,"class":"his-col-protokoll"},{"label":"Video","sortable":false,"filterable":false,"hidden":false,"additionalInfo":false,"class":"his-col-video"}],"rows":[["<a href=\"/person/32337\" target=\"_blank\">Ing. Thomas Schmid (S/B)</a>","Pro",[{"gp_code":"BR","sitzung_id":983,"fund_von":null,"fund_bis":null,"url":"/dokument/BR/BRSITZ/983/A_-_11_57_28_00873336.html#43","title":"11:57:28 - Thomas Schmid (SPÖ/Bgld.) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/43)","text":"RN/43"}],{"url":"/aktuelles/mediathek/BR/BRSITZ/983?DEBATTE=4&TS=1764849454"}],["<a href=\"/person/20236\" target=\"_blank\">Barbara Prügl (V/O)</a>","Pro",[{"gp_code":"BR","sitzung_id":983,"fund_von":null,"fund_bis":null,"url":"/dokument/BR/BRSITZ/983/A_-_12_02_00_00873350.html#44","title":"12:02:00 - Barbara Prügl (ÖVP/OÖ) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/44)","text":"RN/44"}],{"url":"/aktuelles/mediathek/BR/BRSITZ/983?DEBATTE=4&TS=1764849728"}],["<a href=\"/person/20233\" target=\"_blank\">Günter Pröller (F/O)</a>","Pro",[{"gp_code":"BR","sitzung_id":983,"fund_von":null,"fund_bis":null,"url":"/dokument/BR/BRSITZ/983/A_-_12_08_21_00873367.html#45","title":"12:08:21 - Günter Pröller (FPÖ/OÖ) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/45)","text":"RN/45"}],{"url":"/aktuelles/mediathek/BR/BRSITZ/983?DEBATTE=4&TS=1764850110"}],["<a href=\"/person/23967\" target=\"_blank\">Simone Jagl (G/N)</a>","Pro",[{"gp_code":"BR","sitzung_id":983,"fund_von":null,"fund_bis":null,"url":"/dokument/BR/BRSITZ/983/A_-_12_12_49_00873371.html#46","title":"12:12:49 - Simone Jagl (Grüne/NÖ) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/46)","text":"RN/46"}],{"url":"/aktuelles/mediathek/BR/BRSITZ/983?DEBATTE=4&TS=1764850377"}]]}}},{"date":"04.12.2025","text":"983. Sitzung: Antrag, keinen Einspruch zu erheben, <b>angenommen</b><br>Einstimmig","fsth":[{"gp_code":"BR","sitzung_id":983,"fund_von":null,"fund_bis":null,"url":"/dokument/BR/BRSITZ/983/A_-_12_18_53_00873386.html#47","title":"12:18:53 - Abstimmung - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/47)","text":"RN/47"}]},{"date":"04.12.2025","text":"Beschluss im Bundesrat <a href=\"/gegenstand/XXVIII/BNR/89\">89/BNR</a>","priority":1}],"documents":[{"title":"Gesetzestext","documents":[{"link":"/dokument/XXVIII/BNR/89/fname_1724802.pdf","type":"PDF"},{"link":"/dokument/XXVIII/BNR/89/fnameorig_1724802.html","type":"HTML"}]},{"title":"Beschlussformel NR","documents":[{"link":"/dokument/XXVIII/BNR/89/fname_1724803.pdf","type":"PDF"},{"link":"/dokument/XXVIII/BNR/89/fnameorig_1724803.html","type":"HTML"}]},{"title":"Beschlussformel BR","documents":[{"link":"/dokument/XXVIII/BNR/89/fname_1727974.pdf","type":"PDF"},{"link":"/dokument/XXVIII/BNR/89/fnameorig_1727974.html","type":"HTML"}]}],"correspondence":[{"additional":false,"title":"Bundesrat: Mehrheit für Abschaffung der Klebevignetten","date":"04.12.2025","url":"/aktuelles/pk/jahr_2025/pk1138#XXVIII_I_00251"}]}],"shortinfo":{"titel":"Kurzinformation","teil1":"<ul class=\"unordered-list\">\n\t<li>Direkte Zahlung an via donau</li>\n\t<li>Vollkostenabrechnung</li>\n</ul>\n","teil2":"<ul class=\"unordered-list\">\n\t<li>Regelung der Zahlung von Organmandaten und Klarstellung der Erm&auml;chtigung</li>\n\t<li>Verpflichtung zu kostendeckendem Entgelt</li>\n</ul>\n","stand":"15.10.2025"},"documents":[{"title":"Gesetzestext","documents":[{"link":"/dokument/XXVIII/I/251/fname_1716197.pdf","type":"PDF"},{"link":"/dokument/XXVIII/I/251/fnameorig_1716197.html","type":"HTML"}]},{"title":"Erläuterungen","documents":[{"link":"/dokument/XXVIII/I/251/fname_1716199.pdf","type":"PDF"},{"link":"/dokument/XXVIII/I/251/fnameorig_1716199.html","type":"HTML"}]},{"title":"Vorblatt und WFA","documents":[{"link":"/dokument/XXVIII/I/251/imfname_1716201.pdf","type":"PDF"}]},{"title":"Textgegenüberstellung","documents":[{"link":"/dokument/XXVIII/I/251/imfname_1716200.pdf","type":"PDF"}]}],"names":[{"funktext":"Mitglied der Bundesregierung","name":"Peter Hanke","frak_code":null,"ltext":"Bundesministerium für Innovation, Mobilität und Infrastruktur","url":"/person/32508","portrait":{"rendertype":"image","data":{"src":"/dokument/bild/201547/20154702_384.jpg","alt":"Portraitfoto von Peter Hanke","bildId":20154702,"copyright":"BKA/Andy Wenzel"}}}],"correspondence":[{"additional":false,"title":"Neu im Verkehrsausschuss","date":"29.10.2025","url":"/aktuelles/pk/jahr_2025/pk0975#XXVIII_I_00251"},{"additional":false,"title":"Verkehrsausschuss beschließt Aus für Klebevignette ab Ende 2026","date":"06.11.2025","url":"/aktuelles/pk/jahr_2025/pk1006#XXVIII_I_00251"},{"additional":false,"title":"Nationalrat beschließt mit Mehrheit neue Mautsätze und Abschaffung der Klebevignetten","date":"20.11.2025","url":"/aktuelles/pk/jahr_2025/pk1046#XXVIII_I_00251"},{"additional":false,"title":"Bundesrat: Mehrheit für Abschaffung der Klebevignetten","date":"04.12.2025","url":"/aktuelles/pk/jahr_2025/pk1138#XXVIII_I_00251"}],"vote":{"result":[{"text":"FPÖ","code":"F","color":"#0052FB","fraction":57,"infavor":true},{"text":"ÖVP","code":"V","color":"#62C3D0","fraction":51,"infavor":true},{"text":"SPÖ","code":"S","color":"#FF0000","fraction":41,"infavor":true},{"text":"NEOS","code":"N","color":"#E3257B","fraction":18,"infavor":true},{"text":"GRÜNE","code":"G","color":"#69B12E","fraction":16,"infavor":true}],"infavor":true,"code":"FVSNG","text":"Dafür: F, V, S, N, G, Dagegen: -","comment":null},"topics":{"rendertype":"bubbles","data":{"title":"","bubbles":[{"label":"Inneres und Recht","link":"/suche?thema=Inneres und Recht"},{"label":"Verkehr und Infrastruktur","link":"/suche?thema=Verkehr und Infrastruktur"}],"pretext":null,"subtitle":null}},"headwords":{"rendertype":"bubbles","data":{"title":"","bubbles":[{"label":"Verkehr IV. Schifffahrt","link":"/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Verkehr IV. Schifffahrt"},{"label":"Verwaltungsorganisation","link":"/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Verwaltungsorganisation"}],"pretext":null,"subtitle":null}},"eurovoc":{"rendertype":"bubbles","data":{"title":"","bubbles":[{"label":"See- und Binnenschiffsverkehr","link":"/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=See- und Binnenschiffsverkehr"},{"label":"Verwaltungsorganisation","link":"/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=Verwaltungsorganisation"}],"pretext":null,"subtitle":null}}}}
+{
+  "pagetype": "geschichtsseite",
+  "meta": {
+    "description": "Wasserstraßengesetz, Schifffahrtsgesetz, Änderung (251 d.B.)",
+    "generationTime": "Fri Aug 21 23:03:56 GMT 2026",
+    "keywords": "\"Verkehr IV. Schifffahrt\", \"Verwaltungsorganisation\"",
+    "lang": "de",
+    "title": "Wasserstraßengesetz, Schifffahrtsgesetz, Änderung (251 d.B.) | Parlament Österreich",
+    "openGraph": {
+      "image": "https://www.parlament.gv.at/static/img/og.png",
+      "title": "Wasserstraßengesetz, Schifffahrtsgesetz, Änderung | Parlament Österreich",
+      "description": "251 d.B."
+    },
+    "scripts": [],
+    "styles": []
+  },
+  "content": {
+    "breadcrumbs": [
+      { "title": "Start", "url": "/" },
+      { "title": "Gesetzesinitiativen", "url": "/recherchieren/gegenstaende/gesetzesinitiativen/" },
+      { "title": "Nationalrat - XXVIII. GP", "url": "/recherchieren/gegenstaende/gesetzesinitiativen/?GP=XXVIII" },
+      {
+        "title": "Regierungsvorlage: Bundes(verfassungs)gesetz",
+        "url": "/recherchieren/gegenstaende/gesetzesinitiativen/?GP=XXVIII&RGES=RV"
+      },
+      { "title": "251 d.B." }
+    ],
+    "type": "Regierungsvorlage: Bundes(verfassungs)gesetz",
+    "sntype": "Regierungsvorlage: Bundes(verfassungs)gesetz",
+    "title": "Wasserstraßengesetz, Schifffahrtsgesetz, Änderung",
+    "zitation": "251 d.B.",
+    "description": "Bundesgesetz, mit dem das Wasserstraßengesetz und das Schifffahrtsgesetz geändert werden",
+    "gp_code": "XXVIII",
+    "ityp": "I",
+    "inr": 251,
+    "doktyp": "RV",
+    "update": "2026-08-22T01:03:51",
+    "nr_gp_code": "XXVIII",
+    "intranet": "N",
+    "group": "1",
+    "deleted": false,
+    "einlangen": "2025-10-15T00:00:00",
+    "history_ind": 2,
+    "vhg_fertig": "J",
+    "vhg_fertig_docs": "J",
+    "process": "J",
+    "statementsstate": "0",
+    "approvalstate": "9 Keine Zustimmung bei dem Doktyp \"RV\" möglich",
+    "statements": {
+      "new": 0,
+      "documents": [
+        {
+          "title": "Gesetzestext",
+          "documents": [
+            { "link": "/dokument/XXVIII/I/251/fname_1716197.pdf", "type": "PDF" },
+            { "link": "/dokument/XXVIII/I/251/fnameorig_1716197.html", "type": "HTML" }
+          ]
+        },
+        {
+          "title": "Geändert im Ausschuss",
+          "documents": [
+            { "link": "/dokument/XXVIII/I/285/fname_1720730.pdf", "type": "PDF" },
+            { "link": "/dokument/XXVIII/I/285/fnameorig_1720730.html", "type": "HTML" }
+          ]
+        }
+      ],
+      "filter": {
+        "rendertype": "filter",
+        "data": {
+          "type": "FILTER",
+          "resultLayout": "TABLE",
+          "hasForm": true,
+          "hasList": true,
+          "label": "Stellungnahmen",
+          "pagesize": 20,
+          "definition": {
+            "bez": "FP_142_vhg",
+            "listeId": 142,
+            "params": { "BEZUG_GP_CODE": ["XXVIII"], "BEZUG_ITYP": ["I"], "BEZUG_INR": [251] },
+            "fixedParams": { "BEZUG_GP_CODE": ["XXVIII"], "BEZUG_ITYP": ["I"], "BEZUG_INR": [251] },
+            "hideDimensions": ["BEZUG_GP_CODE", "BEZUG_ITYP", "BEZUG_INR"],
+            "hideColumns": ["16", "17"],
+            "sortrnr": 5,
+            "ascDesc": "DESC"
+          }
+        }
+      }
+    },
+    "status": {
+      "number": 5,
+      "description": "Beschlossen im Bundesrat <a href=\"/gegenstand/XXVIII/BNR/89\">89/BNR</a><br>Einstimmig<br>Beschlossen im Nationalrat <a href=\"/gegenstand/XXVIII/BNR/89\">89/BNR</a>, Einstimmig",
+      "bgbllinks": [
+        {
+          "title": "Bundesgesetzblatt I Nr. 86/2025",
+          "link": "http://www.ris.bka.gv.at/Dokument.wxe?Abfrage=BgblAuth&Dokumentnummer=BGBLA_2025_I_86",
+          "type": "DEFAULT"
+        },
+        {
+          "title": "Kunsttext",
+          "link": "http://www.ris.bka.gv.at/Ergebnis.wxe?Abfrage=Bundesnormen&Kundmachungsorgan=BGBl.+I+Nr.&Kundmachungsnummer=86%2f2025&Suchworte=&ReturnUrl=%2fSuchen.wxe%3fQueryID%3dBundesnormen",
+          "type": "DEFAULT"
+        }
+      ]
+    },
+    "progress": [
+      { "name": "Einlangen NR", "id": 1, "empty": false },
+      { "name": "Ausschussberatungen NR", "id": 3, "empty": false },
+      { "name": "Plenarberatungen NR", "id": 4, "empty": false },
+      { "name": "Einlangen BR", "id": 5, "empty": false },
+      { "name": "Ausschussberatungen BR", "id": 6, "empty": false },
+      { "name": "Plenarberatungen BR", "id": 7, "empty": false }
+    ],
+    "phase": [
+      {
+        "name": "Einlangen NR",
+        "id": 1,
+        "stages": [
+          { "date": "15.10.2025", "text": "Einlangen im Nationalrat", "priority": 1 },
+          {
+            "date": "15.10.2025",
+            "text": "Vorgesehen für den <a href=\"/ausschuss/XXVIII/A-VE/1/00939\">Ausschuss für Verkehr und Mobilität</a>"
+          },
+          {
+            "date": "16.10.2025",
+            "text": "<a href=\"/gegenstand/XXVIII/NRSITZ/46\">46. Sitzung des Nationalrates</a>: Mitteilung des Einlangens",
+            "fsth": [
+              {
+                "gp_code": "XXVIII",
+                "sitzung_id": 46,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/XXVIII/NRSITZ/46/fnameorig_1768648.html#14.2",
+                "title": "10:09:58 - Präsidium (RN/14.2)",
+                "text": "RN/14.2"
+              }
+            ]
+          }
+        ],
+        "documents": []
+      },
+      {
+        "name": "Ausschussberatungen NR",
+        "id": 3,
+        "stages": [
+          {
+            "date": "16.10.2025",
+            "text": "<a href=\"/gegenstand/XXVIII/NRSITZ/47\">47. Sitzung des Nationalrates</a>: Zuweisung an den <a href=\"/ausschuss/XXVIII/A-VE/1/00939\">Ausschuss für Verkehr und Mobilität</a>",
+            "fsth": [
+              {
+                "gp_code": "XXVIII",
+                "sitzung_id": 47,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/XXVIII/NRSITZ/47/fnameorig_1774591.html#2",
+                "title": "18:56:48 - Walter Rosenkranz, Präsident des Nationalrates - Präsidium (RN/2)",
+                "text": "RN/2"
+              }
+            ]
+          },
+          {
+            "date": "06.11.2025",
+            "text": "Ausschuss für Verkehr und Mobilität: auf <a href=\"/dokument/XXVIII/A-VE/1/00939/TO_16626395.html\">Tagesordnung</a> in der <a href=\"/ausschuss/XXVIII/A-VE/1/00939?selectedStage=105&selectedSession=5&selectedDate=06112025\">5. Sitzung des Ausschusses</a>"
+          },
+          {
+            "date": "06.11.2025",
+            "text": "Ausschuss für Verkehr und Mobilität: Bericht <a href=\"/gegenstand/XXVIII/I/285\">285 d.B.</a>",
+            "priority": 1
+          },
+          {
+            "date": "06.11.2025",
+            "text": "Ausschuss für Verkehr und Mobilität: Abänderungsantrag der Abgeordneten <a href=\"/person/5630\" target=\"_blank\">Mst. Joachim Schnabel</a>, <a href=\"/person/30705\" target=\"_blank\">Wolfgang Moitzi</a>, <a href=\"/person/30681\" target=\"_blank\">Dominik Oberhofer</a>, Kolleginnen und Kollegen (<a href=\"/gegenstand/XXVIII/AAA/16\">16/AAA</a>)<br><b>angenommen</b><br>Dafür: FPÖ, ÖVP, SPÖ, NEOS, GRÜNE, dagegen: -"
+          }
+        ],
+        "documents": [
+          {
+            "title": "Abänderungsantrag (gescanntes Original)",
+            "documents": [{ "link": "/dokument/XXVIII/AAA/16/imfname_1735081.pdf", "type": "PDF" }]
+          },
+          {
+            "title": "Berichterstattung",
+            "documents": [
+              { "link": "/dokument/XXVIII/I/285/fname_1720729.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/I/285/fnameorig_1720729.html", "type": "HTML" }
+            ]
+          },
+          {
+            "title": "Gesetzestext",
+            "documents": [
+              { "link": "/dokument/XXVIII/I/285/fname_1720730.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/I/285/fnameorig_1720730.html", "type": "HTML" }
+            ]
+          },
+          {
+            "title": "Abänderungsantrag (gescanntes Original)",
+            "documents": [{ "link": "/dokument/XXVIII/AAA/16/imfname_1735081.pdf", "type": "PDF" }]
+          }
+        ],
+        "correspondence": [
+          {
+            "additional": false,
+            "title": "Verkehrsausschuss beschließt Aus für Klebevignette ab Ende 2026",
+            "date": "06.11.2025",
+            "url": "/aktuelles/pk/jahr_2025/pk1006#XXVIII_I_00251"
+          }
+        ]
+      },
+      {
+        "name": "Plenarberatungen NR",
+        "id": 4,
+        "stages": [
+          {
+            "date": "20.11.2025",
+            "text": "Auf der <a href=\"/dokument/XXVIII/NRSITZ/52/TO_16447538.html\">Tagesordnung</a> der <a href=\"/gegenstand/XXVIII/NRSITZ/52\">52. Sitzung des Nationalrates</a>"
+          },
+          {
+            "date": "20.11.2025",
+            "text": "Wortmeldungen in der Debatte",
+            "reden": {
+              "rendertype": "table",
+              "data": {
+                "header": [
+                  {
+                    "label": "Name und Klub",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-namefraktion"
+                  },
+                  {
+                    "label": "Wortmeldungsart",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-wortmeldungsart"
+                  },
+                  {
+                    "label": "Protokoll",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-protokoll"
+                  },
+                  {
+                    "label": "Video",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-video"
+                  }
+                ],
+                "rows": [
+                  [
+                    "<a href=\"/person/5644\" target=\"_blank\">Alois Schroll (S)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 52,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/52/A_-_12_18_17_00866909.html#51",
+                        "title": "12:18:17 - Alois Schroll (SPÖ) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/51)",
+                        "text": "RN/51"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641105" }
+                  ],
+                  [
+                    "<a href=\"/person/52727\" target=\"_blank\">Johannes Schmuckenschlager (V)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 52,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/52/A_-_12_22_26_00866933.html#52",
+                        "title": "12:22:26 - Johannes Schmuckenschlager (ÖVP) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/52)",
+                        "text": "RN/52"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641354" }
+                  ],
+                  [
+                    "<a href=\"/person/30681\" target=\"_blank\">Dominik Oberhofer (N)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 52,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/52/A_-_12_24_20_00866936.html#53",
+                        "title": "12:24:20 - Dominik Oberhofer (NEOS) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/53)",
+                        "text": "RN/53"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641467" }
+                  ],
+                  [
+                    "<a href=\"/person/5654\" target=\"_blank\">Dr. Elisabeth Götze (G)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 52,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/52/A_-_12_27_28_00866944.html#54",
+                        "title": "12:27:28 - Elisabeth Götze (Grüne) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/54)",
+                        "text": "RN/54"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641656" }
+                  ],
+                  [
+                    "<a href=\"/person/16234\" target=\"_blank\">Mst. Johann Höfinger, MBA (V)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 52,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/52/A_-_12_31_49_00866955.html#55",
+                        "title": "12:31:49 - Johann Höfinger (ÖVP) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/55)",
+                        "text": "RN/55"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763641908" }
+                  ],
+                  [
+                    "<a href=\"/person/30680\" target=\"_blank\">MMag. Markus Hofer (N)</a>",
+                    "tatsächliche Berichtigung",
+                    [
+                      {
+                        "gp_code": "XXVIII",
+                        "sitzung_id": 52,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/XXVIII/NRSITZ/52/A_-_12_34_32_00866960.html#56",
+                        "title": "12:34:32 - Markus Hofer (NEOS) - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/56)",
+                        "text": "RN/56"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/XXVIII/NRSITZ/52?DEBATTE=3&TS=1763642081" }
+                  ]
+                ]
+              }
+            }
+          },
+          {
+            "date": "20.11.2025",
+            "text": "52. Sitzung des Nationalrates: Gesetzesvorschlag in zweiter Lesung <b>angenommen</b><br>Dafür: FPÖ, ÖVP, SPÖ, NEOS, GRÜNE, dagegen: -",
+            "fsth": [
+              {
+                "gp_code": "XXVIII",
+                "sitzung_id": 52,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/XXVIII/NRSITZ/52/A_-_12_35_42_00866970.html#57",
+                "title": "12:35:42 - Abstimmung - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/57)",
+                "text": "RN/57"
+              }
+            ]
+          },
+          {
+            "date": "20.11.2025",
+            "text": "52. Sitzung des Nationalrates: Gesetzesvorschlag in dritter Lesung <b>angenommen</b><br>Dafür: FPÖ, ÖVP, SPÖ, NEOS, GRÜNE, dagegen: -",
+            "fsth": [
+              {
+                "gp_code": "XXVIII",
+                "sitzung_id": 52,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/XXVIII/NRSITZ/52/A_-_12_35_42_00866970.html#57",
+                "title": "12:35:42 - Abstimmung - TOP 4 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/57)",
+                "text": "RN/57"
+              }
+            ]
+          },
+          { "date": "20.11.2025", "text": "Beschluss im Nationalrat <a href=\"/gegenstand/XXVIII/BNR/89\">89/BNR</a>", "priority": 1 },
+          { "date": "21.11.2025", "text": "Übermittlung des Beschlusses an den Bundesrat" }
+        ],
+        "documents": [
+          {
+            "title": "Gesetzestext",
+            "documents": [
+              { "link": "/dokument/XXVIII/BNR/89/fname_1724802.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/BNR/89/fnameorig_1724802.html", "type": "HTML" }
+            ]
+          },
+          {
+            "title": "Beschlussformel NR",
+            "documents": [
+              { "link": "/dokument/XXVIII/BNR/89/fname_1724803.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/BNR/89/fnameorig_1724803.html", "type": "HTML" }
+            ]
+          },
+          {
+            "title": "Beschlussformel BR",
+            "documents": [
+              { "link": "/dokument/XXVIII/BNR/89/fname_1727974.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/BNR/89/fnameorig_1727974.html", "type": "HTML" }
+            ]
+          }
+        ],
+        "correspondence": [
+          {
+            "additional": false,
+            "title": "Nationalrat beschließt mit Mehrheit neue Mautsätze und Abschaffung der Klebevignetten",
+            "date": "20.11.2025",
+            "url": "/aktuelles/pk/jahr_2025/pk1046#XXVIII_I_00251"
+          }
+        ],
+        "vote": {
+          "result": [
+            { "text": "FPÖ", "code": "F", "color": "#0052FB", "fraction": 57, "infavor": true },
+            { "text": "ÖVP", "code": "V", "color": "#62C3D0", "fraction": 51, "infavor": true },
+            { "text": "SPÖ", "code": "S", "color": "#FF0000", "fraction": 41, "infavor": true },
+            { "text": "NEOS", "code": "N", "color": "#E3257B", "fraction": 18, "infavor": true },
+            { "text": "GRÜNE", "code": "G", "color": "#69B12E", "fraction": 16, "infavor": true }
+          ],
+          "infavor": true,
+          "code": "FVSNG",
+          "text": "Dafür: F, V, S, N, G, Dagegen: -",
+          "comment": null
+        }
+      },
+      {
+        "name": "Einlangen BR",
+        "id": 5,
+        "stages": [
+          { "date": "21.11.2025", "text": "Einlangen im Bundesrat (Frist: 16.01.2026)" },
+          { "date": "21.11.2025", "text": "Mitwirkungsrecht des Bundesrates", "priority": 1 }
+        ],
+        "documents": []
+      },
+      {
+        "name": "Ausschussberatungen BR",
+        "id": 6,
+        "stages": [
+          {
+            "date": "21.11.2025",
+            "text": "Zuweisung an den <a href=\"/ausschuss/BR/A-VE-BR/1/00386\">Ausschuss für Verkehr des Bundesrates</a>"
+          },
+          {
+            "date": "02.12.2025",
+            "text": "Ausschuss für Verkehr des Bundesrates: auf <a href=\"/dokument/BR/A-VE-BR/1/00386/TO_16726974.html\">Tagesordnung</a> in der <a href=\"/ausschuss/BR/A-VE-BR/1/00386?selectedStage=105&selectedSession=3&selectedDate=02122025\">3. Sitzung des Ausschusses</a>"
+          },
+          {
+            "date": "02.12.2025",
+            "text": "Ausschuss für Verkehr des Bundesrates: Bericht <a href=\"/gegenstand/BR/I-BR/11715\">11715/BR d.B.</a>",
+            "priority": 1
+          }
+        ],
+        "documents": [
+          {
+            "title": "Berichterstattung",
+            "documents": [
+              { "link": "/dokument/BR/I-BR/11715/fname_1727338.pdf", "type": "PDF" },
+              { "link": "/dokument/BR/I-BR/11715/fnameorig_1727338.html", "type": "HTML" }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Plenarberatungen BR",
+        "id": 7,
+        "stages": [
+          { "date": "04.12.2025", "text": "Auf der Tagesordnung der <a href=\"/gegenstand/BR/BRSITZ/983\">983. Sitzung</a>" },
+          {
+            "date": "04.12.2025",
+            "text": "983. Sitzung: Berichterstattung durch den Bundesrat <a href=\"/person/22827\" target=\"_blank\">Daniel Schmid</a>",
+            "fsth": [
+              {
+                "gp_code": "BR",
+                "sitzung_id": 983,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/BR/BRSITZ/983/A_-_11_56_40_00873391.html#42",
+                "title": "11:56:40 - Berichterstatter Daniel Schmid - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/42)",
+                "text": "RN/42"
+              }
+            ]
+          },
+          {
+            "date": "04.12.2025",
+            "text": "983. Sitzung: Debatte",
+            "fsth": [
+              {
+                "gp_code": "BR",
+                "sitzung_id": 983,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/BR/BRSITZ/983/A_-_11_57_28_00873336.html#43",
+                "title": "11:57:28 - Thomas Schmid (SPÖ/Bgld.) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/43)",
+                "text": "RN/43"
+              },
+              {
+                "gp_code": "BR",
+                "sitzung_id": 983,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/BR/BRSITZ/983/A_-_12_12_49_00873371.html#46",
+                "title": "12:12:49 - Simone Jagl (Grüne/NÖ) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/46)",
+                "text": "RN/46"
+              }
+            ]
+          },
+          {
+            "date": "04.12.2025",
+            "text": "Wortmeldungen in der Debatte",
+            "reden": {
+              "rendertype": "table",
+              "data": {
+                "header": [
+                  {
+                    "label": "Name und Fraktion",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-namefraktion"
+                  },
+                  {
+                    "label": "Wortmeldungsart",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-wortmeldungsart"
+                  },
+                  {
+                    "label": "Protokoll",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-protokoll"
+                  },
+                  {
+                    "label": "Video",
+                    "sortable": false,
+                    "filterable": false,
+                    "hidden": false,
+                    "additionalInfo": false,
+                    "class": "his-col-video"
+                  }
+                ],
+                "rows": [
+                  [
+                    "<a href=\"/person/32337\" target=\"_blank\">Ing. Thomas Schmid (S/B)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "BR",
+                        "sitzung_id": 983,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/BR/BRSITZ/983/A_-_11_57_28_00873336.html#43",
+                        "title": "11:57:28 - Thomas Schmid (SPÖ/Bgld.) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/43)",
+                        "text": "RN/43"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/BR/BRSITZ/983?DEBATTE=4&TS=1764849454" }
+                  ],
+                  [
+                    "<a href=\"/person/20236\" target=\"_blank\">Barbara Prügl (V/O)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "BR",
+                        "sitzung_id": 983,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/BR/BRSITZ/983/A_-_12_02_00_00873350.html#44",
+                        "title": "12:02:00 - Barbara Prügl (ÖVP/OÖ) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/44)",
+                        "text": "RN/44"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/BR/BRSITZ/983?DEBATTE=4&TS=1764849728" }
+                  ],
+                  [
+                    "<a href=\"/person/20233\" target=\"_blank\">Günter Pröller (F/O)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "BR",
+                        "sitzung_id": 983,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/BR/BRSITZ/983/A_-_12_08_21_00873367.html#45",
+                        "title": "12:08:21 - Günter Pröller (FPÖ/OÖ) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/45)",
+                        "text": "RN/45"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/BR/BRSITZ/983?DEBATTE=4&TS=1764850110" }
+                  ],
+                  [
+                    "<a href=\"/person/23967\" target=\"_blank\">Simone Jagl (G/N)</a>",
+                    "Pro",
+                    [
+                      {
+                        "gp_code": "BR",
+                        "sitzung_id": 983,
+                        "fund_von": null,
+                        "fund_bis": null,
+                        "url": "/dokument/BR/BRSITZ/983/A_-_12_12_49_00873371.html#46",
+                        "title": "12:12:49 - Simone Jagl (Grüne/NÖ) - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/46)",
+                        "text": "RN/46"
+                      }
+                    ],
+                    { "url": "/aktuelles/mediathek/BR/BRSITZ/983?DEBATTE=4&TS=1764850377" }
+                  ]
+                ]
+              }
+            }
+          },
+          {
+            "date": "04.12.2025",
+            "text": "983. Sitzung: Antrag, keinen Einspruch zu erheben, <b>angenommen</b><br>Einstimmig",
+            "fsth": [
+              {
+                "gp_code": "BR",
+                "sitzung_id": 983,
+                "fund_von": null,
+                "fund_bis": null,
+                "url": "/dokument/BR/BRSITZ/983/A_-_12_18_53_00873386.html#47",
+                "title": "12:18:53 - Abstimmung - TOP 5 Neue Kostenregelung für Donau-Schleusenbetrieb (RN/47)",
+                "text": "RN/47"
+              }
+            ]
+          },
+          { "date": "04.12.2025", "text": "Beschluss im Bundesrat <a href=\"/gegenstand/XXVIII/BNR/89\">89/BNR</a>", "priority": 1 }
+        ],
+        "documents": [
+          {
+            "title": "Gesetzestext",
+            "documents": [
+              { "link": "/dokument/XXVIII/BNR/89/fname_1724802.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/BNR/89/fnameorig_1724802.html", "type": "HTML" }
+            ]
+          },
+          {
+            "title": "Beschlussformel NR",
+            "documents": [
+              { "link": "/dokument/XXVIII/BNR/89/fname_1724803.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/BNR/89/fnameorig_1724803.html", "type": "HTML" }
+            ]
+          },
+          {
+            "title": "Beschlussformel BR",
+            "documents": [
+              { "link": "/dokument/XXVIII/BNR/89/fname_1727974.pdf", "type": "PDF" },
+              { "link": "/dokument/XXVIII/BNR/89/fnameorig_1727974.html", "type": "HTML" }
+            ]
+          }
+        ],
+        "correspondence": [
+          {
+            "additional": false,
+            "title": "Bundesrat: Mehrheit für Abschaffung der Klebevignetten",
+            "date": "04.12.2025",
+            "url": "/aktuelles/pk/jahr_2025/pk1138#XXVIII_I_00251"
+          }
+        ]
+      }
+    ],
+    "shortinfo": {
+      "titel": "Kurzinformation",
+      "teil1": "<ul class=\"unordered-list\">\n\t<li>Direkte Zahlung an via donau</li>\n\t<li>Vollkostenabrechnung</li>\n</ul>\n",
+      "teil2": "<ul class=\"unordered-list\">\n\t<li>Regelung der Zahlung von Organmandaten und Klarstellung der Erm&auml;chtigung</li>\n\t<li>Verpflichtung zu kostendeckendem Entgelt</li>\n</ul>\n",
+      "stand": "15.10.2025"
+    },
+    "documents": [
+      {
+        "title": "Gesetzestext",
+        "documents": [
+          { "link": "/dokument/XXVIII/I/251/fname_1716197.pdf", "type": "PDF" },
+          { "link": "/dokument/XXVIII/I/251/fnameorig_1716197.html", "type": "HTML" }
+        ]
+      },
+      {
+        "title": "Erläuterungen",
+        "documents": [
+          { "link": "/dokument/XXVIII/I/251/fname_1716199.pdf", "type": "PDF" },
+          { "link": "/dokument/XXVIII/I/251/fnameorig_1716199.html", "type": "HTML" }
+        ]
+      },
+      { "title": "Vorblatt und WFA", "documents": [{ "link": "/dokument/XXVIII/I/251/imfname_1716201.pdf", "type": "PDF" }] },
+      { "title": "Textgegenüberstellung", "documents": [{ "link": "/dokument/XXVIII/I/251/imfname_1716200.pdf", "type": "PDF" }] }
+    ],
+    "names": [
+      {
+        "funktext": "Mitglied der Bundesregierung",
+        "name": "Peter Hanke",
+        "frak_code": null,
+        "ltext": "Bundesministerium für Innovation, Mobilität und Infrastruktur",
+        "url": "/person/32508",
+        "portrait": {
+          "rendertype": "image",
+          "data": {
+            "src": "/dokument/bild/201547/20154702_384.jpg",
+            "alt": "Portraitfoto von Peter Hanke",
+            "bildId": 20154702,
+            "copyright": "BKA/Andy Wenzel"
+          }
+        }
+      }
+    ],
+    "correspondence": [
+      {
+        "additional": false,
+        "title": "Neu im Verkehrsausschuss",
+        "date": "29.10.2025",
+        "url": "/aktuelles/pk/jahr_2025/pk0975#XXVIII_I_00251"
+      },
+      {
+        "additional": false,
+        "title": "Verkehrsausschuss beschließt Aus für Klebevignette ab Ende 2026",
+        "date": "06.11.2025",
+        "url": "/aktuelles/pk/jahr_2025/pk1006#XXVIII_I_00251"
+      },
+      {
+        "additional": false,
+        "title": "Nationalrat beschließt mit Mehrheit neue Mautsätze und Abschaffung der Klebevignetten",
+        "date": "20.11.2025",
+        "url": "/aktuelles/pk/jahr_2025/pk1046#XXVIII_I_00251"
+      },
+      {
+        "additional": false,
+        "title": "Bundesrat: Mehrheit für Abschaffung der Klebevignetten",
+        "date": "04.12.2025",
+        "url": "/aktuelles/pk/jahr_2025/pk1138#XXVIII_I_00251"
+      }
+    ],
+    "vote": {
+      "result": [
+        { "text": "FPÖ", "code": "F", "color": "#0052FB", "fraction": 57, "infavor": true },
+        { "text": "ÖVP", "code": "V", "color": "#62C3D0", "fraction": 51, "infavor": true },
+        { "text": "SPÖ", "code": "S", "color": "#FF0000", "fraction": 41, "infavor": true },
+        { "text": "NEOS", "code": "N", "color": "#E3257B", "fraction": 18, "infavor": true },
+        { "text": "GRÜNE", "code": "G", "color": "#69B12E", "fraction": 16, "infavor": true }
+      ],
+      "infavor": true,
+      "code": "FVSNG",
+      "text": "Dafür: F, V, S, N, G, Dagegen: -",
+      "comment": null
+    },
+    "topics": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          { "label": "Inneres und Recht", "link": "/suche?thema=Inneres und Recht" },
+          { "label": "Verkehr und Infrastruktur", "link": "/suche?thema=Verkehr und Infrastruktur" }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    },
+    "headwords": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          { "label": "Verkehr IV. Schifffahrt", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Verkehr IV. Schifffahrt" },
+          { "label": "Verwaltungsorganisation", "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&SW=Verwaltungsorganisation" }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    },
+    "eurovoc": {
+      "rendertype": "bubbles",
+      "data": {
+        "title": "",
+        "bubbles": [
+          {
+            "label": "See- und Binnenschiffsverkehr",
+            "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=See- und Binnenschiffsverkehr"
+          },
+          {
+            "label": "Verwaltungsorganisation",
+            "link": "/recherchieren/gegenstaende/?NRBR=NR&GP_CODE=XXVIII&EUROVOC=Verwaltungsorganisation"
+          }
+        ],
+        "pretext": null,
+        "subtitle": null
+      }
+    }
+  }
+}

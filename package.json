@@ -6,7 +6,8 @@
   "license": "MIT",
   "main": "dist/index.js",
   "bin": {
-    "parlament-at-mcp": "dist/index.js"
+    "parlament-at-mcp": "dist/index.js",
+    "parlament-at-mcp-http": "dist/http-cli.js"
   },
   "engines": {
     "node": ">=20"
@@ -18,8 +19,17 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm run test",
-    "smoke:live": "node scripts/smoke-live.mjs"
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test",
+    "smoke:live": "node scripts/smoke-live.mjs",
+    "start:http": "node dist/http-cli.js",
+    "dev:http": "tsx src/http-cli.ts",
+    "test:coverage": "vitest run --coverage",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix",
+    "format": "prettier --write src tests *.md *.json *.ts",
+    "format:check": "prettier --check src tests",
+    "prepublishOnly": "npm run check && npm run build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
@@ -27,9 +37,41 @@
     "zod": "^3.24.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
     "@types/node": "^20.14.0",
+    "@vitest/coverage-v8": "^2.1.9",
+    "eslint": "^9.39.5",
+    "prettier": "^3.9.10",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
+    "typescript-eslint": "^8.72.1",
     "vitest": "^2.1.0"
-  }
+  },
+  "mcpName": "io.github.bernhardbrugger/parlament-at-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernhardbrugger/parlament-at-mcp.git"
+  },
+  "homepage": "https://github.com/bernhardbrugger/parlament-at-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/bernhardbrugger/parlament-at-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "austria",
+    "parliament",
+    "parlament",
+    "nationalrat",
+    "bundesrat",
+    "open-data",
+    "legislation"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ]
 }

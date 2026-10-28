@@ -1,7 +1,12 @@
 /** Legislative periods ("Gesetzgebungsperioden") are written in roman numerals: XXVIII = 28th period. */
 
 const NUMERALS: ReadonlyArray<readonly [string, number]> = [
-  ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1],
+  ['XL', 40],
+  ['X', 10],
+  ['IX', 9],
+  ['V', 5],
+  ['IV', 4],
+  ['I', 1],
 ];
 const MAX_PERIOD = 40;
 

@@ -86,7 +86,9 @@ export function formatGegenstand(d: DetailResponse, path: string): string {
   if (c.reference?.length) {
     lines.push('', 'Bezug:');
     for (const r of c.reference) {
-      lines.push(`- ${[r.text, r.zitation].filter(Boolean).join(' ')}${r.subject ? ` — ${truncate(cleanText(r.subject), 120)}` : ''}${r.url ? ` ${absolute(r.url)}` : ''}`);
+      lines.push(
+        `- ${[r.text, r.zitation].filter(Boolean).join(' ')}${r.subject ? ` — ${truncate(cleanText(r.subject), 120)}` : ''}${r.url ? ` ${absolute(r.url)}` : ''}`,
+      );
     }
   }
   const topics = c.topics?.data.bubbles.map((b) => b.label) ?? [];
@@ -124,7 +126,10 @@ export function registerGegenstand(server: McpServer, client: ParlamentClient): 
         return { content: [{ type: 'text', text: formatGegenstand(detail, path) }] };
       } catch (e) {
         if (e instanceof HttpError && e.status === 404) {
-          return { isError: true, content: [{ type: 'text', text: `Kein Gegenstand unter ${path} gefunden. Gesetzgebungsperiode und Zitation prüfen.` }] };
+          return {
+            isError: true,
+            content: [{ type: 'text', text: `Kein Gegenstand unter ${path} gefunden. Gesetzgebungsperiode und Zitation prüfen.` }],
+          };
         }
         if (e instanceof ParlamentError) {
           return { isError: true, content: [{ type: 'text', text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };

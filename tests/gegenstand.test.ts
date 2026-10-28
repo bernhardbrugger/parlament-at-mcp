@@ -5,7 +5,17 @@ import { parseLegisPeriod, toRoman } from '../src/legis-period.js';
 import { clientWith, fixture, fixtureText, json } from './helpers.js';
 
 describe('legislative periods', () => {
-  it.each([[28, 'XXVIII'], [1, 'I'], [4, 'IV'], [9, 'IX'], [14, 'XIV'], [19, 'XIX'], [27, 'XXVII'], [39, 'XXXIX'], [40, 'XL']])('toRoman(%i) = %s', (n, roman) => {
+  it.each([
+    [28, 'XXVIII'],
+    [1, 'I'],
+    [4, 'IV'],
+    [9, 'IX'],
+    [14, 'XIV'],
+    [19, 'XIX'],
+    [27, 'XXVII'],
+    [39, 'XXXIX'],
+    [40, 'XL'],
+  ])('toRoman(%i) = %s', (n, roman) => {
     expect(toRoman(n)).toBe(roman);
   });
 

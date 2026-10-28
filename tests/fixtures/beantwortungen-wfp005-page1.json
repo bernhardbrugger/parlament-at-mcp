@@ -1,134 +1,134 @@
 {
- "pages": 125,
- "count": 6234,
- "header": [
-  {
-   "filterable": false,
-   "hidden": false,
-   "rnr": 1,
-   "label": "Aktualisierung",
-   "sortable": true,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": false,
-   "rnr": 2,
-   "label": "Art",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "orig_link_rnr": 8,
-   "link_rnr": 7,
-   "hidden": false,
-   "rnr": 3,
-   "label": "Betreff",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "orig_link_rnr": 8,
-   "link_rnr": 8,
-   "hidden": false,
-   "rnr": 4,
-   "label": "Nr.",
-   "sortable": true,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": false,
-   "rnr": 5,
-   "label": "Status",
-   "sortable": true,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "rnr": 6,
-   "label": "RSS Description",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "label": "link",
-   "sortable": false,
-   "additionalinfo": false
-  },
-  {
-   "filterable": false,
-   "hidden": true,
-   "label": "link",
-   "sortable": false,
-   "additionalinfo": false
-  }
- ],
- "rows": [
-  [
-   "23.10.2026",
-   "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
-   "Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen (BMI) zu 6817/J",
-   "6209/AB",
-   "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
-   "Betreff :\nTrotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen (BMI) zu 6817/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
-   "/gegenstand/XXVIII/AB/6209",
-   "/gegenstand/XXVIII/AB/6209"
+  "pages": 125,
+  "count": 6234,
+  "header": [
+    {
+      "filterable": false,
+      "hidden": false,
+      "rnr": 1,
+      "label": "Aktualisierung",
+      "sortable": true,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": false,
+      "rnr": 2,
+      "label": "Art",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "orig_link_rnr": 8,
+      "link_rnr": 7,
+      "hidden": false,
+      "rnr": 3,
+      "label": "Betreff",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "orig_link_rnr": 8,
+      "link_rnr": 8,
+      "hidden": false,
+      "rnr": 4,
+      "label": "Nr.",
+      "sortable": true,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": false,
+      "rnr": 5,
+      "label": "Status",
+      "sortable": true,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "rnr": 6,
+      "label": "RSS Description",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "label": "link",
+      "sortable": false,
+      "additionalinfo": false
+    },
+    {
+      "filterable": false,
+      "hidden": true,
+      "label": "link",
+      "sortable": false,
+      "additionalinfo": false
+    }
   ],
-  [
-   "23.10.2026",
-   "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
-   "Bundesweite Schutzzonen vor Einrichtungen, in denen Schwangerschaftsabbrüche durchgeführt werden – Datengrundlage, konkrete Vorfälle und Auswirkungen auf Grundrechte (BMI) zu 6815/J",
-   "6208/AB",
-   "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
-   "Betreff :\nBundesweite Schutzzonen vor Einrichtungen, in denen Schwangerschaftsabbrüche durchgeführt werden – Datengrundlage, konkrete Vorfälle und Auswirkungen auf Grundrechte (BMI) zu 6815/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
-   "/gegenstand/XXVIII/AB/6208",
-   "/gegenstand/XXVIII/AB/6208"
-  ],
-  [
-   "23.10.2026",
-   "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
-   "Terrorwarnstufe in Österreich seit Oktober 2023 (BMI) zu 6813/J",
-   "6207/AB",
-   "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
-   "Betreff :\nTerrorwarnstufe in Österreich seit Oktober 2023 (BMI) zu 6813/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
-   "/gegenstand/XXVIII/AB/6207",
-   "/gegenstand/XXVIII/AB/6207"
-  ],
-  [
-   "23.10.2026",
-   "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
-   "Wirkungsziel \"Stärkung der Wettbewerbsfähigkeit der österreichischen Wirtschaft mit Fokus auf KMU\" (BMWET) zu 6816/J",
-   "6206/AB",
-   "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
-   "Betreff :\nWirkungsziel \"Stärkung der Wettbewerbsfähigkeit der österreichischen Wirtschaft mit Fokus auf KMU\" (BMWET) zu 6816/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
-   "/gegenstand/XXVIII/AB/6206",
-   "/gegenstand/XXVIII/AB/6206"
-  ],
-  [
-   "23.10.2026",
-   "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
-   "Strafvollzugsgesetz § 133a (BMJ) zu 6812/J",
-   "6205/AB",
-   "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
-   "Betreff :\nStrafvollzugsgesetz § 133a (BMJ) zu 6812/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
-   "/gegenstand/XXVIII/AB/6205",
-   "/gegenstand/XXVIII/AB/6205"
-  ],
-  [
-   "23.10.2026",
-   "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
-   "Transparenz-Defizit im Salzkammergut: Die tatsächliche Kosten- und Besucherbilanz der Kulturhauptstadt 2024 (BMWKMS) zu 6819/J",
-   "6204/AB",
-   "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
-   "Betreff :\nTransparenz-Defizit im Salzkammergut: Die tatsächliche Kosten- und Besucherbilanz der Kulturhauptstadt 2024 (BMWKMS) zu 6819/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
-   "/gegenstand/XXVIII/AB/6204",
-   "/gegenstand/XXVIII/AB/6204"
+  "rows": [
+    [
+      "23.10.2026",
+      "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
+      "Trotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen (BMI) zu 6817/J",
+      "6209/AB",
+      "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
+      "Betreff :\nTrotz angespannter Sicherheitslage um den ESC, Polizeischutz sei selber zu zahlen (BMI) zu 6817/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
+      "/gegenstand/XXVIII/AB/6209",
+      "/gegenstand/XXVIII/AB/6209"
+    ],
+    [
+      "23.10.2026",
+      "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
+      "Bundesweite Schutzzonen vor Einrichtungen, in denen Schwangerschaftsabbrüche durchgeführt werden – Datengrundlage, konkrete Vorfälle und Auswirkungen auf Grundrechte (BMI) zu 6815/J",
+      "6208/AB",
+      "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
+      "Betreff :\nBundesweite Schutzzonen vor Einrichtungen, in denen Schwangerschaftsabbrüche durchgeführt werden – Datengrundlage, konkrete Vorfälle und Auswirkungen auf Grundrechte (BMI) zu 6815/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
+      "/gegenstand/XXVIII/AB/6208",
+      "/gegenstand/XXVIII/AB/6208"
+    ],
+    [
+      "23.10.2026",
+      "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
+      "Terrorwarnstufe in Österreich seit Oktober 2023 (BMI) zu 6813/J",
+      "6207/AB",
+      "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
+      "Betreff :\nTerrorwarnstufe in Österreich seit Oktober 2023 (BMI) zu 6813/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
+      "/gegenstand/XXVIII/AB/6207",
+      "/gegenstand/XXVIII/AB/6207"
+    ],
+    [
+      "23.10.2026",
+      "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
+      "Wirkungsziel \"Stärkung der Wettbewerbsfähigkeit der österreichischen Wirtschaft mit Fokus auf KMU\" (BMWET) zu 6816/J",
+      "6206/AB",
+      "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
+      "Betreff :\nWirkungsziel \"Stärkung der Wettbewerbsfähigkeit der österreichischen Wirtschaft mit Fokus auf KMU\" (BMWET) zu 6816/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
+      "/gegenstand/XXVIII/AB/6206",
+      "/gegenstand/XXVIII/AB/6206"
+    ],
+    [
+      "23.10.2026",
+      "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
+      "Strafvollzugsgesetz § 133a (BMJ) zu 6812/J",
+      "6205/AB",
+      "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
+      "Betreff :\nStrafvollzugsgesetz § 133a (BMJ) zu 6812/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
+      "/gegenstand/XXVIII/AB/6205",
+      "/gegenstand/XXVIII/AB/6205"
+    ],
+    [
+      "23.10.2026",
+      "<span title=\"Anfragebeantwortung\" class=\"zeigeTooltip\">AB</span>",
+      "Transparenz-Defizit im Salzkammergut: Die tatsächliche Kosten- und Besucherbilanz der Kulturhauptstadt 2024 (BMWKMS) zu 6819/J",
+      "6204/AB",
+      "<div class=\"status\" title=\"Einlangen im Nationalrat\"><div class=\"circles\" role=\"img\" aria-label=\"Einlangen im Nationalrat\"><span class=\"circle full 0\"></span><span class=\"circle full 1\"></span><span class=\"circle full 2\"></span><span class=\"circle full 3\"></span><span class=\"circle full 4\"></span></div></div>",
+      "Betreff :\nTransparenz-Defizit im Salzkammergut: Die tatsächliche Kosten- und Besucherbilanz der Kulturhauptstadt 2024 (BMWKMS) zu 6819/J\n<br />\nDatum:\n23.10.2026\n<br />\nStatus:\nEinlangen im Nationalrat\n<br /> Phase:\n05\n<br />\n",
+      "/gegenstand/XXVIII/AB/6204",
+      "/gegenstand/XXVIII/AB/6204"
+    ]
   ]
- ]
 }

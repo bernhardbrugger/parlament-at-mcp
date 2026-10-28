@@ -1,149 +1,149 @@
 {
- "pages": 26,
- "lastSync": "2026-10-28 02:10:07.0",
- "count": 129,
- "header": [
-  {
-   "feldId": 110,
-   "hidden": true,
-   "rnr": 1,
-   "listeId": 251,
-   "label": "GREMIUM",
-   "feld_name": "GREMIUM"
-  },
-  {
-   "feldId": 111,
-   "hidden": true,
-   "rnr": 2,
-   "listeId": 251,
-   "label": "GP",
-   "feld_name": "GP_CODE"
-  },
-  {
-   "feldId": 425,
-   "hidden": true,
-   "rnr": 3,
-   "listeId": 251,
-   "label": "gp_von"
-  },
-  {
-   "feldId": 112,
-   "hidden": false,
-   "sort_rnr": 10,
-   "rnr": 4,
-   "listeId": 251,
-   "label": "Sitzung",
-   "sortable": "1",
-   "feld_name": "SITZUNG"
-  },
-  {
-   "feldId": 113,
-   "hidden": false,
-   "rnr": 5,
-   "listeId": 251,
-   "label": "Rede",
-   "feld_name": "Rede"
-  },
-  {
-   "css_class": "buttons-col",
-   "feldId": 114,
-   "hidden": false,
-   "rnr": 6,
-   "listeId": 251,
-   "class": "buttons-col"
-  },
-  {
-   "css_class": "buttons-col",
-   "feldId": 115,
-   "hidden": false,
-   "rnr": 7,
-   "listeId": 251,
-   "class": "buttons-col"
-  },
-  {
-   "feldId": 116,
-   "hidden": true,
-   "rnr": 8,
-   "listeId": 251,
-   "label": "PAD_INTERN",
-   "feld_name": "PAD_INTERN"
-  },
-  {
-   "feldId": 968,
-   "hidden": true,
-   "rnr": 9,
-   "mediaType": "fromDate",
-   "listeId": 251,
-   "label": "fromDate"
-  },
-  {
-   "feldId": 3401,
-   "hidden": true,
-   "rnr": 10,
-   "listeId": 251,
-   "label": "Sortier"
-  }
- ],
- "rows": [
-  [
-   "N",
-   "XXVII",
-   "Wed Oct 23 02:00:00 CEST 2019",
-   "<a href=\"/sitzung/XXVII/NRSITZ/217?selectedStage=111\" target=\"_blank\">217. Sitzung (01.06.2023) des Nationalrats der XXVII GP.</a>",
-   "Bundes-Energieeffizienzgesetz",
-   "<a href=\"/dokument/XXVII/NRSITZ/217/fnameorig_1637108.html#RU_297804\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
-   "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/217?DEBATTE=1&TS=1685625449\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
-   "91034",
-   "2023-06-01T12:00:00",
-   "202306010217"
+  "pages": 26,
+  "lastSync": "2026-10-28 02:10:07.0",
+  "count": 129,
+  "header": [
+    {
+      "feldId": 110,
+      "hidden": true,
+      "rnr": 1,
+      "listeId": 251,
+      "label": "GREMIUM",
+      "feld_name": "GREMIUM"
+    },
+    {
+      "feldId": 111,
+      "hidden": true,
+      "rnr": 2,
+      "listeId": 251,
+      "label": "GP",
+      "feld_name": "GP_CODE"
+    },
+    {
+      "feldId": 425,
+      "hidden": true,
+      "rnr": 3,
+      "listeId": 251,
+      "label": "gp_von"
+    },
+    {
+      "feldId": 112,
+      "hidden": false,
+      "sort_rnr": 10,
+      "rnr": 4,
+      "listeId": 251,
+      "label": "Sitzung",
+      "sortable": "1",
+      "feld_name": "SITZUNG"
+    },
+    {
+      "feldId": 113,
+      "hidden": false,
+      "rnr": 5,
+      "listeId": 251,
+      "label": "Rede",
+      "feld_name": "Rede"
+    },
+    {
+      "css_class": "buttons-col",
+      "feldId": 114,
+      "hidden": false,
+      "rnr": 6,
+      "listeId": 251,
+      "class": "buttons-col"
+    },
+    {
+      "css_class": "buttons-col",
+      "feldId": 115,
+      "hidden": false,
+      "rnr": 7,
+      "listeId": 251,
+      "class": "buttons-col"
+    },
+    {
+      "feldId": 116,
+      "hidden": true,
+      "rnr": 8,
+      "listeId": 251,
+      "label": "PAD_INTERN",
+      "feld_name": "PAD_INTERN"
+    },
+    {
+      "feldId": 968,
+      "hidden": true,
+      "rnr": 9,
+      "mediaType": "fromDate",
+      "listeId": 251,
+      "label": "fromDate"
+    },
+    {
+      "feldId": 3401,
+      "hidden": true,
+      "rnr": 10,
+      "listeId": 251,
+      "label": "Sortier"
+    }
   ],
-  [
-   "N",
-   "XXVII",
-   "Wed Oct 23 02:00:00 CEST 2019",
-   "<a href=\"/sitzung/XXVII/NRSITZ/211?selectedStage=111\" target=\"_blank\">211. Sitzung (12.05.2023) des Nationalrats der XXVII GP.</a>",
-   "Dringlicher Antrag der Abg. Rendi-Wagner betr. Totalversagen der Bundesregierung im Kampf gegen die Teuerung!",
-   "<a href=\"/dokument/XXVII/NRSITZ/211/fnameorig_1598890.html#RU_295752\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
-   "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/211?DEBATTE=65&TS=1683892983\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
-   "91034",
-   "2023-05-12T12:00:00",
-   "202305120211"
-  ],
-  [
-   "N",
-   "XXVII",
-   "Wed Oct 23 02:00:00 CEST 2019",
-   "<a href=\"/sitzung/XXVII/NRSITZ/209?selectedStage=111\" target=\"_blank\">209. Sitzung (27.04.2023) des Nationalrats der XXVII GP.</a>",
-   "\"Die Gesundheitsversorgung der österreichischen Bevölkerung ist in Gefahr. Wann werden Sie endlich aktiv, Herr Bundeskanzler?\"",
-   "<a href=\"/dokument/XXVII/NRSITZ/209/fnameorig_1597154.html#RU_294260\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
-   "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/209?DEBATTE=150&TS=1682586498\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
-   "91034",
-   "2023-04-27T12:00:00",
-   "202304270209"
-  ],
-  [
-   "N",
-   "XXVII",
-   "Wed Oct 23 02:00:00 CEST 2019",
-   "<a href=\"/sitzung/XXVII/NRSITZ/205?selectedStage=111\" target=\"_blank\">205. Sitzung (29.03.2023) des Nationalrats der XXVII GP.</a>",
-   "Einkommensteuergesetz 1988",
-   "<a href=\"/dokument/XXVII/NRSITZ/205/fnameorig_1605568.html#RU_292312\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
-   "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/205?DEBATTE=3&TS=1680091736\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
-   "91034",
-   "2023-03-29T12:00:00",
-   "202303290205"
-  ],
-  [
-   "N",
-   "XXVII",
-   "Wed Oct 23 02:00:00 CEST 2019",
-   "<a href=\"/sitzung/XXVII/NRSITZ/205?selectedStage=111\" target=\"_blank\">205. Sitzung (29.03.2023) des Nationalrats der XXVII GP.</a>",
-   "Dringlicher (Entschließungs-)Antrag der Abg. Muchitsch betr. Aufhebung der Aliquotierung der ersten Pensionsanpassung",
-   "<a href=\"/dokument/XXVII/NRSITZ/205/fnameorig_1605568.html#R_292583_10\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
-   "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/205?DEBATTE=65&TS=1680103440\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
-   "91034",
-   "2023-03-29T12:00:00",
-   "202303290205"
+  "rows": [
+    [
+      "N",
+      "XXVII",
+      "Wed Oct 23 02:00:00 CEST 2019",
+      "<a href=\"/sitzung/XXVII/NRSITZ/217?selectedStage=111\" target=\"_blank\">217. Sitzung (01.06.2023) des Nationalrats der XXVII GP.</a>",
+      "Bundes-Energieeffizienzgesetz",
+      "<a href=\"/dokument/XXVII/NRSITZ/217/fnameorig_1637108.html#RU_297804\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
+      "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/217?DEBATTE=1&TS=1685625449\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
+      "91034",
+      "2023-06-01T12:00:00",
+      "202306010217"
+    ],
+    [
+      "N",
+      "XXVII",
+      "Wed Oct 23 02:00:00 CEST 2019",
+      "<a href=\"/sitzung/XXVII/NRSITZ/211?selectedStage=111\" target=\"_blank\">211. Sitzung (12.05.2023) des Nationalrats der XXVII GP.</a>",
+      "Dringlicher Antrag der Abg. Rendi-Wagner betr. Totalversagen der Bundesregierung im Kampf gegen die Teuerung!",
+      "<a href=\"/dokument/XXVII/NRSITZ/211/fnameorig_1598890.html#RU_295752\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
+      "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/211?DEBATTE=65&TS=1683892983\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
+      "91034",
+      "2023-05-12T12:00:00",
+      "202305120211"
+    ],
+    [
+      "N",
+      "XXVII",
+      "Wed Oct 23 02:00:00 CEST 2019",
+      "<a href=\"/sitzung/XXVII/NRSITZ/209?selectedStage=111\" target=\"_blank\">209. Sitzung (27.04.2023) des Nationalrats der XXVII GP.</a>",
+      "\"Die Gesundheitsversorgung der österreichischen Bevölkerung ist in Gefahr. Wann werden Sie endlich aktiv, Herr Bundeskanzler?\"",
+      "<a href=\"/dokument/XXVII/NRSITZ/209/fnameorig_1597154.html#RU_294260\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
+      "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/209?DEBATTE=150&TS=1682586498\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
+      "91034",
+      "2023-04-27T12:00:00",
+      "202304270209"
+    ],
+    [
+      "N",
+      "XXVII",
+      "Wed Oct 23 02:00:00 CEST 2019",
+      "<a href=\"/sitzung/XXVII/NRSITZ/205?selectedStage=111\" target=\"_blank\">205. Sitzung (29.03.2023) des Nationalrats der XXVII GP.</a>",
+      "Einkommensteuergesetz 1988",
+      "<a href=\"/dokument/XXVII/NRSITZ/205/fnameorig_1605568.html#RU_292312\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
+      "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/205?DEBATTE=3&TS=1680091736\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
+      "91034",
+      "2023-03-29T12:00:00",
+      "202303290205"
+    ],
+    [
+      "N",
+      "XXVII",
+      "Wed Oct 23 02:00:00 CEST 2019",
+      "<a href=\"/sitzung/XXVII/NRSITZ/205?selectedStage=111\" target=\"_blank\">205. Sitzung (29.03.2023) des Nationalrats der XXVII GP.</a>",
+      "Dringlicher (Entschließungs-)Antrag der Abg. Muchitsch betr. Aufhebung der Aliquotierung der ersten Pensionsanpassung",
+      "<a href=\"/dokument/XXVII/NRSITZ/205/fnameorig_1605568.html#R_292583_10\" target=\"_blank\"><i class=\"fa-file-code fal\"></i><span class=\"sr-only\">Protokoll</span></a>",
+      "<a href=\"/aktuelles/mediathek/XXVII/NRSITZ/205?DEBATTE=65&TS=1680103440\" target=\"_blank\"><i class=\"fa fa-play-circle\"></i><span class=\"sr-only\">Abspielen</span></a>",
+      "91034",
+      "2023-03-29T12:00:00",
+      "202303290205"
+    ]
   ]
- ]
 }

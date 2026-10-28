@@ -4,6 +4,7 @@ import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
 import { parseLegisPeriod } from '../legis-period.js';
 import { fetchSlice, isoFromDe, PAGE_SIZE } from '../paging.js';
 import { cleanText, truncate } from '../text.js';
+import { gegenstandItemSchema, listOutput, listResult } from '../output.js';
 import { rowsToObjects, type FilterResponse } from '../types.js';
 
 /** List id of the "Verhandlungsgegenstände" (bills, motions, petitions, ...). Body keys: NRBR, GP_CODE, VHG, SW, ... */
@@ -97,7 +98,10 @@ export function formatGegenstaende(result: { total: number; items: GegenstandIte
       : `Keine Treffer ab offset=${q.offset}; es gibt insgesamt ${result.total}.`;
   }
   const to = q.offset + result.items.length;
-  const lines = [`${result.total} ${ARTEN[q.art]}-Treffer, angezeigt ${q.offset + 1}–${to}.${to < result.total ? ` Weitere mit offset=${to}.` : ''}`, ''];
+  const lines = [
+    `${result.total} ${ARTEN[q.art]}-Treffer, angezeigt ${q.offset + 1}–${to}.${to < result.total ? ` Weitere mit offset=${to}.` : ''}`,
+    '',
+  ];
   for (const it of result.items) {
     lines.push(`- ${[it.zitation, it.nummerText, it.datum].filter(Boolean).join(' · ')}`);
     lines.push(`  ${truncate(it.betreff, 300)}`);
@@ -122,12 +126,16 @@ export function registerGegenstaende(server: McpServer, client: ParlamentClient)
         'Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {
         art: z.enum(['RV', 'ANTR', 'VOLKBG']).default('RV').describe('RV = Regierungsvorlage, ANTR = Antrag, VOLKBG = Volksbegehren'),
-        gp: z.union([z.string().min(1).max(8), z.number().int().min(1).max(40)]).optional().describe('Gesetzgebungsperiode: 28 oder "XXVIII"'),
+        gp: z
+          .union([z.string().min(1).max(8), z.number().int().min(1).max(40)])
+          .optional()
+          .describe('Gesetzgebungsperiode: 28 oder "XXVIII"'),
         schlagwort: z.string().min(2).max(100).optional().describe('Amtliches Schlagwort, z. B. "Verwaltungsverfahren"'),
         gremium: z.enum(['NR', 'BR']).default('NR').describe('NR = Nationalrat, BR = Bundesrat'),
         limit: z.number().int().min(1).max(50).default(15).describe('Anzahl Treffer pro Aufruf'),
         offset: z.number().int().min(0).max(5000).default(0).describe('Treffer überspringen (Seiten)'),
       },
+      outputSchema: listOutput(gegenstandItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
     },
     async (args) => {
@@ -146,9 +154,11 @@ export function registerGegenstaende(server: McpServer, client: ParlamentClient)
         ...(args.schlagwort ? { schlagwort: args.schlagwort } : {}),
       };
       try {
-        return { content: [{ type: 'text', text: formatGegenstaende(await searchGegenstaende(client, query), query) }] };
+        const result = await searchGegenstaende(client, query);
+        return listResult(formatGegenstaende(result, query), result.total, query.offset, result.items);
       } catch (e) {
-        if (e instanceof ParlamentError) return { isError: true, content: [{ type: 'text', text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };
+        if (e instanceof ParlamentError)
+          return { isError: true, content: [{ type: 'text', text: `Das Parlament hat nicht geantwortet: ${e.message}` }] };
         throw e;
       }
     },

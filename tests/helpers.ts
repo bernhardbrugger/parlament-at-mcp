@@ -39,9 +39,14 @@ export function syntheticPage(count: number, startNr: number, n: number) {
     ];
   });
   const header = [
-    { rnr: 1, label: 'Aktualisierung' }, { rnr: 2, label: 'Art' }, { rnr: 3, label: 'Betreff' },
-    { rnr: 4, label: 'Nr.' }, { rnr: 5, label: 'Status' }, { rnr: 6, label: 'RSS Description', hidden: true },
-    { label: 'link', hidden: true }, { label: 'link', hidden: true },
+    { rnr: 1, label: 'Aktualisierung' },
+    { rnr: 2, label: 'Art' },
+    { rnr: 3, label: 'Betreff' },
+    { rnr: 4, label: 'Nr.' },
+    { rnr: 5, label: 'Status' },
+    { rnr: 6, label: 'RSS Description', hidden: true },
+    { label: 'link', hidden: true },
+    { label: 'link', hidden: true },
   ];
   return { pages: Math.ceil(count / 50), count, header, rows };
 }

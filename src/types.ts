@@ -109,7 +109,16 @@ export const detailSchema = z
           ),
         ),
         reference: lenient(
-          z.array(z.object({ text: z.string().nullish(), subject: z.string().nullish(), zitation: z.string().nullish(), url: z.string().nullish() }).passthrough()),
+          z.array(
+            z
+              .object({
+                text: z.string().nullish(),
+                subject: z.string().nullish(),
+                zitation: z.string().nullish(),
+                url: z.string().nullish(),
+              })
+              .passthrough(),
+          ),
         ),
         topics: lenient(bubbles),
         headwords: lenient(bubbles),
@@ -117,7 +126,12 @@ export const detailSchema = z
         recentagenda: lenient(z.array(z.object({ title: z.string().nullish(), documents: z.array(linkDoc).nullish() }).passthrough())),
         assignments: lenient(
           z
-            .object({ data: z.object({ links: z.array(z.object({ title: z.string().nullish(), link: z.string().nullish() }).passthrough()).nullish() }).passthrough().nullish() })
+            .object({
+              data: z
+                .object({ links: z.array(z.object({ title: z.string().nullish(), link: z.string().nullish() }).passthrough()).nullish() })
+                .passthrough()
+                .nullish(),
+            })
             .passthrough(),
         ),
         /** Bills ("Regierungsvorlage" etc.): where the item stands, per phase of the legislative process. */
@@ -131,7 +145,9 @@ export const detailSchema = z
             .passthrough(),
         ),
         phase: lenient(z.array(z.object({ name: z.string().nullish(), stages: z.array(stage).nullish() }).passthrough())),
-        shortinfo: lenient(z.object({ teil1: z.string().nullish(), teil2: z.string().nullish(), stand: z.string().nullish() }).passthrough()),
+        shortinfo: lenient(
+          z.object({ teil1: z.string().nullish(), teil2: z.string().nullish(), stand: z.string().nullish() }).passthrough(),
+        ),
         vote: lenient(z.object({ text: z.string().nullish(), infavor: z.boolean().nullish() }).passthrough()),
       })
       .passthrough(),
@@ -144,7 +160,11 @@ const speechLinkSchema = z
   .object({
     data: z
       .object({
-        links: z.array(z.object({ documents: z.array(z.object({ link: z.string(), type: z.string().optional() }).passthrough()).optional() }).passthrough()),
+        links: z.array(
+          z
+            .object({ documents: z.array(z.object({ link: z.string(), type: z.string().optional() }).passthrough()).optional() })
+            .passthrough(),
+        ),
       })
       .passthrough(),
   })
@@ -177,9 +197,7 @@ export const progressEntrySchema = z
  * ARRAY of blocks - metadata, `info`, and `progress` (agenda items with their speeches). Blocks are found by
  * the keys they carry, not by position.
  */
-export const sessionSchema = z
-  .object({ content: z.array(z.record(z.unknown())) })
-  .passthrough();
+export const sessionSchema = z.object({ content: z.array(z.record(z.unknown())) }).passthrough();
 
 export interface Session {
   title: string;
@@ -200,7 +218,14 @@ export function parseSession(raw: unknown): Session {
   const progressBlock = blocks.find((b) => Array.isArray(b['progress']));
   const str = (v: unknown): string | null => (typeof v === 'string' && v ? v : null);
   const protocols = z
-    .array(z.object({ title: z.string().optional(), documents: z.array(z.object({ link: z.string(), type: z.string().optional() }).passthrough()).optional() }).passthrough())
+    .array(
+      z
+        .object({
+          title: z.string().optional(),
+          documents: z.array(z.object({ link: z.string(), type: z.string().optional() }).passthrough()).optional(),
+        })
+        .passthrough(),
+    )
     .catch([])
     .parse(meta['stdocuments']);
   return {
@@ -211,8 +236,14 @@ export function parseSession(raw: unknown): Session {
     end: str(info['endtime']),
     state: str(info['state']),
     protocolNote: str(meta['sthint']),
-    protocols: protocols.map((p) => ({ title: p.title ?? 'Dokument', links: (p.documents ?? []).map((d) => ({ link: d.link, type: d.type })) })),
-    progress: z.array(progressEntrySchema).catch([]).parse(progressBlock?.['progress'] ?? []),
+    protocols: protocols.map((p) => ({
+      title: p.title ?? 'Dokument',
+      links: (p.documents ?? []).map((d) => ({ link: d.link, type: d.type })),
+    })),
+    progress: z
+      .array(progressEntrySchema)
+      .catch([])
+      .parse(progressBlock?.['progress'] ?? []),
   };
 }
 
@@ -222,7 +253,10 @@ export const personSchema = z
     content: z
       .object({
         headingbox: z.object({ title_plain: z.string().nullish(), title: z.string().nullish() }).passthrough().nullish(),
-        personInfo: z.object({ aktiv: z.boolean().nullish(), personTyp: z.string().nullish(), pad_intern: z.number().nullish() }).passthrough().nullish(),
+        personInfo: z
+          .object({ aktiv: z.boolean().nullish(), personTyp: z.string().nullish(), pad_intern: z.number().nullish() })
+          .passthrough()
+          .nullish(),
         biografie: z
           .object({
             biografieStand: z.string().nullish(),

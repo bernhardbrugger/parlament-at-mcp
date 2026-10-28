@@ -42,7 +42,20 @@ describe('resolvePerson', () => {
   it('prefers the single current member among several namesakes', async () => {
     const nr = fixture('members-wfw002-nr.json');
     // make Maurice Androsch (pad 73000) a current member; his namesake Hannes (pad 18) is not
-    nr.rows.push(['Androsch Maurice, Ing.', '<span title="NEOS Parlamentsklub">NEOS</span>', '9 Wien', '<span title="Wien">W</span>', 'Androsch', null, null, null, null, null, null, '/person/73000']);
+    nr.rows.push([
+      'Androsch Maurice, Ing.',
+      '<span title="NEOS Parlamentsklub">NEOS</span>',
+      '9 Wien',
+      '<span title="Wien">W</span>',
+      'Androsch',
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      '/person/73000',
+    ]);
     const client = new ParlamentClient({
       delayMs: 0,
       retries: 0,
@@ -65,7 +78,9 @@ describe('resolvePerson', () => {
   it('explains missing or unknown input', async () => {
     const { client } = await persons();
     expect(await resolvePerson(client, {})).toEqual({ error: 'Bitte pad_intern oder name angeben.' });
-    expect(await resolvePerson(client, { pad_intern: 1 })).toMatchObject({ error: expect.stringContaining('Keine Person mit pad_intern 1') });
+    expect(await resolvePerson(client, { pad_intern: 1 })).toMatchObject({
+      error: expect.stringContaining('Keine Person mit pad_intern 1'),
+    });
     expect(await resolvePerson(client, { name: 'Zzzzzz' })).toMatchObject({ error: expect.stringContaining('Keine Person zu "Zzzzzz"') });
   });
 });
@@ -97,7 +112,10 @@ describe('person detail (real fixture)', () => {
 
   it('prefers the current-member line over the generic flag', async () => {
     const { all } = await persons();
-    const rw = { ...all.find((p) => p.padIntern === 91034)!, aktuell: { gremium: 'NR' as const, klub: 'SPÖ', wahlkreis: 'B Bundeswahlvorschlag', bundesland: null } };
+    const rw = {
+      ...all.find((p) => p.padIntern === 91034)!,
+      aktuell: { gremium: 'NR' as const, klub: 'SPÖ', wahlkreis: 'B Bundeswahlvorschlag', bundesland: null },
+    };
     const text = formatPerson(rw, personSchema.parse(detail));
     expect(text).toContain('AKTUELL im Nationalrat · Klub SPÖ');
     expect(text).not.toContain('Derzeit nicht im Amt');
@@ -202,7 +220,9 @@ describe('committees (real fixtures)', () => {
     expect(text).toContain('Vorsitz:');
     expect(text).toContain('Obmann: Josef Muchitsch — https://www.parlament.gv.at/person/35497');
     expect(text).toContain('Obmannstellvertreterin: Dr. Dagmar Belakowitsch');
-    expect(text).toContain('Tagesordnung der 11. Sitzung vom 03.11.2026: https://www.parlament.gv.at/dokument/XXVIII/A-AS/1/00917/TO_16952398.html');
+    expect(text).toContain(
+      'Tagesordnung der 11. Sitzung vom 03.11.2026: https://www.parlament.gv.at/dokument/XXVIII/A-AS/1/00917/TO_16952398.html',
+    );
     expect(text).toContain('Zugewiesene Gegenstände (die 3 ersten von 3)');
     expect(text).toContain('Quelle: https://www.parlament.gv.at/ausschuss/XXVIII/A-AS/1/00917');
   });
