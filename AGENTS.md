@@ -68,7 +68,7 @@ State on 2026-10-28: 10 tools, 5 prompts, 155 offline tests (95 % lines), live s
       compact one-line mode for long lists to save context.
 - [ ] E. Resources: expose stable URIs (`parlament://gegenstand/XXVIII/I/251`, `parlament://person/91034`) as MCP resources/resource links in tool results.
 - [ ] F. Widgets (MCP Apps) for session outline and result lists, only after A-E and with a full text fallback (ris-mcp-ts does this; study its `DECISIONS.md` for client quirks first).
-- [ ] G. When the owner has granted the `workflow` token scope (watch `inbox.md`): move `ci/github-actions-ci.yml` to `.github/workflows/`, add CodeQL, dependabot, release workflow.
-      Until then: do nothing about CI. Also not without the owner: npm publish, registry publish, GitHub release, going public.
+- [x] G. (done 2026-10-28) CI is live in `.github/workflows/ci.yml` (Linux + Windows, Node 20/22), Dependabot is configured (zod major ignored on purpose). CodeQL waits until the repo is public (private repos need GitHub Advanced Security). Still not without the owner: npm publish, registry publish, GitHub release, going public.
+- [ ] H. Dependabot PRs #1-#5 (checkout 7, setup-node 7, cheerio 1.2, dev-dependency group, a zod-4 PR that Dependabot will close itself): they failed only because main's CI was red (CRLF on Windows). Comment `@dependabot rebase` on each, merge the green patch/minor ones one at a time (`npm run check` + `npm run smoke:live` afterwards), look at majors in the changelog first. Never merge a red PR.
 
 When an item is finished: tick it here, update `SPEC.md` milestone notes, `state/portfolio.json` (`nextStep`), `state/log.md`.
