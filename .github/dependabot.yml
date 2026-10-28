@@ -5,6 +5,10 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    ignore:
+      # zod 4 changes the API (z.record needs two arguments, ...) and the MCP SDK still targets zod 3: migrate on purpose, not by bot
+      - dependency-name: zod
+        update-types: ["version-update:semver-major"]
     groups:
       dev-dependencies:
         dependency-type: development
