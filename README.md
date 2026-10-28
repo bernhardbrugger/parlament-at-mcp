@@ -2,7 +2,7 @@
 
 MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an LLM who sits where, which committee a bill is in, what was asked and answered, and **what a politician actually said** in the plenary - with a link to the official source for every result.
 
-> **Status: v0.4, in development.** Ten tools, five prompts, 155 offline tests (95 % line coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
+> **Status: v0.4, in development.** Eleven tools, five prompts, 170 offline tests (95 % line coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
 
 ## What makes it useful
 
@@ -14,24 +14,26 @@ MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an L
 
 ## Tools
 
-| Tool                | What it does                                                                                                         |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `parl_abgeordnete`  | Find people by name, body, function; current members are marked and filterable (`nur_aktuell`, `klub`, `bundesland`) |
-| `parl_person`       | Biography and mandates of one person with dates, club, career, education                                             |
-| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic                                             |
-| `parl_anfragen`     | Inquiries or answers, newest first; filter by body, legislative period, search term                                  |
-| `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge), referendums (Volksbegehren) by period and official keyword       |
-| `parl_gegenstand`   | One item in detail: introducer/answerer with party, procedure, vote, Bundesgesetzblatt, PDFs, references             |
-| `parl_sitzungen`    | List plenary sessions of the Nationalrat and the Bundesrat                                                           |
-| `parl_sitzung`      | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item                  |
-| `parl_rede`         | One speech as text, in citable pieces                                                                                |
-| `parl_ausschuesse`  | Committees of a period; with `suche=` also chairs (with party), tasks, latest agendas, assigned items                |
+| Tool                | What it does                                                                                                                  |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `parl_abgeordnete`  | Find people by name, body, function; current members are marked and filterable (`nur_aktuell`, `klub`, `bundesland`)          |
+| `parl_person`       | Biography and mandates of one person with dates, club, career, education                                                      |
+| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic                                                      |
+| `parl_anfragen`     | Inquiries or answers, newest first; filter by body, legislative period, search term                                           |
+| `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge), referendums (Volksbegehren) by period and official keyword                |
+| `parl_gegenstand`   | One item in detail: introducer/answerer with party, procedure, vote, Bundesgesetzblatt, PDFs, references                      |
+| `parl_sitzungen`    | List plenary sessions of the Nationalrat and the Bundesrat                                                                    |
+| `parl_sitzung`      | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item                           |
+| `parl_rede`         | One speech as text, in citable pieces                                                                                         |
+| `parl_beschluesse`  | What a session decided per agenda item, with the vote by party and later steps (e.g. Bundesrat); press releases, agenda links |
+| `parl_ausschuesse`  | Committees of a period; with `suche=` also chairs (with party), tasks, latest agendas, assigned items                         |
 
 **Prompts:** `rede_recherchieren`, `gesetz_verfolgen`, `anfragen_zum_thema`, `ausschuss_ueberblick`, `abgeordnete_profil` - each chains the tools above for one research task.
 
 Example questions (all answered from live data during development):
 
 - _"Was hat Herbert Kickl in der 30. Sitzung der XXVIII. GP zum Budgetbegleitgesetz gesagt?"_ → `parl_sitzung` (`redner="Kickl"`) → `parl_rede`
+- _"Was hat der Nationalrat am 15. Oktober 2026 beschlossen und wie haben die Parteien abgestimmt?"_ → `parl_beschluesse`
 - _"Wo steht die Regierungsvorlage 251 d.B. im Verfahren?"_ → procedure per phase, vote _Dafür: F, V, S, N, G, Dagegen: -_, Bundesgesetzblatt I Nr. 86/2025
 - _"Wer ist Obmann des Finanzausschusses und was steht auf der Tagesordnung?"_ → `parl_ausschuesse` with `suche="Finanzausschuss"`
 - _"Wer sitzt für die Grünen aus Wien im Nationalrat?"_ → `parl_abgeordnete` with `klub`, `bundesland`

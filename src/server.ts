@@ -4,6 +4,7 @@ import { registerPrompts } from './prompts.js';
 import { registerAbgeordnete } from './tools/abgeordnete.js';
 import { registerAnfragen } from './tools/anfragen.js';
 import { registerAusschuesse } from './tools/ausschuesse.js';
+import { registerBeschluesse } from './tools/beschluesse.js';
 import { registerGegenstand } from './tools/gegenstand.js';
 import { registerGegenstaende } from './tools/gegenstaende.js';
 import { registerPerson } from './tools/person.js';
@@ -12,7 +13,7 @@ import { registerSitzung } from './tools/sitzung.js';
 import { registerSitzungen } from './tools/sitzungen.js';
 
 export const SERVER_NAME = 'parlament-at-mcp';
-export const SERVER_VERSION = '0.4.0';
+export const SERVER_VERSION = '0.5.0';
 
 export function createServer(client: ParlamentClient = new ParlamentClient()): McpServer {
   const server = new McpServer(
@@ -23,6 +24,7 @@ export function createServer(client: ParlamentClient = new ParlamentClient()): M
         'Tools liefern amtliche Informationen, keine Rechtsberatung. Bei Zitaten immer die url aus dem Ergebnis angeben. ' +
         'Typische Wege: Reden = parl_sitzungen (Nummer finden) -> parl_sitzung mit redner= (rede-Nummer) -> parl_rede; ' +
         'Gesetze = parl_gegenstaende -> parl_gegenstand (Stand im Verfahren); Anfragen = parl_anfragen -> parl_gegenstand (wer hat gefragt); ' +
+        'Beschlüsse einer Sitzung (mit Abstimmung nach Parteien) = parl_beschluesse; ' +
         'Personen = parl_abgeordnete -> parl_person (Lebenslauf) / parl_reden_person (alle Reden); Ausschüsse = parl_ausschuesse (mit suche= inkl. Vorsitz).',
     },
   );
@@ -33,6 +35,7 @@ export function createServer(client: ParlamentClient = new ParlamentClient()): M
   registerSitzungen(server, client);
   registerSitzung(server, client);
   registerRede(server, client);
+  registerBeschluesse(server, client);
   registerAusschuesse(server, client);
   registerPerson(server, client);
   registerPrompts(server);

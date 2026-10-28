@@ -48,7 +48,7 @@ async function call(client: Client, name: string, args: Record<string, unknown>)
 }
 
 describe('MCP server', () => {
-  it('lists ten read-only tools, each with a schema and description', async () => {
+  it('lists eleven read-only tools, each with a schema and description', async () => {
     const { client } = await connect();
     const { tools } = await client.listTools();
     expect(tools.map((t) => t.name).sort()).toEqual(
@@ -56,6 +56,7 @@ describe('MCP server', () => {
         'parl_abgeordnete',
         'parl_anfragen',
         'parl_ausschuesse',
+        'parl_beschluesse',
         'parl_gegenstaende',
         'parl_gegenstand',
         'parl_person',
@@ -259,6 +260,20 @@ describe('MCP server', () => {
     const law = await client.getPrompt({ name: 'gesetz_verfolgen', arguments: { gesetz: 'Verwaltungsverfahren' } });
     expect((law.messages[0]!.content as { text: string }).text).toContain('XXVIII');
     await expect(client.getPrompt({ name: 'rede_recherchieren', arguments: {} })).rejects.toThrow();
+  });
+
+  it('parl_beschluesse shows decisions with the vote by party and explains bad input', async () => {
+    const { client } = await connect();
+    const ok = await call(client, 'parl_beschluesse', { gp: 28, nummer: 30, top: 'TOP 3' });
+    expect(ok.isError).toBe(false);
+    expect(ok.text).toContain('Gesetzesvorschlag in dritter Lesung angenommen · Dafür: ÖVP, SPÖ, NEOS, dagegen: FPÖ, GRÜNE');
+    expect(ok.text).toContain('danach (26.06.2025): 979. Sitzung');
+    const noGp = await call(client, 'parl_beschluesse', { nummer: 30 });
+    expect(noGp.isError).toBe(true);
+    expect(noGp.text).toContain('Gesetzgebungsperiode');
+    const missing = await call(client, 'parl_beschluesse', { gp: 28, nummer: 9999 });
+    expect(missing.isError).toBe(true);
+    expect(missing.text).toContain('Keine Sitzung');
   });
 
   it('rejects out-of-range arguments before any request is made', async () => {

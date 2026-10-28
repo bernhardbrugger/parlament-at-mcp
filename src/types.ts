@@ -199,6 +199,33 @@ export const progressEntrySchema = z
  */
 export const sessionSchema = z.object({ content: z.array(z.record(z.unknown())) }).passthrough();
 
+const stageSchema = z.object({ date: z.string().nullish(), text: z.string() }).passthrough();
+
+/** One agenda item with its decisions: `resolutions[]` of a session page. */
+export const resolutionSchema = z
+  .object({
+    top: z.string().nullish(),
+    text: z.string().nullish(),
+    zitation: z.string().nullish(),
+    url: z.string().nullish(),
+    materials: z
+      .array(
+        z
+          .object({
+            text: z.string().nullish(),
+            zitation: z.string().nullish(),
+            url: z.string().nullish(),
+            prefix: z.string().nullish(),
+            stages: z.array(stageSchema).nullish(),
+          })
+          .passthrough(),
+      )
+      .nullish(),
+  })
+  .passthrough();
+
+export type Resolution = z.infer<typeof resolutionSchema>;
+
 export interface Session {
   title: string;
   zitation: string | null;
@@ -209,6 +236,12 @@ export interface Session {
   protocolNote: string | null;
   protocols: Array<{ title: string; links: Array<{ link: string; type: string | undefined }> }>;
   progress: Array<z.infer<typeof progressEntrySchema>>;
+  /** What was decided per agenda item, with party votes (empty while the session has not happened). */
+  resolutions: Resolution[];
+  /** Press releases of the Parliament about this session ("Parlamentskorrespondenz"). */
+  correspondence: Array<{ title: string; date: string | null; url: string }>;
+  /** Agenda documents (Tagesordnung, Fragestunde, list of motions, ...). */
+  agenda: Array<{ title: string; links: Array<{ link: string; type: string | undefined }> }>;
 }
 
 export function parseSession(raw: unknown): Session {
@@ -244,6 +277,27 @@ export function parseSession(raw: unknown): Session {
       .array(progressEntrySchema)
       .catch([])
       .parse(progressBlock?.['progress'] ?? []),
+    resolutions: z
+      .array(resolutionSchema)
+      .catch([])
+      .parse(meta['resolutions'] ?? []),
+    correspondence: z
+      .array(z.object({ title: z.string(), date: z.string().nullish(), url: z.string() }).passthrough())
+      .catch([])
+      .parse(meta['correspondence'] ?? [])
+      .map((c) => ({ title: c.title, date: c.date ?? null, url: c.url })),
+    agenda: z
+      .array(
+        z
+          .object({
+            title: z.string().nullish(),
+            documents: z.array(z.object({ link: z.string(), type: z.string().optional() }).passthrough()).nullish(),
+          })
+          .passthrough(),
+      )
+      .catch([])
+      .parse(meta['agenda'] ?? [])
+      .map((a) => ({ title: a.title ?? 'Dokument', links: (a.documents ?? []).map((d) => ({ link: d.link, type: d.type })) })),
   };
 }
 

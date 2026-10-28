@@ -113,6 +113,13 @@ describe('detail pages keep their shape', () => {
     expect(speeches[0]!.protocol?.data.links[0]?.documents?.some((d) => d.type === 'HTML')).toBe(true);
   });
 
+  it('a finished session carries decisions, press releases and agenda documents', () => {
+    expect(session.resolutions.length).toBeGreaterThan(2);
+    expect(session.resolutions[0]!.materials?.some((m) => (m.stages?.length ?? 0) > 0)).toBe(true);
+    expect(session.correspondence.length).toBeGreaterThan(0);
+    expect(session.agenda.length).toBeGreaterThan(0);
+  });
+
   it('a speech segment is HTML with a speaker marker', async () => {
     const html = await client.document('/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html');
     expect(html).toContain('class="randnummer"');

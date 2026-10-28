@@ -25,6 +25,7 @@ const calls = [
   ['parl_ausschuesse', { gp: 28 }, /Ausschuss/],
   ['parl_ausschuesse', { gp: 28, suche: 'Finanzausschuss' }, /Vorsitz/],
   ['parl_ausschuesse', { gremium: 'BR' }, /Ausschuss/],
+  ['parl_beschluesse', { gp: 28, nummer: 30, top: 'TOP 3' }, /Dafür: ÖVP, SPÖ, NEOS, dagegen: FPÖ, GRÜNE/],
 ];
 
 let failed = 0;

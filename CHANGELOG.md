@@ -1,6 +1,12 @@
 # Changelog
 
-## 0.4.0 (unreleased)
+## 0.5.0 (unreleased)
+
+- **New tool `parl_beschluesse`:** what a plenary session decided per agenda item, with the vote by party, later steps (e.g. Bundesrat), press releases and agenda links.
+- CI on Linux and Windows (Node 20/22), Dependabot; ESLint 10, cheerio 1.2. Vitest stays on 2.x because Vitest 5 requires Node 22+.
+- LF line endings everywhere (`.gitattributes`): Windows runners used to check files out with CRLF and failed the format check.
+
+## 0.4.0
 
 - **New tools:** `parl_ausschuesse` (committees; with `suche=` also chairs, tasks, latest agendas, assigned items), `parl_person` (biography and mandates),
   `parl_reden_person` (all plenary speeches of a person).
