@@ -1,3 +1,4 @@
+# EXPERIMENTAL: this Dockerfile has not been built or run yet.
 FROM node:22-alpine AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./

@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.5.0 (unreleased)
+## 0.5.0 (beta, first public release)
 
 - **Compact lists:** `kompakt=true` on `parl_anfragen`, `parl_gegenstaende`, `parl_sitzungen` and `parl_abgeordnete` prints one line per hit (citation, date, shortened subject, link). Measured live on 50-hit lists: 34-50 % less text. `structuredContent` stays complete.
 - **New tool `parl_beschluesse`:** what a plenary session decided per agenda item, with the vote by party, later steps (e.g. Bundesrat), press releases and agenda links.

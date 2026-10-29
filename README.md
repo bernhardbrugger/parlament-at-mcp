@@ -6,7 +6,7 @@
 
 MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an LLM who sits where, which committee a bill is in, what was asked and answered, and **what a politician actually said** in the plenary - with a link to the official source for every result.
 
-> **Status: v0.5, in development.** Twelve tools, six prompts, 440+ offline tests (98 % line, 88 % branch coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
+> **Status: v0.5, beta.** Twelve tools, six prompts, 440+ offline tests (98 % line, 88 % branch coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
 
 ## Why this exists
 
@@ -92,10 +92,9 @@ Try it with: _"Welche Regierungsvorlagen hat der Nationalrat zuletzt beschlossen
 
 ```bash
 PORT=3000 npm run start:http        # POST http://127.0.0.1:3000/mcp, health: GET /healthz
-docker build -t parlament-at-mcp . && docker run -p 3000:3000 -e ALLOWED_HOSTS=mcp.example.org parlament-at-mcp
 ```
 
-The HTTP mode itself is tested (in-process and with the built server over curl); the Dockerfile is written but has **not been built yet** (Docker is not installed on the development machine).
+The HTTP mode is tested (in-process and with the built server over curl). **Docker is experimental:** the repository contains a `Dockerfile`, but it has never been built or run, so treat it as a starting point and please report problems.
 
 The HTTP mode has no authentication and no rate limiting. Put a reverse proxy with TLS, authentication and rate limiting in front before exposing it; see [`SECURITY.md`](SECURITY.md).
 
@@ -117,7 +116,7 @@ npm run build && npm run smoke:live     # every tool once against the real inter
 npm run test:integration  # live canary: do all lists and pages still have the expected shape?
 ```
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the working rules (measure first, test from real responses, check live) and [`SPEC.md`](SPEC.md) for the plan.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the working rules (measure first, test from real responses, check live) and [`SPEC.md`](SPEC.md) for the design notes and scope.
 
 ## License
 
