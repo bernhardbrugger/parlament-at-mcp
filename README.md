@@ -64,7 +64,51 @@ Quelle: https://www.parlament.gv.at/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801
 
 ## Install
 
-Needs Node 20 or newer.
+Needs Node 20 or newer. No API key, no account: the server only talks to `www.parlament.gv.at`.
+
+### With npx (recommended)
+
+Every client starts the server with the same command, `npx -y parlament-at-mcp`; only the place of the configuration differs. Restart the client after changing its configuration.
+
+**Claude Desktop** (Settings → Developer → Edit config; `%APPDATA%\Claude\claude_desktop_config.json` on Windows, `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS)
+
+```json
+{ "mcpServers": { "parlament-at": { "command": "npx", "args": ["-y", "parlament-at-mcp"] } } }
+```
+
+**Claude Code**
+
+```bash
+claude mcp add parlament-at -- npx -y parlament-at-mcp
+```
+
+**VS Code (GitHub Copilot)**: `.vscode/mcp.json` in your project
+
+```json
+{ "servers": { "parlament-at": { "type": "stdio", "command": "npx", "args": ["-y", "parlament-at-mcp"] } } }
+```
+
+**Cursor**: `.cursor/mcp.json` in your project, or `~/.cursor/mcp.json` for all projects
+
+```json
+{ "mcpServers": { "parlament-at": { "command": "npx", "args": ["-y", "parlament-at-mcp"] } } }
+```
+
+**Windsurf**: `~/.codeium/windsurf/mcp_config.json`
+
+```json
+{ "mcpServers": { "parlament-at": { "command": "npx", "args": ["-y", "parlament-at-mcp"] } } }
+```
+
+**Any other MCP client** that speaks stdio: run `npx -y parlament-at-mcp`.
+
+> **Windows:** if a client cannot find `npx`, start it through the shell instead: `"command": "cmd", "args": ["/c", "npx", "-y", "parlament-at-mcp"]` (this variant was tested).
+>
+> **What was tested:** the `npx` command itself (installed from the packed archive on Windows, started directly and through `cmd /c`, with a live search), and Claude Desktop and Claude Code with a local build. The snippets for VS Code, Cursor and Windsurf follow those programs' documented configuration formats but have not been tried; please open an issue if one does not work.
+
+Try it with: _"Welche Regierungsvorlagen hat der Nationalrat zuletzt beschlossen, und wie haben die Parteien abgestimmt?"_ or _"Hat jemand im Nationalrat den Satz 'Ich rede vom Staatsbesuch' gesagt? Wer, wann, in welcher Sitzung? Zitiere mit Absatznummer."_
+
+### From source (development)
 
 ```bash
 git clone https://github.com/bernhardbrugger/parlament-at-mcp.git
@@ -72,21 +116,7 @@ cd parlament-at-mcp
 npm install && npm run build
 ```
 
-**Claude Desktop / any stdio client**
-
-```json
-{ "mcpServers": { "parlament-at": { "command": "node", "args": ["/absolute/path/to/parlament-at-mcp/dist/index.js"] } } }
-```
-
-On Windows use the full path with doubled backslashes, e.g. `"C:\\Users\\you\\parlament-at-mcp\\dist\\index.js"`. Claude Desktop reads the file `claude_desktop_config.json` (Settings → Developer → Edit config); restart the app after changing it. The server needs no API key and talks only to `www.parlament.gv.at`.
-
-**Claude Code**
-
-```bash
-claude mcp add parlament-at -- node /absolute/path/to/parlament-at-mcp/dist/index.js
-```
-
-Try it with: _"Welche Regierungsvorlagen hat der Nationalrat zuletzt beschlossen, und wie haben die Parteien abgestimmt?"_
+Then point the client at the built file instead of npx, e.g. for Claude Desktop `{ "mcpServers": { "parlament-at": { "command": "node", "args": ["/absolute/path/to/parlament-at-mcp/dist/index.js"] } } }` (on Windows with doubled backslashes: `"C:\\Users\\you\\parlament-at-mcp\\dist\\index.js"`). After a rebuild, restart the client: it keeps running the version it started with.
 
 **Remote (Streamable HTTP, stateless)**
 
