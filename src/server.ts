@@ -11,6 +11,7 @@ import { registerPerson } from './tools/person.js';
 import { registerRede } from './tools/rede.js';
 import { registerSitzung } from './tools/sitzung.js';
 import { registerSitzungen } from './tools/sitzungen.js';
+import { registerSuche } from './tools/suche.js';
 
 export const SERVER_NAME = 'parlament-at-mcp';
 export const SERVER_VERSION = '0.5.0';
@@ -22,7 +23,8 @@ export function createServer(client: ParlamentClient = new ParlamentClient()): M
       instructions:
         'Daten des österreichischen Parlaments (offene Daten, CC BY 4.0, Quelle: Parlamentsdirektion). ' +
         'Tools liefern amtliche Informationen, keine Rechtsberatung. Bei Zitaten immer die url aus dem Ergebnis angeben. ' +
-        'Typische Wege: Reden = parl_sitzungen (Nummer finden) -> parl_sitzung mit redner= (rede-Nummer) -> parl_rede; ' +
+        'Typische Wege: Wer hat zu einem Thema oder mit welchen Worten etwas gesagt = parl_suche (Volltext; modus=phrase für Zitate) -> parl_rede (Wortlaut, Absätze nummeriert); ' +
+        'Reden einer Sitzung = parl_sitzungen (Nummer finden) -> parl_sitzung mit redner= (rede-Nummer) -> parl_rede; ' +
         'Gesetze = parl_gegenstaende -> parl_gegenstand (Stand im Verfahren); Anfragen = parl_anfragen -> parl_gegenstand (wer hat gefragt); ' +
         'Beschlüsse einer Sitzung (mit Abstimmung nach Parteien) = parl_beschluesse; ' +
         'Personen = parl_abgeordnete -> parl_person (Lebenslauf) / parl_reden_person (alle Reden); Ausschüsse = parl_ausschuesse (mit suche= inkl. Vorsitz).',
@@ -36,6 +38,7 @@ export function createServer(client: ParlamentClient = new ParlamentClient()): M
   registerSitzung(server, client);
   registerRede(server, client);
   registerBeschluesse(server, client);
+  registerSuche(server, client);
   registerAusschuesse(server, client);
   registerPerson(server, client);
   registerPrompts(server);

@@ -38,6 +38,37 @@ export function registerPrompts(server: McpServer): void {
   );
 
   server.registerPrompt(
+    'faktencheck',
+    {
+      title: 'Aussage prüfen: Was wurde im Parlament wirklich gesagt?',
+      description:
+        'Prüft eine Aussage oder ein Zitat gegen die Plenarprotokolle, Abstimmungen und Anfragen und trennt dabei "wurde so gesagt" von "stimmt sachlich".',
+      argsSchema: {
+        aussage: z.string().min(5).describe('Die Aussage oder das Zitat, z. B. "Kickl hat im Nationalrat gesagt, ..."'),
+        redner: z.string().optional().describe('Wer soll es gesagt haben (Name oder Teil davon)'),
+        gp,
+      },
+    },
+    ({ aussage, redner, gp: period }) =>
+      user(
+        `Prüfe diese Aussage: "${aussage}"${redner ? ` (Redner: ${redner})` : ''} (Gesetzgebungsperiode ${period ?? 'alle'}).
+` +
+          `1. Zerlege sie in einzelne prüfbare Teile und unterscheide: (a) "X hat gesagt ...", (b) eine Sachbehauptung, (c) eine Behauptung zu einer Abstimmung oder einem Gesetz.
+` +
+          `2. Zu (a): parl_suche mit bereich="reden", modus="phrase" und einem wörtlichen Auszug${redner ? `, redner="${redner}"` : ''}; findet sich nichts, mit modus="alle" und Schlüsselwörtern, auch mit gp, von und bis eingrenzen. ` +
+          `Lies jeden relevanten Treffer mit parl_rede im Wortlaut (zwischenrufe=true) und prüfe den Zusammenhang davor und danach: Ist das Zitat vollständig, verkürzt oder sinnentstellt? Gib den Absatz an, z. B. [12].
+` +
+          `3. Zu (c): parl_beschluesse (Abstimmung nach Parteien), parl_gegenstand (Stand im Verfahren), parl_anfragen oder parl_suche mit bereich="gegenstaende" bzw. "pressemeldungen".
+` +
+          `4. Zu (b): Das Parlament belegt nur, was gesagt oder beschlossen wurde. Prüfe die Sachbehauptung mit einer eigenen Recherche in verlässlichen Quellen (amtliche Statistik, Rechnungshof, Ministerien, seriöse Medien), falls du dazu Werkzeuge hast; sonst sag offen, dass dieser Teil ungeprüft bleibt.
+` +
+          `Antworte in zwei getrennten Teilen: A) Was wurde gesagt oder beschlossen (mit wörtlichem Zitat, Redner, Sitzung, Datum, Absatznummer, url), B) Stimmt es sachlich (mit Quellen). ` +
+          `Urteil je Teil: belegt / teilweise belegt / nicht belegt / widerlegt / nicht prüfbar. Beachte: Protokolle können vorläufig und nicht autorisiert sein, Zwischenrufe gehören nicht zur Rede, und ein Treffer belegt nie, dass die Aussage richtig ist.
+${RULES}`,
+      ),
+  );
+
+  server.registerPrompt(
     'gesetz_verfolgen',
     {
       title: 'Wo steht ein Gesetz im Verfahren?',

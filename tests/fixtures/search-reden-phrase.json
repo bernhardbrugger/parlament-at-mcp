@@ -1,0 +1,25 @@
+{
+  "pages": 1,
+  "meta": { "milliseconds": 55, "totalHits": 1 },
+  "count": 1,
+  "navigators": [],
+  "rows": [
+    {
+      "weiterfuehrender_link": "{\"url\":\"/gegenstand/XXVIII/NRSITZ/30?selectedStage=111&stid=801352\",\"text\":\"Plenarsitzung: 30. Sitzung des Nationalrats vom 16. Juni 2025 (30/NRSITZ)\"}",
+      "item_id": "24040645",
+      "item_id_with_type": "D24040645",
+      "item_type": "stteil",
+      "link": "/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html",
+      "description": "...<span class=\"highlight\">Ich</span> <span class=\"highlight\">rede</span> <span class=\"highlight\">vom</span> <span class=\"highlight\">Staatsbesuch</span> – (auf die Redezeitanzeige am Redner:innenpult weisend:) vielleicht kann man...der <span class=\"highlight\">Rede</span> nicht unterbrochen, aber <span class=\"highlight\">ich</span> möchte darauf hinweisen, dass Tiervergleiche und strafrechtlich...Shetty [NEOS]: Die <span class=\"highlight\">Rede</span> hört sich aber auch wie eine Papageienrede an!)...",
+      "label": "Protokolle",
+      "type": "html",
+      "title": "Teil des Vorläufigen Stenogr. Protokolls der 30. Sitzung der XXVIII. GP des Nationalrates: Herbert Kickl (FPÖ)",
+      "title_highlighted": "Teil des Vorläufigen Stenogr. Protokolls der 30. Sitzung der XXVIII. GP des Nationalrates: Herbert Kickl (FPÖ)",
+      "score": 13.398210525512695,
+      "datetime": "2025-06-15T22:00:00.000Z",
+      "display_link": "/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html",
+      "relatedLink": "/XXVIII/NRSITZ/30",
+      "category": ["Protokolle"]
+    }
+  ]
+}

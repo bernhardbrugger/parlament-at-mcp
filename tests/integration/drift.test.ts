@@ -10,6 +10,7 @@ import { parseAusschuesse } from '../../src/tools/ausschuesse.js';
 import { parseGegenstaende } from '../../src/tools/gegenstaende.js';
 import { parseReden } from '../../src/tools/person.js';
 import { parseSitzungen } from '../../src/tools/sitzungen.js';
+import { suche } from '../../src/tools/suche.js';
 import { detailSchema, personSchema, rowsToObjects, type FilterResponse } from '../../src/types.js';
 
 const client = new ParlamentClient({ userAgent: 'parlament-at-mcp-canary (+https://github.com/bernhardbrugger/parlament-at-mcp)' });
@@ -124,5 +125,53 @@ describe('detail pages keep their shape', () => {
     const html = await client.document('/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html');
     expect(html).toContain('class="randnummer"');
     expect(html).toContain('Kickl');
+  });
+});
+
+describe('full-text search keeps its contract', () => {
+  const q = {
+    suche: 'Ich rede vom Staatsbesuch',
+    modus: 'phrase',
+    bereich: 'reden',
+    nurTitel: false,
+    sortierung: 'relevanz',
+    limit: 5,
+    offset: 0,
+  } as const;
+
+  it('finds a known quote as a speech segment with the arguments for parl_rede', async () => {
+    const res = await suche(client, q);
+    expect(res.total).toBeGreaterThanOrEqual(1);
+    expect(res.items[0]!.rede).toMatchObject({ gremium: 'NR', gp: 'XXVIII', sitzung: 30, rede: 801352 });
+    expect(res.items[0]!.datum).toBe('2025-06-16');
+    expect(res.items[0]!.ausschnitt).toContain('**');
+  });
+
+  it('honours the date range, the legislative period and the sort order', async () => {
+    const june = await suche(client, {
+      ...q,
+      suche: 'Staatsbesuch',
+      modus: 'alle',
+      gp: 'XXVIII',
+      von: '2025-06-16',
+      bis: '2025-06-16',
+      limit: 10,
+    });
+    expect(june.items.length).toBeGreaterThan(0);
+    expect(june.items.every((i) => i.datum === '2025-06-16')).toBe(true);
+    const newest = await suche(client, { ...q, suche: 'Klimaschutz', modus: 'alle', sortierung: 'neueste', limit: 5 });
+    const dates = newest.items.map((i) => i.datum!);
+    expect(dates).toEqual([...dates].sort().reverse());
+  });
+
+  it('the form still offers the categories the tool maps to', async () => {
+    const res = await fetch('https://www.parlament.gv.at/Filter/api/filterform/vts/form?FBEZ=VTS_01', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ searchType: ['all'], searchScope: ['all'] }),
+    });
+    const form = (await res.json()) as Array<{ name?: string; values?: Array<{ value: string }> }>;
+    const categories = form.find((f) => f.name === 'category')?.values?.map((v) => v.value) ?? [];
+    expect(categories).toEqual(expect.arrayContaining(['Protokolle', 'Parlamentskorrespondenz', 'Verhandlungsgegenstände']));
   });
 });

@@ -6,33 +6,34 @@
 
 MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an LLM who sits where, which committee a bill is in, what was asked and answered, and **what a politician actually said** in the plenary - with a link to the official source for every result.
 
-> **Status: v0.5, in development.** Eleven tools, five prompts, 332 offline tests (98 % line, 88 % branch coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
+> **Status: v0.5, in development.** Twelve tools, six prompts, 440+ offline tests (98 % line, 88 % branch coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
 
 ## Why this exists
 
 - **Single speeches, not 300,000-character protocols.** The Parliament publishes every speech as its own segment. `parl_sitzung` lists the agenda items and _every speaker_, `parl_rede` returns one speech as text (interjections optional) in pieces of at most 45,000 characters, with `offset` paging.
 - **Who asked, who answered, how did it go.** Inquiries with the party of the introducer, bills with their procedure through committee, Nationalrat and Bundesrat, the vote by party and the Bundesgesetzblatt link.
 - **Who is in office _now_.** Current Nationalrat and Bundesrat members are marked with club, constituency and state and can be filtered; every person has a biography page and a list of all their plenary speeches.
-- **Built for LLMs:** German tool texts with source links, `structuredContent` + `outputSchema` on the list tools, five ready-made research prompts, size-bounded output. `kompakt=true` on the list tools gives one line per hit (measured on 50-hit lists: 34-50 % less text, links kept).
+- **Built for LLMs:** German tool texts with source links, `structuredContent` + `outputSchema` on the list tools, six ready-made research prompts (including a fact-check workflow), size-bounded output. `kompakt=true` on the list tools gives one line per hit (measured on 50-hit lists: 34-50 % less text, links kept).
 - **Honest about an undocumented interface.** The Parliament documents no endpoints. Everything here was measured and is written down in [`DECISIONS.md`](DECISIONS.md); a live canary suite tells you when the interface changes.
 
 ## Tools
 
-| Tool                | What it does                                                                                                                             |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `parl_abgeordnete`  | Find people by name, body, function; current members are marked and filterable (`nur_aktuell`, `klub`, `bundesland`)                     |
-| `parl_person`       | Biography and mandates of one person with dates, club, career, education                                                                 |
-| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic                                                                 |
-| `parl_anfragen`     | Inquiries or answers, newest first; filter by body, legislative period, search term                                                      |
-| `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge), referendums, petitions, citizens' initiatives and EU documents by period and keyword |
-| `parl_gegenstand`   | One item in detail: introducer/answerer with party, procedure, vote, Bundesgesetzblatt, PDFs, references                                 |
-| `parl_sitzungen`    | List plenary sessions of the Nationalrat and the Bundesrat                                                                               |
-| `parl_sitzung`      | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item                                      |
-| `parl_rede`         | One speech as text, in citable pieces                                                                                                    |
-| `parl_beschluesse`  | What a session decided per agenda item, with the vote by party and later steps (e.g. Bundesrat); press releases, agenda links            |
-| `parl_ausschuesse`  | Committees of a period; with `suche=` also chairs (with party), tasks, latest agendas, assigned items                                    |
+| Tool                | What it does                                                                                                                                                        |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `parl_abgeordnete`  | Find people by name, body, function; current members are marked and filterable (`nur_aktuell`, `klub`, `bundesland`)                                                |
+| `parl_person`       | Biography and mandates of one person with dates, club, career, education                                                                                            |
+| `parl_reden_person` | All plenary speeches of one person, newest first, with session and topic                                                                                            |
+| `parl_anfragen`     | Inquiries or answers, newest first; filter by body, legislative period, search term                                                                                 |
+| `parl_gegenstaende` | List bills (Regierungsvorlagen), motions (Anträge), referendums, petitions, citizens' initiatives and EU documents by period and keyword                            |
+| `parl_gegenstand`   | One item in detail: introducer/answerer with party, procedure, vote, Bundesgesetzblatt, PDFs, references                                                            |
+| `parl_sitzungen`    | List plenary sessions of the Nationalrat and the Bundesrat                                                                                                          |
+| `parl_sitzung`      | Outline of one session: agenda items with times and every speaker; filter by speaker or agenda item                                                                 |
+| `parl_rede`         | One speech as text, in citable pieces                                                                                                                               |
+| `parl_suche`        | **Full-text search** of all plenary speeches (and press releases, items): exact phrases, speaker, period, date range; every hit names the arguments for `parl_rede` |
+| `parl_beschluesse`  | What a session decided per agenda item, with the vote by party and later steps (e.g. Bundesrat); press releases, agenda links                                       |
+| `parl_ausschuesse`  | Committees of a period; with `suche=` also chairs (with party), tasks, latest agendas, assigned items                                                               |
 
-**Prompts:** `rede_recherchieren`, `gesetz_verfolgen`, `anfragen_zum_thema`, `ausschuss_ueberblick`, `abgeordnete_profil` - each chains the tools above for one research task.
+**Prompts:** `faktencheck`, `rede_recherchieren`, `gesetz_verfolgen`, `anfragen_zum_thema`, `ausschuss_ueberblick`, `abgeordnete_profil` - each chains the tools above for one research task.
 
 Real output (from a live run, not mocked):
 
@@ -40,6 +41,7 @@ Real output (from a live run, not mocked):
 
 Example questions (all answered from live data during development):
 
+- _"Hat Herbert Kickl im Nationalrat wirklich gesagt, ...?"_ → `parl_suche` (`modus="phrase"`, `redner="Kickl"`) → `parl_rede` with the paragraph number → `parl_beschluesse` for the vote (the `faktencheck` prompt does this chain)
 - _"Was hat Herbert Kickl in der 30. Sitzung der XXVIII. GP zum Budgetbegleitgesetz gesagt?"_ → `parl_sitzung` (`redner="Kickl"`) → `parl_rede`
 - _"Was hat der Nationalrat am 15. Oktober 2026 beschlossen und wie haben die Parteien abgestimmt?"_ → `parl_beschluesse`
 - _"Wo steht die Regierungsvorlage 251 d.B. im Verfahren?"_ → procedure per phase, vote _Dafür: F, V, S, N, G, Dagegen: -_, Bundesgesetzblatt I Nr. 86/2025
@@ -102,7 +104,7 @@ The HTTP mode has no authentication and no rate limiting. Put a reverse proxy wi
 - Source: open data of the Austrian Parliament, **CC BY 4.0**. Attribution: _Quelle: Parlamentsdirektion_. See the [Parliament's open data page](https://www.parlament.gv.at/recherchieren/open-data/).
 - The interface is the website's own JSON API. It is **not formally documented** and may change without notice. This server records what it measured in [`DECISIONS.md`](DECISIONS.md).
 - Newer stenographic protocols were produced with AI support and then edited by the Parliament (the server passes that note on). Biographies are, from 1945, based on the members' own statements.
-- Counts without a legislative period are capped by the interface at about 20,000. Search terms for bills are _official keywords_, not full text.
+- Counts without a legislative period are capped by the interface at about 20,000. `parl_gegenstaende` searches the _official keywords_ of bills; use `parl_suche` for full text. `parl_suche` finds that something was said, never whether it is true: fact-checking needs a second source, and the `redner` filter only looks at the first 300 hits of a search.
 - The client waits one second between requests and caches large lists (persons 6 h, current members 1 h, sessions 10 min).
 - Results are official information, not legal or political advice. Only office holders and officials as published by the Parliament; no profiling of private persons.
 

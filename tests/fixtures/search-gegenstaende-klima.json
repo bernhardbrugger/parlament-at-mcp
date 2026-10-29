@@ -1,0 +1,72 @@
+{
+  "pages": 23,
+  "meta": { "milliseconds": 42, "totalHits": 447 },
+  "count": 447,
+  "navigators": [],
+  "rows": [
+    {
+      "item_id": "29929739",
+      "item_id_with_type": "E29929739",
+      "item_type": "PMGesch",
+      "link": "/gegenstand/XXVIII/J/5017",
+      "description": "...<span class=\"highlight\">Klimaschutz</span>-Workshops für weibliche Migranten (5017&#x2F;J) Exportieren Exportmöglichkeiten JSON Exportieren...für Land- und Forstwirtschaft, Klima- und Umweltschutz, Regionen und Wasserwirtschaft betreffend <span class=\"highlight\">Klimaschutz</span>-Workshops...Land- und Forstwirtschaft, Klima- und Umweltschutz, Regionen und Wasserwirtschaft Beantwortung <span class=\"highlight\">Klimaschutz</span>-Workshops...",
+      "label": "Schriftliche Anfrage",
+      "type": "html",
+      "title": "Klimaschutz-Workshops für weibliche Migranten (5017/J)",
+      "title_highlighted": "<span class=\"highlight\">Klimaschutz</span>-Workshops für weibliche Migranten (5017&#x2F;J)",
+      "score": 16.066102981567383,
+      "datetime": "2026-02-25T23:00:00.000Z",
+      "display_link": "/gegenstand/XXVIII/J/5017",
+      "relatedLink": "/XXVIII/J/5017",
+      "category": ["Verhandlungsgegenstände"]
+    },
+    {
+      "item_id": "31745518",
+      "item_id_with_type": "E31745518",
+      "item_type": "PMGesch",
+      "link": "/gegenstand/XXVIII/A/824",
+      "description": "...Finanzierung von kommunalen <span class=\"highlight\">Klimaschutz</span>- und Klimawandelanpassungsmaßnahmen (824&#x2F;A(E)) Status Beschlossen...Elisabeth Götze, Kolleginnen und Kollegen betreffend Finanzierung von kommunalen <span class=\"highlight\">Klimaschutz</span>- und Klimawandelanpassungsmaßnahmen...",
+      "label": "Selbständiger Entschließungsantrag",
+      "type": "html",
+      "title": "Finanzierung von kommunalen Klimaschutz- und Klimawandelanpassungsmaßnahmen (824/A(E))",
+      "title_highlighted": "Finanzierung von kommunalen <span class=\"highlight\">Klimaschutz</span>- und Klimawandelanpassungsmaßnahmen (824&#x2F;A(E))",
+      "score": 15.634051322937012,
+      "datetime": "2026-04-22T22:00:00.000Z",
+      "display_link": "/gegenstand/XXVIII/A/824",
+      "relatedLink": "/XXVIII/A/824",
+      "category": ["Verhandlungsgegenstände"]
+    },
+    {
+      "item_id": "30940291",
+      "item_id_with_type": "E30940291",
+      "item_type": "PMGesch",
+      "link": "/gegenstand/XXVIII/M/71",
+      "description": "...ökonomisch &quot;unverzichtbare Notwendigkeit&quot; des <span class=\"highlight\">Klimaschutzes</span> im kommenden Doppelbudget (71&#x2F;M) Exportieren...Wie wird sich die nach Ihren eigenen Worten auch ökonomisch &quot;unverzichtbare Notwendigkeit&quot; des <span class=\"highlight\">Klimaschutzes</span>...",
+      "label": "Mündliche Anfrage",
+      "type": "html",
+      "title": "ökonomisch \"unverzichtbare Notwendigkeit\" des Klimaschutzes im kommenden Doppelbudget (71/M)",
+      "title_highlighted": "ökonomisch &quot;unverzichtbare Notwendigkeit&quot; des <span class=\"highlight\">Klimaschutzes</span> im kommenden Doppelbudget (71&#x2F;M)",
+      "score": 14.602221488952637,
+      "datetime": "2026-03-25T23:00:00.000Z",
+      "display_link": "/gegenstand/XXVIII/M/71",
+      "relatedLink": "/XXVIII/M/71",
+      "category": ["Verhandlungsgegenstände"]
+    },
+    {
+      "item_id": "25805416",
+      "item_id_with_type": "E25805416",
+      "item_type": "PMGesch",
+      "link": "/gegenstand/XXVIII/A/474",
+      "description": "...<span class=\"highlight\">Klimaschutz</span> in der Industriestrategie verankern (474&#x2F;A(E)) Status Beschlossen Ausschuss für Wirtschaft...Entschließungsantrag Antrag der Abgeordneten Leonore Gewessler, BA, Kolleginnen und Kollegen betreffend <span class=\"highlight\">Klimaschutz</span>...",
+      "label": "Selbständiger Entschließungsantrag",
+      "type": "html",
+      "title": "Klimaschutz in der Industriestrategie verankern (474/A(E))",
+      "title_highlighted": "<span class=\"highlight\">Klimaschutz</span> in der Industriestrategie verankern (474&#x2F;A(E))",
+      "score": 13.962404251098633,
+      "datetime": "2025-09-23T22:00:00.000Z",
+      "display_link": "/gegenstand/XXVIII/A/474",
+      "relatedLink": "/XXVIII/A/474",
+      "category": ["Verhandlungsgegenstände"]
+    }
+  ]
+}

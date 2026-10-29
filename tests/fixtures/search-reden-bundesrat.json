@@ -1,0 +1,72 @@
+{
+  "pages": 54,
+  "meta": { "milliseconds": 52, "totalHits": 1077 },
+  "count": 1077,
+  "navigators": [],
+  "rows": [
+    {
+      "weiterfuehrender_link": "{\"url\":\"/gegenstand/BR/BRSITZ/997?selectedStage=111&stid=1041960\",\"text\":\"Plenarsitzung - BR: 997. Sitzung des Bunderats vom 22. Oktober 2026 (997/BRSITZ/2026)\"}",
+      "item_id": "25868616",
+      "item_id_with_type": "D25868616",
+      "item_type": "stteil",
+      "link": "/dokument/BR/BRSITZ/997/A_-_16_45_59_01041960.html",
+      "description": "...das auch die wissenschaftliche Basis für sauberes Trinkwasser, für sicheres Bauen, für wirksamen <span class=\"highlight\">Klimaschutz</span>...",
+      "label": "Protokolle",
+      "type": "html",
+      "title": "Teil des Vorläufigen Stenogr. Protokolls der 997. Sitzung des Bundesrates: Eva-Maria Holzleitner, Bundesministerin für Frauen, Wissenschaft und Forschung",
+      "title_highlighted": "Teil des Vorläufigen Stenogr. Protokolls der 997. Sitzung des Bundesrates: Eva-Maria Holzleitner, Bundesministerin für Frauen, Wissenschaft und Forschung",
+      "datetime": "2026-10-21T22:00:00.000Z",
+      "display_link": "/dokument/BR/BRSITZ/997/A_-_16_45_59_01041960.html",
+      "relatedLink": "/BR/BRSITZ/997",
+      "category": ["Protokolle"]
+    },
+    {
+      "weiterfuehrender_link": "{\"url\":\"/gegenstand/BR/BRSITZ/997?selectedStage=111&stid=1041162\",\"text\":\"Plenarsitzung - BR: 997. Sitzung des Bunderats vom 22. Oktober 2026 (997/BRSITZ/2026)\"}",
+      "item_id": "25855439",
+      "item_id_with_type": "D25855439",
+      "item_type": "stteil",
+      "link": "/dokument/BR/BRSITZ/997/A_-_13_19_29_01041162.html",
+      "description": "...Die Energiewende ist nicht nur eine Frage des <span class=\"highlight\">Klimaschutzes</span>, sie ist auch eine Sicherheitsfrage und wie...",
+      "label": "Protokolle",
+      "type": "html",
+      "title": "Teil des Vorläufigen Stenogr. Protokolls der 997. Sitzung des Bundesrates: Simone Jagl (Grüne/NÖ)",
+      "title_highlighted": "Teil des Vorläufigen Stenogr. Protokolls der 997. Sitzung des Bundesrates: Simone Jagl (Grüne&#x2F;NÖ)",
+      "datetime": "2026-10-21T22:00:00.000Z",
+      "display_link": "/dokument/BR/BRSITZ/997/A_-_13_19_29_01041162.html",
+      "relatedLink": "/BR/BRSITZ/997",
+      "category": ["Protokolle"]
+    },
+    {
+      "weiterfuehrender_link": "{\"url\":\"/gegenstand/BR/BRSITZ/997?selectedStage=111&stid=1041912\",\"text\":\"Plenarsitzung - BR: 997. Sitzung des Bunderats vom 22. Oktober 2026 (997/BRSITZ/2026)\"}",
+      "item_id": "25857969",
+      "item_id_with_type": "D25857969",
+      "item_type": "stteil",
+      "link": "/dokument/BR/BRSITZ/997/A_-_16_33_03_01041912.html",
+      "description": "...Deshalb brauchen wir beides: konsequenten <span class=\"highlight\">Klimaschutz</span>, damit die Krise nicht noch schlimmer wird, und...",
+      "label": "Protokolle",
+      "type": "html",
+      "title": "Teil des Vorläufigen Stenogr. Protokolls der 997. Sitzung des Bundesrates: Amelie Muthsam (SPÖ/NÖ)",
+      "title_highlighted": "Teil des Vorläufigen Stenogr. Protokolls der 997. Sitzung des Bundesrates: Amelie Muthsam (SPÖ&#x2F;NÖ)",
+      "datetime": "2026-10-21T22:00:00.000Z",
+      "display_link": "/dokument/BR/BRSITZ/997/A_-_16_33_03_01041912.html",
+      "relatedLink": "/BR/BRSITZ/997",
+      "category": ["Protokolle"]
+    },
+    {
+      "weiterfuehrender_link": "{\"url\":\"/gegenstand/BR/BRSITZ/996?selectedStage=111&stid=1027478\",\"text\":\"Plenarsitzung - BR: 996. Sitzung des Bundesrats vom 8. Oktober 2026 (996/BRSITZ/2026)\"}",
+      "item_id": "25800754",
+      "item_id_with_type": "D25800754",
+      "item_type": "stteil",
+      "link": "/dokument/BR/BRSITZ/996/A_-_14_11_23_01027478.html",
+      "description": "...Genau das können wir uns beim <span class=\"highlight\">Klimaschutz</span> nicht leisten....<span class=\"highlight\">Klimaschutz</span> funktioniert dann am besten, wenn aus nationalen Zielen internationale Regeln werden....Wir möchten einfach, dass Österreich dort mit am Tisch sitzt und eine Stimme für ambitionierten <span class=\"highlight\">Klimaschutz</span>...",
+      "label": "Protokolle",
+      "type": "html",
+      "title": "Teil des Vorläufigen Stenogr. Protokolls der 996. Sitzung des Bundesrates: Simone Jagl (Grüne/NÖ)",
+      "title_highlighted": "Teil des Vorläufigen Stenogr. Protokolls der 996. Sitzung des Bundesrates: Simone Jagl (Grüne&#x2F;NÖ)",
+      "datetime": "2026-10-07T22:00:00.000Z",
+      "display_link": "/dokument/BR/BRSITZ/996/A_-_14_11_23_01027478.html",
+      "relatedLink": "/BR/BRSITZ/996",
+      "category": ["Protokolle"]
+    }
+  ]
+}

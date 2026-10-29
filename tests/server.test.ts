@@ -48,7 +48,7 @@ async function call(client: Client, name: string, args: Record<string, unknown>)
 }
 
 describe('MCP server', () => {
-  it('lists eleven read-only tools, each with a schema and description', async () => {
+  it('lists twelve read-only tools, each with a schema and description', async () => {
     const { client } = await connect();
     const { tools } = await client.listTools();
     expect(tools.map((t) => t.name).sort()).toEqual(
@@ -64,6 +64,7 @@ describe('MCP server', () => {
         'parl_reden_person',
         'parl_sitzung',
         'parl_sitzungen',
+        'parl_suche',
       ].sort(),
     );
     for (const t of tools) {
@@ -256,7 +257,14 @@ describe('MCP server', () => {
       .filter((t) => t.outputSchema)
       .map((t) => t.name)
       .sort();
-    expect(withSchema).toEqual(['parl_abgeordnete', 'parl_anfragen', 'parl_gegenstaende', 'parl_reden_person', 'parl_sitzungen']);
+    expect(withSchema).toEqual([
+      'parl_abgeordnete',
+      'parl_anfragen',
+      'parl_gegenstaende',
+      'parl_reden_person',
+      'parl_sitzungen',
+      'parl_suche',
+    ]);
     expect(Object.keys(tools.find((t) => t.name === 'parl_anfragen')!.outputSchema!.properties!)).toEqual(['total', 'offset', 'items']);
   });
 
@@ -267,6 +275,7 @@ describe('MCP server', () => {
       'abgeordnete_profil',
       'anfragen_zum_thema',
       'ausschuss_ueberblick',
+      'faktencheck',
       'gesetz_verfolgen',
       'rede_recherchieren',
     ]);

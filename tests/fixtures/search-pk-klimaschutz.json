@@ -1,0 +1,72 @@
+{
+  "pages": 5,
+  "meta": { "milliseconds": 55, "totalHits": 89 },
+  "count": 89,
+  "navigators": [],
+  "rows": [
+    {
+      "item_id": "10620835",
+      "item_id_with_type": "E10620835",
+      "item_type": "pk",
+      "link": "/aktuelles/pk/jahr_2023/pk1267",
+      "description": "...Parlamentskorrespondenz Nr. 1267 vom 27.11.2023 <span class=\"highlight\">Klimaschutz</span>: Österreichs CO2-Emissionen 2021 erneut gestiegen...Klimaschutzministeriums fordert stärkere Einsparung Wien (PK) – &quot;Ein deutlich höheres Ambitionsniveau im <span class=\"highlight\">Klimaschutz</span>...",
+      "label": "Parlamentskorrespondenz",
+      "type": "html",
+      "title": "Klimaschutz: Österreichs CO2-Emissionen 2021 erneut gestiegen (PK1267/27.11.2023)",
+      "title_highlighted": "<span class=\"highlight\">Klimaschutz</span>: Österreichs CO2-Emissionen 2021 erneut gestiegen (PK1267&#x2F;27.11.2023)",
+      "score": 21.674278259277344,
+      "datetime": "2023-11-26T23:00:00.000Z",
+      "display_link": "/aktuelles/pk/jahr_2023/pk1267",
+      "relatedLink": "/pk/jahr_2023/pk1267",
+      "category": ["Parlamentskorrespondenz"]
+    },
+    {
+      "item_id": "1773856",
+      "item_id_with_type": "E1773856",
+      "item_type": "pk",
+      "link": "/aktuelles/pk/jahr_2014/pk1061",
+      "description": "...Grüne: Österreich soll Vorreiter im internationalen <span class=\"highlight\">Klimaschutz</span> sein Zum Thema <span class=\"highlight\">Klimaschutz</span> lagen dem...Österreich sollte auch mehr internationale Verantwortung beim <span class=\"highlight\">Klimaschutz</span> übernehmen....an Ausschuss: Schwerpunkt <span class=\"highlight\">Klimaschutz</span>, thermische Sanierung soll weitergehen Wien (PK) – Das Thermometer...",
+      "label": "Parlamentskorrespondenz",
+      "type": "html",
+      "title": "Umweltminister Rupprechter kündigt Klimaschutz-Maßnahmenprogramm an  (PK1061/12.11.2014)",
+      "title_highlighted": "Umweltminister Rupprechter kündigt <span class=\"highlight\">Klimaschutz</span>-Maßnahmenprogramm an  (PK1061&#x2F;12.11.2014)",
+      "score": 19.936925888061523,
+      "datetime": "2014-11-11T23:00:00.000Z",
+      "display_link": "/aktuelles/pk/jahr_2014/pk1061",
+      "relatedLink": "/pk/jahr_2014/pk1061",
+      "category": ["Parlamentskorrespondenz"]
+    },
+    {
+      "item_id": "1764510",
+      "item_id_with_type": "E1764510",
+      "item_type": "pk",
+      "link": "/aktuelles/pk/jahr_2015/pk1224",
+      "description": "...Brunner rechnet daher mit einer Zielverfehlung beim <span class=\"highlight\">Klimaschutz</span>....Parlamentskorrespondenz Nr. 1224 vom 12.11.2015 Rupprechter: Österreich beim <span class=\"highlight\">Klimaschutz</span> auf Kurs Grüne...Österreich ist beim <span class=\"highlight\">Klimaschutz</span> auf Zielpfad und werde seine Ziele bis 2020 erreichen....",
+      "label": "Parlamentskorrespondenz",
+      "type": "html",
+      "title": "Rupprechter: Österreich beim Klimaschutz auf Kurs (PK1224/12.11.2015)",
+      "title_highlighted": "Rupprechter: Österreich beim <span class=\"highlight\">Klimaschutz</span> auf Kurs (PK1224&#x2F;12.11.2015)",
+      "score": 19.286823272705078,
+      "datetime": "2015-11-11T23:00:00.000Z",
+      "display_link": "/aktuelles/pk/jahr_2015/pk1224",
+      "relatedLink": "/pk/jahr_2015/pk1224",
+      "category": ["Parlamentskorrespondenz"]
+    },
+    {
+      "item_id": "1818131",
+      "item_id_with_type": "E1818131",
+      "item_type": "pk",
+      "link": "/aktuelles/pk/jahr_2008/pk0528",
+      "description": "...Parlamentskorrespondenz Nr. 528 vom 04.06.2008 Beim <span class=\"highlight\">Klimaschutz</span> besteht Handlungsbedarf Klimaschutzbericht...<span class=\"highlight\">Klimaschutz</span>-Sorgenkind Verkehr Der Sektor mit der größten Abweichung zum sektoralen Ziel der Klimastrategie...",
+      "label": "Parlamentskorrespondenz",
+      "type": "html",
+      "title": "Beim Klimaschutz besteht Handlungsbedarf (PK0528/04.06.2008)",
+      "title_highlighted": "Beim <span class=\"highlight\">Klimaschutz</span> besteht Handlungsbedarf (PK0528&#x2F;04.06.2008)",
+      "score": 19.270523071289062,
+      "datetime": "2008-06-03T22:00:00.000Z",
+      "display_link": "/aktuelles/pk/jahr_2008/pk0528",
+      "relatedLink": "/pk/jahr_2008/pk0528",
+      "category": ["Parlamentskorrespondenz"]
+    }
+  ]
+}

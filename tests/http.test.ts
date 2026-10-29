@@ -41,10 +41,10 @@ describe('HTTP transport (stateless)', () => {
     const client = new Client({ name: 'http-test', version: '0' });
     await client.connect(new StreamableHTTPClientTransport(new URL(`${base}/mcp`)));
     const { tools } = await client.listTools();
-    expect(tools).toHaveLength(11);
+    expect(tools).toHaveLength(12);
     const res = await client.callTool({ name: 'parl_abgeordnete', arguments: { name: 'Kickl' } });
     expect((res.content as Array<{ text: string }>)[0]!.text).toContain('Kickl Herbert');
-    expect((await client.listPrompts()).prompts).toHaveLength(5);
+    expect((await client.listPrompts()).prompts).toHaveLength(6);
     await client.close();
   });
 

@@ -31,7 +31,30 @@ const calls = [
   ['parl_gegenstaende', { gp: 28, art: 'EU', limit: 3 }, /\/EU/],
   ['parl_gegenstand', { gp: 28, zitation: '21/PET' }, /Parlamentskorrespondenz/],
   ['parl_beschluesse', { gp: 28, nummer: 30, top: 'TOP 3' }, /Dafür: ÖVP, SPÖ, NEOS, dagegen: FPÖ, GRÜNE/],
-  ['parl_anfragen', { gp: 28, limit: 5, kompakt: true }, /\n- \d+\/J · \d{4}-\d{2}-\d{2} · .+ · https:\/\/www\.parlament\.gv\.at\/[\s\S]*Kompaktansicht/],
+  [
+    'parl_anfragen',
+    { gp: 28, limit: 5, kompakt: true },
+    /\n- \d+\/J · \d{4}-\d{2}-\d{2} · .+ · https:\/\/www\.parlament\.gv\.at\/[\s\S]*Kompaktansicht/,
+  ],
+  [
+    'parl_suche',
+    { suche: 'Ich rede vom Staatsbesuch', modus: 'phrase' },
+    /2025-06-16 · Herbert Kickl \(FPÖ\)[\s\S]*Wortlaut: parl_rede gremium=NR gp=XXVIII nummer=30 rede=801352/,
+  ],
+  [
+    'parl_suche',
+    { suche: 'Staatsbesuch', gp: 28, von: '2025-06-16', bis: '2025-06-16' },
+    /Treffer, angezeigt[\s\S]*2025-06-16 · [\s\S]*nummer=30/,
+  ],
+  ['parl_suche', { suche: 'Staatsbesuch', gp: 28, redner: 'Kickl' }, /Treffer von "Kickl" unter den \d+ geprüften[\s\S]*Herbert Kickl/],
+  ['parl_suche', { suche: 'Klimaschutz', gremium: 'BR', limit: 3 }, /Wortlaut: parl_rede gremium=BR nummer=\d+ rede=\d+/],
+  ['parl_suche', { suche: 'Klimaschutz', bereich: 'pressemeldungen', nur_titel: true, limit: 3 }, /aktuelles\/pk\//],
+  [
+    'parl_suche',
+    { suche: 'Klimaschutz', bereich: 'gegenstaende', nur_titel: true, limit: 3 },
+    /Details: parl_gegenstand gp=[IVXL]+ zitation=/,
+  ],
+  ['parl_suche', { suche: 'xyzzy plugh nonexistentphrase', modus: 'phrase' }, /keine Treffer/],
 ];
 
 let failed = 0;
@@ -57,6 +80,22 @@ for (const art of ['RV', 'PET']) {
   const ok = dates.length === 5 && dates.every((d, i) => d === sorted[i]);
   if (!ok) failed++;
   console.log(`${ok ? 'OK  ' : 'FAIL'} parl_gegenstaende art=${art} comes newest first (${dates.join(', ')})`);
+}
+// The whole fact-check chain: search for a quote, then read the speech with exactly the arguments the hit names.
+{
+  const found = await client.callTool({ name: 'parl_suche', arguments: { suche: 'Ich rede vom Staatsbesuch', modus: 'phrase' } });
+  const rede = found.structuredContent?.items?.[0]?.rede;
+  let ok = false;
+  let detail = 'no speech hit';
+  if (rede) {
+    const args = { gremium: rede.gremium, ...(rede.gp ? { gp: rede.gp } : {}), nummer: rede.sitzung, rede: rede.rede };
+    const speech = await client.callTool({ name: 'parl_rede', arguments: args });
+    const text = speech.content?.[0]?.text ?? '';
+    ok = !speech.isError && /Kickl/.test(text) && /Ich rede vom Staatsbesuch/.test(text) && /\[\d+\] /.test(text);
+    detail = `${JSON.stringify(args)} -> ${text.length} chars`;
+  }
+  if (!ok) failed++;
+  console.log(`${ok ? 'OK  ' : 'FAIL'} parl_suche -> parl_rede chain: the found quote is in the speech (${detail})`);
 }
 await client.close();
 console.log(failed ? `\n${failed} live check(s) failed.` : '\nAll live checks passed.');

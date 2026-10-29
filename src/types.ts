@@ -356,3 +356,33 @@ export const personSchema = z
   .passthrough();
 
 export type PersonResponse = z.infer<typeof personSchema>;
+
+/**
+ * Answer of the full-text search (`/Filter/api/filterform/vts/data?FBEZ=VTS_01`). Unlike the filter lists it has no
+ * positional rows: every hit is an object. Only what the tool uses is typed.
+ */
+export const searchResponseSchema = z
+  .object({
+    count: z.number().int(),
+    pages: z.number().int().nullish(),
+    rows: z.array(
+      z
+        .object({
+          link: z.string().nullish(),
+          title: z.string().nullish(),
+          description: z.string().nullish(),
+          label: z.string().nullish(),
+          item_type: z.string().nullish(),
+          datetime: z.string().nullish(),
+          category: z.array(z.string()).nullish(),
+        })
+        .passthrough(),
+    ),
+  })
+  .passthrough();
+
+export type SearchResponse = z.infer<typeof searchResponseSchema>;
+export type SearchRow = SearchResponse['rows'][number];
+
+/** Body of the full-text search: the query is a plain string, every filter an array of strings. */
+export type SearchBody = Record<string, string | string[]>;

@@ -90,3 +90,25 @@ export const ausschussItemSchema = z.object({
   path: nullableString,
   url: nullableString,
 });
+
+export const sucheItemSchema = z.object({
+  bereich: nullableString.describe('Kind of hit as the Parliament labels it, e.g. "Protokolle"'),
+  titel: z.string(),
+  datum: nullableString,
+  ausschnitt: z.string().describe('Text around the match, matches in **bold**'),
+  url: nullableString,
+  rede: z
+    .object({
+      gremium: z.enum(['NR', 'BR']),
+      gp: nullableString.describe('Legislative period for the Nationalrat, null for the Bundesrat'),
+      sitzung: z.number().int(),
+      rede: z.number().int().describe('Pass to parl_rede as rede'),
+      redner: nullableString,
+    })
+    .nullable()
+    .describe('Set when the hit is a speech: the arguments for parl_rede'),
+  gegenstand: z
+    .object({ gp: z.string(), zitation: z.string() })
+    .nullable()
+    .describe('Set when the hit is an item: the arguments for parl_gegenstand'),
+});

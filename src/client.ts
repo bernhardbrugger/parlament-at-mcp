@@ -4,10 +4,13 @@ import {
   filterResponseSchema,
   parseSession,
   personSchema,
+  searchResponseSchema,
   sessionSchema,
   type DetailResponse,
   type FilterResponse,
   type PersonResponse,
+  type SearchBody,
+  type SearchResponse,
   type Session,
 } from './types.js';
 
@@ -118,6 +121,21 @@ export class ParlamentClient {
       headers: { 'Content-Type': 'application/json', Origin: this.baseUrl },
       body: JSON.stringify(body),
     });
+  }
+
+  /**
+   * Full-text search of the website (`FBEZ=VTS_01`). Body keys: `s.sm.query`, `searchType` (all|any|phrase), `searchScope`
+   * (all|title), `category`, `gp_liste`, `gremium`, `date_range` (two UTC instants, both bounds required, else 500).
+   * Filters are arrays, the query a plain string. `pagesize` up to 100 works; a page behind the last one answers 500; at most 10,000 hits are reachable.
+   */
+  search(body: SearchBody, opts: { page?: number; pagesize?: number; sort?: 'datedesc' | 'dateasc' } = {}): Promise<SearchResponse> {
+    const params = new URLSearchParams({ FBEZ: 'VTS_01', page: String(opts.page ?? 1), pagesize: String(opts.pagesize ?? 50) });
+    if (opts.sort) params.set('sort', opts.sort);
+    return this.parse(
+      `/Filter/api/filterform/vts/data?${params}`,
+      { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: this.baseUrl }, body: JSON.stringify(body) },
+      searchResponseSchema,
+    );
   }
 
   /** The raw JSON of a session page (see `parseSession`); cached for 10 minutes. */
