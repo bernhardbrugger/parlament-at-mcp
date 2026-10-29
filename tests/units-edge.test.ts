@@ -164,6 +164,18 @@ describe('text helpers', () => {
     expect(cleanText('wei&shy;ter')).toBe('weiter');
   });
 
+  it('cleanText never leaves a complete tag behind, however the fragments are nested', () => {
+    expect(cleanText('<scr<b>ipt>alert(1)</scr</b>ipt>')).not.toMatch(/<\s*\/?\s*script/i);
+    expect(cleanText('<<b>b>x</b>')).not.toContain('<');
+    const next = rng(11);
+    const pieces = ['<', '>', '/', 'b', 'script', 'scr', 'ipt', ' ', 'a', '<b>', '</b>', '<i>', 'x'];
+    for (let run = 0; run < 500; run++) {
+      const input = Array.from({ length: 1 + next(14) }, () => pieces[next(pieces.length)]).join('');
+      // without entities in the input, nothing that looks like a complete tag may survive
+      expect(cleanText(input), JSON.stringify(input)).not.toMatch(/<[^>]*>/);
+    }
+  });
+
   it('cleanText leaves invalid or unknown entities as they are', () => {
     for (const odd of ['&unbekannt;', '&#0;', '&#99999999;', '&#xFFFFFFF;', '& und &', '&;', '&amp']) {
       expect(cleanText(odd)).toBe(odd);

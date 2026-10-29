@@ -46,13 +46,24 @@ function decodeEntities(s: string): string {
 }
 
 /**
+ * Remove tags until nothing changes. One pass of `<[^>]*>` cannot assemble a new tag from the remains (a leftover `<` has no `>` behind it),
+ * so this is defence in depth; it also states the intent for scanners that flag single-pass tag removal.
+ */
+function stripTags(s: string): string {
+  let text = s;
+  for (let previous = ''; previous !== text;) {
+    previous = text;
+    text = text.replace(/<[^>]*>/g, '');
+  }
+  return text;
+}
+
+/**
  * The API embeds HTML in text fields, e.g. "Arpa Claudia, Mag.<sup>a</sup>" for the title "Mag.a", and
  * HTML entities ("Erm&auml;chtigung"). Keep the text of such markup, drop the tags, decode the entities.
  */
 export function cleanText(s: string): string {
-  return decodeEntities(s.replace(/<[^>]*>/g, ''))
-    .replace(/\s+/g, ' ')
-    .trim();
+  return decodeEntities(stripTags(s)).replace(/\s+/g, ' ').trim();
 }
 
 /** Value of an attribute in an HTML snippet (first match), e.g. the `title` of `<span title="Wien">W</span>`. */
