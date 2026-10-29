@@ -6,7 +6,7 @@
 
 MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an LLM who sits where, which committee a bill is in, what was asked and answered, and **what a politician actually said** in the plenary - with a link to the official source for every result.
 
-> **Status: v0.5, beta.** Twelve tools, six prompts, 440+ offline tests (98 % line, 88 % branch coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
+> **Status: v0.5, beta.** Twelve tools, six prompts, 440+ offline tests (97 % line, 86 % branch coverage), verified against the live interface. Unofficial; not affiliated with the Parlamentsdirektion.
 
 ## Why this exists
 

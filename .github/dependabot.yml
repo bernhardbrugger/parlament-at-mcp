@@ -6,10 +6,9 @@ updates:
       interval: weekly
     open-pull-requests-limit: 5
     ignore:
-      # zod 4 changes the API (z.record needs two arguments, ...) and the MCP SDK still targets zod 3: migrate on purpose, not by bot
-      - dependency-name: zod
+      # Vitest 5 needs Node 22+ (and @types/node 22+) and Vite 7 needs Node 20.19+: stay on Vitest 4 / Vite 6 while Node 20 is supported
+      - dependency-name: vite
         update-types: ['version-update:semver-major']
-      # Vitest 5 needs Node 22+ (and @types/node 22+): stay on 2.x while Node 20 is supported
       - dependency-name: vitest
         update-types: ['version-update:semver-major']
       - dependency-name: '@vitest/coverage-v8'

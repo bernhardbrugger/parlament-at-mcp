@@ -4,6 +4,7 @@
 
 - **Compact lists:** `kompakt=true` on `parl_anfragen`, `parl_gegenstaende`, `parl_sitzungen` and `parl_abgeordnete` prints one line per hit (citation, date, shortened subject, link). Measured live on 50-hit lists: 34-50 % less text. `structuredContent` stays complete.
 - **New tool `parl_beschluesse`:** what a plenary session decided per agenda item, with the vote by party, later steps (e.g. Bundesrat), press releases and agenda links.
+- **Security:** `zod` 4.6.7 (GHSA-mrhx-c7xc-m3w5, memory exhaustion when validating very large arrays; relevant for the HTTP mode) and Vitest 4 with Vite 6.4 (development tools only: Vitest UI, Vite dev server, esbuild, tinypool advisories). `npm audit` reports 0 vulnerabilities.
 - **New tool `parl_suche`:** full-text search across all plenary speeches of Nationalrat and Bundesrat (and press releases, items). Exact phrases (`modus="phrase"`), speaker, legislative period, date range, sort order; every speech hit names the arguments for `parl_rede`. New prompt `faktencheck` that separates "was it said" from "is it true".
 - **`parl_rede`:** paragraphs are numbered (`[1]`, `[2]`, …) so a quote can name its paragraph, and `absaetze="5-9"` fetches just those paragraphs.
 - **`parl_gegenstaende`:** also lists petitions (`PET`), citizens' initiatives (`BI`) and EU documents (`EU`); `parl_gegenstand` shows the press releases of an item.

@@ -37,7 +37,7 @@ Six prompts chain the tools for common research tasks, among them `faktencheck`,
 ## Quality bar
 
 - [x] Zod-validated client with retries, timeouts, throttling and a host allow-list
-- [x] Offline tests with real-data fixtures and MCP-level tests through an in-memory transport (440+ tests, 98 % lines, 88 % branches)
+- [x] Offline tests with real-data fixtures and MCP-level tests through an in-memory transport (440+ tests, 97 % lines, 86 % branches)
 - [x] A live smoke test and a live canary suite against the real API, kept out of `npm test`
 - [x] `DECISIONS.md` documenting every measured API quirk, `SECURITY.md`, `CONTRIBUTING.md`, issue and pull-request templates
 - [x] CI on Linux and Windows (Node 20 and 22), lint and format checks, Dependabot
