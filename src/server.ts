@@ -14,7 +14,7 @@ import { registerSitzungen } from './tools/sitzungen.js';
 import { registerSuche } from './tools/suche.js';
 
 export const SERVER_NAME = 'parlament-at-mcp';
-export const SERVER_VERSION = '0.5.0';
+export const SERVER_VERSION = '0.5.1';
 
 export function createServer(client: ParlamentClient = new ParlamentClient()): McpServer {
   const server = new McpServer(

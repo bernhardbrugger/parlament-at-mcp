@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1
+
+- **Docs:** the README shipped inside the npm package now explains the install with `npx -y parlament-at-mcp` (Claude Desktop, Claude Code, VS Code, Cursor, Windsurf). The README of 0.5.0 on npmjs.com still described building from source. No code changes.
+
 ## 0.5.0 (beta, first public release)
 
 - **Compact lists:** `kompakt=true` on `parl_anfragen`, `parl_gegenstaende`, `parl_sitzungen` and `parl_abgeordnete` prints one line per hit (citation, date, shortened subject, link). Measured live on 50-hit lists: 34-50 % less text. `structuredContent` stays complete.
