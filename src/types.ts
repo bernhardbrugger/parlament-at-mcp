@@ -201,7 +201,7 @@ export const progressEntrySchema = z
  * ARRAY of blocks - metadata, `info`, and `progress` (agenda items with their speeches). Blocks are found by
  * the keys they carry, not by position.
  */
-export const sessionSchema = z.object({ content: z.array(z.record(z.unknown())) }).passthrough();
+export const sessionSchema = z.object({ content: z.array(z.record(z.string(), z.unknown())) }).passthrough();
 
 const stageSchema = z.object({ date: z.string().nullish(), text: z.string() }).passthrough();
 
