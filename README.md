@@ -1,6 +1,8 @@
 # parlament-at-mcp
 
 [![CI](https://github.com/bernhardbrugger/parlament-at-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/bernhardbrugger/parlament-at-mcp/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/parlament-at-mcp.svg)](https://www.npmjs.com/package/parlament-at-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.bernhardbrugger%2Fparlament--at--mcp-green.svg)](https://registry.modelcontextprotocol.io/v0/servers?search=parlament-at-mcp)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
 ![Node >= 20](https://img.shields.io/badge/node-%3E%3D20-blue.svg)
 
@@ -64,7 +66,7 @@ Quelle: https://www.parlament.gv.at/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801
 
 ## Install
 
-Needs Node 20 or newer. No API key, no account: the server only talks to `www.parlament.gv.at`.
+Needs Node 20 or newer. No API key, no account: the server only talks to `www.parlament.gv.at`. The package is [on npm](https://www.npmjs.com/package/parlament-at-mcp) and listed in the official [MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=parlament-at-mcp) as `io.github.bernhardbrugger/parlament-at-mcp`.
 
 ### With npx (recommended)
 
