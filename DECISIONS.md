@@ -104,3 +104,10 @@ Each entry: what was measured or decided, when, and why. Add to it whenever the 
 
 - A speech segment (`A_-_HH_MM_SS_id.html`) carries exactly one `p.randnummer` ("RN/23", the speaker number) in the measured sample, one `p._RB` and one `p._RE`. The bold names inside paragraphs belong to **interjections** (`<i>…</i>`: "Abg. Hammer [ÖVP]: Na bravo!"), not to a change of speaker. So no speaker-change markers were built: the data does not show any.
 - Paragraphs are the `p`/`h1-h3`/`li` elements with text. `parl_rede` numbers them `[1]`, `[2]`, … **per variant** (with or without interjections, because dropping the `<i>` parts can remove or merge paragraphs); the output says which variant the numbers belong to. `absaetze="5-9"` selects by those numbers; a range past the end is shortened, one that starts after the end is explained.
+
+## 2026-10-29 · Compact list mode (v0.5)
+
+- `kompakt=true` on `parl_anfragen`, `parl_gegenstaende`, `parl_sitzungen`, `parl_abgeordnete`: one line per hit, subject cut to 100 characters (function to 60), status/topics/vote/constituency left out, **the source link stays on every line** (citability rule). `structuredContent` is identical in both modes; only the text changes.
+- Measured live (XXVIII. GP, built server over stdio): `parl_anfragen` limit 50: 14,993 -> 9,065 characters (-40 %); `parl_gegenstaende` limit 50: 13,484 -> 6,728 (-50 %); `parl_sitzungen` limit 50: 8,097 -> 5,206 (-36 %); `parl_abgeordnete` nur_aktuell, limit 100: 20,151 -> 13,279 (-34 %). The link is most of what is left; dropping it would save more but break citing.
+- Found while measuring: `parl_abgeordnete` with `limit=100` (full mode) returns 20,151 characters, slightly above the "well below 20,000" target in AGENTS.md. Not changed yet; options are a lower max limit or switching to compact above 50 hits.
+- The session list's title ("104. Sitzung des Nationalrates") only repeats the number, so compact mode drops it unless the number is missing.

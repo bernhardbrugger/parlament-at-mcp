@@ -3,7 +3,7 @@ import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
 import { parseLegisPeriod } from '../legis-period.js';
 import { cleanText, htmlAttr, truncate } from '../text.js';
-import { anfrageItemSchema, listOutput, listResult } from '../output.js';
+import { anfrageItemSchema, KOMPAKT_HINWEIS, kompaktInput, listOutput, listResult } from '../output.js';
 import { rowsToObjects, type FilterResponse } from '../types.js';
 
 /** Feld-Bezeichner of the inquiries-and-answers list. */
@@ -36,6 +36,8 @@ export interface AnfragenQuery {
   suche?: string;
   limit: number;
   offset: number;
+  /** One line per hit. */
+  kompakt?: boolean;
 }
 
 /** "27.10.2026" -> "2026-10-27" */
@@ -113,6 +115,10 @@ export function formatAnfragen(result: AnfragenResult, q: AnfragenQuery): string
   if (to < result.total) lines.push(`Weitere Treffer mit offset=${to}.`);
   lines.push('');
   for (const it of result.items) {
+    if (q.kompakt) {
+      lines.push(`- ${[it.zitation, it.datum, truncate(it.betreff, 100), it.url].filter(Boolean).join(' · ')}`);
+      continue;
+    }
     const head = [it.zitation, it.datum, it.art ?? it.artCode].filter(Boolean).join(' · ');
     lines.push(`- ${head}`);
     lines.push(`  ${truncate(it.betreff, 300)}`);
@@ -120,6 +126,7 @@ export function formatAnfragen(result: AnfragenResult, q: AnfragenQuery): string
     if (it.url) lines.push(`  ${it.url}`);
   }
   lines.push('', 'Einbringer, Verlauf und Dokumente: parl_gegenstand mit gp und zitation.');
+  if (q.kompakt) lines.push(KOMPAKT_HINWEIS);
   return lines.join('\n');
 }
 
@@ -147,6 +154,7 @@ export function registerAnfragen(server: McpServer, client: ParlamentClient): vo
           .describe('Anfragen oder Anfragebeantwortungen (nicht beides in einer Abfrage)'),
         limit: z.number().int().min(1).max(50).default(15).describe('Anzahl Treffer pro Aufruf'),
         offset: z.number().int().min(0).max(19_950).default(0).describe('Treffer überspringen (Seiten)'),
+        kompakt: kompaktInput,
       },
       outputSchema: listOutput(anfrageItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
@@ -163,6 +171,7 @@ export function registerAnfragen(server: McpServer, client: ParlamentClient): vo
         art: args.art,
         limit: args.limit,
         offset: args.offset,
+        kompakt: args.kompakt,
         ...(gp ? { gp } : {}),
         ...(args.suche ? { suche: args.suche } : {}),
       };

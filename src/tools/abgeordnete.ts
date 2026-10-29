@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
-import { cleanText, fold, htmlAttr } from '../text.js';
-import { listOutput, listResult, personItemSchema } from '../output.js';
+import { cleanText, fold, htmlAttr, truncate } from '../text.js';
+import { KOMPAKT_HINWEIS, kompaktInput, listOutput, listResult, personItemSchema } from '../output.js';
 import { rowsToObjects } from '../types.js';
 
 /** List id of "all persons who ever sat in the Parliament" (Nationalrat, Bundesrat, government, ...). */
@@ -121,6 +121,8 @@ export interface PersonQuery {
   bundesland?: string;
   limit: number;
   offset: number;
+  /** One line per person. */
+  kompakt?: boolean;
 }
 
 export function searchPersons(all: Person[], q: PersonQuery): { total: number; items: Person[] } {
@@ -153,6 +155,10 @@ export function formatPersons(result: { total: number; items: Person[] }, q: Per
     return 'Keine Personen gefunden. Tipp: Namen ohne Titel suchen ("Rendi-Wagner"), Gremium als Kürzel (NR, BR, BuREG); klub/bundesland/nur_aktuell gelten nur für aktuelle Mitglieder von Nationalrat und Bundesrat.';
   }
   const lines = result.items.map((p) => {
+    if (q.kompakt) {
+      const now = p.aktuell ? `${p.aktuell.gremium}${p.aktuell.klub ? ` ${p.aktuell.klub}` : ''}` : null;
+      return `- ${[p.name, p.funktion && truncate(p.funktion, 60), now, `pad_intern ${p.padIntern}`, p.url].filter(Boolean).join(' · ')}`;
+    }
     const body = p.gremien.length ? ` [${p.gremien.join(', ')}]` : '';
     const now = p.aktuell ? `\n  ${describeCurrent(p.aktuell)}` : '';
     return `- ${p.name} — ${p.funktion ?? 'keine Funktion angegeben'}${body}${now}\n  ${p.url} (pad_intern ${p.padIntern})`;
@@ -160,7 +166,8 @@ export function formatPersons(result: { total: number; items: Person[] }, q: Per
   const from = q.offset + 1;
   const to = q.offset + result.items.length;
   const more = to < result.total ? ` Weitere Treffer mit offset=${to}.` : '';
-  return `${result.total} Treffer, angezeigt ${from}–${to}.${more}\n\n${lines.join('\n')}\n\nLebenslauf und Mandate: parl_person; Reden: parl_reden_person (jeweils mit pad_intern).`;
+  const hint = q.kompakt ? `\n${KOMPAKT_HINWEIS}` : '';
+  return `${result.total} Treffer, angezeigt ${from}–${to}.${more}\n\n${lines.join('\n')}\n\nLebenslauf und Mandate: parl_person; Reden: parl_reden_person (jeweils mit pad_intern).${hint}`;
 }
 
 export function registerAbgeordnete(server: McpServer, client: ParlamentClient): void {
@@ -184,6 +191,7 @@ export function registerAbgeordnete(server: McpServer, client: ParlamentClient):
         bundesland: z.string().min(1).max(30).optional().describe('Bundesland eines aktuellen Mitglieds, z. B. Wien oder Oberösterreich'),
         limit: z.number().int().min(1).max(100).default(20).describe('Maximale Anzahl Treffer'),
         offset: z.number().int().min(0).default(0).describe('Treffer überspringen (für Seiten)'),
+        kompakt: kompaktInput,
       },
       outputSchema: listOutput(personItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
@@ -192,6 +200,7 @@ export function registerAbgeordnete(server: McpServer, client: ParlamentClient):
       const query: PersonQuery = {
         limit: args.limit,
         offset: args.offset,
+        kompakt: args.kompakt,
         ...(args.name ? { name: args.name } : {}),
         ...(args.gremium ? { gremium: args.gremium } : {}),
         ...(args.funktion ? { funktion: args.funktion } : {}),

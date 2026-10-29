@@ -230,6 +230,25 @@ describe('MCP server', () => {
     expect((speeches.structuredContent as { total: number }).total).toBe(129);
   });
 
+  it('kompakt=true shortens the text of every list tool but keeps structuredContent complete', async () => {
+    const { client } = await connect();
+    const cases: Array<[string, Record<string, unknown>]> = [
+      ['parl_anfragen', { gp: 28, limit: 10 }],
+      ['parl_gegenstaende', { gp: 28, limit: 5 }],
+      ['parl_sitzungen', { gp: 28, limit: 10 }],
+      ['parl_abgeordnete', { nur_aktuell: true }],
+    ];
+    for (const [name, args] of cases) {
+      const full = await client.callTool({ name, arguments: args });
+      const short = await client.callTool({ name, arguments: { ...args, kompakt: true } });
+      const fullText = (full.content as Array<{ text: string }>)[0]!.text;
+      const shortText = (short.content as Array<{ text: string }>)[0]!.text;
+      expect(shortText.length, name).toBeLessThan(fullText.length);
+      expect(shortText, name).toContain('kompakt=false');
+      expect(short.structuredContent, name).toEqual(full.structuredContent);
+    }
+  });
+
   it('declares an output schema on the list tools', async () => {
     const { client } = await connect();
     const { tools } = await client.listTools();

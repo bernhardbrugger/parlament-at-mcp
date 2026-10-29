@@ -31,6 +31,7 @@ const calls = [
   ['parl_gegenstaende', { gp: 28, art: 'EU', limit: 3 }, /\/EU/],
   ['parl_gegenstand', { gp: 28, zitation: '21/PET' }, /Parlamentskorrespondenz/],
   ['parl_beschluesse', { gp: 28, nummer: 30, top: 'TOP 3' }, /Dafür: ÖVP, SPÖ, NEOS, dagegen: FPÖ, GRÜNE/],
+  ['parl_anfragen', { gp: 28, limit: 5, kompakt: true }, /\n- \d+\/J · \d{4}-\d{2}-\d{2} · .+ · https:\/\/www\.parlament\.gv\.at\/[\s\S]*Kompaktansicht/],
 ];
 
 let failed = 0;

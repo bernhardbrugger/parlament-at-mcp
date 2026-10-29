@@ -4,7 +4,7 @@ import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
 import { parseLegisPeriod } from '../legis-period.js';
 import { fetchSlice, isoFromDe, PAGE_SIZE } from '../paging.js';
 import { cleanText } from '../text.js';
-import { listOutput, listResult, sitzungItemSchema } from '../output.js';
+import { KOMPAKT_HINWEIS, kompaktInput, listOutput, listResult, sitzungItemSchema } from '../output.js';
 import { rowsToObjects, type FilterResponse } from '../types.js';
 
 /** List id of the plenary sessions (and activities); request body keys: GREMIUM, GP_CODE, SIAKT. */
@@ -29,6 +29,8 @@ export interface SitzungenQuery {
   gp?: string;
   limit: number;
   offset: number;
+  /** One line per session. */
+  kompakt?: boolean;
 }
 
 export function parseSitzungen(resp: FilterResponse): SitzungItem[] {
@@ -71,10 +73,16 @@ export function formatSitzungen(result: { total: number; items: SitzungItem[] },
   const lines = [`${result.total} Sitzungen, angezeigt ${q.offset + 1}–${to}.${to < result.total ? ` Weitere mit offset=${to}.` : ''}`, ''];
   for (const s of result.items) {
     const head = [s.nummer !== null ? `Sitzung ${s.nummer}` : null, s.datum, s.art].filter(Boolean).join(' · ');
+    if (q.kompakt) {
+      // The title ("104. Sitzung des Nationalrates") repeats the head; only keep it when there is no number.
+      lines.push(`- ${[head, s.nummer === null ? s.titel : null, s.url].filter(Boolean).join(' · ')}`);
+      continue;
+    }
     lines.push(`- ${head}`, `  ${s.titel}`);
     if (s.url) lines.push(`  ${s.url}`);
   }
   lines.push('', 'Tagesordnung und Redner einer Sitzung: parl_sitzung (gremium, gp, nummer).');
+  if (q.kompakt) lines.push(KOMPAKT_HINWEIS);
   return lines.join('\n');
 }
 
@@ -95,6 +103,7 @@ export function registerSitzungen(server: McpServer, client: ParlamentClient): v
           .describe('Gesetzgebungsperiode, nur für den Nationalrat'),
         limit: z.number().int().min(1).max(50).default(10).describe('Anzahl Sitzungen pro Aufruf'),
         offset: z.number().int().min(0).max(5000).default(0).describe('Sitzungen überspringen (Seiten)'),
+        kompakt: kompaktInput,
       },
       outputSchema: listOutput(sitzungItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
@@ -110,6 +119,7 @@ export function registerSitzungen(server: McpServer, client: ParlamentClient): v
         gremium: args.gremium,
         limit: args.limit,
         offset: args.offset,
+        kompakt: args.kompakt,
         ...(gp ? { gp } : {}),
       };
       try {

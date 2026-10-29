@@ -16,6 +16,15 @@ export function listResult<T>(text: string, total: number, offset: number, items
   return { content: [{ type: 'text' as const, text }], structuredContent: { total, offset, items } };
 }
 
+/** Input flag shared by the list tools: one line per hit instead of a block, to save context on long lists. */
+export const kompaktInput = z
+  .boolean()
+  .default(false)
+  .describe('Eine Zeile pro Treffer (Betreff gekürzt, Link bleibt) statt eines Blocks; spart Kontext bei langen Listen');
+
+/** Last line of a compact list, so the model knows what was left out and how to get it. */
+export const KOMPAKT_HINWEIS = 'Kompaktansicht: Texte gekürzt, Zusatzangaben weggelassen; alle Angaben mit kompakt=false.';
+
 const nullableString = z.string().nullable();
 
 export const anfrageItemSchema = z.object({

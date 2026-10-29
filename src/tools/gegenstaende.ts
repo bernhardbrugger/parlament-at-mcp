@@ -4,7 +4,7 @@ import { BASE_URL, ParlamentError, type ParlamentClient } from '../client.js';
 import { parseLegisPeriod } from '../legis-period.js';
 import { fetchSlice, isoFromDe, PAGE_SIZE } from '../paging.js';
 import { cleanText, truncate } from '../text.js';
-import { gegenstandItemSchema, listOutput, listResult } from '../output.js';
+import { gegenstandItemSchema, KOMPAKT_HINWEIS, kompaktInput, listOutput, listResult } from '../output.js';
 import { rowsToObjects, type FilterResponse } from '../types.js';
 
 /** List id of the "Verhandlungsgegenstände" (bills, motions, petitions, ...). Body keys: NRBR, GP_CODE, VHG, SW, ... */
@@ -44,6 +44,8 @@ export interface GegenstaendeQuery {
   schlagwort?: string;
   limit: number;
   offset: number;
+  /** One line per hit. */
+  kompakt?: boolean;
 }
 
 function jsonList(v: unknown): string[] {
@@ -113,6 +115,10 @@ export function formatGegenstaende(result: { total: number; items: GegenstandIte
     '',
   ];
   for (const it of result.items) {
+    if (q.kompakt) {
+      lines.push(`- ${[it.zitation, it.datum, truncate(it.betreff, 100), it.url].filter(Boolean).join(' · ')}`);
+      continue;
+    }
     lines.push(`- ${[it.zitation, it.nummerText, it.datum].filter(Boolean).join(' · ')}`);
     lines.push(`  ${truncate(it.betreff, 300)}`);
     if (it.artLang) lines.push(`  ${it.artLang}`);
@@ -121,6 +127,7 @@ export function formatGegenstaende(result: { total: number; items: GegenstandIte
     if (it.url) lines.push(`  ${it.url}`);
   }
   lines.push('', 'Stand im Gesetzgebungsverfahren, Einbringer, Dokumente: parl_gegenstand mit gp und der Zitation (z. B. "251/I").');
+  if (q.kompakt) lines.push(KOMPAKT_HINWEIS);
   return lines.join('\n');
 }
 
@@ -149,6 +156,7 @@ export function registerGegenstaende(server: McpServer, client: ParlamentClient)
         gremium: z.enum(['NR', 'BR']).default('NR').describe('NR = Nationalrat, BR = Bundesrat'),
         limit: z.number().int().min(1).max(50).default(15).describe('Anzahl Treffer pro Aufruf'),
         offset: z.number().int().min(0).max(5000).default(0).describe('Treffer überspringen (Seiten)'),
+        kompakt: kompaktInput,
       },
       outputSchema: listOutput(gegenstandItemSchema),
       annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: true },
@@ -165,6 +173,7 @@ export function registerGegenstaende(server: McpServer, client: ParlamentClient)
         art: args.art,
         limit: args.limit,
         offset: args.offset,
+        kompakt: args.kompakt,
         ...(gp ? { gp } : {}),
         ...(args.schlagwort ? { schlagwort: args.schlagwort } : {}),
       };

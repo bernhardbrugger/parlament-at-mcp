@@ -13,7 +13,7 @@ MCP server for the **Austrian Parliament** (Nationalrat and Bundesrat). Ask an L
 - **Single speeches, not 300,000-character protocols.** The Parliament publishes every speech as its own segment. `parl_sitzung` lists the agenda items and _every speaker_, `parl_rede` returns one speech as text (interjections optional) in pieces of at most 45,000 characters, with `offset` paging.
 - **Who asked, who answered, how did it go.** Inquiries with the party of the introducer, bills with their procedure through committee, Nationalrat and Bundesrat, the vote by party and the Bundesgesetzblatt link.
 - **Who is in office _now_.** Current Nationalrat and Bundesrat members are marked with club, constituency and state and can be filtered; every person has a biography page and a list of all their plenary speeches.
-- **Built for LLMs:** German tool texts with source links, `structuredContent` + `outputSchema` on the list tools, five ready-made research prompts, size-bounded output.
+- **Built for LLMs:** German tool texts with source links, `structuredContent` + `outputSchema` on the list tools, five ready-made research prompts, size-bounded output. `kompakt=true` on the list tools gives one line per hit (measured on 50-hit lists: 34-50 % less text, links kept).
 - **Honest about an undocumented interface.** The Parliament documents no endpoints. Everything here was measured and is written down in [`DECISIONS.md`](DECISIONS.md); a live canary suite tells you when the interface changes.
 
 ## Tools
