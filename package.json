@@ -1,7 +1,7 @@
 {
   "name": "parlament-at-mcp",
   "version": "0.5.0",
-  "description": "MCP server for the Austrian Parliament (Nationalrat, Bundesrat): members, inquiries, plenary protocols, legislative items - via the official open data JSON interface",
+  "description": "MCP server for the Austrian Parliament (Nationalrat, Bundesrat): full-text search of speeches, votes, bills, inquiries, committees and members",
   "type": "module",
   "license": "MIT",
   "main": "dist/index.js",
@@ -66,7 +66,11 @@
     "nationalrat",
     "bundesrat",
     "open-data",
-    "legislation"
+    "legislation",
+    "fact-checking",
+    "full-text-search",
+    "speeches",
+    "democracy"
   ],
   "files": [
     "dist",
@@ -74,5 +78,6 @@
     "LICENSE",
     "CHANGELOG.md",
     "SECURITY.md"
-  ]
+  ],
+  "author": "Bernhard Brugger (https://github.com/bernhardbrugger)"
 }

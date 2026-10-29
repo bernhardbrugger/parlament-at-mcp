@@ -1,7 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.bernhardbrugger/parlament-at-mcp",
-  "description": "Austrian Parliament: members, committees, inquiries, bills with procedure and vote, plenary sessions and single speeches.",
+  "title": "Austrian Parliament (Nationalrat, Bundesrat)",
+  "description": "Austrian Parliament: search speeches, votes, bills, inquiries, committees and members",
+  "websiteUrl": "https://github.com/bernhardbrugger/parlament-at-mcp#readme",
   "repository": {
     "url": "https://github.com/bernhardbrugger/parlament-at-mcp",
     "source": "github"
