@@ -53,10 +53,11 @@ A speech, as the server returns it (shortened):
 Herbert Kickl (FPÖ) · 11.12–11.32
 30. Sitzung des Nationalrats der XXVIII. GP am 16. Juni 2025 · TOP 2-4 Debatte zum Budgetbegleitgesetz 2025
 Quelle: https://www.parlament.gv.at/dokument/XXVIII/NRSITZ/30/A_-_11_12_46_00801352.html
+45 Absätze, in eckigen Klammern nummeriert (mit Zwischenrufen gezählt); zum Zitieren die Nummer angeben, gezielt abrufbar mit absaetze="5-9".
 
-Abgeordneter Herbert Kickl (FPÖ): Danke schön, Herr Präsident! […] (Beifall bei der FPÖ. – Abg. Michael Hammer [ÖVP]: Na bravo!)
+[1] Abgeordneter Herbert Kickl (FPÖ): Danke schön, Herr Präsident! […] (Beifall bei der FPÖ. – Abg. Michael Hammer [ÖVP]: Na bravo!)
 
-[Zeichen 1–857 von 21643; weiterlesen mit offset=857]
+[Zeichen 1–857 von 21859; weiterlesen mit offset=857]
 ```
 
 ## Install
@@ -74,6 +75,16 @@ npm install && npm run build
 ```json
 { "mcpServers": { "parlament-at": { "command": "node", "args": ["/absolute/path/to/parlament-at-mcp/dist/index.js"] } } }
 ```
+
+On Windows use the full path with doubled backslashes, e.g. `"C:\\Users\\you\\parlament-at-mcp\\dist\\index.js"`. Claude Desktop reads the file `claude_desktop_config.json` (Settings → Developer → Edit config); restart the app after changing it. The server needs no API key and talks only to `www.parlament.gv.at`.
+
+**Claude Code**
+
+```bash
+claude mcp add parlament-at -- node /absolute/path/to/parlament-at-mcp/dist/index.js
+```
+
+Try it with: _"Welche Regierungsvorlagen hat der Nationalrat zuletzt beschlossen, und wie haben die Parteien abgestimmt?"_
 
 **Remote (Streamable HTTP, stateless)**
 

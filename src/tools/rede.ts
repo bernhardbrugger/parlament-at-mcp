@@ -49,6 +49,25 @@ export function locateSpeech(session: Session, id: number): Located | null {
   return null;
 }
 
+export interface ParagraphRange {
+  from: number;
+  to: number;
+}
+
+/** "7" or "5-9" (also "5–9") -> { from: 5, to: 9 }; null when the text is not a paragraph range. */
+export function parseParagraphRange(s: string): ParagraphRange | null {
+  const m = /^\s*(\d{1,4})\s*(?:[-–]\s*(\d{1,4}))?\s*$/.exec(s);
+  if (!m) return null;
+  const from = Number(m[1]);
+  const to = m[2] === undefined ? from : Number(m[2]);
+  return from >= 1 && to >= from ? { from, to } : null;
+}
+
+/** A range that reaches past the end is shortened to the last paragraph; one that starts after it stays as asked (and yields no text). */
+function clampRange(range: ParagraphRange, count: number): ParagraphRange {
+  return range.from > count ? range : { from: range.from, to: Math.min(range.to, count) };
+}
+
 export function formatRede(args: {
   located: Located;
   sessionTitle: string;
@@ -57,9 +76,15 @@ export function formatRede(args: {
   interjections: boolean;
   offset: number;
   maxChars: number;
+  /** Only these paragraphs (1-based, inclusive) - `absaetze` of the tool. */
+  paragraphs?: ParagraphRange | undefined;
 }): string {
   const speech = parseSpeechHtml(args.html, { interjections: args.interjections });
-  const full = speech.paragraphs.join('\n\n');
+  const count = speech.paragraphs.length;
+  const range = args.paragraphs ? clampRange(args.paragraphs, count) : null;
+  const numbered = speech.paragraphs.map((p, i) => ({ n: i + 1, text: `[${i + 1}] ${p}` }));
+  const chosen = range ? numbered.filter((p) => p.n >= range.from && p.n <= range.to) : numbered;
+  const full = chosen.map((p) => p.text).join('\n\n');
   const win = windowText(full, args.offset, args.maxChars);
   const times = speech.start
     ? ` · ${speech.start}${speech.end ? `–${speech.end}` : ''}`
@@ -69,8 +94,19 @@ export function formatRede(args: {
   const lines = [`${speech.speaker ?? args.located.speaker}${times}`, `${args.sessionTitle} · ${args.located.top}`];
   if (args.located.autorisiert === false) lines.push('Hinweis: Dieser Redebeitrag ist laut Parlament noch nicht autorisiert.');
   if (args.protocolNote) lines.push(`Hinweis des Parlaments: ${cleanText(args.protocolNote)}`);
-  lines.push(`Quelle: ${BASE_URL}${args.located.htmlPath}`, '');
-  if (win.total === 0) {
+  lines.push(`Quelle: ${BASE_URL}${args.located.htmlPath}`);
+  if (count > 0) {
+    const shown = range && chosen.length > 0 ? `Absätze ${range.from}–${range.to} von ${count}` : `${count} Absätze`;
+    lines.push(
+      `${shown}, in eckigen Klammern nummeriert (${args.interjections ? 'mit Zwischenrufen' : 'ohne Zwischenrufe'} gezählt); zum Zitieren die Nummer angeben, gezielt abrufbar mit absaetze="5-9".`,
+    );
+  }
+  lines.push('');
+  if (range && chosen.length === 0) {
+    lines.push(
+      `(Die Rede hat nur ${count} Absätze; absaetze="${range.from}${range.to > range.from ? `-${range.to}` : ''}" liegt dahinter.)`,
+    );
+  } else if (win.total === 0) {
     lines.push('(Der Redebeitrag enthält keinen Text.)');
   } else {
     lines.push(win.text);
@@ -92,6 +128,7 @@ export function registerRede(server: McpServer, client: ParlamentClient): void {
       description:
         'Liefert den Text EINES Redebeitrags aus dem stenographischen Protokoll (Sitzung wie bei parl_sitzung, dazu die rede-Nummer aus deren Ergebnis). ' +
         'Zwischenrufe und Beifall stehen standardmäßig im Text; mit zwischenrufe=false werden sie weggelassen. ' +
+        'Die Absätze sind in eckigen Klammern nummeriert: zum Zitieren die Absatznummer nennen, mit absaetze="5-9" nur diese Absätze holen. ' +
         `Lange Reden werden in Stücken von höchstens ${HARD_LIMIT_CHARS.toLocaleString('de-AT')} Zeichen geliefert (offset zum Weiterlesen). ` +
         'Zitate immer mit Redner, Sitzung und der Quellangabe aus dem Ergebnis belegen. Quelle: offene Daten des Parlaments (CC BY 4.0).',
       inputSchema: {
@@ -103,6 +140,13 @@ export function registerRede(server: McpServer, client: ParlamentClient): void {
         nummer: z.number().int().min(1).max(9999).describe('Sitzungsnummer'),
         rede: z.number().int().min(1).describe('Nummer des Redebeitrags (rede=...) aus parl_sitzung'),
         zwischenrufe: z.boolean().default(true).describe('Zwischenrufe und Beifall mitliefern'),
+        absaetze: z
+          .string()
+          .max(12)
+          .optional()
+          .describe(
+            'Nur diese Absätze, z. B. "7" oder "5-9" (die Nummern stehen in eckigen Klammern im Text); ersetzt das Blättern über offset',
+          ),
         offset: z.number().int().min(0).default(0).describe('Ab diesem Zeichen weiterlesen'),
         max_zeichen: z.number().int().min(1000).max(HARD_LIMIT_CHARS).default(DEFAULT_CHARS).describe('Größe des gelieferten Stücks'),
       },
@@ -115,6 +159,10 @@ export function registerRede(server: McpServer, client: ParlamentClient): void {
         path = sitzungPath(args.gremium, args.gp, args.nummer);
       } catch (e) {
         return fail((e as Error).message);
+      }
+      const paragraphs = args.absaetze === undefined ? undefined : parseParagraphRange(args.absaetze);
+      if (args.absaetze !== undefined && !paragraphs) {
+        return fail(`Ungültiger Absatzbereich "${args.absaetze}". Erlaubt: eine Nummer ("7") oder ein Bereich ("5-9"), ab 1.`);
       }
       try {
         const session = await client.session(path);
@@ -130,6 +178,7 @@ export function registerRede(server: McpServer, client: ParlamentClient): void {
           interjections: args.zwischenrufe,
           offset: args.offset,
           maxChars: args.max_zeichen,
+          paragraphs: paragraphs ?? undefined,
         });
         return { content: [{ type: 'text' as const, text }] };
       } catch (e) {

@@ -3,6 +3,7 @@
 ## 0.5.0 (unreleased)
 
 - **New tool `parl_beschluesse`:** what a plenary session decided per agenda item, with the vote by party, later steps (e.g. Bundesrat), press releases and agenda links.
+- **`parl_rede`:** paragraphs are numbered (`[1]`, `[2]`, …) so a quote can name its paragraph, and `absaetze="5-9"` fetches just those paragraphs.
 - **`parl_gegenstaende`:** also lists petitions (`PET`), citizens' initiatives (`BI`) and EU documents (`EU`); `parl_gegenstand` shows the press releases of an item.
 - **Fix:** `parl_gegenstaende` now really returns the newest items first. The Parliament's list has no useful default order (a 2025 bill came before a 2026 one); the tool asks for the sort explicitly.
 - **Fix:** `parl_rede` continuation windows no longer cut a word in two when a paragraph is longer than half the window (they end at the last space).

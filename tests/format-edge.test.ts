@@ -184,7 +184,7 @@ describe('formatRede', () => {
     expect(lines[0]).toBe('Herbert Kickl (FPÖ) · 11.12–11.20');
     expect(lines[1]).toBe('30. Sitzung · TOP 1');
     expect(text).toContain('Quelle: https://www.parlament.gv.at/dokument/a.html');
-    expect(text).toContain('Erster Absatz.\n\nZweiter (Beifall) Absatz.');
+    expect(text).toContain('[1] Erster Absatz.\n\n[2] Zweiter (Beifall) Absatz.');
     expect(text).toContain('[Ende der Rede, ');
     expect(text).not.toContain('ohne Zwischenrufe');
   });
