@@ -21,6 +21,7 @@ const calls = [
   ['parl_rede', { gp: 28, nummer: 30, rede: 801352, max_zeichen: 1500 }, /Kickl[\s\S]*\d+ Absätze, in eckigen Klammern nummeriert/],
   ['parl_rede', { gp: 28, nummer: 30, rede: 801352, absaetze: '2-3' }, /Absätze 2–3 von \d+[\s\S]*\[2\] [\s\S]*\[3\] /],
   ['parl_abgeordnete', { nur_aktuell: true, klub: 'SPÖ', bundesland: 'Wien', limit: 3 }, /AKTUELL im (Nationalrat|Bundesrat)/],
+  ['parl_abgeordnete', { nur_aktuell: true, limit: 100 }, /\n- .+ · pad_intern \d+ · https:\/\/[\s\S]*Kompaktansicht automatisch/],
   ['parl_person', { name: 'Rendi-Wagner' }, /Mandate und Funktionen/],
   ['parl_reden_person', { name: 'Rendi-Wagner', limit: 3 }, /Reden von/],
   ['parl_ausschuesse', { gp: 28 }, /Ausschuss/],

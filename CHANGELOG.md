@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **`parl_abgeordnete`:** a full-mode list that would pass 18,000 characters is printed compact by itself and says so. Measured live: all current members with `limit=100` went from 20,151 to 13,201 characters, above the size bound of the other tools before. `structuredContent` stays complete.
+
 ## 0.5.1
 
 - **Docs:** the README shipped inside the npm package now explains the install with `npx -y parlament-at-mcp` (Claude Desktop, Claude Code, VS Code, Cursor, Windsurf). The README of 0.5.0 on npmjs.com still described building from source. No code changes.

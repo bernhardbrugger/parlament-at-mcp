@@ -150,7 +150,19 @@ export function describeCurrent(a: CurrentInfo): string {
   return [`AKTUELL im ${body}`, a.klub && `Klub ${a.klub}`, a.wahlkreis && `Wahlkreis ${a.wahlkreis}`, land].filter(Boolean).join(' · ');
 }
 
+/** Above this many characters a full-mode list is rendered compact instead (AGENTS.md: list tools stay well below 20,000). */
+export const PERSONS_FULL_MAX_CHARS = 18_000;
+
+export const AUTO_KOMPAKT_HINWEIS =
+  'Kompaktansicht automatisch, weil die volle Liste über 18.000 Zeichen hätte; alle Angaben mit kleinerem limit (z. B. 50) und offset.';
+
 export function formatPersons(result: { total: number; items: Person[] }, q: PersonQuery): string {
+  const text = renderPersons(result, q);
+  if (q.kompakt || text.length <= PERSONS_FULL_MAX_CHARS) return text;
+  return renderPersons(result, { ...q, kompakt: true }, AUTO_KOMPAKT_HINWEIS);
+}
+
+function renderPersons(result: { total: number; items: Person[] }, q: PersonQuery, kompaktHinweis = KOMPAKT_HINWEIS): string {
   if (result.total === 0) {
     return 'Keine Personen gefunden. Tipp: Namen ohne Titel suchen ("Rendi-Wagner"), Gremium als Kürzel (NR, BR, BuREG); klub/bundesland/nur_aktuell gelten nur für aktuelle Mitglieder von Nationalrat und Bundesrat.';
   }
@@ -166,7 +178,7 @@ export function formatPersons(result: { total: number; items: Person[] }, q: Per
   const from = q.offset + 1;
   const to = q.offset + result.items.length;
   const more = to < result.total ? ` Weitere Treffer mit offset=${to}.` : '';
-  const hint = q.kompakt ? `\n${KOMPAKT_HINWEIS}` : '';
+  const hint = q.kompakt ? `\n${kompaktHinweis}` : '';
   return `${result.total} Treffer, angezeigt ${from}–${to}.${more}\n\n${lines.join('\n')}\n\nLebenslauf und Mandate: parl_person; Reden: parl_reden_person (jeweils mit pad_intern).${hint}`;
 }
 

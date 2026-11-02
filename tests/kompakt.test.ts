@@ -3,7 +3,7 @@ import { KOMPAKT_HINWEIS } from '../src/output.js';
 import { formatAnfragen, parseAnfragen } from '../src/tools/anfragen.js';
 import { formatGegenstaende, parseGegenstaende } from '../src/tools/gegenstaende.js';
 import { formatSitzungen, parseSitzungen } from '../src/tools/sitzungen.js';
-import { formatPersons, type Person } from '../src/tools/abgeordnete.js';
+import { AUTO_KOMPAKT_HINWEIS, formatPersons, PERSONS_FULL_MAX_CHARS, type Person } from '../src/tools/abgeordnete.js';
 import { fixture } from './helpers.js';
 
 /** Lines that describe a hit: they start with "- " (header lines and hints do not). */
@@ -90,5 +90,33 @@ describe('compact list mode (real fixtures)', () => {
       '- Straßer Hans · pad_intern 4 · https://www.parlament.gv.at/person/4',
     ]);
     expect(short).toContain(KOMPAKT_HINWEIS);
+  });
+
+  it('parl_abgeordnete: a full list that would pass 18,000 characters switches to compact by itself', () => {
+    // Shaped like the measured worst case (nur_aktuell, limit=100: 20,151 characters in full mode).
+    const member = (i: number): Person => ({
+      padIntern: 10_000 + i,
+      name: `Abgeordnete Nummer ${i}`,
+      funktion: 'Abgeordnete zum Nationalrat, Bereichssprecherin für Verkehr, Infrastruktur und Innovation',
+      gremien: ['NR', 'BR'],
+      geschlecht: 'W',
+      url: `https://www.parlament.gv.at/person/${10_000 + i}`,
+      portraitUrl: null,
+      aktuell: { gremium: 'NR', klub: 'GRÜNE', wahlkreis: '4D Traunviertel', bundesland: 'Oberösterreich' },
+    });
+    const many = Array.from({ length: 100 }, (_, i) => member(i));
+    const q = { nurAktuell: true, limit: 100, offset: 0 };
+    const auto = formatPersons({ total: 183, items: many }, q);
+    expect(auto.length).toBeLessThan(PERSONS_FULL_MAX_CHARS);
+    expect(hitLines(auto)).toHaveLength(100);
+    expect(blockLines(auto)).toEqual([]);
+    expect(auto).toContain(AUTO_KOMPAKT_HINWEIS);
+    expect(auto).not.toContain(KOMPAKT_HINWEIS);
+    for (const p of many) expect(auto).toContain(p.url);
+
+    const few = formatPersons({ total: 183, items: many.slice(0, 20) }, { ...q, limit: 20 });
+    expect(few).toContain('AKTUELL im Nationalrat');
+    expect(few).not.toContain(AUTO_KOMPAKT_HINWEIS);
+    expect(few).not.toContain(KOMPAKT_HINWEIS);
   });
 });

@@ -109,7 +109,7 @@ Each entry: what was measured or decided, when, and why. Add to it whenever the 
 
 - `kompakt=true` on `parl_anfragen`, `parl_gegenstaende`, `parl_sitzungen`, `parl_abgeordnete`: one line per hit, subject cut to 100 characters (function to 60), status/topics/vote/constituency left out, **the source link stays on every line** (citability rule). `structuredContent` is identical in both modes; only the text changes.
 - Measured live (XXVIII. GP, built server over stdio): `parl_anfragen` limit 50: 14,993 -> 9,065 characters (-40 %); `parl_gegenstaende` limit 50: 13,484 -> 6,728 (-50 %); `parl_sitzungen` limit 50: 8,097 -> 5,206 (-36 %); `parl_abgeordnete` nur_aktuell, limit 100: 20,151 -> 13,279 (-34 %). The link is most of what is left; dropping it would save more but break citing.
-- Found while measuring: `parl_abgeordnete` with `limit=100` (full mode) returns 20,151 characters, slightly above the "well below 20,000" target in AGENTS.md. Not changed yet; options are a lower max limit or switching to compact above 50 hits.
+- Found while measuring: `parl_abgeordnete` with `limit=100` (full mode) returns 20,151 characters, slightly above the "well below 20,000" target in AGENTS.md. Fixed 2026-11-02: a full-mode list above 18,000 characters is rendered compact automatically, with its own hint (a fixed hit count would not follow name or function lengths). Live: `nur_aktuell`, `limit=100` -> 13,201 characters; checked in `smoke:live`.
 - The session list's title ("104. Sitzung des Nationalrates") only repeats the number, so compact mode drops it unless the number is missing.
 
 ## 2026-10-29 · Full-text search (`VTS_01`), measured (v0.5)
