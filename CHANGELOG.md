@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **Security (development tools only):** `minimatch` 11.0.1 via an npm override (GHSA-g3hv-75wg-m249, denial of service through glob-part amplification, published 2026-10-30; no fixed 10.x exists). It is pulled in by ESLint and typescript-eslint, not by the published package. `npm audit` reports 0 vulnerabilities again.
 - **`parl_abgeordnete`:** a full-mode list that would pass 18,000 characters is printed compact by itself and says so. Measured live: all current members with `limit=100` went from 20,151 to 13,201 characters, above the size bound of the other tools before. `structuredContent` stays complete.
 
 ## 0.5.1
